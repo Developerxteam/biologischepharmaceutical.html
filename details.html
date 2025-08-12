@@ -4,137 +4,131 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Medicine Details</title>
-
-  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
-  
-  <!-- AOS Animation Library -->
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-
-  <!-- Zoom & Pan Library -->
-  <script src="https://unpkg.com/medium-zoom/dist/medium-zoom.min.js"></script>
-
   <style>
     body {
-      background: #ffffff;
-      color: #222;
       font-family: 'Inter', sans-serif;
+      background-color: #fff;
+      color: #111;
     }
-    .tab-btn.active {
-      background: #10b981;
+    /* Image Zoom */
+    .zoom-container {
+      overflow: hidden;
+      position: relative;
+    }
+    .zoom-container img {
+      transition: transform 0.4s ease;
+    }
+    .zoom-container:hover img {
+      transform: scale(1.1);
+    }
+    /* Animated Tag */
+    .tag-badge {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      background: linear-gradient(135deg, #ff5f6d, #ffc371);
       color: white;
+      font-weight: bold;
+      padding: 0.4rem 0.8rem;
+      border-radius: 9999px;
+      font-size: 0.85rem;
+      animation: pulseTag 1.5s infinite;
     }
-    .badge {
-      animation: float 3s ease-in-out infinite;
-    }
-    @keyframes float {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-4px); }
+    @keyframes pulseTag {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.1); opacity: 0.8; }
     }
   </style>
 </head>
-<body class="min-h-screen flex flex-col">
+<body>
 
-<!-- Page Container -->
-<div class="container mx-auto px-4 py-8" data-aos="fade-up">
+<!-- Container -->
+<div class="max-w-6xl mx-auto p-4 md:p-8">
 
-  <!-- Back Button -->
-  <a href="index.html" class="inline-flex items-center mb-6 text-emerald-600 hover:text-emerald-800">
-    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
-    </svg>
-    Back to Store
-  </a>
+  <!-- Back Link -->
+  <a href="index.html" class="text-emerald-600 hover:underline mb-4 inline-block">&larr; Back to Medicines</a>
 
-  <!-- Product Section -->
-  <div class="grid md:grid-cols-2 gap-10 items-start">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 
-    <!-- Product Image with Tag -->
-    <div class="relative" data-aos="zoom-in">
-      <img id="product-image" src="" alt="Medicine" class="rounded-lg shadow-lg w-full max-h-[450px] object-contain cursor-zoom-in" />
-      <span id="product-tag" class="absolute top-4 left-4 bg-emerald-500 text-white px-3 py-1 rounded-full text-sm font-semibold badge shadow-lg">Best Seller</span>
+    <!-- Image Section -->
+    <div class="zoom-container rounded-lg shadow-lg relative">
+      <span class="tag-badge">Best Seller</span>
+      <img id="productImage" src="" alt="" class="w-full object-contain rounded-lg bg-gray-100 p-4" />
     </div>
 
     <!-- Product Info -->
-    <div data-aos="fade-left">
-      <h1 id="product-name" class="text-3xl font-bold mb-2">Product Name</h1>
-      <p id="product-brand" class="text-lg text-gray-600 mb-4">Brand</p>
-      <div class="text-emerald-600 text-2xl font-bold mb-4">₹<span id="product-price">0</span></div>
-      <p class="text-gray-500 mb-2">MFG: <span id="product-mfg"></span></p>
-      <p class="text-gray-500 mb-6">EXP: <span id="product-exp"></span></p>
+    <div>
+      <h1 id="productName" class="text-3xl font-bold mb-2">Medicine Name</h1>
+      <p id="productBrand" class="text-gray-500 mb-4">Brand Name</p>
+      <div class="text-2xl font-bold text-emerald-600 mb-4">₹<span id="productPrice">0</span></div>
+      <p class="text-gray-700 mb-2"><strong>MFG:</strong> <span id="productMfg"></span></p>
+      <p class="text-gray-700 mb-6"><strong>EXP:</strong> <span id="productExp"></span></p>
 
-      <!-- Action Buttons -->
-      <div class="flex gap-3 mb-6">
-        <a id="order-link" href="#" target="_blank" class="px-6 py-3 rounded-lg bg-emerald-500 text-white font-semibold hover:bg-emerald-600 transition">Order Now</a>
-        <a id="call-link" href="#" class="px-6 py-3 rounded-lg border border-emerald-500 text-emerald-500 font-semibold hover:bg-emerald-50 transition">Call Us</a>
-      </div>
+      <!-- Description -->
+      <p id="productDesc" class="mb-6 text-gray-800"></p>
 
-      <!-- Tabs -->
-      <div>
-        <div class="flex gap-2 mb-4 flex-wrap">
-          <button class="tab-btn px-4 py-2 rounded-lg border border-gray-300" data-tab="composition">Composition</button>
-          <button class="tab-btn px-4 py-2 rounded-lg border border-gray-300" data-tab="effective">Effective In</button>
-          <button class="tab-btn px-4 py-2 rounded-lg border border-gray-300" data-tab="dosage">Dosage</button>
-          <button class="tab-btn px-4 py-2 rounded-lg border border-gray-300" data-tab="precautions">Precautions</button>
-          <button class="tab-btn px-4 py-2 rounded-lg border border-gray-300" data-tab="manufacturer">Manufacturer</button>
+      <!-- Detailed Info -->
+      <div class="space-y-4">
+        <div>
+          <h3 class="font-semibold text-lg">Composition</h3>
+          <p id="productComposition" class="text-gray-700">N/A</p>
         </div>
-        <div id="tab-content" class="p-4 border rounded-lg bg-gray-50">
-          Select a tab to view details.
+        <div>
+          <h3 class="font-semibold text-lg">Effective In</h3>
+          <p id="productEffective" class="text-gray-700">N/A</p>
+        </div>
+        <div>
+          <h3 class="font-semibold text-lg">Dosage</h3>
+          <p id="productDosage" class="text-gray-700">N/A</p>
+        </div>
+        <div>
+          <h3 class="font-semibold text-lg">Precautions</h3>
+          <p id="productPrecautions" class="text-gray-700">N/A</p>
+        </div>
+        <div>
+          <h3 class="font-semibold text-lg">Manufactured By</h3>
+          <p class="text-gray-700">Herbal Biologische Pharmaceuticals Private Limited</p>
         </div>
       </div>
     </div>
-
   </div>
 </div>
 
-<!-- Scripts -->
+<!-- Fixed Bottom Bar -->
+<div class="fixed bottom-0 left-0 w-full bg-white border-t border-gray-200 shadow-lg p-3 flex gap-3 md:hidden">
+  <a id="orderLink" href="#" target="_blank" class="flex-1 bg-emerald-600 text-white py-3 text-center rounded-lg font-semibold">Order Now</a>
+  <a href="tel:9120227101" class="flex-1 border border-emerald-600 text-emerald-600 py-3 text-center rounded-lg font-semibold">Call Us</a>
+</div>
+
 <script>
-  // Medicine data (can be from backend)
+  // Medicine data (can be imported from main page in real project)
   const medicines = [
-    { id:1, name:"Cyston Drops", brand:"Herbal Biologische Pharmaceuticals", price:200, mfg:"2023-01", exp:"2025-01", image:"https://i.postimg.cc/jdHbc7NV/Screenshot-2025-08-11-at-10-12-43-PM.png", tag:"Best Seller", composition:"Ayurvedic herbs mix", effective:"Renal Stone, Colic", dosage:"10 drops twice daily", precautions:"Consult doctor if pregnant", manufacturer:"Herbal Biologische Pharmaceuticals Pvt Ltd" },
-    { id:2, name:"Spon-dy Drops", brand:"Herbal Biologische Pharmaceuticals", price:120, mfg:"2022-06", exp:"2024-12", image:"https://i.postimg.cc/6qynfKTq/Screenshot-2025-08-11-at-10-54-42-PM.png", tag:"20% OFF", composition:"Special herbal blend", effective:"Spondylitis, Back Pain", dosage:"15 drops daily", precautions:"Avoid in children", manufacturer:"Herbal Biologische Pharmaceuticals Pvt Ltd" }
+    { id:1, name:"Cyston Drops", brand:"Herbal Biologische Pharmaceuticals Private Limited", price:200, mfg:"2023-01", exp:"2025-01", desc:"For Renal Stone And Colic", composition:"Each 5ml contains...", effective:"Renal stones, urinary disorders", dosage:"10 drops twice a day", precautions:"Consult doctor before use", image:"https://i.postimg.cc/jdHbc7NV/Screenshot-2025-08-11-at-10-12-43-PM.png", link:"https://example.com/order1" },
+    { id:2, name:"Spon-dy Drops", brand:"Herbal Biologische Pharmaceuticals Private Limited", price:120, mfg:"2022-06", exp:"2024-12", desc:"For Spondylitis", composition:"Each 5ml contains...", effective:"Back pain, joint pain", dosage:"15 drops twice a day", precautions:"Not for children under 12", image:"https://i.postimg.cc/6qynfKTq/Screenshot-2025-08-11-at-10-54-42-PM.png", link:"https://example.com/order2" }
   ];
 
   // Get ID from URL
   const params = new URLSearchParams(window.location.search);
-  const id = parseInt(params.get("id"));
+  const id = parseInt(params.get('id'));
   const product = medicines.find(m => m.id === id);
 
   if (product) {
-    document.getElementById("product-name").textContent = product.name;
-    document.getElementById("product-brand").textContent = product.brand;
-    document.getElementById("product-price").textContent = product.price;
-    document.getElementById("product-mfg").textContent = product.mfg;
-    document.getElementById("product-exp").textContent = product.exp;
-    document.getElementById("product-image").src = product.image;
-    document.getElementById("product-tag").textContent = product.tag;
-    document.getElementById("order-link").href = "https://wa.me/9120227101";
-    document.getElementById("call-link").href = "tel:9120227101";
-
-    // Tab click events
-    const tabs = document.querySelectorAll(".tab-btn");
-    tabs.forEach(btn => {
-      btn.addEventListener("click", () => {
-        tabs.forEach(t => t.classList.remove("active"));
-        btn.classList.add("active");
-        const type = btn.getAttribute("data-tab");
-        let content = "";
-        if (type === "composition") content = product.composition;
-        if (type === "effective") content = product.effective;
-        if (type === "dosage") content = product.dosage;
-        if (type === "precautions") content = product.precautions;
-        if (type === "manufacturer") content = product.manufacturer;
-        document.getElementById("tab-content").textContent = content;
-      });
-    });
+    document.getElementById('productImage').src = product.image;
+    document.getElementById('productName').textContent = product.name;
+    document.getElementById('productBrand').textContent = product.brand;
+    document.getElementById('productPrice').textContent = product.price;
+    document.getElementById('productMfg').textContent = product.mfg;
+    document.getElementById('productExp').textContent = product.exp;
+    document.getElementById('productDesc').textContent = product.desc;
+    document.getElementById('productComposition').textContent = product.composition;
+    document.getElementById('productEffective').textContent = product.effective;
+    document.getElementById('productDosage').textContent = product.dosage;
+    document.getElementById('productPrecautions').textContent = product.precautions;
+    document.getElementById('orderLink').href = product.link;
+  } else {
+    document.body.innerHTML = "<div class='text-center mt-20 text-xl'>Product not found.</div>";
   }
-
-  // Init animations
-  AOS.init({ duration: 800 });
-
-  // Init zoom
-  mediumZoom('#product-image', { background: 'rgba(0,0,0,0.8)' });
 </script>
 
 </body>
