@@ -1,134 +1,274 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Medicine Details</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: #fff;
-      color: #111;
-    }
-    /* Image Zoom */
-    .zoom-container {
-      overflow: hidden;
-      position: relative;
-    }
-    .zoom-container img {
-      transition: transform 0.4s ease;
-    }
-    .zoom-container:hover img {
-      transform: scale(1.1);
-    }
-    /* Animated Tag */
-    .tag-badge {
-      position: absolute;
-      top: 1rem;
-      left: 1rem;
-      background: linear-gradient(135deg, #ff5f6d, #ffc371);
-      color: white;
-      font-weight: bold;
-      padding: 0.4rem 0.8rem;
-      border-radius: 9999px;
-      font-size: 0.85rem;
-      animation: pulseTag 1.5s infinite;
-    }
-    @keyframes pulseTag {
-      0%, 100% { transform: scale(1); opacity: 1; }
-      50% { transform: scale(1.1); opacity: 0.8; }
-    }
-  </style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Product — Herbal Biologische</title>
+
+<!-- Tailwind (no build) -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+<!-- AOS (scroll reveal) -->
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+<!-- GSAP -->
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
+
+<!-- medium-zoom for image zoom on click/tap -->
+<script src="https://unpkg.com/medium-zoom/dist/medium-zoom.min.js"></script>
+
+<style>
+  :root{
+    --accent-1: #059669; /* emerald */
+    --accent-2: #0ea5a4; /* teal */
+    --gold-1: #ffb800;
+  }
+  body { font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; background:#fff; color:#0f172a; }
+  /* Header gradient accent */
+  .brand-grad { background: linear-gradient(90deg, rgba(5,150,105,1), rgba(14,165,164,1)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+
+  /* badge */
+  .badge {
+    background: linear-gradient(135deg,#ff5f6d,#ffc371); color:#fff;
+    padding:.35rem .65rem; border-radius:999px; font-weight:700; font-size:.82rem;
+    box-shadow:0 6px 18px rgba(16,24,40,.12); transform-origin:center; will-change:transform;
+  }
+  .badge.anim { animation: floatBadge 2.6s ease-in-out infinite; }
+  @keyframes floatBadge { 0%{transform:translateY(0)}50%{transform:translateY(-6px)}100%{transform:translateY(0)} }
+
+  /* image container sizing */
+  .img-mobile { max-height:18rem; }   /* mobile */
+  .img-sm { max-height:24rem; }       /* small screens */
+  .img-md { max-height:32rem; }       /* desktop */
+
+  /* subtle card */
+  .card { background: linear-gradient(180deg, #ffffff, #fbfbfd); border:1px solid rgba(15,23,42,0.04); border-radius:12px; box-shadow: 0 8px 30px rgba(2,6,23,.06); }
+
+  /* Icon circle */
+  .icon-circle { width:44px;height:44px;border-radius:10px;display:inline-flex;align-items:center;justify-content:center;background:linear-gradient(135deg,rgba(5,150,105,0.08),rgba(14,165,164,0.05)); }
+
+  /* CTA gradients */
+  .btn-primary { background: linear-gradient(90deg,var(--accent-1),var(--accent-2)); color: #fff; }
+  .btn-ghost { border:1px solid rgba(5,150,105,.14); color: var(--accent-1); background:transparent; }
+
+  /* responsive tweaks */
+  @media(min-width:768px){
+    .img-mobile { max-height:24rem; } 
+  }
+  @media(min-width:1024px){
+    .img-mobile { max-height:36rem; } 
+  }
+</style>
 </head>
 <body>
 
-<!-- Container -->
-<div class="max-w-6xl mx-auto p-4 md:p-8">
+<!-- header -->
+<header class="sticky top-0 z-40 bg-white/95 backdrop-blur-sm border-b">
+  <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <!-- SVG logo (premium, inline) -->
+      <svg width="44" height="44" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="rounded-md p-1" aria-hidden>
+        <rect x="0" y="0" width="24" height="24" rx="5" fill="url(#g)"></rect>
+        <defs>
+          <linearGradient id="g" x1="0" x2="1">
+            <stop offset="0" stop-color="#059669"/>
+            <stop offset="1" stop-color="#0ea5a4"/>
+          </linearGradient>
+        </defs>
+        <path d="M7 12c0-2.76 2.24-5 5-5s5 2.24 5 5-2.24 5-5 5-5-2.24-5-5z" fill="white" opacity="0.95"/>
+      </svg>
 
-  <!-- Back Link -->
-  <a href="index.html" class="text-emerald-600 hover:underline mb-4 inline-block">&larr; Back to Medicines</a>
-
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-
-    <!-- Image Section -->
-    <div class="zoom-container rounded-lg shadow-lg relative">
-      <span class="tag-badge">Best Seller</span>
-      <img id="productImage" src="" alt="" class="w-full object-contain rounded-lg bg-gray-100 p-4" />
-    </div>
-
-    <!-- Product Info -->
-    <div>
-      <h1 id="productName" class="text-3xl font-bold mb-2">Medicine Name</h1>
-      <p id="productBrand" class="text-gray-500 mb-4">Brand Name</p>
-      <div class="text-2xl font-bold text-emerald-600 mb-4">₹<span id="productPrice">0</span></div>
-      <p class="text-gray-700 mb-2"><strong>MFG:</strong> <span id="productMfg"></span></p>
-      <p class="text-gray-700 mb-6"><strong>EXP:</strong> <span id="productExp"></span></p>
-
-      <!-- Description -->
-      <p id="productDesc" class="mb-6 text-gray-800"></p>
-
-      <!-- Detailed Info -->
-      <div class="space-y-4">
-        <div>
-          <h3 class="font-semibold text-lg">Composition</h3>
-          <p id="productComposition" class="text-gray-700">N/A</p>
-        </div>
-        <div>
-          <h3 class="font-semibold text-lg">Effective In</h3>
-          <p id="productEffective" class="text-gray-700">N/A</p>
-        </div>
-        <div>
-          <h3 class="font-semibold text-lg">Dosage</h3>
-          <p id="productDosage" class="text-gray-700">N/A</p>
-        </div>
-        <div>
-          <h3 class="font-semibold text-lg">Precautions</h3>
-          <p id="productPrecautions" class="text-gray-700">N/A</p>
-        </div>
-        <div>
-          <h3 class="font-semibold text-lg">Manufactured By</h3>
-          <p class="text-gray-700">Herbal Biologische Pharmaceuticals Private Limited</p>
-        </div>
+      <div>
+        <div class="text-sm font-semibold brand-grad" style="font-family:'Poppins',sans-serif;">Herbal Biologische</div>
+        <div class="text-xs text-slate-500 -mt-0.5">Premium Pharmaceutical Pvt. Ltd</div>
       </div>
     </div>
+
+    <a href="index.html" class="text-sm font-semibold text-slate-700 hover:text-slate-900">Back to store</a>
   </div>
+</header>
+
+<!-- main -->
+<main class="container mx-auto px-4 py-8">
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+
+    <!-- left: image -->
+    <section class="card p-4 relative overflow-hidden">
+      <!-- animated badge -->
+      <div id="badge" class="badge anim absolute top-4 left-4 hidden">Best Seller</div>
+
+      <!-- image (object-contain) -->
+      <div class="flex items-center justify-center p-3">
+        <img id="productImage" src="" alt="Product" class="w-full object-contain rounded-lg img-mobile sm:img-sm md:img-md transition-transform duration-400" />
+      </div>
+
+      <!-- optional small gallery row on mobile (shows thumbnails) -->
+      <div id="thumbs" class="mt-3 flex gap-3 overflow-auto"></div>
+    </section>
+
+    <!-- right: details -->
+    <section class="space-y-4">
+      <div class="flex items-start justify-between gap-4">
+        <div>
+          <h1 id="productName" class="text-2xl md:text-3xl font-extrabold leading-tight">Product Name</h1>
+          <p id="productBrand" class="text-sm text-slate-500 mt-1">Brand name</p>
+        </div>
+
+        <div class="text-right">
+          <div id="price" class="text-2xl md:text-3xl font-bold text-emerald-600">₹0</div>
+          <div class="text-xs text-slate-400 mt-1">Inclusive of all taxes</div>
+        </div>
+      </div>
+
+      <!-- quick details row -->
+      <div class="flex flex-wrap gap-3">
+        <div class="px-3 py-2 rounded-lg bg-slate-50 text-slate-700 text-sm">MFG: <span id="mfg"></span></div>
+        <div class="px-3 py-2 rounded-lg bg-slate-50 text-slate-700 text-sm">EXP: <span id="exp"></span></div>
+        <div class="px-3 py-2 rounded-lg bg-slate-50 text-slate-700 text-sm">Stock: <span id="stock">In Stock</span></div>
+      </div>
+
+      <!-- description -->
+      <div class="card p-4">
+        <h3 class="text-lg font-semibold flex items-center gap-2">
+          <!-- svg icon -->
+          <span class="icon-circle"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" stroke="#059669" stroke-width="1.6" viewBox="0 0 24 24"><path d="M12 2v6l4 2"></path><path d="M21 12v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-6"></path></svg></span>
+          Product information
+        </h3>
+        <p id="desc" class="mt-3 text-slate-700 leading-relaxed">Description text</p>
+      </div>
+
+      <!-- big details sections (composition, effective-in, dosage, precautions, manufactured by) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="p-4 card">
+          <h4 class="font-semibold text-emerald-600 mb-2">Composition</h4>
+          <p id="composition" class="text-slate-700 text-sm">—</p>
+        </div>
+        <div class="p-4 card">
+          <h4 class="font-semibold text-emerald-600 mb-2">Effective In</h4>
+          <p id="effective" class="text-slate-700 text-sm">—</p>
+        </div>
+        <div class="p-4 card">
+          <h4 class="font-semibold text-emerald-600 mb-2">Dosage</h4>
+          <p id="dosage" class="text-slate-700 text-sm">—</p>
+        </div>
+        <div class="p-4 card">
+          <h4 class="font-semibold text-emerald-600 mb-2">Precautions</h4>
+          <p id="precautions" class="text-slate-700 text-sm">—</p>
+        </div>
+      </div>
+
+      <!-- manufacturer block + action row -->
+      <div class="flex items-center justify-between gap-4">
+        <div>
+          <div class="text-xs text-slate-400">Manufactured by</div>
+          <div id="manufacturer" class="font-semibold">—</div>
+        </div>
+
+        <div class="flex gap-3">
+          <a id="whatsappBtn" href="#" target="_blank" class="btn-primary px-4 py-2 rounded-lg inline-flex items-center gap-2 shadow-md text-white hover:brightness-95">
+            <!-- SVG phone/wa -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-1l-1-2a2 2 0 0 0-2-1H9a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg>
+            Order (WhatsApp)
+          </a>
+          <a id="callBtn" href="#" class="btn-ghost px-4 py-2 rounded-lg inline-flex items-center gap-2 font-semibold">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M22 16.92V21a1 1 0 0 1-1 1c-10.493 0-19-8.506-19-19a1 1 0 0 1 1-1h4.08a1 1 0 0 1 1 .76c.3 1.64 1.02 3.58 2.1 5.5a1 1 0 0 1-.24 1.12L8.91 9.09a13.24 13.24 0 0 0 6 6l-3.88 3.88a1 1 0 0 1-1.12.24c-1.92-1.08-3.86-1.8-5.5-2.1a1 1 0 0 1-.76-1V4"></path></svg>
+            Call
+          </a>
+        </div>
+      </div>
+
+    </section>
+  </div>
+</main>
+
+<!-- mobile sticky CTA -->
+<div class="fixed bottom-0 left-0 right-0 md:hidden p-3 bg-white border-t shadow-lg flex gap-3">
+  <a id="mobileOrder" href="#" target="_blank" class="flex-1 btn-primary py-3 rounded-lg text-center font-semibold">Order Now</a>
+  <a id="mobileCall" href="tel:9120227101" class="flex-1 border border-emerald-600 text-emerald-600 py-3 rounded-lg text-center font-semibold">Call</a>
 </div>
 
-<!-- Fixed Bottom Bar -->
-<div class="fixed bottom-0 left-0 w-full bg-white border-t border-gray-200 shadow-lg p-3 flex gap-3 md:hidden">
-  <a id="orderLink" href="#" target="_blank" class="flex-1 bg-emerald-600 text-white py-3 text-center rounded-lg font-semibold">Order Now</a>
-  <a href="tel:9120227101" class="flex-1 border border-emerald-600 text-emerald-600 py-3 text-center rounded-lg font-semibold">Call Us</a>
-</div>
+<!-- AOS -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 
 <script>
-  // Medicine data (can be imported from main page in real project)
-  const medicines = [
-    { id:1, name:"Cyston Drops", brand:"Herbal Biologische Pharmaceuticals Private Limited", price:200, mfg:"2023-01", exp:"2025-01", desc:"For Renal Stone And Colic", composition:"Each 5ml contains...", effective:"Renal stones, urinary disorders", dosage:"10 drops twice a day", precautions:"Consult doctor before use", image:"https://i.postimg.cc/jdHbc7NV/Screenshot-2025-08-11-at-10-12-43-PM.png", link:"https://example.com/order1" },
-    { id:2, name:"Spon-dy Drops", brand:"Herbal Biologische Pharmaceuticals Private Limited", price:120, mfg:"2022-06", exp:"2024-12", desc:"For Spondylitis", composition:"Each 5ml contains...", effective:"Back pain, joint pain", dosage:"15 drops twice a day", precautions:"Not for children under 12", image:"https://i.postimg.cc/6qynfKTq/Screenshot-2025-08-11-at-10-54-42-PM.png", link:"https://example.com/order2" }
-  ];
+/* -------------------------------
+   Data – add all your meds here
+   ------------------------------- */
+const meds = [
+  { id:1, name:"Cyston Drops", brand:"Herbal Biologische Pharmaceuticals Private Limited", price:200, mfg:"Jan 2023", exp:"Jan 2025", desc:"For Renal Stone And Colic", composition:"BERBERIS VULGARIS Q HPI 1 ml; CANTHARIS 3X HPI 0.5 ml; ...", effective:"Kidney stone pain, discomfort during urination", dosage:"15-20 drops in half cup of water, 4x/day or as directed", precautions:"Keep away from children; avoid during pregnancy; consult physician", manufacturer:"Biologische Pharmaceuticals, Lucknow", image:"https://i.postimg.cc/jdHbc7NV/Screenshot-2025-08-11-at-10-12-43-PM.png", badge:"Best Seller", keywords:["Fever","Headache"]},
+  { id:2, name:"Spon-dy Drops", brand:"Herbal Biologische Pharmaceuticals Private Limited", price:120, mfg:"Jun 2022", exp:"Dec 2024", desc:"For Spondylitis", composition:"COLOCYNTHIS 3X; CONIUM 3X; ...", effective:"Spondylitis, joint pain", dosage:"Use as prescribed", precautions:"Not for children under 12", manufacturer:"Dr.Patels Homoeopathic Medicines", image:"https://i.postimg.cc/6qynfKTq/Screenshot-2025-08-11-at-10-54-42-PM.png", badge:"20% OFF", keywords:["Back Pain","Joint Pain"]}
+  // add rest of products...
+];
 
-  // Get ID from URL
-  const params = new URLSearchParams(window.location.search);
-  const id = parseInt(params.get('id'));
-  const product = medicines.find(m => m.id === id);
+/* --------------------------------
+   Read id from URL and populate
+   -------------------------------- */
+const params = new URLSearchParams(window.location.search);
+const id = parseInt(params.get('id')) || 1;
+const item = meds.find(m=>m.id===id);
 
-  if (product) {
-    document.getElementById('productImage').src = product.image;
-    document.getElementById('productName').textContent = product.name;
-    document.getElementById('productBrand').textContent = product.brand;
-    document.getElementById('productPrice').textContent = product.price;
-    document.getElementById('productMfg').textContent = product.mfg;
-    document.getElementById('productExp').textContent = product.exp;
-    document.getElementById('productDesc').textContent = product.desc;
-    document.getElementById('productComposition').textContent = product.composition;
-    document.getElementById('productEffective').textContent = product.effective;
-    document.getElementById('productDosage').textContent = product.dosage;
-    document.getElementById('productPrecautions').textContent = product.precautions;
-    document.getElementById('orderLink').href = product.link;
-  } else {
-    document.body.innerHTML = "<div class='text-center mt-20 text-xl'>Product not found.</div>";
+if (!item) {
+  document.body.innerHTML = "<div class='min-h-screen flex items-center justify-center'>Product not found.</div>";
+} else {
+  // fill page
+  document.getElementById('productImage').src = item.image;
+  document.getElementById('productName').textContent = item.name;
+  document.getElementById('productBrand').textContent = item.brand;
+  document.getElementById('price').textContent = '₹' + item.price;
+  document.getElementById('mfg').textContent = item.mfg;
+  document.getElementById('exp').textContent = item.exp;
+  document.getElementById('desc').textContent = item.desc;
+  document.getElementById('composition').textContent = item.composition || 'Not available';
+  document.getElementById('effective').textContent = item.effective || 'Not available';
+  document.getElementById('dosage').textContent = item.dosage || 'Not available';
+  document.getElementById('precautions').textContent = item.precautions || 'Not available';
+  document.getElementById('manufacturer').textContent = item.manufacturer || '';
+  // badge
+  if (item.badge) {
+    const b = document.getElementById('badge');
+    b.textContent = item.badge;
+    b.classList.remove('hidden');
   }
+  // links
+  const wa = 'https://wa.me/9120227101?text=' + encodeURIComponent('Hello, I want to order ' + item.name);
+  document.getElementById('whatsappBtn').href = wa;
+  document.getElementById('mobileOrder').href = wa;
+  document.getElementById('orderBtn')?.setAttribute('href', wa);
+  document.getElementById('callBtn').href = 'tel:9120227101';
+  document.getElementById('mobileCall').href = 'tel:9120227101';
+}
+
+/* -----------------------------
+   Init AOS & animations
+   ----------------------------- */
+AOS.init({ duration:700, once:true });
+
+gsap.from('#productName', { opacity:0, y:-12, duration:0.6 });
+gsap.from('#productImage', { opacity:0, scale:.98, duration:0.7, delay:0.05 });
+
+/* -----------------------------
+   medium-zoom
+   ----------------------------- */
+mediumZoom('#productImage', { background: 'rgba(0,0,0,0.85)', margin:48 });
+
+/* -----------------------------
+   optional: thumbnails (if you add more images)
+   ----------------------------- */
+/* Example (if item.images array provided)
+if(item.images && item.images.length>1){
+  const thumbs = document.getElementById('thumbs');
+  item.images.forEach(src=>{
+    const img = document.createElement('img');
+    img.src = src;
+    img.className = 'w-20 h-20 object-cover rounded-md border cursor-pointer';
+    img.onclick = ()=> document.getElementById('productImage').src = src;
+    thumbs.appendChild(img);
+  });
+}
+*/
 </script>
 
 </body>
