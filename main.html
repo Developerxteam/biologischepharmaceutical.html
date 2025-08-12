@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title> Herbal Biologische Pharmaceuticals Private Limited </title>
+
+  <!-- TailwindCSS CDN (works without build step) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Vue 3 CDN -->
+  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+
+  <!-- Fuse.js for fuzzy search -->
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2/dist/fuse.min.js"></script>
+
+  <!-- Swiper for carousel (optional) -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper@9/swiper-bundle.min.css" />
+  <script src="https://unpkg.com/swiper@9/swiper-bundle.min.js"></script>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+<!-- Animate.css -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+<!-- Lottie Player -->
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+  <style>
+    /* small custom */
+    body { transition: background-color .3s, color .3s; -webkit-font-smoothing:antialiased; }
+    .glass { background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); backdrop-filter: blur(6px); }
+    .chip { transition: transform .12s, background .12s; }
+    .chip:active { transform: scale(.98); }
+    .off-overlay { background: linear-gradient(180deg,#071026,#04263a); }
+  </style>
+</head>
+<body class="bg-slate-900 text-slate-100">
+
+<div id="app" class="min-h-screen flex flex-col">
+  <!-- Offline overlay -->
+  <!-- Offline Overlay -->
+<div 
+  v-if="!online" 
+  class="fixed inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 z-50 flex flex-col items-center justify-center text-center p-6 text-white font-[Poppins] animate__animated animate__fadeIn"
+>
+  <!-- Signal Icon -->
+  <div class="text-6xl mb-3 animate__animated animate__pulse animate__infinite">📡</div>
+
+  <!-- Heading -->
+  <h2 class="text-3xl md:text-4xl font-bold font-[Bebas Neue] tracking-widest mb-2 animate__animated animate__fadeInDown">
+    No Internet Connection
+  </h2>
+
+  <!-- Message -->
+  <p class="text-slate-300 max-w-lg mb-6 animate__animated animate__fadeInUp">
+    Please check your network. This page will return when connection is restored.
+  </p>
+
+  <!-- Animations: Tablet, Syrup, More -->
+  <div class="flex justify-center items-center gap-6 mb-6">
+    <!-- Eating Tablet -->
+    <lottie-player
+      src="https://lottie.host/9b7ce40b-5538-45cc-a45d-62d5ac15ae13/WkjrFz6yNQ.json"
+      background="transparent"
+      speed="1"
+      style="width: 80px; height: 80px"
+      loop
+      autoplay
+    ></lottie-player>
+
+    <!-- Syrup -->
+    <lottie-player
+      src="https://lottie.host/2a08e315-1d87-4726-872f-e04f276fc625/1zDohSP17y.json"
+      background="transparent"
+      speed="1"
+      style="width: 80px; height: 80px"
+      loop
+      autoplay
+    ></lottie-player>
+
+    <!-- More Meds -->
+    <lottie-player
+      src="https://lottie.host/87b005db-8dc3-4950-9211-75e28940fa2a/z8zRtDfdTe.json"
+      background="transparent"
+      speed="1"
+      style="width: 80px; height: 80px"
+      loop
+      autoplay
+    ></lottie-player>
+  </div>
+
+  <!-- Buttons -->
+  <div class="flex flex-wrap justify-center gap-4 animate__animated animate__fadeInUp">
+    <button 
+      @click="checkNow" 
+      class="px-6 py-2 rounded-lg bg-emerald-400 hover:bg-emerald-500 text-black font-semibold transition-all duration-300 shadow-lg"
+    >
+      🔄 Retry
+    </button>
+    <a 
+      :href="waLink" 
+      target="_blank" 
+      class="px-6 py-2 rounded-lg border border-slate-600 hover:border-white transition-all duration-300"
+    >
+      💬 Contact
+    </a>
+  </div>
+</div>
+
+
+ <!-- Premium Top Ticker -->
+<div class="w-full bg-gradient-to-r from-emerald-500 via-teal-500 to-emerald-600 text-black text-sm py-2 shadow-md relative overflow-hidden">
+  <div class="container mx-auto px-4">
+    <div class="whitespace-nowrap flex items-center gap-3 animate-marquee hover:[animation-play-state:paused]">
+      
+      <!-- Repeated Icon -->
+      <span class="text-yellow-300 text-lg animate-pulse">🔥</span>
+      <span class="font-semibold tracking-wide drop-shadow">
+        Flat 10% off on selected medicines — Free pickup in Lucknow — Use code <strong class="text-emerald-900">MED10</strong>
+      </span>
+      <span class="text-yellow-300 text-lg animate-pulse">🔥</span>
+      <span class="font-semibold tracking-wide drop-shadow">
+        24/7 Customer Care — Call <a href="tel:9120227101" class="underline hover:text-black">9120227101</a>
+      </span>
+      <span class="text-yellow-300 text-lg animate-pulse">🔥</span>
+      <span class="font-semibold tracking-wide drop-shadow">
+        WhatsApp us for instant orders 📲
+      </span>
+      
+    </div>
+  </div>
+</div>
+
+<!-- Marquee Animation -->
+<style>
+@keyframes marquee {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+.animate-marquee {
+  animation: marquee 15s linear infinite;
+}
+</style>
+
+  <!-- NAV -->
+  <header class="sticky top-0 z-40 bg-slate-800/80 backdrop-blur glass border-b border-slate-700">
+    <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <button @click="mobileNav = !mobileNav" class="md:hidden p-2 rounded hover:bg-slate-700">
+          <!-- hamburger -->
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 6h18M3 12h18M3 18h18" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </button>
+        <div class="flex items-center gap-3 cursor-pointer" @click="scrollTop">
+          <div class="w-10 h-10 rounded-full flex items-center justify-center font-bold bg-gradient-to-br from-emerald-400 to-teal-600 text-slate-900">Ml</div>
+          <div class="hidden sm:block">
+            <div class="font-semibold text-base">Herbal Biologische Pharmaceuticals</div>
+            <div class="text-xs text-slate-400 -mt--1">Premium pharmacy</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- mobile nav -->
+<div v-if="mobileNav" 
+     class="md:hidden fixed top-16 left-0 w-full bg-slate-900/90 backdrop-blur-lg border-t border-slate-700 animate-slideDown z-50 shadow-lg">
+  
+  <div class="px-6 py-5 flex flex-col gap-3 text-lg font-semibold text-white">
+
+    <!-- Home -->
+    <a href="#" 
+       @click.prevent="scrollTo('home'); mobileNav=false" 
+       class="flex items-center gap-3 py-2 px-3 rounded-lg transition-all duration-300 hover:bg-gradient-to-r hover:from-emerald-500 hover:to-teal-400 hover:text-black">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M3 12l9-9 9 9M4 10v10a1 1 0 001 1h6m6-11v10a1 1 0 01-1 1h-6" />
+      </svg>
+      Home
+    </a>
+
+    <!-- Medicines -->
+    <a href="#medicines" 
+       @click.prevent="scrollTo('medicines'); mobileNav=false" 
+       class="flex items-center gap-3 py-2 px-3 rounded-lg transition-all duration-300 hover:bg-gradient-to-r hover:from-emerald-500 hover:to-teal-400 hover:text-black">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M7 17h10M7 13h10M7 9h10" />
+      </svg>
+      Medicines
+    </a>
+
+    <!-- Location -->
+    <a href="#location" 
+       @click.prevent="scrollTo('location'); mobileNav=false" 
+       class="flex items-center gap-3 py-2 px-3 rounded-lg transition-all duration-300 hover:bg-gradient-to-r hover:from-emerald-500 hover:to-teal-400 hover:text-black">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z" />
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 22s8-6 8-10a8 8 0 10-16 0c0 4 8 10 8 10z" />
+      </svg>
+      Location
+    </a>
+
+    <!-- Contact -->
+    <a href="#contact" 
+       @click.prevent="scrollTo('contact'); mobileNav=false" 
+       class="flex items-center gap-3 py-2 px-3 rounded-lg transition-all duration-300 hover:bg-gradient-to-r hover:from-emerald-500 hover:to-teal-400 hover:text-black">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M3 5h18M3 19h18M4 8h16v8H4z" />
+      </svg>
+      Contact
+    </a>
+
+    <!-- About -->
+    <a href="#about" 
+       @click.prevent="scrollTo('about'); mobileNav=false" 
+       class="flex items-center gap-3 py-2 px-3 rounded-lg transition-all duration-300 hover:bg-gradient-to-r hover:from-emerald-500 hover:to-teal-400 hover:text-black">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12A9 9 0 113 12a9 9 0 0118 0z" />
+      </svg>
+      About
+    </a>
+
+  </div>
+</div>
+
+<!-- Custom Animation -->
+<style>
+@keyframes slideDown {
+  from { transform: translateY(-20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+.animate-slideDown {
+  animation: slideDown 0.3s ease-out forwards;
+}
+</style>
+
+      <div class="flex items-center gap-6">
+        <button @click="toggleDark" class="px-2 py-3 rounded-md bg-gradient-to-r from-sky-500 to-purple-600">
+          <span v-if="dark">🌙</span><span v-else>☀️</span>
+        </button>
+        <a :href="waLink" target="_blank" class="hidden md:inline-flex items-center px-3 py-2 rounded bg-emerald-400 text-black font-semibold">Contact Us</a>
+      </div>
+    </div>
+
+    <!-- mobile nav -->
+    <div v-if="mobileNav" class="md:hidden bg-slate-900 border-t border-slate-700">
+      <div class="px-4 py-3 flex flex-col gap-2">
+        <a href="#" @click.prevent="scrollTo('home'); mobileNav=false" class="py-2">Home</a>
+        <a href="#medicines" @click.prevent="scrollTo('medicines'); mobileNav=false" class="py-2">Medicines</a>
+        <a href="#location" @click.prevent="scrollTo('location'); mobileNav=false" class="py-2">Location</a>
+        <a href="#contact" @click.prevent="scrollTo('contact'); mobileNav=false" class="py-2">Contact</a>
+        <a href="#about" @click.prevent="scrollTo('about'); mobileNav=false" class="py-2">About</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN (mobile-first) -->
+  <main id="home" class="flex-1 container mx-auto px-4 py-6">
+    <!-- hero carousel + search -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <!-- carousel area -->
+      <div class="md:col-span-2 bg-slate-800 glass rounded-xl p-4 shadow">
+        <div class="swiper mySwiper rounded-lg overflow-hidden">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide p-3" v-for="(s, i) in slides" :key="i">
+              <div class="md:flex md:gap-4 items-center">
+               <img :src="s.image" alt="" class="w-full md:w-2/5 h-40 md:h-48 object-cover rounded-lg shadow" />
+                <div class="mt-3 md:mt-0">
+                  <h3 class="text-2xl font-bold">{{ s.title }}</h3>
+                  <p class="mt-1 text-slate-300">{{ s.desc }}</p>
+                  <div class="mt-3 flex gap-2">
+                    <a :href="s.link" target="_blank" class="px-4 py-2 rounded bg-emerald-500 text-black font-semibold">Order</a>
+                    <a :href="s.altLink" target="_blank" class="px-4 py-2 rounded border border-slate-700">Visit Store</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-pagination mt-3"></div>
+        </div>
+      </div>
+
+      <!-- search / chips area -->
+      <aside class="bg-slate-800 glass rounded-xl p-4 shadow flex flex-col gap-3">
+        <h2 class="text-xl font-bold">Find Medicines</h2>
+        <p class="text-slate-400 text-sm">Search by Medicine Name Or By Symptoms.</p>
+
+        <div class="flex gap-2">
+          <input v-model="query" @input="searchFuse" type="search" placeholder="e.g. paracetamol or back pain" class="flex-1 px-4 py-3 rounded-full bg-slate-900 border border-slate-700 focus:outline-none" />
+          <button @click="startVoice" class="w-12 h-12 rounded-full bg-sky-500 flex items-center justify-center text-black">  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-6 h-6" viewBox="0 0 16 16"><path d="M8 12a3 3 0 0 0 3-3V4a3 3 0 0 0-6 0v5a3 3 0 0 0 3 3z"/><path d="M5 10.5a5.5 5.5 0 0 0 11 0V8h-1v2.5a4.5 4.5 0 1 1-9 0V8H5v2.5z"/></svg></button>
+        </div>
+
+        <!-- tags / chips -->
+        <div class="flex flex-wrap gap-2">
+          <button v-for="t in tags" :key="t" @click="applyTag(t)" class="chip px-3 py-1 rounded-full border border-slate-700 text-sm text-slate-200 hover:bg-emerald-700">
+            {{ t }}
+          </button>
+        </div>
+
+        <div class="text-sm text-slate-300 mt-2">
+          <template v-if="filtered.length">Showing <strong class="text-emerald-300">{{ filtered.length }}</strong> result(s)</template>
+          <template v-else>No results yet — try another spelling or tag.</template>
+        </div>
+      </aside>
+    </div>
+<!-- medicines list -->
+<section id="medicines" class="mt-6">
+  <h3 class="text-xl font-semibold mb-3">Medicines</h3>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+
+    <div v-for="m in filtered" :key="m.id" 
+         class="bg-slate-800 glass rounded-xl p-4 shadow flex flex-col">
+      
+      <!-- Image container -->
+      <div class="flex justify-center items-center bg-white rounded-lg p-2 h-48">
+        <img :src="m.image" alt="" 
+             class="max-h-full max-w-full object-contain" />
+      </div>
+
+      <!-- Product details -->
+      <div class="flex-1 flex flex-col mt-4">
+        <div class="flex justify-between items-start">
+          <div>
+            <h4 class="font-semibold text-lg">{{ m.name }}</h4>
+            <div class="text-sm text-slate-400">{{ m.brand }}</div>
+          </div>
+          <div class="text-emerald-300 font-bold">₹{{ m.price }}</div>
+        </div>
+
+        <div class="text-xs text-slate-400 mt-2">
+          MFG: {{ m.mfg }} • EXP: {{ m.exp }}
+        </div>
+
+        <p class="text-sm text-slate-300 mt-2">{{ m.desc }}</p>
+
+        <!-- Buttons -->
+        <div class="mt-auto pt-4 flex gap-2">
+          <button @click="openBuy(m)" 
+                  class="flex-1 px-3 py-2 rounded bg-emerald-500 text-black font-semibold hover:bg-emerald-400">
+            Buy
+          </button>
+          <button @click="viewDetails(m)" 
+                  class="flex-1 px-3 py-2 rounded border border-slate-700 hover:bg-slate-700">
+            Details
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div v-if="filtered.length === 0" 
+         class="col-span-full text-center text-slate-400 py-8">
+      No medicines found. Try different keyword / tag.
+    </div>
+  </div>
+</section>
+    <!-- location & contact -->
+    <section id="location" class="mt-8 grid md:grid-cols-2 gap-4">
+      <div class="bg-slate-800 glass rounded-xl p-4 shadow">
+        <h4 class="font-semibold text-lg">Our Store — Lucknow</h4>
+        <p class="text-slate-300 mt-2">Visit our store in Lucknow. Open 9am–9pm. Click buttons to call or email (they open apps directly).</p>
+        <div class="mt-3 flex gap-2">
+          <a :href="callLink" class="px-4 py-2 rounded bg-emerald-500 text-black font-semibold">Call Us</a>
+          <a :href="mailtoLink" class="px-4 py-2 rounded border border-slate-700">Email Us</a>
+        </div>
+      </div>
+
+      <div class="rounded-xl overflow-hidden border border-slate-700">
+        <iframe class="w-full h-48" loading="lazy"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3559.651739224215!2d80.94616511451502!3d26.84669398315617!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399be2ccf0b0e0a5%3A0x1f50a4f3f7bdf2b!2sLucknow%2C%20Uttar%20Pradesh%2C%20India!5e0!3m2!1sen!2sin!4v1692280200000"></iframe>
+      </div>
+    </section>
+
+    <!-- about -->
+    <section id="about" class="mt-8">
+      <div class="bg-slate-800 glass rounded-xl p-4 shadow">
+        <h4 class="font-semibold">About Us</h4>
+        <p class="text-slate-300 mt-2">Trusted local pharmacy in Lucknow. Replace this with client content.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- footer -->
+  <footer class="bg-slate-900 border-t border-slate-800 mt-6">
+    <div class="container mx-auto px-4 py-6 flex flex-col md:flex-row justify-between items-center gap-4">
+      <div class="text-slate-400 text-sm">© <span id="year"></span> MedStore</div>
+      <div class="flex gap-3">
+        <a class="px-3 py-2 rounded bg-emerald-500 text-black" :href="waLink" target="_blank">WhatsApp</a>
+        <a class="px-3 py-2 rounded border" href="#" @click.prevent="scrollTo('contact')">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+
+
+<!-- Floating WhatsApp button (outside main) -->
+<a :href="waLink" target="_blank" 
+   class="fixed bottom-5 right-5 w-14 h-14 rounded-full bg-emerald-500 flex items-center justify-center text-black z-50 shadow-lg hover:bg-emerald-400 transition">
+  
+  <!-- Premium WhatsApp SVG -->
+  <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+    <path d="M20.52 3.48A11.76 11.76 0 0 0 12.06 0C5.51 0 .06 5.45.06 12c0 2.12.55 4.18 1.6 6.02L0 24l6.2-1.62a11.94 11.94 0 0 0 5.85 1.49h.01c6.55 0 11.99-5.45 11.99-12a11.93 11.93 0 0 0-3.53-8.39zM12.06 21.4h-.01c-1.85 0-3.65-.5-5.23-1.44l-.38-.23-3.68.96.98-3.58-.25-.37a9.93 9.93 0 0 1-1.52-5.25c0-5.48 4.46-9.94 9.94-9.94 2.65 0 5.14 1.03 7.01 2.9a9.89 9.89 0 0 1 2.93 7.04c0 5.48-4.46 9.94-9.94 9.94zm5.48-7.45c-.3-.15-1.77-.87-2.05-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.28-.47-2.44-1.5-.9-.8-1.5-1.78-1.67-2.08-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.23-.24-.57-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37s-1.05 1.02-1.05 2.48 1.07 2.88 1.22 3.08c.15.2 2.11 3.23 5.12 4.54.72.31 1.28.49 1.72.63.72.23 1.38.2 1.9.12.58-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35z"/>
+  </svg>
+</a>
+
+
+
+  <!-- details modal -->
+  <div v-if="detail" class="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4">
+    <div class="bg-slate-900 rounded-xl p-5 w-full max-w-xl">
+      <div class="flex justify-between items-start">
+        <div>
+          <h3 class="text-lg font-semibold">{{ detail.name }}</h3>
+          <div class="text-sm text-slate-400">{{ detail.brand }}</div>
+        </div>
+        <button @click="detail=null" class="text-slate-400">✕</button>
+      </div>
+      <div class="mt-3 grid md:grid-cols-2 gap-4">
+        <img :src="detail.image" class="w-full h-36 object-cover rounded" />
+        <div>
+          <p class="text-slate-300">{{ detail.desc }}</p>
+          <p class="text-sm text-slate-400 mt-2">MFG: {{ detail.mfg }} • EXP: {{ detail.exp }}</p>
+          <div class="text-2xl text-emerald-300 font-bold mt-3">₹{{ detail.price }}</div>
+          <div class="mt-4 flex gap-2">
+            <button @click="openBuy(detail)" class="px-4 py-2 rounded bg-emerald-500 text-black">Buy</button>
+            <button @click="detail=null" class="px-4 py-2 rounded border">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  // replace these values
+  const WHATSAPP_NUMBER = "9120227101"; 
+  const PHONE_NUMBER = "9120227101";
+  const EMAIL_ADDRESS = "info@medstore.com";
+
+  const { createApp } = Vue;
+
+  createApp({
+    data() {
+      return {
+        mobileNav: false,
+        dark: true,
+        online: navigator.onLine,
+        query: "",
+        activeTag: "",
+        detail: null,
+        // sample slides - replace images & links
+        slides: [
+          { title:"Trusted Medicines", desc:"Verified brands", image:"https://images.unsplash.com/photo-1580281657525-7e6b6fbf3f2b?q=80&w=1200&auto=format&fit=crop", link:"https://www.flipkart.com", altLink:"https://www.flipkart.com" },
+          { title:"Buy on Amazon", desc:"Original sellers", image:"https://images.unsplash.com/photo-1582719478178-86f1f1f6bbef?q=80&w=1200&auto=format&fit=crop", link:"https://www.amazon.in", altLink:"https://www.amazon.in" },
+          { title:"In-store Pickup", desc:"Order and collect", image:"https://images.unsplash.com/photo-1503602642458-232111445657?q=80&w=1200&auto=format&fit=crop", link:"https://example.com", altLink:"https://example.com" },
+          { title:"Authentic Brands", desc:"Quality assured", image:"https://images.unsplash.com/photo-1580281657525-7e6b6fbf3f2b?q=80&w=1200&auto=format&fit=crop", link:"https://example.com", altLink:"https://example.com" }
+        ],
+        // tags
+        tags: ["Fever","Headache","Back Pain","Stomach","Cold","Cough","Allergy","Joint Pain","Diabetes","Hypertension","Acidity","Migraine","Kidney","Liver","Skin","Eye","Ear","BP","Thyroid","Anxiety"],
+        // sample medicines - replace / extend
+        meds: [
+          { id:1, name:"Cyston Drops", brand:"Herbal Biologische Pharmaceuticals Private Limited", price:200, mfg:"2023-01", exp:"2025-01", desc:"For Renal Stone And Colic", image:"https://i.postimg.cc/jdHbc7NV/Screenshot-2025-08-11-at-10-12-43-PM.png", keywords:["Fever","Headache"] },
+          { id:2, name:"Spon-dy Drops", brand:"Herbal Biologische Pharmaceuticals Private Limited", price:120, mfg:"2022-06", exp:"2024-12", desc:"For Spondylitis", image:"https://i.postimg.cc/6qynfKTq/Screenshot-2025-08-11-at-10-54-42-PM.png", keywords:["Back Pain","Joint Pain","Migraine"] },
+          { id:3, name:"D-Skin-Care", brand:"Herbal Biologische Pharmaceuticals Private Limited", price:120, mfg:"2022-06", exp:"2024-12", desc:"For Fungal Infection", image:"https://i.postimg.cc/KY01qW6M/Screenshot-2025-08-11-at-10-56-18-PM.png", keywords:["Back Pain","Joint Pain","Migraine"] },
+          { id:4, name:"Super Vigo 3 Gold Drops", brand:"Herbal Biologische Pharmaceuticals Private Limited", price:120, mfg:"2022-06", exp:"2024-12", desc:"For Accelerating Sex Drive", image:"https://i.postimg.cc/PrbmHT0G/Screenshot-2025-08-11-at-10-57-42-PM.png", keywords:["Back Pain","Joint Pain","Migraine"] },
+          { id:5, name:"Biologsce Coffez", brand:"Herbal Biologische Pharmaceuticals Private Limited", price:120, mfg:"2022-06", exp:"2024-12", desc:"Cold & Cough Syrup", image:"https://i.postimg.cc/zXM1JYhj/Screenshot-2025-08-11-at-11-01-16-PM.png", keywords:["Back Pain","Joint Pain","Migraine"] },
+          { id:6, name:"Alfalfa Health Supplement Tonic", brand:"Herbal Biologische Pharmaceuticals Private Limited", price:120, mfg:"2022-06", exp:"2024-12", desc:"supplement tonic", image:"https://i.postimg.cc/JzntF8L5/Screenshot-2025-08-11-at-10-59-13-PM.png", keywords:["Back Pain","Joint Pain","Migraine"] },
+          { id:7, name:"Homoeo Cali Tablet", brand:"Herbal Biologische Pharmaceuticals Private Limited", price:120, mfg:"2022-06", exp:"2024-12", desc:"Homeopathic calcium Supplement", image:"https://i.postimg.cc/Sxh5DQbJ/Screenshot-2025-08-11-at-11-04-57-PM.png", keywords:["Back Pain","Joint Pain","Migraine"] },
+          { id:8, name:"Homoeo Pilex Tablet", brand:"Herbal Biologische Pharmaceuticals Private Limited", price:120, mfg:"2022-06", exp:"2024-12", desc:"For the Piles & Fissures", image:"https://i.postimg.cc/DyVYwfZB/Screenshot-2025-08-11-at-11-06-05-PM.png", keywords:["Back Pain","Joint Pain","Migraine"] },
+          { id:9, name:"Homoeo Loose Tablet", brand:"Herbal Biologische Pharmaceuticals Private Limited", price:90, mfg:"2023-04", exp:"2026-04", desc:"Allergy relief", image:"https://i.postimg.cc/RZp7qGd4/Screenshot-2025-08-11-at-11-09-43-PM.png", keywords:["Allergy","Cold"] }
+        ],
+        fuse: null,
+      };
+    },
+    computed: {
+      waLink() { return `https://wa.me/${WHATSAPP_NUMBER}`; },
+      callLink() { return `tel:${PHONE_NUMBER.replace(/\s+/g, '')}`; },
+      mailtoLink() { return `mailto:${EMAIL_ADDRESS}`; },
+      filtered() {
+        if (this.activeTag) {
+          return this.meds.filter(m => m.keywords.map(k=>k.toLowerCase()).includes(this.activeTag.toLowerCase()));
+        }
+        if (!this.query) return this.meds;
+        // use fuse for fuzzy search
+        const results = this.fuse.search(this.query);
+        return results.map(r => r.item);
+      }
+    },
+    methods: {
+      scrollTo(id) {
+        this.mobileNav = false;
+        if (id === 'home') window.scrollTo({ top: 0, behavior: 'smooth' });
+        else {
+          const el = document.getElementById(id);
+          if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      },
+      scrollTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); },
+      toggleDark() {
+        this.dark = !this.dark;
+        if (this.dark) {
+          document.body.classList.remove('bg-white','text-slate-900');
+          document.body.classList.add('bg-slate-900','text-slate-100');
+        } else {
+          document.body.classList.remove('bg-slate-900','text-slate-100');
+          document.body.classList.add('bg-white','text-slate-900');
+        }
+      },
+      applyTag(tag) {
+        this.activeTag = tag;
+        this.query = "";
+        this.scrollTo('medicines');
+      },
+      startVoice() {
+        const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+        if (!SpeechRecognition) { alert('Voice search works in Chrome (HTTPS).'); return; }
+        const sr = new SpeechRecognition();
+        sr.lang = 'en-IN';
+        sr.onresult = e => { this.query = e.results[0][0].transcript; this.activeTag=''; this.searchFuse(); };
+        sr.onerror = ()=>{};
+        sr.start();
+      },
+      searchFuse() {
+        this.activeTag = "";
+      },
+      openBuy(m) {
+        // replace with product-specific merchant link if available
+        window.open(this.slides[0].link,'_blank');
+      },
+      viewDetails(m) { this.detail = m; },
+      checkNow() { this.online = navigator.onLine; },
+    },
+    mounted() {
+      // init fuse
+      const options = { keys: ['name','brand','desc','keywords'], threshold: 0.35, ignoreLocation: true };
+      this.fuse = new Fuse(this.meds, options);
+
+      // swiper
+      new Swiper('.mySwiper', { loop:true, autoplay:{delay:3500}, pagination:{el:'.swiper-pagination', clickable:true} });
+
+      // online/offline listeners
+      window.addEventListener('online', ()=> this.online = true);
+      window.addEventListener('offline', ()=> this.online = false);
+
+      // footer year
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      // ensure initial theme
+      if (this.dark) { document.body.classList.add('bg-slate-900','text-slate-100'); }
+      else { document.body.classList.add('bg-white','text-slate-900'); }
+    }
+  }).mount('#app');
+</script>
+
+<!-- small marquee animation -->
+<style>
+  @keyframes marquee { 0%{transform:translateX(100%)} 100%{transform:translateX(-100%)} }
+  .animate-marquee { display:inline-block; animation: marquee 14s linear infinite; }
+</style>
+</body>
+</html>
