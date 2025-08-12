@@ -1,134 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Medicine Details - Herbal Biologische</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Medicine Details</title>
 
 <!-- Tailwind CSS -->
 <script src="https://cdn.tailwindcss.com"></script>
 
 <!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@600;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
-<!-- AOS Animations -->
-<link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<!-- AOS Animation Library -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
 <!-- GSAP -->
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
-
-<!-- Lightbox for zoom -->
-<link href="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/css/lightbox.min.css" rel="stylesheet" />
-<script src="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/js/lightbox.min.js"></script>
-
-<!-- Vue 3 -->
-<script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 
 <style>
-  body {
-    font-family: 'Inter', sans-serif;
+  body { font-family: 'Poppins', sans-serif; background: #ffffff; color: #222; }
+  .badge {
+    @apply absolute top-3 left-3 bg-gradient-to-r from-emerald-500 to-teal-400 text-white px-3 py-1 rounded-full text-sm font-semibold shadow-lg;
+  }
+  .tag {
+    @apply inline-block px-3 py-1 text-xs rounded-full font-semibold mr-2;
   }
 </style>
 </head>
-<body class="bg-white text-slate-900">
-
-<div id="app">
+<body>
 
 <!-- Header -->
-<header class="bg-gradient-to-r from-emerald-500 to-blue-500 text-white shadow-lg">
-  <div class="container mx-auto flex justify-between items-center p-4">
-    <h1 class="text-2xl font-bold" style="font-family: 'Poppins', sans-serif;">Herbal Biologische</h1>
-    <button @click="goBack" class="px-4 py-2 bg-white text-emerald-600 rounded-full shadow-md hover:scale-105 transition">← Back</button>
+<header class="sticky top-0 bg-white border-b shadow z-50">
+  <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+    <!-- Logo -->
+    <div class="flex items-center gap-3">
+      <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4.5L6 21l1.5-7.5L2 9h7l3-7z"/>
+      </svg>
+      <span class="font-bold text-lg text-emerald-600">Herbal Biologische</span>
+    </div>
+    <a href="index.html" class="text-emerald-600 font-semibold hover:underline">← Back</a>
   </div>
 </header>
 
-<!-- Main -->
-<main v-if="medicine" class="container mx-auto py-10 px-4">
+<!-- Main Content -->
+<main class="container mx-auto px-4 py-6" id="details-page">
 
-  <div class="grid md:grid-cols-2 gap-10 items-start">
+  <div class="grid md:grid-cols-2 gap-8 items-start" data-aos="fade-up">
+    
+    <!-- Image Section -->
+    <div class="relative">
+      <img id="product-image" src="" alt="Medicine" class="w-full max-h-[400px] object-contain rounded-lg shadow-lg border">
+      <div id="product-badge" class="badge hidden">Best Seller</div>
+    </div>
 
-    <!-- Image with zoom -->
-    <a :href="medicine.image" data-lightbox="product" class="block">
-      <img :src="medicine.image" class="w-full rounded-lg shadow-lg" data-aos="fade-right" />
-    </a>
+    <!-- Details Section -->
+    <div>
+      <h1 id="product-name" class="text-3xl font-bold text-gray-900"></h1>
+      <p id="product-brand" class="text-gray-500 mt-1"></p>
+      <div class="text-emerald-600 text-2xl font-bold mt-2" id="product-price"></div>
 
-    <!-- Info -->
-    <div data-aos="fade-left">
-      <h2 class="text-4xl font-extrabold mb-2" style="font-family: 'Poppins', sans-serif;">{{ medicine.name }}</h2>
-      <p class="text-lg text-gray-600 mb-3">{{ medicine.brand }}</p>
-      <div class="text-emerald-600 text-3xl font-bold mb-6">₹{{ medicine.price }}</div>
-
-      <p class="mb-4 text-gray-700">{{ medicine.desc }}</p>
-
-      <!-- Dates -->
-      <div class="flex gap-6 mb-6 text-sm">
-        <span class="bg-emerald-100 px-4 py-2 rounded-full">MFG: {{ medicine.mfg }}</span>
-        <span class="bg-red-100 px-4 py-2 rounded-full">EXP: {{ medicine.exp }}</span>
+      <div class="mt-2 text-sm text-gray-500">
+        <span id="product-mfg"></span> • <span id="product-exp"></span>
       </div>
 
-      <!-- CTA -->
-      <div class="flex gap-4 mb-10">
-        <a :href="'https://wa.me/9120227101?text=I want '+medicine.name"
-           target="_blank"
-           class="px-6 py-3 bg-gradient-to-r from-emerald-500 to-green-400 text-white rounded-full shadow-md hover:scale-105 transition">WhatsApp Order</a>
-        <a :href="'tel:9120227101'"
-           class="px-6 py-3 bg-gradient-to-r from-blue-500 to-blue-400 text-white rounded-full shadow-md hover:scale-105 transition">Call Now</a>
+      <p id="product-desc" class="mt-4 text-gray-700 leading-relaxed"></p>
+
+      <!-- Tags -->
+      <div id="product-tags" class="mt-3"></div>
+
+      <!-- Action Buttons -->
+      <div class="flex gap-3 mt-6">
+        <a id="order-link" target="_blank" class="flex-1 text-center px-5 py-3 rounded-lg bg-emerald-600 text-white font-semibold shadow hover:bg-emerald-500 transition">Order Now</a>
+        <a id="call-link" class="flex-1 text-center px-5 py-3 rounded-lg border border-emerald-600 text-emerald-600 font-semibold hover:bg-emerald-50 transition">Call Us</a>
       </div>
     </div>
   </div>
 
-  <!-- Premium Sections -->
-  <div class="mt-12 space-y-8">
-    <section data-aos="fade-up" class="p-6 rounded-xl shadow-xl bg-gray-50">
-      <h3 class="text-2xl font-bold mb-3 text-emerald-600">💊 Composition</h3>
-      <p class="text-gray-700 text-lg leading-relaxed">{{ medicine.composition }}</p>
-    </section>
-
-    <section data-aos="fade-up" data-aos-delay="100" class="p-6 rounded-xl shadow-xl bg-gray-50">
-      <h3 class="text-2xl font-bold mb-3 text-blue-600">📜 Instructions</h3>
-      <p class="text-gray-700 text-lg leading-relaxed">{{ medicine.instructions }}</p>
-    </section>
-
-    <section data-aos="fade-up" data-aos-delay="200" class="p-6 rounded-xl shadow-xl bg-gray-50">
-      <h3 class="text-2xl font-bold mb-3 text-yellow-600">💡 Effectiveness</h3>
-      <p class="text-gray-700 text-lg leading-relaxed">{{ medicine.effectiveness }}</p>
-    </section>
-  </div>
-
+  <!-- Extra Info -->
+  <section class="mt-10 grid md:grid-cols-3 gap-6" data-aos="fade-up" data-aos-delay="100">
+    <div class="p-5 rounded-lg border shadow hover:shadow-lg transition">
+      <h3 class="font-bold text-lg text-emerald-600">Composition</h3>
+      <p id="composition" class="text-gray-600 mt-2">Details about medicine composition...</p>
+    </div>
+    <div class="p-5 rounded-lg border shadow hover:shadow-lg transition">
+      <h3 class="font-bold text-lg text-emerald-600">Instructions</h3>
+      <p id="instructions" class="text-gray-600 mt-2">Usage instructions...</p>
+    </div>
+    <div class="p-5 rounded-lg border shadow hover:shadow-lg transition">
+      <h3 class="font-bold text-lg text-emerald-600">Effectiveness</h3>
+      <p id="effectiveness" class="text-gray-600 mt-2">Expected benefits...</p>
+    </div>
+  </section>
 </main>
 
-<!-- Sticky Buy Bar -->
-<div v-if="medicine" class="fixed bottom-0 left-0 w-full bg-white shadow-lg p-4 flex justify-between items-center border-t border-gray-200" data-aos="fade-up">
-  <div class="text-lg font-bold text-emerald-600">₹{{ medicine.price }}</div>
-  <a :href="'https://wa.me/9120227101?text=I want '+medicine.name"
-     target="_blank"
-     class="px-6 py-3 bg-gradient-to-r from-emerald-500 to-green-400 text-white rounded-full shadow-md hover:scale-105 transition">Buy Now</a>
-</div>
-
-</div>
-
+<!-- Scripts -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
 AOS.init();
-const { createApp } = Vue;
-createApp({
-  data() {
-    return {
-      meds: [
-        { id:1, name:"Cyston Drops", brand:"Herbal Biologische Pharmaceuticals", price:200, mfg:"2023-01", exp:"2025-01", desc:"For Renal Stone And Colic", composition:"Herbal extracts 50mg with high purity...", instructions:"Take 10 drops twice daily with water", effectiveness:"Helps dissolve kidney stones", image:"https://i.postimg.cc/jdHbc7NV/Screenshot-2025-08-11-at-10-12-43-PM.png" },
-        { id:2, name:"Spon-dy Drops", brand:"Herbal Biologische Pharmaceuticals", price:120, mfg:"2022-06", exp:"2024-12", desc:"For Spondylitis", composition:"Herbal blend for bone health", instructions:"15 drops 3 times daily", effectiveness:"Supports joint mobility", image:"https://i.postimg.cc/6qynfKTq/Screenshot-2025-08-11-at-10-54-42-PM.png" }
-      ],
-      medicine: null
-    }
-  },
-  mounted() {
-    const params = new URLSearchParams(window.location.search);
-    const id = parseInt(params.get("id"));
-    this.medicine = this.meds.find(m => m.id === id);
-    gsap.from("h2", { y: -30, opacity: 0, duration: 0.8 });
-  },
-  methods: { goBack() { window.history.back(); } }
-}).mount('#app');
+
+// Medicine Data
+const medicines = [
+  { id:1, name:"Cyston Drops", brand:"Herbal Biologische Pharmaceuticals Private Limited", price:200, mfg:"MFG: Jan 2023", exp:"EXP: Jan 2025", desc:"For Renal Stone And Colic", image:"https://i.postimg.cc/jdHbc7NV/Screenshot-2025-08-11-at-10-12-43-PM.png", keywords:["Fever","Headache"], badge:"Best Seller", composition:"Herbal blend for kidney health", instructions:"Take 5 drops twice daily", effectiveness:"Helps dissolve kidney stones" },
+  { id:2, name:"Spon-dy Drops", brand:"Herbal Biologische Pharmaceuticals Private Limited", price:120, mfg:"MFG: Jun 2022", exp:"EXP: Dec 2024", desc:"For Spondylitis", image:"https://i.postimg.cc/6qynfKTq/Screenshot-2025-08-11-at-10-54-42-PM.png", keywords:["Back Pain","Joint Pain","Migraine"], badge:"20% Off", composition:"Natural anti-inflammatory agents", instructions:"Take 10 drops with water", effectiveness:"Relieves spinal inflammation" }
+  // Add other medicines...
+];
+
+// Get ID from URL
+const params = new URLSearchParams(window.location.search);
+const id = parseInt(params.get("id"));
+const med = medicines.find(m => m.id === id);
+
+if (med) {
+  document.getElementById("product-image").src = med.image;
+  document.getElementById("product-name").textContent = med.name;
+  document.getElementById("product-brand").textContent = med.brand;
+  document.getElementById("product-price").textContent = `₹${med.price}`;
+  document.getElementById("product-mfg").textContent = med.mfg;
+  document.getElementById("product-exp").textContent = med.exp;
+  document.getElementById("product-desc").textContent = med.desc;
+  document.getElementById("composition").textContent = med.composition;
+  document.getElementById("instructions").textContent = med.instructions;
+  document.getElementById("effectiveness").textContent = med.effectiveness;
+  
+  // Tags
+  med.keywords.forEach(tag => {
+    const el = document.createElement("span");
+    el.className = "tag bg-emerald-100 text-emerald-700";
+    el.textContent = tag;
+    document.getElementById("product-tags").appendChild(el);
+  });
+
+  // Badge
+  if (med.badge) {
+    const badge = document.getElementById("product-badge");
+    badge.textContent = med.badge;
+    badge.classList.remove("hidden");
+  }
+
+  // Links
+  document.getElementById("order-link").href = `https://wa.me/9120227101?text=I want to order ${med.name}`;
+  document.getElementById("call-link").href = "tel:9120227101";
+}
+
+// GSAP Animations
+gsap.from("#product-image", { duration: 1, opacity: 0, y: 50 });
+gsap.from("#product-name", { duration: 1, opacity: 0, x: -50, delay: 0.3 });
 </script>
 
 </body>
