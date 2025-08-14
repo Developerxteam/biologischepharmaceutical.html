@@ -1,0 +1,388 @@
+<!-- W3Schools Tryit-ready: Tailwind + Bootstrap + Vue 3 + AOS + GSAP + Swiper (single file) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About Us — Herbal Biologische Pharmaceuticals</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#1FAB54',
+            accent: '#C9A635',
+            dark: '#054A29',
+            light: '#DFF2E0',
+          },
+          boxShadow: {
+            glow: '0 0 0 6px rgba(223,242,224,0.8)'
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Animations & UI libs -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+  <style>
+    :root {
+      --primary-green: #1FAB54;
+      --accent-gold: #C9A635;
+      --light-green: #DFF2E0;
+      --dark-green: #054A29;
+    }
+    body { background: var(--light-green); }
+    .btn-gradient { background: linear-gradient(90deg,var(--primary-green),var(--accent-gold)); color:#fff; }
+    .btn-gradient:hover{ filter:brightness(1.05); }
+    .ring-primary { --tw-ring-color: var(--primary-green); }
+    .ring-offset-light { --tw-ring-offset-color: var(--light-green); }
+  </style>
+</head>
+<body class="antialiased text-slate-800">
+<div id="app">
+  <!-- NAVBAR -->
+  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <!-- Logo + Name -->
+      <a href="#" class="flex items-center gap-3" @click.prevent="scrollTo('home')">
+        <div class="w-10 h-10 rounded-full ring-2 ring-primary ring-offset-2 ring-offset-white flex items-center justify-center bg-white overflow-hidden shadow-glow">
+          <!-- Paste your OWN converted SVG BELOW (replace the demo). Keep xmlns/viewBox. -->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" class="w-7 h-7" aria-label="Logo">
+            <defs>
+              <linearGradient id="lg" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="var(--primary-green)"/>
+                <stop offset="100%" stop-color="var(--accent-gold)"/>
+              </linearGradient>
+            </defs>
+            <circle cx="32" cy="32" r="28" fill="url(#lg)" opacity=".15"/>
+            <path d="M32 14c9.9 0 18 8.1 18 18S41.9 50 32 50 14 41.9 14 32 22.1 14 32 14Zm0 6a12 12 0 1 0 0 24 12 12 0 0 0 0-24Z" fill="url(#lg)"/>
+          </svg>
+          <!-- If you have PNG/JPG instead, swap with <img src="/path/logo.png" class="w-7 h-7 object-contain"> -->
+        </div>
+        <div class="leading-tight">
+          <div class="font-bold tracking-wide text-slate-900 text-lg">Herbal Biologische Pharmaceuticals</div>
+          <div class="text-xs text-slate-500">Ayurvedic • Homeopathic</div>
+        </div>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-6">
+        <a href="#about" class="hover:text-primary">About</a>
+        <a href="#team" class="hover:text-primary">Team</a>
+        <a href="#impact" class="hover:text-primary">Impact</a>
+        <a href="#contact" class="hover:text-primary">Contact</a>
+      </nav>
+
+      <button class="md:hidden w-10 h-10 inline-flex items-center justify-center rounded-full border" @click="mobileOpen=!mobileOpen" aria-label="Open menu">
+        <span class="i-menu">☰</span>
+      </button>
+    </div>
+    <div v-show="mobileOpen" class="md:hidden border-t border-slate-200 bg-white">
+      <div class="max-w-7xl mx-auto px-4 py-3 flex flex-col gap-3">
+        <a href="#about" class="hover:text-primary" @click="mobileOpen=false">About</a>
+        <a href="#team" class="hover:text-primary" @click="mobileOpen=false">Team</a>
+        <a href="#impact" class="hover:text-primary" @click="mobileOpen=false">Impact</a>
+        <a href="#contact" class="hover:text-primary" @click="mobileOpen=false">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="home" class="relative pt-20 pb-16 bg-white">
+    <div class="absolute inset-0 -z-10 pointer-events-none">
+      <div class="absolute -top-24 -left-24 w-80 h-80 rounded-full blur-3xl opacity-20 bg-[conic-gradient(at_top_left,var(--primary-green),var(--accent-gold))]"></div>
+      <div class="absolute -bottom-24 -right-24 w-80 h-80 rounded-full blur-3xl opacity-20 bg-[conic-gradient(at_bottom_right,var(--accent-gold),var(--primary-green))]"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <h1 id="heroTitle" class="text-4xl sm:text-5xl font-extrabold text-slate-900 leading-tight" data-aos="fade-up">
+          Science‑backed natural care for modern life
+        </h1>
+        <p class="mt-4 text-lg text-slate-600" data-aos="fade-up" data-aos-delay="100">
+          We combine Ayurvedic wisdom and Homeopathic research to deliver safe, effective, and affordable care. Our mission is to make holistic health accessible to everyone.
+        </p>
+        <div class="mt-8 flex items-center gap-4" data-aos="fade-up" data-aos-delay="200">
+          <button class="btn btn-gradient rounded-full px-5 py-3" data-bs-toggle="modal" data-bs-target="#introVideoModal">Watch Introduction</button>
+          <a href="#about" class="px-5 py-3 rounded-full border border-slate-300 hover:border-primary hover:text-primary transition">Learn more</a>
+        </div>
+        <div class="mt-10 grid grid-cols-3 gap-6 text-center" data-aos="fade-up" data-aos-delay="300">
+          <div>
+            <div class="text-3xl font-bold text-primary">10+</div>
+            <div class="text-xs text-slate-500">Years</div>
+          </div>
+          <div>
+            <div class="text-3xl font-bold text-primary">50K+</div>
+            <div class="text-xs text-slate-500">Patients</div>
+          </div>
+          <div>
+            <div class="text-3xl font-bold text-primary">98%</div>
+            <div class="text-xs text-slate-500">Satisfaction</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="relative" data-aos="zoom-in">
+        <div class="rounded-3xl overflow-hidden shadow-xl ring-1 ring-slate-200">
+          <!-- Replace src with your own Lottie JSON, or swap with an image/video poster -->
+          <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_vnikrcia.json" background="transparent" speed="1" loop autoplay style="width:100%;height:360px"></lottie-player>
+        </div>
+        <div class="absolute -bottom-6 -right-6 w-28 h-28 rounded-2xl bg-white shadow-glow flex items-center justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-10 h-10"><defs><linearGradient id="gradHero" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="var(--primary-green)"/><stop offset="100%" stop-color="var(--accent-gold)"/></linearGradient></defs><path fill="url(#gradHero)" d="M12 2a10 10 0 1 0 0 20 10 10 0 1 0 0-20Zm-2 14V8l6 4-6 4Z"/></svg>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-16 text-primary">
+      <svg viewBox="0 0 1440 120" preserveAspectRatio="none" class="w-full h-[120px]"><path fill="currentColor" d="M0,32L80,48C160,64,320,96,480,101.3C640,107,800,85,960,69.3C1120,53,1280,43,1360,37.3L1440,32L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z"/></svg>
+    </div>
+  </section>
+
+  <!-- Intro Video Modal (Bootstrap) -->
+  <div class="modal fade" id="introVideoModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Introduction Video</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <video id="introVideo" class="w-100 rounded" controls poster="https://images.unsplash.com/photo-1557683316-973673baf926?q=80&w=1200&auto=format&fit=crop">
+            <source src="/videos/intro.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section id="about" class="py-20 bg-light/50">
+    <div class="max-w-5xl mx-auto px-4">
+      <h2 class="text-3xl sm:text-4xl font-bold text-center text-slate-900" data-aos="fade-up">About Us</h2>
+      <p class="mt-6 text-lg text-slate-700 leading-relaxed" data-aos="fade-up" data-aos-delay="100">
+        We are a multidisciplinary team of physicians, researchers, pharmacists, and caregivers committed to evidence-based natural medicine. Our approach blends time-tested Ayurvedic principles with rigorous Homeopathic methods, supported by clinical insights and continuous R&amp;D. We partner with hospitals and community clinics to broaden access and improve outcomes.
+      </p>
+
+      <!-- Values cards -->
+      <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="p-6 rounded-2xl bg-white ring-1 ring-slate-200 shadow-sm" data-aos="fade-up">
+          <div class="w-12 h-12 rounded-xl bg-light flex items-center justify-center mb-4">
+            <svg viewBox="0 0 24 24" class="w-7 h-7 text-primary" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M12 2a10 10 0 1 0 0 20 10 10 0 1 0 0-20Zm1 14.5V13h2v-2h-2V7.5h-2V11H9v2h2v3.5h2Z"/></svg>
+          </div>
+          <h3 class="font-semibold">Patient First</h3>
+          <p class="mt-2 text-slate-600">Every decision begins with patient safety, empathy, and measurable results.</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-white ring-1 ring-slate-200 shadow-sm" data-aos="fade-up" data-aos-delay="100">
+          <div class="w-12 h-12 rounded-xl bg-light flex items-center justify-center mb-4">
+            <svg viewBox="0 0 24 24" class="w-7 h-7 text-primary" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M17 2H7a2 2 0 0 0-2 2v16l7-3 7 3V4a2 2 0 0 0-2-2Z"/></svg>
+          </div>
+          <h3 class="font-semibold">Research &amp; Rigor</h3>
+          <p class="mt-2 text-slate-600">Protocols informed by journals, audits, and peer collaboration.</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-white ring-1 ring-slate-200 shadow-sm" data-aos="fade-up" data-aos-delay="200">
+          <div class="w-12 h-12 rounded-xl bg-light flex items-center justify-center mb-4">
+            <svg viewBox="0 0 24 24" class="w-7 h-7 text-primary" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M12 2 2 7l10 5 10-5-10-5Zm0 7L2 4v13l10 5 10-5V4L12 9Z"/></svg>
+          </div>
+          <h3 class="font-semibold">Education</h3>
+          <p class="mt-2 text-slate-600">We invest in patient education and professional training.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM (Vue lists) -->
+  <section id="team" class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl sm:text-4xl font-bold text-center text-slate-900" data-aos="fade-up">Our People</h2>
+
+      <div class="mt-12">
+        <h3 class="text-xl font-semibold text-slate-800 mb-6">Founders</h3>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <article v-for="(p,idx) in founders" :key="'f-'+idx" class="p-6 rounded-2xl bg-white ring-1 ring-slate-200 shadow-sm" data-aos="zoom-in">
+            <img :src="p.photo" :alt="p.name" class="w-full h-48 object-cover rounded-xl">
+            <div class="mt-4">
+              <div class="font-semibold text-slate-900">{{ p.name }}</div>
+              <div class="text-sm text-primary">{{ p.title }}</div>
+              <p class="mt-2 text-sm text-slate-600">{{ p.bio }}</p>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div class="mt-16">
+        <h3 class="text-xl font-semibold text-slate-800 mb-6">Doctors</h3>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <article v-for="(p,idx) in doctors" :key="'d-'+idx" class="p-6 rounded-2xl bg-white ring-1 ring-slate-200 shadow-sm" data-aos="fade-up">
+            <img :src="p.photo" :alt="p.name" class="w-full h-48 object-cover rounded-xl">
+            <div class="mt-4">
+              <div class="font-semibold text-slate-900">{{ p.name }}</div>
+              <div class="text-sm text-primary">{{ p.speciality }}</div>
+              <p class="mt-2 text-sm text-slate-600">{{ p.bio }}</p>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div class="mt-16">
+        <h3 class="text-xl font-semibold text-slate-800 mb-6">Contributors &amp; Support</h3>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <article v-for="(p,idx) in helpers" :key="'h-'+idx" class="p-6 rounded-2xl bg-white ring-1 ring-slate-200 shadow-sm" data-aos="fade-up">
+            <img :src="p.photo" :alt="p.name" class="w-full h-48 object-cover rounded-xl">
+            <div class="mt-4">
+              <div class="font-semibold text-slate-900">{{ p.name }}</div>
+              <div class="text-sm text-primary">{{ p.role }}</div>
+              <p class="mt-2 text-sm text-slate-600">{{ p.bio }}</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- IMPACT / STATS with Swiper -->
+  <section id="impact" class="py-20 bg-light/50">
+    <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
+      <div data-aos="fade-right">
+        <h2 class="text-3xl font-bold">Impact at a glance</h2>
+        <p class="mt-4 text-slate-700">We collaborate across clinics and communities to improve access and outcomes.</p>
+        <ul class="mt-6 space-y-3 text-slate-700">
+          <li class="flex items-start gap-3"><span class="mt-1 text-primary">◆</span> 120+ validated formulations</li>
+          <li class="flex items-start gap-3"><span class="mt-1 text-primary">◆</span> 25 research partnerships</li>
+          <li class="flex items-start gap-3"><span class="mt-1 text-primary">◆</span> 15 outreach programs annually</li>
+        </ul>
+      </div>
+      <div data-aos="fade-left">
+        <div class="swiper mySwiper rounded-3xl overflow-hidden ring-1 ring-slate-200">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1579154204601-01588f351e67?q=80&w=1200&auto=format&fit=crop" class="w-full h-80 object-cover" alt="Lab"/></div>
+            <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1504814532849-cff240bbc503?q=80&w=1200&auto=format&fit=crop" class="w-full h-80 object-cover" alt="Herbs"/></div>
+            <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?q=80&w=1200&auto=format&fit=crop" class="w-full h-80 object-cover" alt="Care"/></div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 bg-gradient-to-r from-primary to-accent text-white">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold" data-aos="zoom-in">Join our mission</h2>
+      <p class="mt-3 text-white/90" data-aos="zoom-in" data-aos-delay="100">Partner with us for research, training, and community programs.</p>
+      <div class="mt-6">
+        <a href="#contact" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white text-primary font-semibold hover:opacity-90">Contact Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT / FOOTER -->
+  <footer id="contact" class="py-16 bg-white border-t">
+    <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-3 gap-10">
+      <div>
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full ring-2 ring-primary ring-offset-2 ring-offset-white flex items-center justify-center bg-white overflow-hidden">
+            <!-- You can reuse your SVG here too -->
+            <svg viewBox="0 0 64 64" class="w-7 h-7" xmlns="http://www.w3.org/2000/svg"><circle cx="32" cy="32" r="20" fill="var(--primary-green)" opacity=".2"/><path d="M20 32h24" stroke="var(--primary-green)" stroke-width="4"/></svg>
+          </div>
+          <span class="font-semibold">Herbal Biologische</span>
+        </div>
+        <p class="mt-3 text-sm text-slate-600">Evidence-based natural medicine for all.</p>
+      </div>
+      <div>
+        <h4 class="font-semibold mb-3">Reach us</h4>
+        <ul class="space-y-2 text-sm text-slate-700">
+          <li>Email: hello@example.com</li>
+          <li>Phone: +91-00000-00000</li>
+          <li>Address: Bhubaneswar, Odisha</li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold mb-3">Quick links</h4>
+        <ul class="space-y-2 text-sm text-slate-700">
+          <li><a href="#about" class="hover:text-primary">About</a></li>
+          <li><a href="#team" class="hover:text-primary">Team</a></li>
+          <li><a href="#impact" class="hover:text-primary">Impact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="mt-10 text-center text-xs text-slate-500">© <span id="yearSpan"></span> Herbal Biologische Pharmaceuticals</div>
+  </footer>
+</div>
+
+<!-- JS: Bootstrap -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+  const App = {
+    data(){
+      return {
+        mobileOpen:false,
+        founders:[
+          { name:'A. Sharma', title:'Founder & CEO', photo:'https://images.unsplash.com/photo-1544006659-f0b21884ce1d?q=80&w=800&auto=format&fit=crop', bio:'Leads strategy and research partnerships.' },
+          { name:'B. Gupta', title:'Co‑Founder & COO', photo:'https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?q=80&w=800&auto=format&fit=crop', bio:'Operations, quality, and compliance.' },
+          { name:'C. Iyer', title:'Co‑Founder & CTO', photo:'https://images.unsplash.com/photo-1544723795-3fb6469f5b39?q=80&w=800&auto=format&fit=crop', bio:'Technology, data, and product.' }
+        ],
+        doctors:[
+          { name:'Dr. Meera N.', speciality:'Ayurveda (MD)', photo:'https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=800&auto=format&fit=crop', bio:'Chronic care protocols.' },
+          { name:'Dr. R. Khan', speciality:'Homeopathy (BHMS)', photo:'https://images.unsplash.com/photo-1542131596-dea5384842c1?q=80&w=800&auto=format&fit=crop', bio:'Integrative therapeutics.' },
+          { name:'Dr. S. Patil', speciality:'Nutrition', photo:'https://images.unsplash.com/photo-1546421845-6471bdcf3edf?q=80&w=800&auto=format&fit=crop', bio:'Dietary frameworks.' }
+        ],
+        helpers:[
+          { name:'Priya Das', role:'Sr. Pharmacist', photo:'https://images.unsplash.com/photo-1554151228-14d9def656e4?q=80&w=800&auto=format&fit=crop', bio:'Dispensing & QA.' },
+          { name:'Arun J.', role:'Community Lead', photo:'https://images.unsplash.com/photo-1552053831-71594a27632d?q=80&w=800&auto=format&fit=crop', bio:'Outreach programs.' },
+          { name:'Kalpana R.', role:'Clinic Manager', photo:'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=800&auto=format&fit=crop', bio:'Patient experience.' }
+        ]
+      }
+    },
+    mounted(){
+      // Year
+      document.getElementById('yearSpan').textContent = new Date().getFullYear();
+
+      // AOS
+      AOS.init({ once:true, duration:700, easing:'ease-out-cubic' });
+
+      // Swiper
+      new Swiper('.mySwiper', { pagination: { el: '.swiper-pagination', clickable: true }, loop:true, autoplay:{ delay: 3000 } });
+
+      // GSAP
+      gsap.from('#heroTitle', { y: 30, opacity: 0, duration: 0.9, ease: 'power2.out' });
+      gsap.utils.toArray('[data-aos]'); // keep gsap loaded for future custom effects
+
+      // Smooth scroll (Lenis)
+      const lenis = new Lenis({ lerp:0.08 });
+      function raf(time){ lenis.raf(time); requestAnimationFrame(raf) } requestAnimationFrame(raf);
+
+      // Pause video when modal closes
+      const modalEl = document.getElementById('introVideoModal');
+      modalEl.addEventListener('hidden.bs.modal', () => {
+        const v = document.getElementById('introVideo'); if (v) v.pause();
+      });
+    },
+    methods:{
+      scrollTo(id){
+        document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+  };
+  Vue.createApp(App).mount('#app');
+</script>
+</body>
+</html>
+
+
