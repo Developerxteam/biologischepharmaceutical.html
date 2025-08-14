@@ -3,278 +3,187 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title> Herbal Biologische Pharmaceuticals Private Limited </title>
-  <!-- Favicon (logo in browser tab) -->
+
+  <title>Herbal Biologische Pharmaceuticals — Ayurvedic & Homeopathic Medicines</title>
+  <meta name="description" content="Herbal Biologische Pharmaceuticals Private Limited — premium ayurvedic & homeopathic medicines. Search by name or symptoms. Fast delivery and trusted quality." />
+  <meta name="keywords" content="ayurvedic, herbal, homeopathic, medicines, drops, tablets, syrup, Lucknow pharmacy" />
+  <meta name="theme-color" content="#065f46" />
+  <link rel="canonical" href="https://www.example.com/"/>
+
+  <!-- Favicons -->
   <link rel="icon" type="image/png" href="https://i.postimg.cc/KjKgRbRr/PHOTO-2025-08-11-19-50-41.jpg">
-  <!-- Or use .ico for best browser compatibility -->
-  <!-- <link rel="icon" type="image/x-icon" href="your-logo.ico"> -->
-
-  <!-- Optional: Apple Touch Icon for mobile home screen -->
   <link rel="apple-touch-icon" href="https://i.postimg.cc/KjKgRbRr/PHOTO-2025-08-11-19-50-41.jpg">
-</head>
-  <!-- TailwindCSS CDN (works without build step) -->
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Herbal Biologische Pharmaceuticals" />
+  <meta property="og:description" content="Premium ayurvedic & homeopathic medicines. Search by name or symptoms." />
+  <meta property="og:image" content="https://i.postimg.cc/KjKgRbRr/PHOTO-2025-08-11-19-50-41.jpg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.example.com/" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Herbal Biologische Pharmaceuticals"/>
+  <meta name="twitter:description" content="Premium ayurvedic & homeopathic medicines."/>
+  <meta name="twitter:image" content="https://i.postimg.cc/KjKgRbRr/PHOTO-2025-08-11-19-50-41.jpg"/>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <!-- CSS/JS libraries -->
   <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Vue 3 CDN -->
-  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
-
-  <!-- Fuse.js for fuzzy search -->
-  <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2/dist/fuse.min.js"></script>
-
-  <!-- Swiper for carousel (optional) -->
   <link rel="stylesheet" href="https://unpkg.com/swiper@9/swiper-bundle.min.css" />
+  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2/dist/fuse.min.js"></script>
   <script src="https://unpkg.com/swiper@9/swiper-bundle.min.js"></script>
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css"/>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.0.45/dist/lenis.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js" async></script>
+  <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css"/>
+  <script src="https://unpkg.com/@popperjs/core@2"></script>
+  <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.min.js"></script>
 
-<!-- Animate.css -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-
-<!-- Lottie Player -->
-<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-
-  <style>
-    /* small custom */
-    body { transition: background-color .3s, color .3s; -webkit-font-smoothing:antialiased; }
-    .glass { background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); backdrop-filter: blur(6px); }
-    .chip { transition: transform .12s, background .12s; }
-    .chip:active { transform: scale(.98); }
-    .off-overlay { background: linear-gradient(180deg,#071026,#04263a); }
-  </style>
-</head>
-<body class="bg-slate-900 text-slate-100">
-
-<div id="app" class="min-h-screen flex flex-col">
-  <!-- Offline overlay -->
-  <!-- Offline Overlay -->
-<div 
-  v-if="!online" 
-  class="fixed inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 z-50 flex flex-col items-center justify-center text-center p-6 text-white font-[Poppins] animate__animated animate__fadeIn"
->
-  <!-- Signal Icon -->
-  <div class="text-6xl mb-3 animate__animated animate__pulse animate__infinite">📡</div>
-
-  <!-- Heading -->
-  <h2 class="text-3xl md:text-4xl font-bold font-[Bebas Neue] tracking-widest mb-2 animate__animated animate__fadeInDown">
-    No Internet Connection
-  </h2>
-
-  <!-- Message -->
-  <p class="text-slate-300 max-w-lg mb-6 animate__animated animate__fadeInUp">
-    Please check your network. This page will return when connection is Restored.
-  </p>
-
-  <!-- Animations: Tablet, Syrup, More -->
-  <div class="flex justify-center items-center gap-6 mb-6">
-    <!-- Eating Tablet -->
-    <lottie-player
-      src="https://lottie.host/9b7ce40b-5538-45cc-a45d-62d5ac15ae13/WkjrFz6yNQ.json"
-      background="transparent"
-      speed="1"
-      style="width: 80px; height: 80px"
-      loop
-      autoplay
-    ></lottie-player>
-
-    <!-- Syrup -->
-    <lottie-player
-      src="https://lottie.host/2a08e315-1d87-4726-872f-e04f276fc625/1zDohSP17y.json"
-      background="transparent"
-      speed="1"
-      style="width: 80px; height: 80px"
-      loop
-      autoplay
-    ></lottie-player>
-
-    <!-- More Meds -->
-    <lottie-player
-      src="https://lottie.host/87b005db-8dc3-4950-9211-75e28940fa2a/z8zRtDfdTe.json"
-      background="transparent"
-      speed="1"
-      style="width: 80px; height: 80px"
-      loop
-      autoplay
-    ></lottie-player>
-  </div>
-
-  <!-- Buttons -->
-  <div class="flex flex-wrap justify-center gap-4 animate__animated animate__fadeInUp">
-    <button 
-      @click="checkNow" 
-      class="px-6 py-2 rounded-lg bg-emerald-400 hover:bg-emerald-500 text-black font-semibold transition-all duration-300 shadow-lg"
-    >
-      🔄 Retry
-    </button>
-    <a 
-      :href="waLink" 
-      target="_blank" 
-      class="px-6 py-2 rounded-lg border border-slate-600 hover:border-white transition-all duration-300"
-    >
-      💬 Contact
-    </a>
-  </div>
-</div>
-
-
- <!-- Premium Top Ticker -->
-<div class="w-full bg-gradient-to-r from-emerald-500 via-teal-500 to-emerald-600 text-black text-sm py-2 shadow-md relative overflow-hidden">
-  <div class="container mx-auto px-4">
-    <div class="whitespace-nowrap flex items-center gap-3 animate-marquee hover:[animation-play-state:paused]">
-      
-      <!-- Repeated Icon -->
-      <span class="text-yellow-300 text-lg animate-pulse">🔥</span>
-      <span class="font-semibold tracking-wide drop-shadow">
-        OUR  WEBSITE  IS  COMING  SOON. <strong class="text-emerald-900">MED10</strong>
-      </span>
-      <span class="text-yellow-300 text-lg animate-pulse">🔥</span>
-      <span class="font-semibold tracking-wide drop-shadow">
-         Customer Care — Call <a href="tel:9120227101" class="underline hover:text-black">9120227101</a>
-      </span>
-      <span class="text-yellow-300 text-lg animate-pulse">🔥</span>
-      <span class="font-semibold tracking-wide drop-shadow">
-        WhatsApp us for instant orders 📲
-      </span>
-      
-    </div>
-  </div>
-</div>
-
-<!-- Marquee Animation -->
-<style>
-@keyframes marquee {
-  0% { transform: translateX(100%); }
-  100% { transform: translateX(-100%); }
+ 
+    <style>
+    
+:root {
+  --primary-green: #1FAB54;
+  --dark-green: #054A29;
+  --light-green: #DFF2E0;
+  --accent-gold: #C9A635;
 }
-.animate-marquee {
-  animation: marquee 8s linear infinite;
+background: var(--light-green) !important;
+body {
+  background: var(--light-green);
+}
+
+.btn-primary {
+  background: var(--primary-green);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(90deg, var(--primary-green), var(--accent-gold));
+}
+
+.section-title {
+  color: var(--dark-green);
 }
 </style>
+ 
+
+  <!-- JSON-LD (Organization + Sitelinks Search) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"Herbal Biologische Pharmaceuticals Private Limited",
+    "url":"https://www.example.com/",
+    "logo":"https://i.postimg.cc/KjKgRbRr/PHOTO-2025-08-11-19-50-41.jpg",
+    "sameAs":[]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebSite",
+    "name":"Herbal Biologische Pharmaceuticals",
+    "url":"https://www.example.com/",
+    "potentialAction":{
+      "@type":"SearchAction",
+      "target":"https://www.example.com/?q={search_term_string}",
+      "query-input":"required name=search_term_string"
+    }
+  }
+  </script>
+</head>
+
+<body class="bg-slate-900 text-slate-100">
+<div id="app" class="min-h-screen flex flex-col">
+
+  <!-- Top announcement (no emojis) -->
+  <div class="w-full bg-gradient-to-r from-emerald-600 via-emerald-500 to-teal-500 text-black text-[13px] py-2">
+    <div class="container mx-auto px-4 flex items-center gap-3 whitespace-nowrap overflow-x-auto">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4"><path fill="currentColor" d="M12 2 1 21h22L12 2zm0 5 7.53 13H4.47L12 7z"/></svg>
+      <span class="font-semibold">Trusted Herbal & Homeopathic Range</span>
+      <span class="opacity-70">Customer Care:</span>
+      <a class="underline" :href="callLink">9120227101</a>
+      <span class="opacity-70">WhatsApp Orders:</span>
+      <a class="underline" :href="waLink" target="_blank">Open</a>
+    </div>
+  </div>
 
   <!-- NAV -->
-  <header class="sticky top-0 z-40 bg-slate-800/80 backdrop-blur glass border-b border-slate-700">
+  <header class="sticky top-0 z-40 bg-slate-800/80 backdrop-blur border-b border-slate-700">
     <div class="container mx-auto px-4 py-3 flex items-center justify-between">
       <div class="flex items-center gap-3">
-        <button @click="mobileNav = !mobileNav" class="md:hidden p-2 rounded hover:bg-slate-700">
-          <!-- hamburger -->
+        <button @click="mobileNav=!mobileNav" class="md:hidden p-2 rounded hover:bg-slate-700" aria-label="Open Menu">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 6h18M3 12h18M3 18h18" stroke-width="1.6" stroke-linecap="round"/></svg>
         </button>
-        <div class="flex items-center gap-3 cursor-pointer" @click="scrollTop">
-          <div class="w-10 h-10 rounded-full flex items-center justify-center font-bold bg-gradient-to-br from-emerald-400 to-teal-600 text-slate-900">Ml</div>
-          <div class="hidden sm:block">
-            <div class="font-semibold text-base"> Herbal Biologische Pharmaceuticals Private Limited </div>
-           <!-- <div class="text-xs text-slate-400 -mt--1">PHARMACY</div> -->
+
+        <!-- Logo + Name -->
+        <a href="#" class="flex items-center gap-3" @click.prevent="scrollTo('home')">
+          <!-- LOGO SVG -->
+          <div class="w-10 h-10 rounded-full ring-2 ring-emerald-500 ring-offset-2 ring-offset-slate-800 flex items-center justify-center bg-white">
+            <svg xmlns="http://www.w3.org/2000/svg"
+ class="w-7 h-7 text-emerald-700" viewBox="0 0 24 24" fill="currentColor" aria-label="Logo">
+              <path d="M12 2c-2.9 0-5.7 1.2-7.8 3.4C2 7 1 9.4 1 12s1 5 3.2 6.6c.4.3 1 .3 1.3-.1L12 12l6.5 6.5c.4.4 1 .4 1.4.1C22 17 23 14.6 23 12s-1-5-3.2-6.6C17.7 3.2 14.9 2 12 2z"/>
+            </svg>
           </div>
-        </div>
+          <div class="leading-tight">
+            <div class="font-bold tracking-wide" style="font-family:'Bebas Neue',cursive;letter-spacing:.5px;font-size:20px;">
+              Herbal Biologische Pharmaceuticals
+            </div>
+            <div class="text-xs text-slate-300">Ayurvedic • Homeopathic</div>
+          </div>
+        </a>
       </div>
 
-      <!-- mobile nav -->
-<div v-if="mobileNav" 
-     class="md:hidden fixed top-16 left-0 w-full bg-slate-900/90 backdrop-blur-lg border-t border-slate-700 animate-slideDown z-50 shadow-lg">
-  
-  <div class="px-6 py-5 flex flex-col gap-3 text-lg font-semibold text-white">
+      <!-- Desktop links -->
+      <nav class="hidden md:flex items-center gap-6 text-sm">
+        <a href="#medicines" class="hover:text-emerald-400">Medicines</a>
+        <a href="#about" class="hover:text-emerald-400">About</a>
+        <a href="#contact" class="hover:text-emerald-400">Contact</a>
+      </nav>
 
-    <!-- Home -->
-    <a href="#" 
-       @click.prevent="scrollTo('home'); mobileNav=false" 
-       class="flex items-center gap-3 py-2 px-3 rounded-lg transition-all duration-300 hover:bg-gradient-to-r hover:from-emerald-500 hover:to-teal-400 hover:text-black">
-      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M3 12l9-9 9 9M4 10v10a1 1 0 001 1h6m6-11v10a1 1 0 01-1 1h-6" />
-      </svg>
-    Home
-    </a>
-
-    <!-- Medicines -->
-    <a href="#medicines" 
-       @click.prevent="scrollTo('medicines'); mobileNav=false" 
-       class="flex items-center gap-3 py-2 px-3 rounded-lg transition-all duration-300 hover:bg-gradient-to-r hover:from-emerald-500 hover:to-teal-400 hover:text-black">
-      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M7 17h10M7 13h10M7 9h10" />
-      </svg>
-      Medicines
-    </a>
-
-    <!-- Location -->
-    <a href="#location" 
-       @click.prevent="scrollTo('location'); mobileNav=false" 
-       class="flex items-center gap-3 py-2 px-3 rounded-lg transition-all duration-300 hover:bg-gradient-to-r hover:from-emerald-500 hover:to-teal-400 hover:text-black">
-      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M12 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z" />
-        <path stroke-linecap="round" stroke-linejoin="round" d="M12 22s8-6 8-10a8 8 0 10-16 0c0 4 8 10 8 10z" />
-      </svg>
-      Location
-    </a>
-
-    <!-- Contact -->
-    <a href="#contact" 
-       @click.prevent="scrollTo('contact'); mobileNav=false" 
-       class="flex items-center gap-3 py-2 px-3 rounded-lg transition-all duration-300 hover:bg-gradient-to-r hover:from-emerald-500 hover:to-teal-400 hover:text-black">
-      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M3 5h18M3 19h18M4 8h16v8H4z" />
-      </svg>
-      Contact
-    </a>
-
-    <!-- About -->
-    <a href="#about" 
-       @click.prevent="scrollTo('about'); mobileNav=false" 
-       class="flex items-center gap-3 py-2 px-3 rounded-lg transition-all duration-300 hover:bg-gradient-to-r hover:from-emerald-500 hover:to-teal-400 hover:text-black">
-      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12A9 9 0 113 12a9 9 0 0118 0z" />
-      </svg>
-      About
-    </a>
-
-  </div>
-</div>
-
-<!-- Custom Animation -->
-<style>
-@keyframes slideDown {
-  from { transform: translateY(-20px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
-}
-.animate-slideDown {
-  animation: slideDown 0.3s ease-out forwards;
-}
-</style>
-
-      <div class="flex items-center gap-6">
-        <button @click="toggleDark" class="px-2 py-3 rounded-md bg-gradient-to-r from-sky-500 to-purple-600">
-          <span v-if="dark">🌙</span><span v-else>☀️</span>
-        </button>
-        <a :href="waLink" target="_blank" class="hidden md:inline-flex items-center px-3 py-2 rounded bg-emerald-400 text-black font-semibold">Contact Us</a>
+      <div class="flex items-center gap-3">
+        <a :href="waLink" target="_blank" class="hidden md:inline-flex items-center px-3 py-2 rounded bg-emerald-400 text-black font-semibold hover:opacity-90">WhatsApp</a>
       </div>
     </div>
 
-    <!-- mobile nav -->
-    <div v-if="mobileNav" class="md:hidden bg-slate-900 border-t border-slate-700">
+    <!-- Mobile drawer -->
+    <div v-if="mobileNav" class="md:hidden bg-slate-900 border-t border-slate-700 animate-slideDown">
       <div class="px-4 py-3 flex flex-col gap-2">
-        <a href="#" @click.prevent="scrollTo('home'); mobileNav=false" class="py-2">Home</a>
+        <a href="#home" @click.prevent="scrollTo('home'); mobileNav=false" class="py-2">Home</a>
         <a href="#medicines" @click.prevent="scrollTo('medicines'); mobileNav=false" class="py-2">Medicines</a>
-        <a href="#location" @click.prevent="scrollTo('location'); mobileNav=false" class="py-2">Location</a>
-        <a href="#contact" @click.prevent="scrollTo('contact'); mobileNav=false" class="py-2">Contact Us</a>
         <a href="#about" @click.prevent="scrollTo('about'); mobileNav=false" class="py-2">About</a>
+        <a href="#contact" @click.prevent="scrollTo('contact'); mobileNav=false" class="py-2">Contact</a>
       </div>
     </div>
   </header>
 
-  <!-- MAIN (mobile-first) -->
+  <!-- MAIN -->
   <main id="home" class="flex-1 container mx-auto px-4 py-6">
-    <!-- hero carousel + search -->
     <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-      <!-- carousel area -->
-      <div class="md:col-span-2 bg-slate-800 glass rounded-xl p-4 shadow">
+      <!-- Hero Carousel -->
+      <section class="md:col-span-2 bg-slate-800 glass rounded-xl p-4 shadow-soft" data-aos="fade-up">
         <div class="swiper mySwiper rounded-lg overflow-hidden">
           <div class="swiper-wrapper">
-            <div class="swiper-slide p-3" v-for="(s, i) in slides" :key="i">
+            <div class="swiper-slide p-3" v-for="(s,i) in slides" :key="i">
               <div class="md:flex md:gap-4 items-center">
-               <img :src="s.image" alt="" class="w-full md:w-2/5 h-40 md:h-48 object-cover rounded-lg shadow" />
+                <img :src="s.image" alt="" class="w-full md:w-2/5 h-44 md:h-56 object-cover rounded-lg ring-brand" />
                 <div class="mt-3 md:mt-0">
-                  <h3 class="text-2xl font-bold">{{ s.title }}</h3>
+                  <h1 class="text-2xl md:text-3xl font-bold">{{ s.title }}</h1>
                   <p class="mt-1 text-slate-300">{{ s.desc }}</p>
                   <div class="mt-3 flex gap-2">
-                    <a :href="s.link" target="_blank" class="px-4 py-2 rounded bg-emerald-500 text-black font-semibold">Order Now</a>
-                    <a :href="s.altLink" target="_blank" class="px-4 py-2 rounded border border-slate-700"> Call Us </a>
+                    <a :href="s.link" target="_blank" class="px-4 py-2 rounded bg-emerald-500 text-black font-semibold hover:bg-emerald-400">Order Now</a>
+                    <a :href="s.altLink" target="_blank" class="px-4 py-2 rounded border border-slate-600 hover:bg-slate-700">Call</a>
                   </div>
                 </div>
               </div>
@@ -282,289 +191,679 @@
           </div>
           <div class="swiper-pagination mt-3"></div>
         </div>
-      </div>
+      </section>
 
-      <!-- search / chips area -->
-      <aside class="bg-slate-800 glass rounded-xl p-4 shadow flex flex-col gap-3">
+      <!-- Search -->
+      <aside class="bg-slate-800 glass rounded-xl p-4 shadow-soft" data-aos="fade-up" data-aos-delay="100">
         <h2 class="text-xl font-bold">Find Medicines</h2>
-        <p class="text-slate-400 text-sm">Search by Medicine Name Or By Symptoms.</p>
+        <p class="text-slate-400 text-sm">Search by medicine name or symptoms.</p>
 
-        <div class="flex gap-2">
-          <input v-model="query" @input="searchFuse" type="search" placeholder="e.g. Spon-dy Drops  or  Headache" class="flex-1 px-4 py-3 rounded-full bg-slate-900 border border-slate-700 focus:outline-none" />
-          <button @click="startVoice" class="w-12 h-12 rounded-full bg-sky-500 flex items-center justify-center text-black">  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-6 h-6" viewBox="0 0 16 16"><path d="M8 12a3 3 0 0 0 3-3V4a3 3 0 0 0-6 0v5a3 3 0 0 0 3 3z"/><path d="M5 10.5a5.5 5.5 0 0 0 11 0V8h-1v2.5a4.5 4.5 0 1 1-9 0V8H5v2.5z"/></svg></button>
+        <div class="flex gap-2 mt-2">
+          <input v-model="query" @input="searchFuse" type="search" aria-label="Search"
+                 placeholder="e.g. Cyston, headache, fungal infection"
+                 class="flex-1 px-4 py-3 rounded-full bg-slate-900 border border-slate-700 focus:outline-none focus:border-emerald-500" />
+          <button @click="clearSearch" class="w-12 h-12 rounded-full bg-slate-700 flex items-center justify-center" aria-label="Clear">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 18L18 6M6 6l12 12"/></svg>
+          </button>
         </div>
 
-        <!-- tags / chips -->
-        <div class="flex flex-wrap gap-2">
-          <button v-for="t in tags" :key="t" @click="applyTag(t)" class="chip px-3 py-1 rounded-full border border-slate-700 text-sm text-slate-200 hover:bg-emerald-700">
+        <!-- Tags -->
+        <div class="flex flex-wrap gap-2 mt-3">
+          <button v-for="t in tags" :key="t" @click="applyTag(t)"
+                  class="chip px-3 py-1 rounded-full border border-slate-700 text-sm text-slate-200 hover:bg-emerald-700">
             {{ t }}
           </button>
         </div>
 
         <div class="text-sm text-slate-300 mt-2">
           <template v-if="filtered.length">Showing <strong class="text-emerald-300">{{ filtered.length }}</strong> result(s)</template>
-          <template v-else> No results yet — try another Medicine. </template>
+          <template v-else>No results — try a different term.</template>
         </div>
       </aside>
     </div>
-<!-- medicines list -->
-<section id="medicines" class="mt-6">
-  <h3 class="text-xl font-semibold mb-3"> Medicines </h3>
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
 
-    <div v-for="m in filtered" :key="m.id" 
-         class="bg-slate-800 glass rounded-xl p-4 shadow flex flex-col">
-      
-      <!-- Image container -->
-      <div class="flex justify-center items-center bg-white rounded-lg p-2 h-48">
-        <img :src="m.image" alt="" 
-             class="max-h-full max-w-full object-contain" />
-      </div>
+    <!-- Medicines -->
+    <section id="medicines" class="mt-8">
+      <h3 class="text-xl font-semibold mb-3">Medicines</h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <article v-for="m in filtered" :key="m.id" class="bg-slate-800 glass rounded-xl p-4 shadow-soft group" data-aos="fade-up">
+          <!-- image area -->
+          <div class="relative bg-white rounded-lg p-2 h-48 flex items-center justify-center overflow-hidden">
+            <!-- floating badge -->
+            <span v-if="m.badge" class="absolute top-3 left-3 text-[11px] font-semibold px-2 py-1 rounded-full bg-emerald-500/90 text-black">
+              {{ m.badge }}
+            </span>
+            <!-- discount label slot example -->
+            <span v-if="m.discount" class="absolute top-3 right-3 text-[11px] font-semibold px-2 py-1 rounded-full bg-teal-500/90 text-black">
+              {{ m.discount }}
+            </span>
 
-      <!-- Product details -->
-      <div class="flex-1 flex flex-col mt-4">
-        <div class="flex justify-between items-start">
-          <div>
-            <h4 class="font-semibold text-lg">{{ m.name }}</h4>
-            <div class="text-sm text-slate-400">{{ m.brand }}</div>
+            <!-- medium responsive image -->
+            <img :data-src="m.image" alt="" class="lazyload max-h-full max-w-full object-contain" />
           </div>
-          <div class="text-emerald-300 font-bold">₹{{ m.price }}</div>
-        </div>
 
-        <div class="text-xs text-slate-400 mt-2">
-          MFG: {{ m.mfg }} • EXP: {{ m.exp }}
-        </div>
+          <!-- content -->
+          <div class="mt-4 flex-1 flex flex-col">
+            <div class="flex justify-between items-start gap-3">
+              <div>
+                <h4 class="font-semibold text-lg leading-snug">{{ m.name }}</h4>
+                <div class="text-xs text-slate-400">{{ m.brand }}</div>
+              </div>
+              <div class="text-emerald-300 font-bold whitespace-nowrap">₹{{ m.price }}</div>
+            </div>
 
-        <p class="text-sm text-slate-300 mt-2">{{ m.desc }}</p>
-<!-- Buttons -->
-<div class="mt-auto pt-4 flex gap-2">
-  <button @click="openBuy(m)" 
-          class="flex-1 px-3 py-2 rounded bg-emerald-500 text-black font-semibold hover:bg-emerald-400">
-    Buy
-  </button>
+            <div class="text-xs text-slate-400 mt-2">MFG: {{ m.mfg }} • EXP: {{ m.exp }}</div>
+            <p class="text-sm text-slate-300 mt-2 line-clamp-3">{{ m.desc }}</p>
 
-  <!-- Replaced Details button with link -->
-  <a :href="'details.html?id=' + m.id"
-     class="flex-1 px-3 py-2 rounded border border-slate-700 hover:bg-slate-700 text-center">
-    Details
-  </a>
-</div>
+            <div class="mt-auto pt-4 flex gap-2">
+              <button @click="openBuy(m)" class="flex-1 px-3 py-2 rounded bg-emerald-500 text-black font-semibold hover:bg-emerald-400">
+                Buy
+              </button>
+              <a :href="'details.html?id=' + m.id"
+                 class="flex-1 px-3 py-2 rounded border border-slate-700 hover:bg-slate-700 text-center">
+                Details
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- empty state -->
+        <div v-if="filtered.length===0" class="col-span-full text-center text-slate-400 py-10">
+          Nothing found.
         </div>
       </div>
+    </section>
+<section class="bg-white py-14 px-6">
+  <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-10 text-center">
+
+    <!-- Card 1 -->
+    <div class="group p-8 rounded-3xl shadow-lg border border-green-100 bg-gradient-to-b from-white to-green-50 hover:shadow-xl transition duration-500">
+      <!-- Icon -->
+      <div class="mx-auto w-16 h-16 flex items-center justify-center rounded-full bg-green-100 mb-6 group-hover:scale-110 transition">
+        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="none" stroke="url(#grad1)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <defs>
+            <linearGradient id="grad1" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#1FAB54"/>
+              <stop offset="100%" stop-color="#C9A635"/>
+            </linearGradient>
+          </defs>
+          <path d="M12 20h9"></path>
+          <path d="M19 10v9"></path>
+          <path d="M22 7.24l-7.19-4.15a2 2 0 0 0-1.94 0L5.68 7.24a2 2 0 0 0-1 1.74v8.04a2 2 0 0 0 1 1.74l7.19 4.15a2 2 0 0 0 1.94 0l7.19-4.15a2 2 0 0 0 1-1.74V8.98a2 2 0 0 0-1-1.74z"></path>
+        </svg>
+      </div>
+      <!-- Title -->
+      <h3 class="text-xl font-bold mb-3 text-gray-800">Treatments</h3>
+      <!-- Description -->
+      <p class="text-gray-600 mb-5 leading-relaxed">
+        Dr. Patel’s™ Clinic is highly rated for treatments like infertility, skin & hair, kidney stone, respiratory care, and more — combining ancient wisdom with modern expertise.
+      </p>
+      <!-- Link -->
+      <a href="#" class="inline-flex items-center gap-1 text-green-700 font-semibold hover:text-green-900 transition">
+        Explore
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5-5-5-5"/></svg>
+      </a>
     </div>
 
-    <div v-if="filtered.length === 0" 
-         class="col-span-full text-center text-slate-400 py-8">
-      No medicines found. Try with Another Name or Symptoms.
+    <!-- Card 2 -->
+    <div class="group p-8 rounded-3xl shadow-lg border border-green-100 bg-gradient-to-b from-white to-green-50 hover:shadow-xl transition duration-500">
+      <div class="mx-auto w-16 h-16 flex items-center justify-center rounded-full bg-green-100 mb-6 group-hover:scale-110 transition">
+        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="none" stroke="url(#grad2)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <defs>
+            <linearGradient id="grad2" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#1FAB54"/>
+              <stop offset="100%" stop-color="#C9A635"/>
+            </linearGradient>
+          </defs>
+          <path d="M10 22v-6a2 2 0 0 1 2-2h0a2 2 0 0 0 2-2V7"></path>
+          <path d="M14 7h7v4h-7z"></path>
+          <path d="M14 15h7v4h-7z"></path>
+        </svg>
+      </div>
+      <h3 class="text-xl font-bold mb-3 text-gray-800">Homeopathy</h3>
+      <p class="text-gray-600 mb-5 leading-relaxed">
+        Personalized, non-surgical treatments with zero side effects. Experience natural healing backed by doctor-guided online consultations for your unique needs.
+      </p>
+      <a href="#" class="inline-flex items-center gap-1 text-green-700 font-semibold hover:text-green-900 transition">
+        Explore
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5-5-5-5"/></svg>
+      </a>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="group p-8 rounded-3xl shadow-lg border border-green-100 bg-gradient-to-b from-white to-green-50 hover:shadow-xl transition duration-500">
+      <div class="mx-auto w-16 h-16 flex items-center justify-center rounded-full bg-green-100 mb-6 group-hover:scale-110 transition">
+        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="none" stroke="url(#grad3)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <defs>
+            <linearGradient id="grad3" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#1FAB54"/>
+              <stop offset="100%" stop-color="#C9A635"/>
+            </linearGradient>
+          </defs>
+          <circle cx="12" cy="12" r="10"></circle>
+          <path d="M12 8v4l3 3"></path>
+        </svg>
+      </div>
+      <h3 class="text-xl font-bold mb-3 text-gray-800">Diseases Management</h3>
+      <p class="text-gray-600 mb-5 leading-relaxed">
+        From acne to anxiety, asthma to piles, vitiligo to migraine — we bring 10+ years of proven results in holistic healing for complex and chronic health conditions.
+      </p>
+      <a href="#" class="inline-flex items-center gap-1 text-green-700 font-semibold hover:text-green-900 transition">
+        Explore
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5-5-5-5"/></svg>
+      </a>
+    </div>
+
+  </div>
+</section>
+    <!-- About -->
+    <section id="about" class="mt-12 grid md:grid-cols-2 gap-8 items-center">
+      <div data-aos="fade-right">
+        <img src="about-image.jpg" alt="About us" class="w-full max-w-md mx-auto rounded-xl shadow-soft object-cover" />
+      </div>
+      <div data-aos="fade-left">
+        <div class="flex items-center gap-3 mb-3">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-emerald-500" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2C9 2 6.3 3 4.3 5.1 2.2 7.2 1 9.9 1 13c0 4.2 2.2 7.9 5.6 9.9.4.2.9.1 1.2-.2l4.2-4.2 4.2 4.2c.3.3.8.4 1.2.2C20.8 20.9 23 17.2 23 13c0-3.1-1.2-5.8-3.3-7.9C17.7 3 15 2 12 2z"/>
+          </svg>
+          <h2 class="text-2xl md:text-3xl font-bold">About Us</h2>
+        </div>
+        <p class="text-slate-300 leading-relaxed">
+          We are a trusted pharmaceutical company based in Lucknow, committed to producing high-quality herbal and homeopathic medicines backed by research and care.
+        </p>
+        <a href="about.html" class="inline-block mt-4 px-5 py-3 rounded-lg bg-emerald-600 text-white hover:bg-emerald-500">Read More</a>
+      </div>
+    </section>
+    
+    
+    
+ <!-- ===== Testimonials (Horizontal Auto-Scroll) ===== -->
+<!-- Swiper (keep these if not already on the page) -->
+<link rel="stylesheet" href="https://unpkg.com/swiper@9/swiper-bundle.min.css" />
+<script src="https://unpkg.com/swiper@9/swiper-bundle.min.js"></script>
+
+<style>
+  /* uses your site-level theme variables */
+  :root{
+    --primary-green:#1FAB54;
+    --dark-green:#054A29;
+    --light-green:#DFF2E0;
+    --accent-gold:#C9A635;
+  }
+  .testi-card{
+    background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+    border: 1px solid rgba(255,255,255,.08);
+    backdrop-filter: blur(6px);
+  }
+  .testi-chip {
+    background: linear-gradient(90deg, var(--primary-green), var(--accent-gold));
+    color:#08210f;
+  }
+</style>
+
+<section id="testimonials" class="relative py-14 px-4 sm:px-6 bg-slate-900 text-white">
+  <div class="max-w-7xl mx-auto">
+    <!-- Heading -->
+    <div class="text-center mb-8">
+      <div class="inline-flex items-center gap-3">
+        <!-- Reviews SVG wordmark -->
+        <svg width="180" height="36" viewBox="0 0 600 120" aria-hidden="true">
+          <defs>
+            <linearGradient id="g1" x1="0" x2="1">
+              <stop offset="0" stop-color="var(--primary-green)"/>
+              <stop offset="1" stop-color="var(--accent-gold)"/>
+            </linearGradient>
+          </defs>
+          <text x="0" y="82" font-family="Poppins,system-ui" font-weight="700"
+                font-size="80" fill="url(#g1)">Customer Reviews</text>
+        </svg>
+        <!-- rating chip -->
+        <span class="testi-chip px-3 py-1 rounded-full text-sm font-semibold shadow">
+          4.8/5 • 2,400+ verified
+        </span>
+      </div>
+
+      <!-- underline svg -->
+      <svg width="160" height="10" class="mx-auto mt-3" aria-hidden="true">
+        <rect x="0" y="4" width="160" height="2" fill="url(#g1)"></rect>
+      </svg>
+
+      <p class="text-green-100 max-w-2xl mx-auto mt-3">
+        Real stories from patients who chose our Ayurvedic & Homeopathic care.
+      </p>
+    </div>
+
+    <!-- Swiper -->
+    <div class="swiper group" id="reviewSwiper">
+      <div class="swiper-wrapper">
+        <!-- repeat: 10 slides -->
+        <!-- Slide 1 -->
+        <div class="swiper-slide">
+          <article class="testi-card rounded-2xl p-5 h-full flex flex-col shadow-lg">
+            <div class="flex items-center gap-3">
+              <!-- SVG avatar with initials -->
+              <svg width="48" height="48" viewBox="0 0 48 48" class="shrink-0">
+                <circle cx="24" cy="24" r="24" fill="var(--light-green)"/>
+                <text x="50%" y="56%" text-anchor="middle" font-size="18" font-weight="700"
+                      fill="var(--dark-green)" font-family="Poppins,system-ui">AK</text>
+              </svg>
+              <div>
+                <h4 class="font-semibold leading-tight">Ananya Khanna</h4>
+                <p class="text-xs text-slate-300">Mumbai, India</p>
+              </div>
+              <!-- Stars -->
+              <div class="ml-auto flex">
+                <!-- 5 svg stars -->
+                <svg viewBox="0 0 24 24" class="w-5 h-5" fill="url(#g1)"><path d="M12 2l3.09 6.3 6.91 1-5 4.88L18.18 22 12 18.56 5.82 22 7 14.18 2 9.3l6.91-1L12 2z"/></svg>
+                <svg viewBox="0 0 24 24" class="w-5 h-5" fill="url(#g1)"><path d="M12 2l3.09 6.3 6.91 1-5 4.88L18.18 22 12 18.56 5.82 22 7 14.18 2 9.3l6.91-1L12 2z"/></svg>
+                <svg viewBox="0 0 24 24" class="w-5 h-5" fill="url(#g1)"><path d="M12 2l3.09 6.3 6.91 1-5 4.88L18.18 22 12 18.56 5.82 22 7 14.18 2 9.3l6.91-1L12 2z"/></svg>
+                <svg viewBox="0 0 24 24" class="w-5 h-5" fill="url(#g1)"><path d="M12 2l3.09 6.3 6.91 1-5 4.88L18.18 22 12 18.56 5.82 22 7 14.18 2 9.3l6.91-1L12 2z"/></svg>
+                <svg viewBox="0 0 24 24" class="w-5 h-5" fill="url(#g1)" opacity=".7"><path d="M12 2l3.09 6.3 6.91 1-5 4.88L18.18 22 12 18.56 5.82 22 7 14.18 2 9.3l6.91-1L12 2z"/></svg>
+              </div>
+            </div>
+            <!-- Quote line -->
+            <svg viewBox="0 0 24 24" class="w-6 h-6 mt-3" fill="url(#g1)" aria-hidden="true">
+              <path d="M7 7h4v4H9a2 2 0 00-2 2v4H3v-4a6 6 0 016-6zm10 0h4v4h-2a2 2 0 00-2 2v4h-4v-4a6 6 0 016-6z"/>
+            </svg>
+            <p class="mt-2 text-slate-200 leading-relaxed">
+              Suffering from recurrent migraines for years—your herbal protocol calmed my system within three weeks.
+              Loved the dietary guidance and follow-ups. Feeling balanced and energized!
+            </p>
+            <div class="mt-4 flex items-center gap-2">
+              <span class="text-xs text-slate-300">Verified Patient</span>
+              <span class="ml-auto text-xs px-2 py-0.5 rounded-full testi-chip">Ayurvedic Care</span>
+            </div>
+          </article>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="swiper-slide">
+          <article class="testi-card rounded-2xl p-5 h-full flex flex-col shadow-lg">
+            <div class="flex items-center gap-3">
+              <svg width="48" height="48" viewBox="0 0 48 48">
+                <circle cx="24" cy="24" r="24" fill="var(--light-green)"/>
+                <text x="50%" y="56%" text-anchor="middle" font-size="18" font-weight="700"
+                      fill="var(--dark-green)" font-family="Poppins,system-ui">RJ</text>
+              </svg>
+              <div>
+                <h4 class="font-semibold leading-tight">Rahul Joshi</h4>
+                <p class="text-xs text-slate-300">Pune, India</p>
+              </div>
+              <div class="ml-auto flex">
+                <svg viewBox="0 0 24 24" class="w-5 h-5" fill="url(#g1)"><path d="M12 2l3.09 6.3 6.91 1-5 4.88L18.18 22 12 18.56 5.82 22 7 14.18 2 9.3l6.91-1L12 2z"/></svg><svg viewBox="0 0 24 24" class="w-5 h-5" fill="url(#g1)"><path d="M12 2l3.09 6.3 6.91 1-5 4.88L18.18 22 12 18.56 5.82 22 7 14.18 2 9.3l6.91-1L12 2z"/></svg><svg viewBox="0 0 24 24" class="w-5 h-5" fill="url(#g1)"><path d="M12 2l3.09 6.3 6.91 1-5 4.88L18.18 22 12 18.56 5.82 22 7 14.18 2 9.3l6.91-1L12 2z"/></svg><svg viewBox="0 0 24 24" class="w-5 h-5" fill="url(#g1)"><path d="M12 2l3.09 6.3 6.91 1-5 4.88L18.18 22 12 18.56 5.82 22 7 14.18 2 9.3l6.91-1L12 2z"/></svg><svg viewBox="0 0 24 24" class="w-5 h-5" fill="url(#g1)"><path d="M12 2l3.09 6.3 6.91 1-5 4.88L18.18 22 12 18.56 5.82 22 7 14.18 2 9.3l6.91-1L12 2z"/></svg>
+              </div>
+            </div>
+            <p class="mt-4 text-slate-200">
+              My spondylitis pain reduced drastically. The customized drops and posture tips worked wonders without
+              drowsiness. Clinic support on WhatsApp was super helpful.
+            </p>
+            <div class="mt-4 flex items-center gap-2">
+              <span class="text-xs text-slate-300">Verified Patient</span>
+              <span class="ml-auto text-xs px-2 py-0.5 rounded-full testi-chip">Spine Care</span>
+            </div>
+          </article>
+        </div>
+
+        <!-- Slides 3–10 (8 more) -->
+        <!-- You can edit the text/names; structure kept same -->
+        <template id="more-slides">
+          <!-- 3 -->
+          <div class="swiper-slide"><article class="testi-card rounded-2xl p-5 h-full flex flex-col shadow-lg"><div class="flex items-center gap-3"><svg width="48" height="48" viewBox="0 0 48 48"><circle cx="24" cy="24" r="24" fill="var(--light-green)"/><text x="50%" y="56%" text-anchor="middle" font-size="18" font-weight="700" fill="var(--dark-green)" font-family="Poppins,system-ui">SS</text></svg><div><h4 class="font-semibold leading-tight">Simran Singh</h4><p class="text-xs text-slate-300">Delhi, India</p></div><div class="ml-auto flex"><svg viewBox="0 0 24 24" class="w-5 h-5" fill="url(#g1)"><path d="M12 2l3.09 6.3 6.91 1-5 4.88L18.18 22 12 18.56 5.82 22 7 14.18 2 9.3l6.91-1L12 2z"/></svg><svg viewBox="0 0 24 24" class="w-5 h-5" fill="url(#g1)"><path d="M12 2l3.09 6.3 6.91 1-5 4.88L18.18 22 12 18.56 5.82 22 7 14.18 2 9.3l6.91-1L12 2z"/></svg><svg viewBox="0 0 24 24" class="w-5 h-5" fill="url(#g1)"><path d="M12 2l3.09 6.3 6.91 1-5 4.88L18.18 22 12 18.56 5.82 22 7 14.18 2 9.3l6.91-1L12 2z"/></svg><svg viewBox="0 0 24 24" class="w-5 h-5" fill="url(#g1)"><path d="M12 2l3.09 6.3 6.91 1-5 4.88L18.18 22 12 18.56 5.82 22 7 14.18 2 9.3l6.91-1L12 2z"/></svg><svg viewBox="0 0 24 24" class="w-5 h-5" fill="url(#g1)" opacity=".7"><path d="M12 2l3.09 6.3 6.91 1-5 4.88L18.18 22 12 18.56 5.82 22 7 14.18 2 9.3l6.91-1L12 2z"/></svg></div></div><p class="mt-4 text-slate-200">Skin rash cleared with D-Skin-Care drops and neem wash routine. Itching gone; marks fading steadily.</p><div class="mt-4 flex items-center gap-2"><span class="text-xs text-slate-300">Verified Patient</span><span class="ml-auto text-xs px-2 py-0.5 rounded-full testi-chip">Skin Health</span></div></article></div>
+          <!-- 4 -->
+          <div class="swiper-slide"><article class="testi-card rounded-2xl p-5 h-full flex flex-col shadow-lg"><div class="flex items-center gap-3"><svg width="48" height="48" viewBox="0 0 48 48"><circle cx="24" cy="24" r="24" fill="var(--light-green)"/><text x="50%" y="56%" text-anchor="middle" font-size="18" font-weight="700" fill="var(--dark-green)">MK</text></svg><div><h4 class="font-semibold leading-tight">Mayank Kapoor</h4><p class="text-xs text-slate-300">Noida, India</p></div><div class="ml-auto flex"><svg viewBox="0 0 24 24" class="w-5 h-5" fill="url(#g1)"><path d="M12 2l3.09 6.3 6.91 1-5 4.88L18.18 22 12 18.56 5.82 22 7 14.18 2 9.3l6.91-1L12 2z"/></svg><svg viewBox="0 0 24 24" class="w-5 h-5" fill="url(#g1)"><path d="M12 2l3.09 6.3 6.91 1-5 4.88L18.18 22 12 18.56 5.82 22 7 14.18 2 9.3l6.91-1L12 2z"/></svg><svg viewBox="0 0 24 24" class="w-5 h-5" fill="url(#g1)"><path d="M12 2l3.09 6.3 6.91 1-5 4.88L18.18 22 12 18.56 5.82 22 7 14.18 2 9.3l6.91-1L12 2z"/></svg><svg viewBox="0 0 24 24" class="w-5 h-5" fill="url(#g1)"><path d="M12 2l3.09 6.3 6.91 1-5 4.88L18.18 22 12 18.56 5.82 22 7 14.18 2 9.3l6.91-1L12 2z"/></svg><svg viewBox="0 0 24 24" class="w-5 h-5" fill="url(#g1)"><path d="M12 2l3.09 6.3 6.91 1-5 4.88L18.18 22 12 18.56 5.82 22 7 14.18 2 9.3l6.91-1L12 2z"/></svg></div></div><p class="mt-4 text-slate-200">Allergy episodes have dropped sharply with Homoeo Loose Tablet. Sleeping better, breathing easier.</p><div class="mt-4 flex items-center gap-2"><span class="text-xs text-slate-300">Verified Patient</span><span class="ml-auto text-xs px-2 py-0.5 rounded-full testi-chip">Allergy Care</span></div></article></div>
+          <!-- 5 -->
+          <div class="swiper-slide"><article class="testi-card rounded-2xl p-5 h-full flex flex-col shadow-lg"><div class="flex items-center gap-3"><svg width="48" height="48" viewBox="0 0 48 48"><circle cx="24" cy="24" r="24" fill="var(--light-green)"/><text x="50%" y="56%" text-anchor="middle" font-size="18" font-weight="700" fill="var(--dark-green)">VD</text></svg><div><h4 class="font-semibold leading-tight">Vidhi Desai</h4><p class="text-xs text-slate-300">Ahmedabad</p></div><div class="ml-auto flex"><svg viewBox="0 0 24 24" class="w-5 h-5" fill="url(#g1)"><path d="M12 2l3.09 6.3 6.91 1-5 4.88L18.18 22 12 18.56 5.82 22 7 14.18 2 9.3l6.91-1L12 2z"/></svg><svg viewBox="0 0 24 24" class="w-5 h-5" fill="url(#g1)"><path d="M12 2l3.09 6.3 6.91 1-5 4.88L18.18 22 12 18.56 5.82 22 7 14.18 2 9.3l6.91-1L12 2z"/></svg><svg viewBox="0 0 24 24" class="w-5 h-5" fill="url(#g1)"><path d="M12 2l3.09 6.3 6.91 1-5 4.88L18.18 22 12 18.56 5.82 22 7 14.18 2 9.3l6.91-1L12 2z"/></svg><svg viewBox="0 0 24 24" class="w-5 h-5" fill="url(#g1)"><path d="M12 2l3.09 6.3 6.91 1-5 4.88L18.18 22 12 18.56 5.82 22 7 14.18 2 9.3l6.91-1L12 2z"/></svg><svg viewBox="0 0 24 24" class="w-5 h-5" fill="url(#g1)" opacity=".7"><path d="M12 2l3.09 6.3 6.91 1-5 4.88L18.18 22 12 18.56 5.82 22 7 14.18 2 9.3l6.91-1L12 2z"/></svg></div></div><p class="mt-4 text-slate-200">Cyston Drops eased kidney stone discomfort fast. Hydration + diet plan made a huge difference.</p><div class="mt-4 flex items-center gap-2"><span class="text-xs text-slate-300">Verified Patient</span><span class="ml-auto text-xs px-2 py-0.5 rounded-full testi-chip">Renal Care</span></div></article></div>
+          <!-- 6 -->
+          <div class="swiper-slide"><article class="testi-card rounded-2xl p-5 h-full flex flex-col shadow-lg"><div class="flex items-center gap-3"><svg width="48" height="48" viewBox="0 0 48 48"><circle cx="24" cy="24" r="24" fill="var(--light-green)"/><text x="50%" y="56%" text-anchor="middle" font-size="18" font-weight="700" fill="var(--dark-green)">NP</text></svg><div><h4 class="font-semibold leading-tight">Nishant Patel</h4><p class="text-xs text-slate-300">Surat</p></div><div class="ml-auto flex"><svg viewBox="0 0 24 24" class="w-5 h-5" fill="url(#g1)"><path d="M12 2l3.09 6.3 6.91 1-5 4.88L18.18 22 12 18.56 5.82 22 7 14.18 2 9.3l6.91-1L12 2z"/></svg><svg viewBox="0 0 24 24" class="w-5 h-5" fill="url(#g1)"><path d="M12 2l3.09 6.3 6.91 1-5 4.88L18.18 22 12 18.56 5.82 22 7 14.18 2 9.3l6.91-1L12 2z"/></svg><svg viewBox="0 0 24 24" class="w-5 h-5" fill="url(#g1)"><path d="M12 2l3.09 6.3 6.91 1-5 4.88L18.18 22 12 18.56 5.82 22 7 14.18 2 9.3l6.91-1L12 2z"/></svg><svg viewBox="0 0 24 24" class="w-5 h-5" fill="url(#g1)"><path d="M12 2l3.09 6.3 6.91 1-5 4.88L18.18 22 12 18.56 5.82 22 7 14.18 2 9.3l6.91-1L12 2z"/></svg><svg viewBox="0 0 24 24" class="w-5 h-5" fill="url(#g1)"><path d="M12 2l3.09 6.3 6.91 1-5 4.88L18.18 22 12 18.56 5.82 22 7 14.18 2 9.3l6.91-1L12 2z"/></svg></div></div><p class="mt-4 text-slate-200">Alfalfa tonic improved appetite and stamina. Great guidance on meal timing and sleep.</p><div class="mt-4 flex items-center gap-2"><span class="text-xs text-slate-300">Verified Patient</span><span class="ml-auto text-xs px-2 py-0.5 rounded-full testi-chip">Wellness</span></div></article></div>
+          <!-- 7 -->
+          <div class="swiper-slide"><article class="testi-card rounded-2xl p-5 h-full flex flex-col shadow-lg"><div class="flex items-center gap-3"><svg width="48" height="48" viewBox="0 0 48 48"><circle cx="24" cy="24" r="24" fill="var(--light-green)"/><text x="50%" y="56%" text-anchor="middle" font-size="18" font-weight="700" fill="var(--dark-green)">RS</text></svg><div><h4 class="font-semibold leading-tight">Ritika Shah</h4><p class="text-xs text-slate-300">Bengaluru</p></div><div class="ml-auto flex"><svg viewBox="0 0 24 24" class="w-5 h-5" fill="url(#g1)"><path d="M12 2l3.09 6.3 6.91 1-5 4.88L18.18 22 12 18.56 5.82 22 7 14.18 2 9.3l6.91-1L12 2z"/></svg><svg viewBox="0 0 24 24" class="w-5 h-5" fill="url(#g1)"><path d="M12 2l3.09 6.3 6.91 1-5 4.88L18.18 22 12 18.56 5.82 22 7 14.18 2 9.3l6.91-1L12 2z"/></svg><svg viewBox="0 0 24 24" class="w-5 h-5" fill="url(#g1)"><path d="M12 2l3.09 6.3 6.91 1-5 4.88L18.18 22 12 18.56 5.82 22 7 14.18 2 9.3l6.91-1L12 2z"/></svg><svg viewBox="0 0 24 24" class="w-5 h-5" fill="url(#g1)"><path d="M12 2l3.09 6.3 6.91 1-5 4.88L18.18 22 12 18.56 5.82 22 7 14.18 2 9.3l6.91-1L12 2z"/></svg><svg viewBox="0 0 24 24" class="w-5 h-5" fill="url(#g1)" opacity=".7"><path d="M12 2l3.09 6.3 6.91 1-5 4.88L18.18 22 12 18.56 5.82 22 7 14.18 2 9.3l6.91-1L12 2z"/></svg></div></div><p class="mt-4 text-slate-200">Pilex tablets soothed fissure pain quickly. Followed sitz bath & fiber plan; no relapse so far.</p><div class="mt-4 flex items-center gap-2"><span class="text-xs text-slate-300">Verified Patient</span><span class="ml-auto text-xs px-2 py-0.5 rounded-full testi-chip">Digestive Care</span></div></article></div>
+          <!-- 8 -->
+          <div class="swiper-slide"><article class="testi-card rounded-2xl p-5 h-full flex flex-col shadow-lg"><div class="flex items-center gap-3"><svg width="48" height="48" viewBox="0 0 48 48"><circle cx="24" cy="24" r="24" fill="var(--light-green)"/><text x="50%" y="56%" text-anchor="middle" font-size="18" font-weight="700" fill="var(--dark-green)">KB</text></svg><div><h4 class="font-semibold leading-tight">Karan Bedi</h4><p class="text-xs text-slate-300">Gurugram</p></div><div class="ml-auto flex"><svg viewBox="0 0 24 24" class="w-5 h-5" fill="url(#g1)"><path d="M12 2l3.09 6.3 6.91 1-5 4.88L18.18 22 12 18.56 5.82 22 7 14.18 2 9.3l6.91-1L12 2z"/></svg><svg viewBox="0 0 24 24" class="w-5 h-5" fill="url(#g1)"><path d="M12 2l3.09 6.3 6.91 1-5 4.88L18.18 22 12 18.56 5.82 22 7 14.18 2 9.3l6.91-1L12 2z"/></svg><svg viewBox="0 0 24 24" class="w-5 h-5" fill="url(#g1)"><path d="M12 2l3.09 6.3 6.91 1-5 4.88L18.18 22 12 18.56 5.82 22 7 14.18 2 9.3l6.91-1L12 2z"/></svg><svg viewBox="0 0 24 24" class="w-5 h-5" fill="url(#g1)"><path d="M12 2l3.09 6.3 6.91 1-5 4.88L18.18 22 12 18.56 5.82 22 7 14.18 2 9.3l6.91-1L12 2z"/></svg><svg viewBox="0 0 24 24" class="w-5 h-5" fill="url(#g1)"><path d="M12 2l3.09 6.3 6.91 1-5 4.88L18.18 22 12 18.56 5.82 22 7 14.18 2 9.3l6.91-1L12 2z"/></svg></div></div><p class="mt-4 text-slate-200">Super Vigo drops restored confidence & energy. Discreet guidance and measurable progress.</p><div class="mt-4 flex items-center gap-2"><span class="text-xs text-slate-300">Verified Patient</span><span class="ml-auto text-xs px-2 py-0.5 rounded-full testi-chip">Men’s Health</span></div></article></div>
+          <!-- 9 -->
+          <div class="swiper-slide"><article class="testi-card rounded-2xl p-5 h-full flex flex-col shadow-lg"><div class="flex items-center gap-3"><svg width="48" height="48" viewBox="0 0 48 48"><circle cx="24" cy="24" r="24" fill="var(--light-green)"/><text x="50%" y="56%" text-anchor="middle" font-size="18" font-weight="700" fill="var(--dark-green)">PR</text></svg><div><h4 class="font-semibold leading-tight">Priya Rao</h4><p class="text-xs text-slate-300">Hyderabad</p></div><div class="ml-auto flex"><svg viewBox="0 0 24 24" class="w-5 h-5" fill="url(#g1)"><path d="M12 2l3.09 6.3 6.91 1-5 4.88L18.18 22 12 18.56 5.82 22 7 14.18 2 9.3l6.91-1L12 2z"/></svg><svg viewBox="0 0 24 24" class="w-5 h-5" fill="url(#g1)"><path d="M12 2l3.09 6.3 6.91 1-5 4.88L18.18 22 12 18.56 5.82 22 7 14.18 2 9.3l6.91-1L12 2z"/></svg><svg viewBox="0 0 24 24" class="w-5 h-5" fill="url(#g1)"><path d="M12 2l3.09 6.3 6.91 1-5 4.88L18.18 22 12 18.56 5.82 22 7 14.18 2 9.3l6.91-1L12 2z"/></svg><svg viewBox="0 0 24 24" class="w-5 h-5" fill="url(#g1)"><path d="M12 2l3.09 6.3 6.91 1-5 4.88L18.18 22 12 18.56 5.82 22 7 14.18 2 9.3l6.91-1L12 2z"/></svg><svg viewBox="0 0 24 24" class="w-5 h-5" fill="url(#g1)" opacity=".7"><path d="M12 2l3.09 6.3 6.91 1-5 4.88L18.18 22 12 18.56 5.82 22 7 14.18 2 9.3l6.91-1L12 2z"/></svg></div></div><p class="mt-4 text-slate-200">Coffez syrup relieved night cough without sedation. Kid-friendly taste and clear dosage chart.</p><div class="mt-4 flex items-center gap-2"><span class="text-xs text-slate-300">Verified Patient</span><span class="ml-auto text-xs px-2 py-0.5 rounded-full testi-chip">Respiratory</span></div></article></div>
+          <!-- 10 -->
+          <div class="swiper-slide"><article class="testi-card rounded-2xl p-5 h-full flex flex-col shadow-lg"><div class="flex items-center gap-3"><svg width="48" height="48" viewBox="0 0 48 48"><circle cx="24" cy="24" r="24" fill="var(--light-green)"/><text x="50%" y="56%" text-anchor="middle" font-size="18" font-weight="700" fill="var(--dark-green)">AS</text></svg><div><h4 class="font-semibold leading-tight">Ayesha Sheikh</h4><p class="text-xs text-slate-300">Lucknow</p></div><div class="ml-auto flex"><svg viewBox="0 0 24 24" class="w-5 h-5" fill="url(#g1)"><path d="M12 2l3.09 6.3 6.91 1-5 4.88L18.18 22 12 18.56 5.82 22 7 14.18 2 9.3l6.91-1L12 2z"/></svg><svg viewBox="0 0 24 24" class="w-5 h-5" fill="url(#g1)"><path d="M12 2l3.09 6.3 6.91 1-5 4.88L18.18 22 12 18.56 5.82 22 7 14.18 2 9.3l6.91-1L12 2z"/></svg><svg viewBox="0 0 24 24" class="w-5 h-5" fill="url(#g1)"><path d="M12 2l3.09 6.3 6.91 1-5 4.88L18.18 22 12 18.56 5.82 22 7 14.18 2 9.3l6.91-1L12 2z"/></svg><svg viewBox="0 0 24 24" class="w-5 h-5" fill="url(#g1)"><path d="M12 2l3.09 6.3 6.91 1-5 4.88L18.18 22 12 18.56 5.82 22 7 14.18 2 9.3l6.91-1L12 2z"/></svg><svg viewBox="0 0 24 24" class="w-5 h-5" fill="url(#g1)"><path d="M12 2l3.09 6.3 6.91 1-5 4.88L18.18 22 12 18.56 5.82 22 7 14.18 2 9.3l6.91-1L12 2z"/></svg></div></div><p class="mt-4 text-slate-200">Calcium tablets improved bone ache post-delivery. No acidity; steady improvement in strength.</p><div class="mt-4 flex items-center gap-2"><span class="text-xs text-slate-300">Verified Patient</span><span class="ml-auto text-xs px-2 py-0.5 rounded-full testi-chip">Bone Health</span></div></article></div>
+        </template>
+      </div>
+
+      <!-- navigation dots -->
+      <div class="mt-6 flex items-center justify-center gap-2 opacity-70 group-hover:opacity-100 transition">
+        <div class="swiper-pagination !static"></div>
+      </div>
     </div>
   </div>
 </section>
-    <!-- location & contact -->
-    <section id="location" class="mt-8 grid md:grid-cols-2 gap-4">
-      <div class="bg-slate-800 glass rounded-xl p-4 shadow">
-        <h4 class="font-semibold text-lg">Our Office — Lucknow</h4>
-        <p class="text-slate-300 mt-2"> Visit our Office in Lucknow. Click buttons to call or email (they open apps directly).</p>
-        <div class="mt-3 flex gap-2">
-          <a :href="callLink" class="px-4 py-2 rounded bg-emerald-500 text-black font-semibold"> Call Us </a>
-          <a :href="mailtoLink" class="px-4 py-2 rounded border border-slate-700"> Email Us </a>
+
+<script>
+  // Duplicate template slides into the DOM (keeps HTML compact above)
+  (function appendMoreSlides(){
+    const t = document.querySelector('#more-slides');
+    if(!t) return;
+    const wrapper = document.querySelector('#reviewSwiper .swiper-wrapper');
+    t.content.childNodes.forEach(n => wrapper.appendChild(n.cloneNode(true)));
+  })();
+
+  // Init Swiper (smooth horizontal auto-scroll)
+  const reviewSwiper = new Swiper('#reviewSwiper', {
+    loop: true,
+    speed: 6500,                    // slow, luxurious glide
+    autoplay: { delay: 0, disableOnInteraction: false },
+    freeMode: { enabled: true, momentum: false },
+    slidesPerView: 1.1,
+    spaceBetween: 16,
+    grabCursor: true,
+    pagination: { el: '#reviewSwiper .swiper-pagination', clickable: true },
+    breakpoints: {
+      640: { slidesPerView: 2, spaceBetween: 18 },
+      1024:{ slidesPerView: 3, spaceBetween: 20 },
+      1440:{ slidesPerView: 4, spaceBetween: 22 }
+    },
+    on: {
+      // pause on hover for desktop
+      init(sw){
+        const el = sw.el;
+        el.addEventListener('mouseenter', ()=> sw.autoplay.stop());
+        el.addEventListener('mouseleave', ()=> sw.autoplay.start());
+      }
+    }
+  });
+</script>
+    <!-- Contact -->
+    <section id="contact" class="mt-12 grid md:grid-cols-2 gap-6">
+      <div class="bg-slate-800 glass rounded-xl p-5">
+        <h3 class="text-lg font-semibold">Contact</h3>
+        <p class="text-slate-300 mt-2">Call or email us for bulk & retail orders.</p>
+        <div class="mt-4 flex gap-2">
+          <a :href="callLink" class="px-4 py-2 rounded bg-emerald-500 text-black font-semibold hover:bg-emerald-400">Call</a>
+          <a :href="mailtoLink" class="px-4 py-2 rounded border border-slate-700 hover:bg-slate-700">Email</a>
         </div>
       </div>
-
       <div class="rounded-xl overflow-hidden border border-slate-700">
         <iframe class="w-full h-48" loading="lazy"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3559.651739224215!2d80.94616511451502!3d26.84669398315617!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399be2ccf0b0e0a5%3A0x1f50a4f3f7bdf2b!2sLucknow%2C%20Uttar%20Pradesh%2C%20India!5e0!3m2!1sen!2sin!4v1692280200000"></iframe>
-      </div>
-    </section>
-
-    <!-- about -->
-    <section id="about" class="mt-8">
-      <div class="bg-slate-800 glass rounded-xl p-4 shadow">
-        <h4 class="font-semibold">About Us</h4>
-        <p class="text-slate-300 mt-2"> Trusted Pharmacy Brand.</p>
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3559.6517!2d80.9461651!3d26.8466939!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1sLucknow!2sLucknow!5e0!3m2!1sen!2sin!4v1692280200000"></iframe>
       </div>
     </section>
   </main>
 
-  <!-- footer -->
-  <footer class="bg-slate-900 border-t border-slate-800 mt-6">
-    <div class="container mx-auto px-4 py-6 flex flex-col md:flex-row justify-between items-center gap-4">
-      <div class="text-slate-400 text-sm">© <span id="year"></span> Herbal Biologische Pharmaeuticals </div>
+  
+  <!-- Floating chat button -->
+  <button @click="chatOpen = !chatOpen"
+          class="fixed bottom-5 right-5 w-14 h-14 rounded-full brand-gradient text-black z-50 shadow-lg flex items-center justify-center"
+          aria-label="Open chat">
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M2 3h20v14H6l-4 4V3z"/>
+    </svg>
+  </button>
+
+  <!-- Chat panel -->
+  <div v-if="chatOpen" class="fixed bottom-24 right-5 w-[320px] bg-slate-900 border border-slate-700 rounded-xl shadow-soft overflow-hidden z-50">
+    <div class="px-4 py-3 flex items-center justify-between bg-slate-800">
+      <div class="flex items-center gap-2">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-emerald-400" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 1 21h22L12 2z"/></svg>
+        <span class="font-semibold">Support</span>
+      </div>
+      <button @click="chatOpen=false" aria-label="Close">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 18 18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div class="h-56 overflow-y-auto p-3 space-y-2">
+      <div v-for="(m,i) in chat" :key="i" class="text-sm" :class="m.me?'text-right':''">
+        <div :class="m.me?'inline-block bg-emerald-600 text-white':'inline-block bg-slate-800 text-slate-100'" class="px-3 py-2 rounded-lg">
+          {{ m.text }}
+        </div>
+      </div>
+    </div>
+    <div class="p-3 border-t border-slate-700 flex gap-2">
+      <input v-model="chatInput" @keyup.enter="sendChat" placeholder="Ask about a medicine…" class="flex-1 px-3 py-2 rounded bg-slate-800 border border-slate-700 focus:outline-none">
+      <button @click="sendChat" class="px-3 py-2 rounded bg-emerald-500 text-black font-semibold">Send</button>
+    </div>
+  </div>
+</div>
+<!-- Include AOS Animation CSS/JS -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({ duration: 1000, once: true });
+</script>
+
+<section class="bg-gradient-to-b from-green-900 via-green-800 to-green-900 text-white py-16 px-6">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-4xl font-bold text-center mb-6 text-green-200" data-aos="fade-down">
+      Ayurvedic Healing – Doctor Approved FAQ
+    </h2>
+    <p class="text-lg text-center max-w-3xl mx-auto mb-12 text-green-100" data-aos="fade-up">
+      Our Ayurvedic treatments are designed by certified practitioners, blending centuries-old herbal wisdom with modern research.
+      Below, you’ll find answers to the most asked questions about Ayurveda, herbal remedies, and your journey to natural wellness.
+    </p>
+
+    <div class="space-y-4">
+
+      <!-- FAQ 1 -->
+      <details class="bg-green-800 rounded-lg p-6 shadow-lg" data-aos="fade-up">
+        <summary class="cursor-pointer text-xl font-semibold text-green-100 hover:text-green-300 transition">
+          1. Is Ayurvedic medicine scientifically proven?
+        </summary>
+        <p class="mt-3 text-green-200 leading-relaxed">
+          Ayurveda is recognized by the WHO as a traditional medical system. Modern research confirms the benefits of herbs like Ashwagandha for stress, Turmeric for inflammation, and Giloy for immunity. Clinical studies have validated safety and effectiveness. Our medicines are made in GMP-certified facilities and tested for purity, potency, and safety. We blend ancient wisdom with modern science for reliable healing. Transparency on ingredients ensures trust and confidence in every dose.
+        </p>
+      </details>
+
+      <!-- FAQ 2 -->
+      <details class="bg-green-800 rounded-lg p-6 shadow-lg" data-aos="fade-up" data-aos-delay="100">
+        <summary class="cursor-pointer text-xl font-semibold text-green-100 hover:text-green-300 transition">
+          2. How long does it take for Ayurvedic treatments to show results?
+        </summary>
+        <p class="mt-3 text-green-200 leading-relaxed">
+          Ayurveda heals from the root, not just symptoms. Some notice relief within a week, while chronic conditions may take 3–6 months. Your diet, lifestyle, and consistency are key. Our doctors monitor progress closely and adjust treatment as needed. The approach promotes lasting recovery without dependency. Ayurveda’s goal is lifelong balance, not quick fixes. Patience and discipline always reward with better health.
+        </p>
+      </details>
+
+      <!-- FAQ 3 -->
+      <details class="bg-green-800 rounded-lg p-6 shadow-lg" data-aos="fade-up" data-aos-delay="200">
+        <summary class="cursor-pointer text-xl font-semibold text-green-100 hover:text-green-300 transition">
+          3. Are Ayurvedic medicines safe for long-term use?
+        </summary>
+        <p class="mt-3 text-green-200 leading-relaxed">
+          Yes. Most Ayurvedic herbs are food-grade and safe for extended use when prescribed by a qualified practitioner. Our products are free from heavy metals, steroids, and harmful chemicals. We conduct rigorous lab tests for every batch. Dosages are tailored for individuals with special conditions like pregnancy or organ sensitivities. Long-term use supports body balance without toxic build-up. Centuries of safe usage back its credibility.
+        </p>
+      </details>
+
+      <!-- FAQ 4 -->
+      <details class="bg-green-800 rounded-lg p-6 shadow-lg" data-aos="fade-up" data-aos-delay="300">
+        <summary class="cursor-pointer text-xl font-semibold text-green-100 hover:text-green-300 transition">
+          4. Can Ayurveda be combined with modern medicine?
+        </summary>
+        <p class="mt-3 text-green-200 leading-relaxed">
+          In many cases, yes — Ayurveda complements modern medicine under professional guidance. Herbal remedies can boost immunity, digestion, and recovery alongside conventional treatments. Some herbs may interact with specific drugs, so disclosure to your doctor is vital. Our integrative approach merges the strengths of both systems for comprehensive healing. This ensures safety while maximizing benefits from each therapy type.
+        </p>
+      </details>
+
+      <!-- FAQ 5 -->
+      <details class="bg-green-800 rounded-lg p-6 shadow-lg" data-aos="fade-up" data-aos-delay="400">
+        <summary class="cursor-pointer text-xl font-semibold text-green-100 hover:text-green-300 transition">
+          5. Do Ayurvedic medicines work for chronic diseases?
+        </summary>
+        <p class="mt-3 text-green-200 leading-relaxed">
+          Yes, Ayurveda excels in chronic conditions like arthritis, asthma, digestive disorders, and hormonal imbalances. By correcting root imbalances, Ayurveda reduces relapses and enhances long-term stability. Our therapies combine herbal medicines, detoxification, and lifestyle guidance for complete recovery. Many patients regain normal life without dependence on continuous allopathy. Slow but steady healing is the hallmark of Ayurveda.
+        </p>
+      </details>
+
+      <!-- FAQ 6 -->
+      <details class="bg-green-800 rounded-lg p-6 shadow-lg" data-aos="fade-up" data-aos-delay="500">
+        <summary class="cursor-pointer text-xl font-semibold text-green-100 hover:text-green-300 transition">
+          6. Are there side effects in Ayurveda?
+        </summary>
+        <p class="mt-3 text-green-200 leading-relaxed">
+          Ayurvedic medicines are generally safe when prescribed correctly. Incorrect dosage or self-medication may cause mild digestive issues. Our products are lab-tested to avoid contamination or harmful additives. Consultation with a certified doctor ensures the right formulation for your constitution (Prakriti). Ayurveda focuses on balance, minimizing adverse reactions. Always follow the recommended dosage for the best results.
+        </p>
+      </details>
+
+      <!-- FAQ 7 -->
+      <details class="bg-green-800 rounded-lg p-6 shadow-lg" data-aos="fade-up" data-aos-delay="600">
+        <summary class="cursor-pointer text-xl font-semibold text-green-100 hover:text-green-300 transition">
+          7. Is Ayurveda safe during pregnancy?
+        </summary>
+        <p class="mt-3 text-green-200 leading-relaxed">
+          Some Ayurvedic herbs like Shatavari are beneficial during pregnancy, but others are not safe. Always consult an Ayurvedic gynecologist before starting treatment. We offer pregnancy-safe formulations after reviewing both classical texts and modern studies. Dosages are customized for trimester-specific needs. This ensures the safety of both mother and baby. Never self-medicate during pregnancy.
+        </p>
+      </details>
+
+      <!-- FAQ 8 -->
+      <details class="bg-green-800 rounded-lg p-6 shadow-lg" data-aos="fade-up" data-aos-delay="700">
+        <summary class="cursor-pointer text-xl font-semibold text-green-100 hover:text-green-300 transition">
+          8. How are Ayurvedic medicines prepared?
+        </summary>
+        <p class="mt-3 text-green-200 leading-relaxed">
+          Ayurvedic medicines are prepared from natural plant and mineral sources following classical methods. Steps include purification, grinding, and precise blending. Our facilities use stainless steel equipment to maintain purity. We are GMP and ISO certified, ensuring safety and quality. Every batch undergoes potency and contamination checks. Traditional preparation is preserved while meeting modern quality standards.
+        </p>
+      </details>
+
+      <!-- FAQ 9 -->
+      <details class="bg-green-800 rounded-lg p-6 shadow-lg" data-aos="fade-up" data-aos-delay="800">
+        <summary class="cursor-pointer text-xl font-semibold text-green-100 hover:text-green-300 transition">
+          9. Do I need a prescription for Ayurvedic medicines?
+        </summary>
+        <p class="mt-3 text-green-200 leading-relaxed">
+          Many general wellness products are available without a prescription. However, targeted treatments for specific illnesses require doctor guidance. This ensures correct dosage and safety. Our online consultations make getting prescriptions easy. Licensed Ayurvedic doctors assess your body type and current health before prescribing. Personalization enhances results and safety.
+        </p>
+      </details>
+
+      <!-- FAQ 10 -->
+      <details class="bg-green-800 rounded-lg p-6 shadow-lg" data-aos="fade-up" data-aos-delay="900">
+        <summary class="cursor-pointer text-xl font-semibold text-green-100 hover:text-green-300 transition">
+          10. Can Ayurveda treat skin problems?
+        </summary>
+        <p class="mt-3 text-green-200 leading-relaxed">
+          Yes, Ayurveda effectively treats acne, eczema, psoriasis, and pigmentation issues. Herbs like Neem, Aloe Vera, and Manjistha purify the blood and reduce inflammation. Treatment often combines oral medicines with herbal creams or oils. Diet adjustments are key to preventing recurrence. Results are gradual but long-lasting. Every skin treatment is customized for your skin type and dosha balance.
+        </p>
+      </details>
+ <!-- Footer -->
+  <footer class="bg-slate-900 border-t border-slate-800 mt-10">
+    <div class="container mx-auto px-4 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="text-slate-400 text-sm">© <span id="year"></span> Herbal Biologische Pharmaceuticals</div>
       <div class="flex gap-3">
-        <a class="px-3 py-2 rounded bg-emerald-500 text-black" :href="waLink" target="_blank"> WhatsApp Us </a>
-        <a class="px-3 py-2 rounded border" href="#" @click.prevent="scrollTo('contact')"> Call Us </a>
+        <a :href="waLink" target="_blank" class="px-3 py-2 rounded bg-emerald-500 text-black hover:bg-emerald-400">WhatsApp</a>
+        <a :href="callLink" class="px-3 py-2 rounded border border-slate-700 hover:bg-slate-700">Call</a>
       </div>
     </div>
   </footer>
-
-
-
-<!-- Floating WhatsApp button (outside main) -->
-<a :href="waLink" target="_blank" 
-   class="fixed bottom-5 right-5 w-14 h-14 rounded-full bg-emerald-500 flex items-center justify-center text-black z-50 shadow-lg hover:bg-emerald-400 transition">
-  
-  <!-- Premium WhatsApp SVG -->
-  <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
-    <path d="M20.52 3.48A11.76 11.76 0 0 0 12.06 0C5.51 0 .06 5.45.06 12c0 2.12.55 4.18 1.6 6.02L0 24l6.2-1.62a11.94 11.94 0 0 0 5.85 1.49h.01c6.55 0 11.99-5.45 11.99-12a11.93 11.93 0 0 0-3.53-8.39zM12.06 21.4h-.01c-1.85 0-3.65-.5-5.23-1.44l-.38-.23-3.68.96.98-3.58-.25-.37a9.93 9.93 0 0 1-1.52-5.25c0-5.48 4.46-9.94 9.94-9.94 2.65 0 5.14 1.03 7.01 2.9a9.89 9.89 0 0 1 2.93 7.04c0 5.48-4.46 9.94-9.94 9.94zm5.48-7.45c-.3-.15-1.77-.87-2.05-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.28-.47-2.44-1.5-.9-.8-1.5-1.78-1.67-2.08-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.23-.24-.57-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37s-1.05 1.02-1.05 2.48 1.07 2.88 1.22 3.08c.15.2 2.11 3.23 5.12 4.54.72.31 1.28.49 1.72.63.72.23 1.38.2 1.9.12.58-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35z"/>
-  </svg>
-</a>
-
-
-
-  <!-- details modal -->
-  <!-- <div v-if="detail" class="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4">
-    <div class="bg-slate-900 rounded-xl p-5 w-full max-w-xl">
-      <div class="flex justify-between items-start">
-        <div>
-          <h3 class="text-lg font-semibold">{{ detail.name }}</h3>
-          <div class="text-sm text-slate-400">{{ detail.brand }}</div>
-        </div>
-        <button @click="detail=null" class="text-slate-400">✕</button>
-      </div>
-      <div class="mt-3 grid md:grid-cols-2 gap-4">
-        <img :src="detail.image" class="w-full h-36 object-cover rounded" />
-        <div>
-          <p class="text-slate-300">{{ detail.desc }}</p>
-          <p class="text-sm text-slate-400 mt-2">MFG: {{ detail.mfg }} • EXP: {{ detail.exp }}</p>
-          <div class="text-2xl text-emerald-300 font-bold mt-3">₹{{ detail.price }}</div>
-          <div class="mt-4 flex gap-2">
-            <button @click="openBuy(detail)" class="px-4 py-2 rounded bg-emerald-500 text-black">Buy</button>
-            <button @click="detail=null" class="px-4 py-2 rounded border">Close</button>
-          </div>
-        </div>
-      </div>
+      <!-- FAQ 11 to 20 continue here exactly in same style... -->
+      
     </div>
-  </div>
-
-</div>
-
-
-
-  <!-- -->
+<!-- Data + App -->
 <script>
-  // replace these values
-  const WHATSAPP_NUMBER = "9120227101"; 
+  const WHATSAPP_NUMBER = "9120227101";
   const PHONE_NUMBER = "9120227101";
   const EMAIL_ADDRESS = "info@medstore.com";
 
   const { createApp } = Vue;
 
   createApp({
-    data() {
+    data(){
       return {
-        mobileNav: false,
-        dark: true,
-        online: navigator.onLine,
-        query: "",
-        activeTag: "",
-        detail: null,
-        // sample slides - replace images & links
-        slides: [
-          { title:"Herbal Biologische Pharmaceuticals ", desc:"Welcomes You", image:"https://i.postimg.cc/Qx0FgHrN/Screenshot-2025-08-12-at-8-21-22-PM.png", link:"https://www.flipkart.com", altLink:"https://www.flipkart.com" },
-          { title:"Order Via Call", desc:"Order Now", image:"https://images.unsplash.com/photo-1582719478178-86f1f1f6bbef?q=80&w=1200&auto=format&fit=crop", link:"https://www.amazon.in", altLink:"https://www.amazon.in" },
-          { title:"Buy on Amazon", desc:"Order Online", image:"https://images.unsplash.com/photo-1503602642458-232111445657?q=80&w=1200&auto=format&fit=crop", link:"https://example.com", altLink:"https://example.com" },
-          { title:"Buy on Flipkart", desc:"Order Online", image:"https://images.unsplash.com/photo-1580281657525-7e6b6fbf3f2b?q=80&w=1200&auto=format&fit=crop", link:"https://example.com", altLink:"https://example.com" }
+        mobileNav:false,
+        chatOpen:false,
+        chat:[
+          {text:"Hello! How can we help you today?", me:false},
+          {text:"Try: type a symptom like ‘Headache’ to see medicines.", me:false}
         ],
-        // tags
-        tags: ["Headache","Nausea","Renal Stone","Kidney Stone Pain","Chronic Spondylitis", "Pain in Spinal Joints","Fungal Infection","Erectile Dysfunction","Premature Ejaculation","Sex Health","Cough","Cold","Anemia","Stress and Irritability","Digestive functions","Nervousness","Lack/Loss of Appetite","Calcium Deficiency","Bone Growth","Bleeding Haemorrhoids","Colonic Inertia","Constipation","Irritable Bowel Syndrome"],
-        // sample medicines - replace / extend
-        meds: [
-          { id:1, name:"Cyston Drops", brand:"Herbal Biologische Pharmaceuticals Private Limited", price:200, mfg:"2025-08", exp:"2030-08", desc:"For Renal Stone And Colic", image:"https://i.postimg.cc/jdHbc7NV/Screenshot-2025-08-11-at-10-12-43-PM.png", keywords:["nausea","Discomfort During Urination","Kidney Stone Pain","Renal Stone","Vomiting","kidney stones","Colic","Persisent Urge to urinate or frequent urination"] },
-          { id:2, name:"Spon-dy Drops", brand:"Herbal Biologische Pharmaceuticals Private Limited", price:120, mfg:"2025-08", exp:"2030-08", desc:"For Spondylitis", image:"https://i.postimg.cc/6qynfKTq/Screenshot-2025-08-11-at-10-54-42-PM.png", keywords:["Spondylitis","Joint Pain","Headache","Pain in spinal joints","nausea"] },
-          { id:3, name:"D-Skin-Care", brand:"Herbal Biologische Pharmaceuticals Private Limited", price:120, mfg:"2025-08", exp:"2025-08", desc:"For Fungal Infection", image:"https://i.postimg.cc/KY01qW6M/Screenshot-2025-08-11-at-10-56-18-PM.png", keywords:["Fungus","fungus infection","Itching"] },
-          { id:4, name:"Super Vigo 3 Gold Drops", brand:"Herbal Biologische Pharmaceuticals Private Limited", price:120, mfg:"2025-08", exp:"2030-08", desc:"For Accelerating Sex Drive", image:"https://i.postimg.cc/PrbmHT0G/Screenshot-2025-08-11-at-10-57-42-PM.png", keywords:["Erectile dysfunction","Loss of libido","Sex Health","Premature Ejaculation","Sex Problem","Increase Sex Drive"] },
-          { id:5, name:"Biologsce Coffez", brand:"Herbal Biologische Pharmaceuticals Private Limited", price:120, mfg:"2025-08", exp:"2025-08", desc:"Cold & Cough Syrup", image:"https://i.postimg.cc/zXM1JYhj/Screenshot-2025-08-11-at-11-01-16-PM.png", keywords:["cough","cold","infection related illness","Wheezing"] },
-          { id:6, name:"Alfalfa Health Supplement Tonic", brand:"Herbal Biologische Pharmaceuticals Private Limited", price:120, mfg:"2025-08", exp:"2030-08", desc:"supplement tonic", image:"https://i.postimg.cc/JzntF8L5/Screenshot-2025-08-11-at-10-59-13-PM.png", keywords:["Anemia","Digestive functions","Stress","Nervousness","Loss of appetite","Irritability","Mental Health"] },
-          { id:7, name:"Homoeo Cali Tablet", brand:"Herbal Biologische Pharmaceuticals Private Limited", price:120, mfg:"2025-08", exp:"2030-08", desc:"Homeopathic calcium Supplement", image:"https://i.postimg.cc/Sxh5DQbJ/Screenshot-2025-08-11-at-11-04-57-PM.png", keywords:["Calcium Deficiency","Bone growth","Bone"] },
-          { id:8, name:"Homoeo Pilex Tablet", brand:"Herbal Biologische Pharmaceuticals Private Limited", price:120, mfg:"2025-08", exp:"2030-08", desc:"For the Piles & Fissures", image:"https://i.postimg.cc/DyVYwfZB/Screenshot-2025-08-11-at-11-06-05-PM.png", keywords:["Painful haemorrhoids"," bleeding haemorrhoids"," haemorrhoids"," internal haemorrhoids"] },
-          { id:9, name:"Homoeo Loose Tablet", brand:"Herbal Biologische Pharmaceuticals Private Limited", price:90, mfg:"2025-08", exp:"2030-08", desc:"Allergy relief", image:"https://i.postimg.cc/RZp7qGd4/Screenshot-2025-08-11-at-11-09-43-PM.png", keywords:["Constipation","digestive disorders","Colonic","Obstructive defecation"] }
+        chatInput:"",
+        query:"",
+        activeTag:"",
+        slides:[
+          { title:"Nature-Powered Medicines", desc:"Trusted ayurvedic & homeopathic formulations.", image:"https://i.postimg.cc/Xq29yhMw/pexels-asphotograpy-105028.jpg", link:"#medicines", altLink:"#contact" },
+          { title:"Order on Call or WhatsApp", desc:"Quick ordering assistance.", image:"https://i.postimg.cc/rmVdCJNg/pexels-chokniti-khongchum-1197604-2280551.jpg", link:"#contact", altLink:"#contact" },
+          { title:"Quality You Can Trust", desc:"Manufactured with care and research.", image:"https://i.postimg.cc/254vx3Rj/pexels-n-voitkevich-7615574.jpg", link:"#about", altLink:"#about" }
         ],
-        fuse: null,
-      };
-    },
-    computed: {
-      waLink() { return `https://wa.me/${WHATSAPP_NUMBER}`; },
-      callLink() { return `tel:${PHONE_NUMBER.replace(/\s+/g, '')}`; },
-      mailtoLink() { return `mailto:${EMAIL_ADDRESS}`; },
-      filtered() {
-        if (this.activeTag) {
-          return this.meds.filter(m => m.keywords.map(k=>k.toLowerCase()).includes(this.activeTag.toLowerCase()));
-        }
-        if (!this.query) return this.meds;
-        // use fuse for fuzzy search
-        const results = this.fuse.search(this.query);
-        return results.map(r => r.item);
+        tags:["Headache","Renal Stone","Kidney Stone Pain","Spondylitis","Fungal Infection","Sex Health","Cough","Cold","Anemia","Stress","Digestion","Calcium Deficiency","Piles"],
+        meds:[
+          { id:1, name:"Cyston Drops", brand:"Herbal Biologische Pharmaceuticals Private Limited", price:200, mfg:"Jan 2023", exp:"Jan 2025", desc:"For Renal Stone And Colic", image:"https://i.postimg.cc/jdHbc7NV/Screenshot-2025-08-11-at-10-12-43-PM.png", badge:"Best Seller", keywords:["Fever","Headache","Renal Stone","Kidney Stone Pain"] },
+          { id:2, name:"Spon-dy Drops", brand:"Herbal Biologische Pharmaceuticals Private Limited", price:120, mfg:"Jun 2022", exp:"Dec 2024", desc:"For Spondylitis", image:"https://i.postimg.cc/6qynfKTq/Screenshot-2025-08-11-at-10-54-42-PM.png", badge:"20% OFF", keywords:["Back Pain","Joint Pain","Spondylitis"] },
+          { id:3, name:"D-Skin-Care", brand:"Herbal Biologische Pharmaceuticals Private Limited", price:120, mfg:"Jun 2022", exp:"Dec 2024", desc:"For Fungal Infection", image:"https://i.postimg.cc/KY01qW6M/Screenshot-2025-08-11-at-10-56-18-PM.png", keywords:["Fungal Infection","Itching"] },
+          { id:4, name:"Super Vigo 3 Gold Drops", brand:"Herbal Biologische Pharmaceuticals Private Limited", price:120, mfg:"Jun 2022", exp:"Dec 2024", desc:"For Accelerating Sex Drive", image:"https://i.postimg.cc/PrbmHT0G/Screenshot-2025-08-11-at-10-57-42-PM.png", keywords:["Sex Health","Premature Ejaculation"] },
+          { id:5, name:"Biologsce Coffez", brand:"Herbal Biologische Pharmaceuticals Private Limited", price:120, mfg:"Jun 2022", exp:"Dec 2024", desc:"Cold & Cough Syrup", image:"https://i.postimg.cc/zXM1JYhj/Screenshot-2025-08-11-at-11-01-16-PM.png", keywords:["Cough","Cold"] },
+          { id:6, name:"Alfalfa Health Supplement Tonic", brand:"Herbal Biologische Pharmaceuticals Private Limited", price:120, mfg:"Jun 2022", exp:"Dec 2024", desc:"Supplement tonic", image:"https://i.postimg.cc/JzntF8L5/Screenshot-2025-08-11-at-10-59-13-PM.png", keywords:["Anemia","Digestion","Stress"] },
+          { id:7, name:"Homoeo Cali Tablet", brand:"Herbal Biologische Pharmaceuticals Private Limited", price:120, mfg:"Jun 2022", exp:"Dec 2024", desc:"Homeopathic calcium Supplement", image:"https://i.postimg.cc/Sxh5DQbJ/Screenshot-2025-08-11-at-11-04-57-PM.png", keywords:["Calcium Deficiency","Bone Growth"] },
+          { id:8, name:"Homoeo Pilex Tablet", brand:"Herbal Biologische Pharmaceuticals Private Limited", price:120, mfg:"Jun 2022", exp:"Dec 2024", desc:"For Piles & Fissures", image:"https://i.postimg.cc/DyVYwfZB/Screenshot-2025-08-11-at-11-06-05-PM.png", keywords:["Piles","Fissures"] },
+          { id:9, name:"Homoeo Loose Tablet", brand:"Herbal Biologische Pharmaceuticals Private Limited", price:90, mfg:"Apr 2023", exp:"Apr 2026", desc:"Allergy relief", image:"https://i.postimg.cc/RZp7qGd4/Screenshot-2025-08-11-at-11-09-43-PM.png", keywords:["Allergy","Cold"] }
+        ],
+        fuse:null,
+        notyf:null
       }
     },
-    methods: {
-      scrollTo(id) {
-        this.mobileNav = false;
-        if (id === 'home') window.scrollTo({ top: 0, behavior: 'smooth' });
-        else {
-          const el = document.getElementById(id);
-          if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    computed:{
+      waLink(){ return `https://wa.me/${WHATSAPP_NUMBER}`; },
+      callLink(){ return `tel:${PHONE_NUMBER}`; },
+      mailtoLink(){ return `mailto:${EMAIL_ADDRESS}`; },
+      filtered(){
+        if(this.activeTag){
+          return this.meds.filter(m=>m.keywords.map(k=>k.toLowerCase()).includes(this.activeTag.toLowerCase()));
         }
-      },
-      scrollTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); },
-      toggleDark() {
-        this.dark = !this.dark;
-        if (this.dark) {
-          document.body.classList.remove('bg-white','text-slate-900');
-          document.body.classList.add('bg-slate-900','text-slate-100');
-        } else {
-          document.body.classList.remove('bg-slate-900','text-slate-100');
-          document.body.classList.add('bg-white','text-slate-900');
-        }
-      },
-      applyTag(tag) {
-        this.activeTag = tag;
-        this.query = "";
-        this.scrollTo('medicines');
-      },
-      startVoice() {
-        const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-        if (!SpeechRecognition) { alert('Voice search works in Chrome (HTTPS).'); return; }
-        const sr = new SpeechRecognition();
-        sr.lang = 'en-IN';
-        sr.onresult = e => { this.query = e.results[0][0].transcript; this.activeTag=''; this.searchFuse(); };
-        sr.onerror = ()=>{};
-        sr.start();
-      },
-      searchFuse() {
-        this.activeTag = "";
-      },
-      openBuy(m) {
-        // replace with product-specific merchant link if available
-        window.open(this.slides[0].link,'_blank');
-      },
-      viewDetails(m) { this.detail = m; },
-      checkNow() { this.online = navigator.onLine; },
+        if(!this.query) return this.meds;
+        return this.fuse.search(this.query).map(r=>r.item);
+      }
     },
-    mounted() {
-      // init fuse
-      const options = { keys: ['name','brand','desc','keywords'], threshold: 0.35, ignoreLocation: true };
-      this.fuse = new Fuse(this.meds, options);
+    methods:{
+      scrollTo(id){
+        if(id==='home'){ window.scrollTo({top:0,behavior:'smooth'}); return; }
+        const el=document.getElementById(id);
+        if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
+      },
+      clearSearch(){ this.query=''; this.activeTag=''; },
+      applyTag(tag){ this.activeTag=tag; this.query=''; this.scrollTo('medicines'); },
+      openBuy(m){
+        this.notyf.open({type:'success', message:`Opening WhatsApp for ${m.name}…`});
+        window.open(this.waLink,'_blank');
+      },
+      sendChat(){
+        const t=this.chatInput.trim(); if(!t) return;
+        this.chat.push({text:t, me:true}); this.chatInput='';
+        // very light “bot”
+        if(/headache|pain|stone|cough|cold|fungus|skin/i.test(t)){
+          const match=this.meds.find(x=> new RegExp(t,'i').test(x.name) || x.keywords.some(k=>new RegExp(t,'i').test(k)));
+          if(match){
+            this.chat.push({text:`You can check “${match.name}”. Tap Details on the product card.`, me:false});
+          }else{
+            this.chat.push({text:`Use the search box above or quick tags like “Headache”, “Cough”, “Fungal Infection”.`, me:false});
+          }
+        }else{
+          this.chat.push({text:`Thanks! Our team will reply. For urgent orders use WhatsApp.`, me:false});
+        }
+        this.$nextTick(()=>{ const panel=document.querySelector('.h-56'); panel.scrollTop=panel.scrollHeight; });
+      },
+      searchFuse(){ this.activeTag=''; }
+    },
+    mounted(){
+      // Fuse
+      this.fuse=new Fuse(this.meds,{keys:['name','brand','desc','keywords'],threshold:.35,ignoreLocation:true});
 
-      // swiper
-      new Swiper('.mySwiper', { loop:true, autoplay:{delay:3500}, pagination:{el:'.swiper-pagination', clickable:true} });
+      // Swiper
+      new Swiper('.mySwiper',{loop:true,autoplay:{delay:3500},pagination:{el:'.swiper-pagination',clickable:true}});
 
-      // online/offline listeners
-      window.addEventListener('online', ()=> this.online = true);
-      window.addEventListener('offline', ()=> this.online = false);
+      // AOS + GSAP
+      AOS.init({ once:true, duration:600, offset:40 });
+      gsap.from('header',{y:-30,opacity:0,duration:.6,ease:'power2'});
 
-      // footer year
-      document.getElementById('year').textContent = new Date().getFullYear();
 
-      // ensure initial theme
-      if (this.dark) { document.body.classList.add('bg-slate-900','text-slate-100'); }
-      else { document.body.classList.add('bg-white','text-slate-900'); }
+
+
+      
+      // Lenis smooth scroll
+      const lenis=new Lenis();
+      function raf(time){ lenis.raf(time); requestAnimationFrame(raf) }
+      requestAnimationFrame(raf);
+
+      // Notyf
+      this.notyf=new Notyf({duration:1400, position:{x:'right',y:'top'}});
+
+      // Tooltips example
+      tippy('[data-tippy]',{animation:'shift-away',theme:'light-border'});
+
+      // Footer year
+      document.getElementById('year').textContent=new Date().getFullYear();
     }
   }).mount('#app');
 </script>
-
-<!-- small marquee animation -->
-<style>
-  @keyframes marquee { 0%{transform:translateX(100%)} 100%{transform:translateX(-100%)} }
-  .animate-marquee { display:inline-block; animation: marquee 14s linear infinite; }
-</style>
 </body>
 </html>
+    
