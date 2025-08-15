@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Herbal Biologische Pharmaceuticals Help</title>
+
+  <!-- Tailwind (no build) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Vue 3 -->
+  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+
+  <!-- Animation & UI libraries (CDN) -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/notyf/3.10.0/notyf.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/notyf/3.10.0/notyf.min.css" rel="stylesheet"/>
+
+  <script src="https://unpkg.com/@popperjs/core@2"></script>
+  <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.min.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/animations/scale.css"/>
+
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2/dist/fuse.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.0.37/bundled/lenis.min.js"></script>
+
+  <!-- Optional: Swiper (if you want carousels later) -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper@9/swiper-bundle.min.css" />
+  <script src="https://unpkg.com/swiper@9/swiper-bundle.min.js"></script>
+
+  <style>
+    /* Theme */
+    :root{
+      --leaf-1: #022712;
+      --leaf-2: #063a24;
+      --leaf-3: #0b5b33;
+      --accent: #10b981;
+      --muted: rgba(255,255,255,0.85);
+    }
+    body{
+      background: linear-gradient(180deg,var(--leaf-1),#02120b 60%);
+      color: #eafaf0;
+      -webkit-font-smoothing:antialiased;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    .glass{
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      backdrop-filter: blur(6px);
+      border: 1px solid rgba(255,255,255,0.04);
+    }
+    .brand-gradient{
+      background: linear-gradient(135deg,#34d399,var(--accent));
+    }
+    .shadow-soft{ box-shadow: 0 20px 50px rgba(2,39,18,0.45); }
+    .pill{ padding: .45rem .85rem; border-radius: 999px; }
+    .chat-scroll::-webkit-scrollbar{ width:8px }
+    .chat-scroll::-webkit-scrollbar-thumb{ background: rgba(255,255,255,0.06); border-radius:6px; }
+    /* Center big bot icon */
+    .bot-central{
+      width:96px; height:96px; border-radius:24px;
+      display:flex; align-items:center; justify-content:center;
+      font-weight:700; font-size:22px; color:#03210d;
+    }
+    /* small responsive tweaks */
+    @media (max-width:640px){
+      .chat-panel { right: 12px; left: 12px; width: auto; }
+    }
+  </style>
+</head>
+<body>
+  <div id="app" class="min-h-screen flex flex-col items-center py-8 px-4">
+
+    <!-- Header: centered brand + animated bot icon with logo -->
+<header class="w-full max-w-3xl mb-6 text-center">
+  <div class="mx-auto inline-flex items-center gap-4">
+    <!-- Logo instead of HB -->
+    <div class="bot-central brand-gradient animate__animated animate__bounceIn shadow-soft overflow-hidden rounded-full w-16 h-16 flex items-center justify-center">
+      <img src="https://i.postimg.cc/KjKgRbRr/PHOTO-2025-08-11-19-50-41.jpg" alt="Herbal Biologische Logo" class="w-full h-full object-contain" />
+    </div>
+    <div class="text-left ml-3">
+      <div class="text-2xl font-extrabold leading-tight">Herbal Biologische Pharmaceuticals Private Limited</div>
+      <div class="text-sm text-white/75 -mt-1">Homeopathic Pharmacy &amp;— Chat Support</div>
+    </div>
+  </div>
+</header>
+   
+   
+   
+   
+   
+
+    <!-- Big centered chat area -->
+    <main class="w-full max-w-3xl">
+      <section class="glass rounded-2xl p-5 shadow-soft" data-aos="fade-up">
+        <div class="flex flex-col gap-4">
+          <h2 class="text-lg font-semibold">Chat-Bot Here</h2>
+          <p class="text-sm text-white/70">Ask about medicines, place orders, request call or email — our chat assistant guides you. Click the green chat button at bottom to open the experience.</p>
+
+          <!-- Intro Lottie -->
+          <div class="w-full flex justify-center">
+            <lottie-player src="https://assets6.lottiefiles.com/packages/lf20_jcikwtux.json" background="transparent" speed="1" style="width:220px; height:120px;" loop autoplay></lottie-player>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Floating chat open button (centered bottom) -->
+    <div class="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50">
+      <button @click="toggleChat" class="w-20 h-20 rounded-full brand-gradient shadow-lg flex items-center justify-center focus:outline-none ring-4 ring-black/20">
+        <!-- stylized bot SVG -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-9 h-9" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2a7 7 0 00-7 7v1H4a2 2 0 00-2 2v3a3 3 0 003 3h2l1.5 2 1.5-2h4l1.5 2 1.5-2h2a3 3 0 003-3v-3a2 2 0 00-2-2h-1V9a7 7 0 00-7-7z"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- CHAT PANEL (floating, animated) -->
+    <div v-if="chatOpen" class="chat-panel fixed bottom-36 right-8 w-[360px] md:w-[420px] bg-[color:var(--leaf-2)] border border-white/6 rounded-xl overflow-hidden z-60 shadow-soft animate__animated animate__fadeInUp">
+      <!-- header -->
+      <div class="px-4 py-3 flex items-center justify-between bg-[color:var(--leaf-3)]">
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-md brand-gradient flex items-center justify-center text-black font-bold">HB</div>
+          <div>
+            <div class="font-semibold">Support Bot</div>
+            <div class="text-xs text-white/60">24×7 — Chat, WhatsApp & Calls</div>
+          </div>
+        </div>
+        <div class="flex items-center gap-2">
+          <button @click="resetChat" class="text-xs px-2 py-1 rounded border border-white/6">Restart</button>
+          <button @click="chatOpen=false" class="text-white/80 p-1 rounded hover:bg-white/2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 18L18 6M6 6l12 12"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- messages -->
+      <div ref="chatBody" class="h-64 overflow-y-auto p-3 chat-scroll space-y-3">
+        <div v-for="(m,i) in chat" :key="i" class="text-sm">
+          <div :class="m.me ? 'text-right' : 'text-left'">
+            <div :class="['inline-block px-3 py-2 rounded-lg max-w-[85%] break-words', m.me ? 'bg-emerald-500 text-black' : 'bg-[color:var(--leaf-1)] text-white/95']" v-html="m.html ? m.text : (m.text)"></div>
+            <div class="text-xs text-white/50 mt-1" v-if="m.time">{{ m.time }}</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- input / options -->
+      <div class="px-3 py-3 border-t border-white/6 bg-[color:var(--leaf-2)]">
+        <div v-if="!userName" class="flex gap-2">
+          <input v-model="nameInput" @keyup.enter="submitName" placeholder="Enter your name..." class="flex-1 px-3 py-2 rounded bg-[color:var(--leaf-1)] border border-white/6 focus:outline-none text-white/90" />
+          <button @click="submitName" class="px-3 py-2 rounded bg-emerald-400 text-black font-semibold">Start</button>
+        </div>
+
+        <div v-else>
+          <div class="mb-2 text-xs text-white/70">Hello, <strong class="text-emerald-200">{{ userName }}</strong>. Choose an action or type below.</div>
+
+          <div class="flex flex-wrap gap-2 mb-3">
+            <button @click="actionContact" class="pill bg-emerald-500 text-black">WhatsApp</button>
+            <button @click="actionCall" class="pill bg-[color:var(--leaf-1)] text-white/90">Call</button>
+            <button @click="actionEmail" class="pill bg-[color:var(--leaf-1)] text-white/90">Email</button>
+            <button @click="actionMedicines" class="pill bg-[color:var(--leaf-1)] text-white/90">Medicines</button>
+          </div>
+
+          <div class="flex gap-2">
+            <input v-model="chatInput" @keyup.enter="sendChat" placeholder="Type a quick question…" class="flex-1 px-3 py-2 rounded bg-[color:var(--leaf-1)] border border-white/6 focus:outline-none text-white/90" />
+            <button @click="sendChat" class="px-3 py-2 rounded bg-emerald-400 text-black font-semibold">Send</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MEDICINES MODAL -->
+    <div v-if="medPanel" class="fixed inset-0 z-50 flex items-end md:items-center justify-center p-4">
+      <div class="absolute inset-0 bg-black/60" @click="medPanel=false"></div>
+      <div class="relative w-full max-w-3xl bg-[color:var(--leaf-2)] rounded-2xl glass p-4 shadow-soft">
+        <div class="flex items-center justify-between mb-3">
+          <h3 class="font-semibold text-lg">Medicines Catalogue</h3>
+          <div class="flex gap-2">
+            <button @click="medPanel=false" class="px-3 py-1 text-xs rounded border border-white/6">Close</button>
+          </div>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 max-h-[60vh] overflow-auto">
+          <template v-for="m in meds" :key="m.id">
+            <div class="p-3 rounded-md bg-[color:var(--leaf-3)] hover:bg-[color:var(--leaf-1)] transition flex flex-col">
+              <div class="flex items-center gap-3">
+                <img :src="m.image" alt="" class="w-20 h-20 object-contain bg-white/5 p-2 rounded" />
+                <div class="flex-1">
+                  <div class="font-semibold">{{ m.name }}</div>
+                  <div class="text-xs text-white/60">{{ m.brand }}</div>
+                  <div class="text-xs text-emerald-300 font-bold">₹{{ m.price }}</div>
+                </div>
+              </div>
+              <div class="mt-3 flex gap-2">
+                <button @click="openDetails(m.id)" class="flex-1 px-3 py-2 rounded bg-emerald-500 text-black font-semibold">Open</button>
+                <button @click="quickWaForMedicine(m)" class="px-3 py-2 rounded border border-white/10">Order</button>
+              </div>
+            </div>
+          </template>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- App Script: Vue + logic -->
+  <script>
+  const WHATSAPP_NUMBER = "919120227101"; // international for wa.me
+  const PHONE_NUMBER = "9120227101";
+  const EMAIL_ADDRESS = "pharmaceuticals22@gmail.com";
+
+  const { createApp } = Vue;
+
+  createApp({
+    data(){
+      return {
+        chatOpen:false,
+        chat:[],
+        chatInput:'',
+        nameInput:'',
+        userName:'',
+        medPanel:false,
+        meds:[
+          { id:1, name:"Cyston Drops", brand:"Herbal Biologische Pharmaceuticals Private Limited", price:200, mfg:"2025", exp:"2030", desc:"For Renal Stone And Colic", image:"https://i.postimg.cc/jdHbc7NV/Screenshot-2025-08-11-at-10-12-43-PM.png", keywords:["Renal Stone","Kidney Stone Pain"]},
+          { id:2, name:"Spon-dy Drops", brand:"Herbal Biologische Pharmaceuticals Private Limited", price:120, mfg:"2025", exp:"2030", desc:"For Spondylitis", image:"https://i.postimg.cc/6qynfKTq/Screenshot-2025-08-11-at-10-54-42-PM.png", keywords:["Spondylitis","Joint Pain"]},
+          { id:3, name:"D-Skin-Care", brand:"Herbal Biologische Pharmaceuticals Private Limited", price:120, mfg:"2025", exp:"2030", desc:"For Fungal Infection", image:"https://i.postimg.cc/KY01qW6M/Screenshot-2025-08-11-at-10-56-18-PM.png", keywords:["Fungal Infection","Itching"]},
+          { id:4, name:"Super Vigo 3 Gold Drops", brand:"Herbal Biologische Pharmaceuticals Private Limited", price:120, mfg:"2025", exp:"2030", desc:"For Accelerating Sex Drive", image:"https://i.postimg.cc/PrbmHT0G/Screenshot-2025-08-11-at-10-57-42-PM.png", keywords:["Sex Health"]},
+          { id:5, name:"Biologsce Coffez", brand:"Herbal Biologische Pharmaceuticals Private Limited", price:120, mfg:"2025", exp:"2030", desc:"Cold & Cough Syrup", image:"https://i.postimg.cc/zXM1JYhj/Screenshot-2025-08-11-at-11-01-16-PM.png", keywords:["Cough","Cold"]},
+          { id:6, name:"Alfalfa Health Supplement Tonic", brand:"Herbal Biologische Pharmaceuticals Private Limited", price:120, mfg:"2025", exp:"2030", desc:"Supplement tonic", image:"https://i.postimg.cc/JzntF8L5/Screenshot-2025-08-11-at-10-59-13-PM.png", keywords:["Anemia","Digestion"]},
+          { id:7, name:"Homoeo Cali Tablet", brand:"Herbal Biologische Pharmaceuticals Private Limited", price:120, mfg:"2025", exp:"2030", desc:"Homeopathic calcium Supplement", image:"https://i.postimg.cc/Sxh5DQbJ/Screenshot-2025-08-11-at-11-04-57-PM.png", keywords:["Calcium Deficiency","Bone Growth"]},
+          { id:8, name:"Homoeo Pilex Tablet", brand:"Herbal Biologische Pharmaceuticals Private Limited", price:120, mfg:"2025", exp:"2030", desc:"For Piles & Fissures", image:"https://i.postimg.cc/DyVYwfZB/Screenshot-2025-08-11-at-11-06-05-PM.png", keywords:["Piles","Fissures"]},
+          { id:9, name:"Homoeo Loose Tablet", brand:"Herbal Biologische Pharmaceuticals Private Limited", price:90, mfg:"2025", exp:"2030", desc:"Allergy relief", image:"https://i.postimg.cc/RZp7qGd4/Screenshot-2025-08-11-at-11-09-43-PM.png", keywords:["Allergy","Cold"]}
+        ],
+        // company contact for actions
+        phone: PHONE_NUMBER,
+        email: EMAIL_ADDRESS
+      }
+    },
+    methods: {
+      toggleChat(){
+        this.chatOpen = !this.chatOpen;
+        if(this.chatOpen && this.chat.length === 0) {
+          this.botMessage("Welcome to Herbal Biologische support. What's your name?");
+        }
+        this.$nextTick(()=> this.scrollChatBottom());
+      },
+      submitName(){
+        const nm = (this.nameInput||'').trim();
+        if(!nm) return;
+        this.userName = nm;
+        this.nameInput = '';
+        this.userMessage(`My name is ${this.userName}`);
+        this.botMessage(`Hello ${this.userName}! Choose: Contact, Call, Email, or Medicines.`);
+        // show inline clickable options (HTML) — safe since it's your content
+        const optionsHtml = `
+          <div style="display:flex;gap:8px;margin-top:8px;">
+            <button onclick="window.__HB_chat_action('contact')" style="padding:8px 12px;border-radius:8px;background:#10b981;color:#02140f;border:none;cursor:pointer">Contact</button>
+            <button onclick="window.__HB_chat_action('call')" style="padding:8px 12px;border-radius:8px;background:#063e2a;color:#e9fff1;border:none;cursor:pointer">Call</button>
+            <button onclick="window.__HB_chat_action('email')" style="padding:8px 12px;border-radius:8px;background:#063e2a;color:#e9fff1;border:none;cursor:pointer">Email</button>
+            <button onclick="window.__HB_chat_action('medicines')" style="padding:8px 12px;border-radius:8px;background:#063e2a;color:#e9fff1;border:none;cursor:pointer">Medicines</button>
+          </div>
+        `;
+        this.botHtmlMessage(optionsHtml);
+      },
+      sendChat(){
+        const t = (this.chatInput||'').trim();
+        if(!t) return;
+        this.userMessage(t);
+        this.chatInput = '';
+        setTimeout(()=> {
+          // simple rule-based suggestions
+          if(/(headache|back|pain|cough|cold|allergy|stone|spond)/i.test(t)){
+            // try to match a product
+            const rx = new RegExp(t.split(' ').slice(0,2).join('|'),'i');
+            const match = this.meds.find(m => rx.test(m.name) || m.keywords.some(k=>rx.test(k)));
+            if(match){
+              this.botMessage(`I found a product: ${match.name}. Click Medicines → Open to view details.`);
+            } else {
+              this.botMessage("Thanks — our team will review and get back. For immediate help use Contact or Call.");
+            }
+          } else {
+            this.botMessage("Thanks — please choose an option or type more details.");
+          }
+        }, 600);
+      },
+      userMessage(text){
+        this.chat.push({ text, me:true, time:this.nowTime() });
+        this.$nextTick(()=> this.scrollChatBottom());
+      },
+      botMessage(text){
+        this.chat.push({ text, me:false, time:this.nowTime(), html:false });
+        this.$nextTick(()=> this.scrollChatBottom());
+      },
+      botHtmlMessage(html){
+        this.chat.push({ text: html, me:false, time:this.nowTime(), html:true });
+        this.$nextTick(()=> this.scrollChatBottom());
+      },
+      nowTime(){
+        const d = new Date();
+        return d.getHours().toString().padStart(2,'0') + ':' + d.getMinutes().toString().padStart(2,'0');
+      },
+      scrollChatBottom(){
+        this.$nextTick(()=> {
+          const el = this.$refs.chatBody;
+          if(el) el.scrollTop = el.scrollHeight;
+        });
+      },
+
+      // actions (WhatsApp, call, email, medicines)
+      actionContact(){
+        if(!this.userName){ this.botMessage("Please enter your name first."); return; }
+        this.userMessage("Contact (WhatsApp)");
+        const lines = [
+          `Hi, I am ${this.userName}.`,
+          ``,
+          `I would like to request help regarding my health.`,
+          `Problem / symptoms: [describe briefly]`,
+          `Duration: [e.g. 1 week / 2 months]`,
+          `Current medications (if any): [list here]`,
+          `Preferred contact time: [morning / afternoon / evening]`,
+          `Please advise dosage & next steps.`,
+          ``,
+          `Regards,`,
+          `${this.userName}`
+        ];
+        const message = encodeURIComponent(lines.join('\n'));
+        const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${message}`;
+        window.open(url, '_blank');
+        this.botMessage("Opening WhatsApp with a prepared message — you can edit before sending.");
+      },
+      actionCall(){
+        this.userMessage("Call");
+        this.botMessage(`Opening dialer for ${this.formatPhone(this.phone)} — please confirm to call.`);
+        window.location.href = `tel:${this.phone}`;
+      },
+      actionEmail(){
+        this.userMessage("Email");
+        const subject = encodeURIComponent(`Enquiry from ${this.userName || 'Customer'}`);
+        const body = encodeURIComponent(`Hello,\n\nMy name is ${this.userName || '[Your name]'}.\nI need assistance regarding: [brief description]\n\nRegards,\n${this.userName || ''}`);
+        const mailto = `mailto:${this.email}?subject=${subject}&body=${body}`;
+        window.open(mailto, '_blank');
+        this.botMessage("Opening your email client with a prepared draft.");
+      },
+      actionMedicines(){
+        this.userMessage("Medicines");
+        this.botMessage("Opening our medicines.");
+        this.medPanel = true;
+      },
+
+      quickWaForMedicine(m){
+        this.userMessage(`Order: ${m.name}`);
+        const lines = [
+          `Hi, I am ${this.userName || '[Your name]'}.`,
+          `I would like to order: ${m.name} (₹${m.price}).`,
+          `Product ID: ${m.id}`,
+          `Quantity: 1`,
+          `Delivery city: [Your city]`,
+          `Preferred contact time: [morning/afternoon/evening]`,
+          ``,
+          `Regards,`,
+          `${this.userName || ''}`
+        ];
+        const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(lines.join('\n'))}`;
+        window.open(url, '_blank');
+        this.botMessage(`Opening WhatsApp to order ${m.name}.`);
+      },
+      openDetails(id){
+        this.userMessage(`Open details for product #${id}`);
+        this.botMessage("Opening product details in a new tab.");
+        window.open(`details.html?id=${id}`, '_blank');
+        this.medPanel = false;
+      },
+
+      formatPhone(p){
+        if(!p) return p;
+        return p.replace(/(\d{3})(\d{3})(\d{4})/,'$1-$2-$3');
+      },
+
+      resetChat(){
+        this.chat = [];
+        this.userName = '';
+        this.nameInput = '';
+        this.chatInput = '';
+        this.botMessage("Welcome to Herbal Biologische support. What's your name?");
+      }
+    },
+    mounted(){
+      // expose callback for inline HTML buttons
+      window.__HB_chat_action = (act) => {
+        if(act === 'contact') this.actionContact();
+        else if(act === 'call') this.actionCall();
+        else if(act === 'email') this.actionEmail();
+        else if(act === 'medicines') this.actionMedicines();
+      };
+
+      // Initialize animations & helpers
+      AOS.init({ once:true, duration:700, offset:40 });
+      gsap.from('.bot-central',{ scale:0.7, opacity:0, duration:0.9, ease:'elastic.out(1,0.6)' });
+
+      // seed chat
+      this.botMessage("Welcome to Herbal Biologische support. What's your name?");
+    }
+  }).mount('#app');
+  </script>
+
+  <!-- Init small libs that are already included (no extra configuration required) -->
+  <script>
+    // Notyf poly: create if available (optional)
+    (function(){
+      if(window.Notyf){
+        window._hb_notyf = new Notyf({ duration: 2000, position: { x:'right', y:'top' } });
+      }
+    })();
+  </script>
+</body>
+</html>
