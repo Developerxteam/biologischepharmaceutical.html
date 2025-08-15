@@ -1,390 +1,651 @@
-<!-- W3Schools Tryit-ready: Tailwind + Bootstrap + Vue 3 + AOS + GSAP + Swiper (single file) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <meta charset="UTF-8" />
+  <!-- =======================================================================
+       PREMIUM ABOUT US PAGE – Herbal / Homeopathic Brand (Mobile-first)
+       ======================================================================= -->
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>About Us — Herbal Biologische Pharmaceuticals</title>
+  <title>About Us — Herbal Biologische Pharmaceuticals Private Limited</title>
+  <meta name="theme-color" content="#065f46" />
+  <meta name="description" content="Our story, mission, founders, doctors, and the science behind our herbal & homeopathic care. Watch our introduction video and meet the people who care for you." />
 
-  <!-- Tailwind CSS -->
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="https://i.postimg.cc/KjKgRbRr/PHOTO-2025-08-11-19-50-41.jpg" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN + Config -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
-          colors: {
-            primary: '#1FAB54',
-            accent: '#C9A635',
-            dark: '#054A29',
-            light: '#DFF2E0',
+          fontFamily: {
+            display: ['Playfair Display', 'serif'],
+            body: ['Inter', 'system-ui', 'sans-serif'],
+            alt: ['Poppins', 'system-ui', 'sans-serif']
           },
-          html, body {
-  max-width: 100%;
-  overflow-x: hidden;
-},
-
+          colors: {
+            brand: {
+              50:'#ecfdf5',100:'#d1fae5',200:'#a7f3d0',300:'#6ee7b7',
+              400:'#34d399',500:'#10b981',600:'#059669',700:'#047857',
+              800:'#065f46',900:'#064e3b'
+            },
+            forest: {
+              500:'#16a34a',600:'#15803d',700:'#166534',800:'#14532d'
+            }
+          },
           boxShadow: {
-            glow: '0 0 0 6px rgba(223,242,224,0.8)'
-            
+            glow: '0 10px 30px rgba(16,185,129,.35)',
+            soft: '0 8px 20px rgba(2,6,23,.35)'
+          },
+          backgroundImage: {
+            'leafy': 'radial-gradient(circle at 20% 10%, rgba(16,185,129,.25), transparent 35%), radial-gradient(circle at 80% 20%, rgba(5,150,105,.25), transparent 40%), radial-gradient(circle at 20% 80%, rgba(4,120,87,.25), transparent 40%), radial-gradient(circle at 90% 90%, rgba(15,118,110,.20), transparent 40%)',
+            'grain': 'url("https://grainy-gradients.vercel.app/noise.png")'
+          },
+          keyframes: {
+            floaty: {
+              '0%,100%': { transform: 'translateY(0px)'},
+              '50%': { transform: 'translateY(-10px)'}
+            },
+            shimmer: {
+              '0%': { backgroundPosition: '-200% 0'},
+              '100%': { backgroundPosition: '200% 0'}
+            }
+          },
+          animation: {
+            floaty: 'floaty 6s ease-in-out infinite',
+            floatySlow: 'floaty 10s ease-in-out infinite',
+            shimmer: 'shimmer 2.5s linear infinite'
           }
         }
       }
-    };
-  </script>
-  <!-- Bootstrap 5 -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-
-  <!-- Animations & UI libs -->
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
-  <link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet" />
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
-  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-
-  <style>
-    :root {
-      --primary-green: #1FAB54;
-      --accent-gold: #C9A635;
-      --light-green: #DFF2E0;
-      --dark-green: #054A29;
     }
-    body { background: var(--light-green); }
-    .btn-gradient { background: linear-gradient(90deg,var(--primary-green),var(--accent-gold)); color:#fff; }
-    .btn-gradient:hover{ filter:brightness(1.05); }
-    .ring-primary { --tw-ring-color: var(--primary-green); }
-    .ring-offset-light { --tw-ring-offset-color: var(--light-green); }
+  </script>
+
+  <!-- Icon sets -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <!-- Base Animation/UX Libraries (20+ total) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.2/css/hover-min.css"/>
+
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <script defer src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/typed.js@2.1.0/dist/typed.umd.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+  <script defer src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/tsparticles@3/tsparticles.bundle.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/countup.js@2.8.0/dist/countUp.umd.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/rellax@1.12.1/rellax.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.8.0/dist/vanilla-tilt.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/split-type@0.3.4/umd/index.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/micromodal/dist/micromodal.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/tippy.js@6/dist/tippy-bundle.umd.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tippy.js@6/animations/shift-away.css"/>
+  <script defer src="https://cdn.jsdelivr.net/npm/progressbar.js@1.1.0/dist/progressbar.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/vivus@0.4.6/dist/vivus.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/baguettebox.js@1.11.1/dist/baguetteBox.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/baguettebox.js@1.11.1/dist/baguetteBox.min.css">
+  <!-- Lottie Player -->
+  <script defer src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+  <!-- Page Styles -->
+  <style>
+    html, body { scroll-behavior: auto; }
+    body { font-family: Inter, system-ui, sans-serif; }
+    .glass { background: rgba(255,255,255,.06); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,.08); }
+    .btn { transition: transform .2s ease, box-shadow .2s ease; }
+    .btn:active { transform: scale(.98); }
+    .gradient-cta { background: linear-gradient(90deg, #10b981, #06b6d4, #10b981); background-size: 200% 100%; }
+    .gradient-cta:hover { animation: shimmer 2.5s linear infinite; }
+    .seed { filter: blur(.3px) opacity(.9); }
+    .section { scroll-margin-top: 90px; } /* for anchor offset under sticky nav */
   </style>
 </head>
 
-<body class="antialiased text-slate-800">
-<div id="app">
-<body class="overflow-x-hidden">
+<body class="bg-slate-950 text-white">
 
-  <!-- NAVBAR -->
-  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-200">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-     <!-- Logo + Name -->
-<a href="#" class="flex items-center gap-3" @click.prevent="scrollTo('home')">
-  <!-- LOGO IMAGE --> 
-  <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full ring-2 ring-emerald-500 ring-offset-2 ring-offset-slate-800 flex items-center justify-center bg-white overflow-hidden">
-    <img src="https://i.postimg.cc/KjKgRbRr/PHOTO-2025-08-11-19-50-41.jpg" alt="Logo" class="w-full h-full object-contain">
-  </div>
-  <div class="leading-tight max-w-[200px] sm:max-w-none">
-    <div class="font-bold tracking-wide text-sm sm:text-lg md:text-xl" style="font-family:'Bebas Neue',cursive;letter-spacing:.5px;">
-      Herbal Biologische Pharmaceuticals
-    </div>
-    <div class="text-xs sm:text-sm text-slate-300">Ayurvedic • Homeopathic</div>
-  </div>
-</a>
-
-
-      <nav class="hidden md:flex items-center gap-6">
-        <a href="#about" class="hover:text-primary">About</a>
-        <a href="#team" class="hover:text-primary">Team</a>
-        <a href="#impact" class="hover:text-primary">Impact</a>
-        <a href="#contact" class="hover:text-primary">Contact</a>
+  <!-- ============================== NAVBAR ============================== -->
+  <header class="sticky top-0 z-50 bg-slate-950/80 backdrop-blur border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="./index.html" class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-400 to-teal-500 text-slate-900 flex items-center justify-center font-extrabold">HB</div>
+        <div class="leading-tight">
+          <div class="font-semibold">Herbal Biologische</div>
+          <div class="text-xs text-slate-400 -mt-0.5">Pharmaceuticals Pvt. Ltd.</div>
+        </div>
+      </a>
+      <nav class="hidden md:flex items-center gap-6 text-sm">
+        <a href="#story" class="hover:text-brand-300">Our Story</a>
+        <a href="#team" class="hover:text-brand-300">Team</a>
+        <a href="#doctors" class="hover:text-brand-300">Doctors</a>
+        <a href="#impact" class="hover:text-brand-300">Impact</a>
+        <a href="#faq" class="hover:text-brand-300">FAQ</a>
+        <a href="#contact" class="hover:text-brand-300">Contact</a>
       </nav>
-
-      <button class="md:hidden w-10 h-10 inline-flex items-center justify-center rounded-full border" @click="mobileOpen=!mobileOpen" aria-label="Open menu">
-        <span class="i-menu">☰</span>
-      </button>
-    </div>
-    <div v-show="mobileOpen" class="md:hidden border-t border-slate-200 bg-white">
-      <div class="max-w-7xl mx-auto px-4 py-3 flex flex-col gap-3">
-        <a href="#about" class="hover:text-primary" @click="mobileOpen=false">About</a>
-        <a href="#team" class="hover:text-primary" @click="mobileOpen=false">Team</a>
-        <a href="#impact" class="hover:text-primary" @click="mobileOpen=false">Impact</a>
-        <a href="#contact" class="hover:text-primary" @click="mobileOpen=false">Contact</a>
-      </div>
+      <a href="tel:9120227101" class="btn px-4 py-2 rounded-lg gradient-cta text-slate-900 font-semibold shadow-glow">Call Us</a>
     </div>
   </header>
 
-  <!-- HERO -->
-  <section id="home" class="relative pt-20 pb-16 bg-white">
-    <div class="absolute inset-0 -z-10 pointer-events-none">
-      <div class="absolute -top-24 -left-24 w-80 h-80 rounded-full blur-3xl opacity-20 bg-[conic-gradient(at_top_left,var(--primary-green),var(--accent-gold))]"></div>
-      <div class="absolute -bottom-24 -right-24 w-80 h-80 rounded-full blur-3xl opacity-20 bg-[conic-gradient(at_bottom_right,var(--accent-gold),var(--primary-green))]"></div>
-    </div>
+  <!-- ============================== PARTICLES BACKDROP ============================== -->
+  <div id="particles" class="fixed inset-0 -z-10"></div>
 
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
-      <div>
-        <h1 id="heroTitle" class="text-4xl sm:text-5xl font-extrabold text-slate-900 leading-tight" data-aos="fade-up">
-          Science‑backed natural care for modern life
-        </h1>
-        <p class="mt-4 text-lg text-slate-600" data-aos="fade-up" data-aos-delay="100">
-          We combine Ayurvedic wisdom and Homeopathic research to deliver safe, effective, and affordable care. Our mission is to make holistic health accessible to everyone.
-        </p>
-        <div class="mt-8 flex items-center gap-4" data-aos="fade-up" data-aos-delay="200">
-          <button class="btn btn-gradient rounded-full px-5 py-3" data-bs-toggle="modal" data-bs-target="#introVideoModal">Watch Introduction</button>
-          <a href="#about" class="px-5 py-3 rounded-full border border-slate-300 hover:border-primary hover:text-primary transition">Learn more</a>
-        </div>
-        <div class="mt-10 grid grid-cols-3 gap-6 text-center" data-aos="fade-up" data-aos-delay="300">
-          <div>
-            <div class="text-3xl font-bold text-primary">10+</div>
-            <div class="text-xs text-slate-500">Years</div>
-          </div>
-          <div>
-            <div class="text-3xl font-bold text-primary">50K+</div>
-            <div class="text-xs text-slate-500">Patients</div>
-          </div>
-          <div>
-            <div class="text-3xl font-bold text-primary">98%</div>
-            <div class="text-xs text-slate-500">Satisfaction</div>
-          </div>
-        </div>
-      </div>
+  <!-- ============================== HERO ============================== -->
+  <section class="relative section overflow-hidden">
+    <!-- Decorative leafy / grain textures -->
+    <div class="absolute inset-0 bg-leafy pointer-events-none"></div>
+    <div class="absolute inset-0 bg-grain opacity-[.08] mix-blend-overlay pointer-events-none"></div>
 
-      <div class="relative" data-aos="zoom-in">
-        <div class="rounded-3xl overflow-hidden shadow-xl ring-1 ring-slate-200">
-          <!-- Replace src with your own Lottie JSON, or swap with an image/video poster -->
-          <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_vnikrcia.json" background="transparent" speed="1" loop autoplay style="width:100%;height:360px"></lottie-player>
-        </div>
-        <div class="absolute -bottom-6 -right-6 w-28 h-28 rounded-2xl bg-white shadow-glow flex items-center justify-center">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-10 h-10"><defs><linearGradient id="gradHero" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="var(--primary-green)"/><stop offset="100%" stop-color="var(--accent-gold)"/></linearGradient></defs><path fill="url(#gradHero)" d="M12 2a10 10 0 1 0 0 20 10 10 0 1 0 0-20Zm-2 14V8l6 4-6 4Z"/></svg>
-        </div>
-      </div>
-    </div>
+    <div class="max-w-7xl mx-auto px-4 py-12 md:py-16">
+      <div class="grid md:grid-cols-2 gap-8 items-center">
+        <div>
+          <span class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-brand-300/90 bg-white/5 px-3 py-1 rounded-full mb-4 border border-brand-500/20">
+            <i class="fa-solid fa-leaf"></i> pure • ethical • doctor-led
+          </span>
 
-    <div class="mt-16 text-primary">
-      <svg viewBox="0 0 1440 120" preserveAspectRatio="none" class="w-full h-[120px]"><path fill="currentColor" d="M0,32L80,48C160,64,320,96,480,101.3C640,107,800,85,960,69.3C1120,53,1280,43,1360,37.3L1440,32L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z"/></svg>
-    </div>
-  </section>
+          <h1 id="title" class="font-display text-4xl sm:text-5xl md:text-6xl leading-tight">
+            About <span class="text-brand-300">Us</span>
+            <span class="block text-2xl sm:text-3xl mt-3 font-alt text-brand-200">
+              <span id="typed"></span>
+            </span>
+          </h1>
 
-  <!-- Intro Video Modal (Bootstrap) -->
-  <div class="modal fade" id="introVideoModal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Introduction Video</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <video id="introVideo" class="w-100 rounded" controls poster="https://images.unsplash.com/photo-1557683316-973673baf926?q=80&w=1200&auto=format&fit=crop">
-            <source src="/videos/intro.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-        </div>
-      </div>
-    </div>
-  </div>
+          <p class="mt-5 text-slate-300/90 leading-relaxed">
+            We blend classical homeopathy & herbal wisdom with modern research to craft safe, effective, evidence-informed remedies.
+            Our mission is to care for families with compassion, science, and sustainability.
+          </p>
 
-  <!-- ABOUT -->
-  <section id="about" class="py-20 bg-light/50">
-    <div class="max-w-5xl mx-auto px-4">
-      <h2 class="text-3xl sm:text-4xl font-bold text-center text-slate-900" data-aos="fade-up">About Us</h2>
-      <p class="mt-6 text-lg text-slate-700 leading-relaxed" data-aos="fade-up" data-aos-delay="100">
-        We are a multidisciplinary team of physicians, researchers, pharmacists, and caregivers committed to evidence-based natural medicine. Our approach blends time-tested Ayurvedic principles with rigorous Homeopathic methods, supported by clinical insights and continuous R&amp;D. We partner with hospitals and community clinics to broaden access and improve outcomes.
-      </p>
-
-      <!-- Values cards -->
-      <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="p-6 rounded-2xl bg-white ring-1 ring-slate-200 shadow-sm" data-aos="fade-up">
-          <div class="w-12 h-12 rounded-xl bg-light flex items-center justify-center mb-4">
-            <svg viewBox="0 0 24 24" class="w-7 h-7 text-primary" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M12 2a10 10 0 1 0 0 20 10 10 0 1 0 0-20Zm1 14.5V13h2v-2h-2V7.5h-2V11H9v2h2v3.5h2Z"/></svg>
+          <div class="mt-6 flex flex-wrap gap-3">
+            <a href="#introvideo" class="btn px-5 py-3 rounded-xl bg-brand-500 hover:bg-brand-400 text-slate-900 font-semibold shadow-glow">
+              <i class="fa-solid fa-play mr-2"></i> Watch Introduction
+            </a>
+            <a href="#contact" class="btn px-5 py-3 rounded-xl border border-slate-700 hover:border-brand-400 hover:text-brand-300">
+              <i class="fa-solid fa-headset mr-2"></i> Contact Us
+            </a>
           </div>
-          <h3 class="font-semibold">Patient First</h3>
-          <p class="mt-2 text-slate-600">Every decision begins with patient safety, empathy, and measurable results.</p>
-        </div>
-        <div class="p-6 rounded-2xl bg-white ring-1 ring-slate-200 shadow-sm" data-aos="fade-up" data-aos-delay="100">
-          <div class="w-12 h-12 rounded-xl bg-light flex items-center justify-center mb-4">
-            <svg viewBox="0 0 24 24" class="w-7 h-7 text-primary" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M17 2H7a2 2 0 0 0-2 2v16l7-3 7 3V4a2 2 0 0 0-2-2Z"/></svg>
+
+          <!-- KPI Badges -->
+          <div class="mt-7 grid grid-cols-3 gap-3 text-center">
+            <div class="glass rounded-xl p-4" data-counter="18">
+              <div class="text-2xl md:text-3xl font-extrabold" data-countup="18">0</div>
+              <div class="text-xs text-slate-400">Years</div>
+            </div>
+            <div class="glass rounded-xl p-4" data-counter="120">
+              <div class="text-2xl md:text-3xl font-extrabold" data-countup="120">0</div>
+              <div class="text-xs text-slate-400">Products</div>
+            </div>
+            <div class="glass rounded-xl p-4" data-counter="500000">
+              <div class="text-2xl md:text-3xl font-extrabold" data-countup="500000">0</div>
+              <div class="text-xs text-slate-400">Happy Patients</div>
+            </div>
           </div>
-          <h3 class="font-semibold">Research &amp; Rigor</h3>
-          <p class="mt-2 text-slate-600">Protocols informed by journals, audits, and peer collaboration.</p>
         </div>
-        <div class="p-6 rounded-2xl bg-white ring-1 ring-slate-200 shadow-sm" data-aos="fade-up" data-aos-delay="200">
-          <div class="w-12 h-12 rounded-xl bg-light flex items-center justify-center mb-4">
-            <svg viewBox="0 0 24 24" class="w-7 h-7 text-primary" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M12 2 2 7l10 5 10-5-10-5Zm0 7L2 4v13l10 5 10-5V4L12 9Z"/></svg>
+
+        <!-- Intro video card -->
+        <div id="introvideo" class="relative">
+          <div class="rounded-2xl overflow-hidden shadow-glow ring-1 ring-brand-500/20" data-tilt data-tilt-max="8" data-tilt-glare="true" data-tilt-max-glare="0.25">
+            <video class="w-full h-64 sm:h-80 object-cover" playsinline controls poster="https://images.unsplash.com/photo-1600959907703-125ba1374a12?q=80&w=1200&auto=format&fit=crop">
+              <!-- TODO: replace with your brand intro video URL -->
+              <source src="" type="video/mp4">
+            </video>
           </div>
-          <h3 class="font-semibold">Education</h3>
-          <p class="mt-2 text-slate-600">We invest in patient education and professional training.</p>
+          <div class="absolute -right-3 -bottom-3">
+            <lottie-player src="https://lottie.host/7a15b3a0-5afc-4a57-bce8-27994224b6c0/3k3XUbu8bM.json" background="transparent" speed="1" style="width: 100px; height: 100px" loop autoplay></lottie-player>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- TEAM (Vue lists) -->
-  <section id="team" class="py-20 bg-white">
-    <div class="max-w-6xl mx-auto px-4">
-      <h2 class="text-3xl sm:text-4xl font-bold text-center text-slate-900" data-aos="fade-up">Our People</h2>
-
-      <div class="mt-12">
-        <h3 class="text-xl font-semibold text-slate-800 mb-6">Founders</h3>
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          <article v-for="(p,idx) in founders" :key="'f-'+idx" class="p-6 rounded-2xl bg-white ring-1 ring-slate-200 shadow-sm" data-aos="zoom-in">
-            <img :src="p.photo" :alt="p.name" class="w-full h-48 object-cover rounded-xl">
-            <div class="mt-4">
-              <div class="font-semibold text-slate-900">{{ p.name }}</div>
-              <div class="text-sm text-primary">{{ p.title }}</div>
-              <p class="mt-2 text-sm text-slate-600">{{ p.bio }}</p>
-            </div>
-          </article>
+  <!-- ============================== STORY / MISSION ============================== -->
+  <section id="story" class="section py-12 md:py-16">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="glass rounded-2xl p-6 md:p-8" data-aos="fade-right">
+          <h2 class="font-display text-3xl md:text-4xl mb-3">Our Story</h2>
+          <p class="text-slate-300 leading-relaxed">
+            Founded with a promise: pure, ethical, and accessible care. From a small clinic to a trusted healthcare brand,
+            our journey has been powered by doctors, researchers, and pharmacists working together to deliver gentle yet
+            powerful remedies. Each product reflects meticulous sourcing, rigorous testing, and respect for people & planet.
+          </p>
+          <div class="mt-6 grid grid-cols-3 gap-3">
+            <img class="rounded-xl hover:opacity-90 transition" src="https://images.unsplash.com/photo-1515387784663-e2e29a23f69b?q=80&w=600&auto=format&fit=crop" alt="">
+            <img class="rounded-xl hover:opacity-90 transition" src="https://images.unsplash.com/photo-1580281657525-7e6b6fbf3f2b?q=80&w=600&auto=format&fit=crop" alt="">
+            <a class="relative group rounded-xl overflow-hidden" href="https://images.unsplash.com/photo-1503602642458-232111445657?q=80&w=1200&auto=format&fit=crop" data-gallery="story">
+              <img class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1503602642458-232111445657?q=80&w=600&auto=format&fit=crop" alt="">
+              <span class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 grid place-content-center transition">
+                <i class="fa-solid fa-magnifying-glass-plus text-white text-2xl"></i>
+              </span>
+            </a>
+          </div>
         </div>
-      </div>
-
-      <div class="mt-16">
-        <h3 class="text-xl font-semibold text-slate-800 mb-6">Doctors</h3>
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          <article v-for="(p,idx) in doctors" :key="'d-'+idx" class="p-6 rounded-2xl bg-white ring-1 ring-slate-200 shadow-sm" data-aos="fade-up">
-            <img :src="p.photo" :alt="p.name" class="w-full h-48 object-cover rounded-xl">
-            <div class="mt-4">
-              <div class="font-semibold text-slate-900">{{ p.name }}</div>
-              <div class="text-sm text-primary">{{ p.speciality }}</div>
-              <p class="mt-2 text-sm text-slate-600">{{ p.bio }}</p>
-            </div>
-          </article>
-        </div>
-      </div>
-
-      <div class="mt-16">
-        <h3 class="text-xl font-semibold text-slate-800 mb-6">Contributors &amp; Support</h3>
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          <article v-for="(p,idx) in helpers" :key="'h-'+idx" class="p-6 rounded-2xl bg-white ring-1 ring-slate-200 shadow-sm" data-aos="fade-up">
-            <img :src="p.photo" :alt="p.name" class="w-full h-48 object-cover rounded-xl">
-            <div class="mt-4">
-              <div class="font-semibold text-slate-900">{{ p.name }}</div>
-              <div class="text-sm text-primary">{{ p.role }}</div>
-              <p class="mt-2 text-sm text-slate-600">{{ p.bio }}</p>
-            </div>
-          </article>
+        <div class="glass rounded-2xl p-6 md:p-8" data-aos="fade-left">
+          <h2 class="font-display text-3xl md:text-4xl mb-3">Mission & Values</h2>
+          <ul class="space-y-3 text-slate-300">
+            <li class="flex gap-3"><i class="fa-solid fa-check text-brand-300 mt-1"></i> Doctor-led, science-supported formulations.</li>
+            <li class="flex gap-3"><i class="fa-solid fa-check text-brand-300 mt-1"></i> Clean labels, honest sourcing, sustainable packaging.</li>
+            <li class="flex gap-3"><i class="fa-solid fa-check text-brand-300 mt-1"></i> Compassionate care for families across ages.</li>
+            <li class="flex gap-3"><i class="fa-solid fa-check text-brand-300 mt-1"></i> Transparent education and responsible wellness.</li>
+          </ul>
+          <div class="mt-6 w-full h-2 rounded-full bg-slate-800">
+            <div id="progressBar" class="h-2 rounded-full bg-gradient-to-r from-brand-400 to-teal-400" style="width: 0%"></div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- IMPACT / STATS with Swiper -->
-  <section id="impact" class="py-20 bg-light/50">
-    <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
-      <div data-aos="fade-right">
-        <h2 class="text-3xl font-bold">Impact at a glance</h2>
-        <p class="mt-4 text-slate-700">We collaborate across clinics and communities to improve access and outcomes.</p>
-        <ul class="mt-6 space-y-3 text-slate-700">
-          <li class="flex items-start gap-3"><span class="mt-1 text-primary">◆</span> 120+ validated formulations</li>
-          <li class="flex items-start gap-3"><span class="mt-1 text-primary">◆</span> 25 research partnerships</li>
-          <li class="flex items-start gap-3"><span class="mt-1 text-primary">◆</span> 15 outreach programs annually</li>
-        </ul>
-      </div>
-      <div data-aos="fade-left">
-        <div class="swiper mySwiper rounded-3xl overflow-hidden ring-1 ring-slate-200">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1579154204601-01588f351e67?q=80&w=1200&auto=format&fit=crop" class="w-full h-80 object-cover" alt="Lab"/></div>
-            <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1504814532849-cff240bbc503?q=80&w=1200&auto=format&fit=crop" class="w-full h-80 object-cover" alt="Herbs"/></div>
-            <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?q=80&w=1200&auto=format&fit=crop" class="w-full h-80 object-cover" alt="Care"/></div>
+  <!-- ============================== FOUNDERS / TEAM ============================== -->
+  <section id="team" class="section py-12 md:py-16">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="font-display text-3xl md:text-4xl mb-8 text-center">Leadership & Team</h2>
+
+      <!-- Founders -->
+      <div class="grid sm:grid-cols-2 gap-6 mb-10">
+        <!-- Founder -->
+        <div class="glass rounded-2xl p-6 flex gap-4 items-center" data-aos="zoom-in" data-tilt>
+          <img class="w-20 h-20 rounded-xl object-cover" src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?q=80&w=400&auto=format&fit=crop" alt="Founder">
+          <div>
+            <h3 class="text-xl font-semibold">Dr. A. Founder</h3>
+            <p class="text-slate-400 text-sm">Founder & CEO • Homeopathic Physician</p>
+            <p class="text-slate-300 text-sm mt-1">Leads product strategy & clinical validation with 15+ years experience.</p>
           </div>
+        </div>
+        <!-- Co-Founder -->
+        <div class="glass rounded-2xl p-6 flex gap-4 items-center" data-aos="zoom-in" data-aos-delay="100" data-tilt>
+          <img class="w-20 h-20 rounded-xl object-cover" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=400&auto=format&fit=crop" alt="Co-Founder">
+          <div>
+            <h3 class="text-xl font-semibold">Ms. B. Co-Founder</h3>
+            <p class="text-slate-400 text-sm">Co-Founder • Ops & Sustainability</p>
+            <p class="text-slate-300 text-sm mt-1">Oversees ethical sourcing, quality systems and green packaging.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Doctors / Workers / Contributors / Helpers Carousels -->
+      <div class="swiper team-swiper">
+        <div class="swiper-wrapper">
+          <!-- Repeatable team card -->
+          <div class="swiper-slide">
+            <div class="glass rounded-xl p-5 h-full" data-tilt>
+              <div class="flex items-center gap-4">
+                <img class="w-16 h-16 rounded-lg object-cover" src="https://images.unsplash.com/photo-1550831107-1553da8c8464?q=80&w=300&auto=format&fit=crop" alt="Doctor">
+                <div>
+                  <div class="font-semibold">Dr. C. Specialist</div>
+                  <div class="text-xs text-slate-400">MD (Hom.), Clinical Research</div>
+                </div>
+              </div>
+              <p class="text-sm mt-3 text-slate-300">Focus on dermatology & chronic care with patient-centric protocols.</p>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="glass rounded-xl p-5 h-full" data-tilt>
+              <div class="flex items-center gap-4">
+                <img class="w-16 h-16 rounded-lg object-cover" src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=300&auto=format&fit=crop" alt="Worker">
+                <div>
+                  <div class="font-semibold">Operations Lead</div>
+                  <div class="text-xs text-slate-400">Manufacturing</div>
+                </div>
+              </div>
+              <p class="text-sm mt-3 text-slate-300">GMP-compliant processes, zero-contamination workflows, batch traceability.</p>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="glass rounded-xl p-5 h-full" data-tilt>
+              <div class="flex items-center gap-4">
+                <img class="w-16 h-16 rounded-lg object-cover" src="https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?q=80&w=300&auto=format&fit=crop" alt="Contributor">
+                <div>
+                  <div class="font-semibold">Community Contributor</div>
+                  <div class="text-xs text-slate-400">Outreach</div>
+                </div>
+              </div>
+              <p class="text-sm mt-3 text-slate-300">Education drives and rural health camps supporting preventive care.</p>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="glass rounded-xl p-5 h-full" data-tilt>
+              <div class="flex items-center gap-4">
+                <img class="w-16 h-16 rounded-lg object-cover" src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?q=80&w=300&auto=format&fit=crop" alt="Helper">
+                <div>
+                  <div class="font-semibold">Clinic Helper</div>
+                  <div class="text-xs text-slate-400">Patient Care</div>
+                </div>
+              </div>
+              <p class="text-sm mt-3 text-slate-300">First-touch support, ensuring comfort & empathy across visits.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-5 flex items-center justify-between">
           <div class="swiper-pagination"></div>
+          <div class="flex gap-2">
+            <button class="team-prev p-2 rounded-lg border border-slate-700 hover:border-brand-400"><i class="fa-solid fa-arrow-left"></i></button>
+            <button class="team-next p-2 rounded-lg border border-slate-700 hover:border-brand-400"><i class="fa-solid fa-arrow-right"></i></button>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="py-20 bg-gradient-to-r from-primary to-accent text-white">
-    <div class="max-w-6xl mx-auto px-4 text-center">
-      <h2 class="text-3xl font-bold" data-aos="zoom-in">Join our mission</h2>
-      <p class="mt-3 text-white/90" data-aos="zoom-in" data-aos-delay="100">Partner with us for research, training, and community programs.</p>
-      <div class="mt-6">
-        <a href="#contact" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white text-primary font-semibold hover:opacity-90">Contact Us</a>
+  <!-- ============================== DOCTORS GRID ============================== -->
+  <section id="doctors" class="section py-12 md:py-16">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="font-display text-3xl md:text-4xl mb-8 text-center">Our Doctors</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <!-- 8 sample doctor cards -->
+        <!-- Use hover tilt + AOS -->
+        <!-- Repeat block -->
+        ${Array.from({length:8}).map((_,i)=>`
+        <div class="glass rounded-2xl p-5 text-center" data-aos="fade-up" data-tilt>
+          <img class="w-24 h-24 mx-auto rounded-xl object-cover" src="https://images.unsplash.com/photo-1550831107-1553da8c8464?q=80&w=400&auto=format&fit=crop" alt="Doctor ${i+1}">
+          <div class="mt-3 font-semibold">Dr. Specialist ${i+1}</div>
+          <div class="text-xs text-slate-400">Homeopathy • Wellness</div>
+          <div class="mt-2 text-sm text-slate-300">Holistic, safe, long-term relief plans tailored to you.</div>
+        </div>
+        `).join('')}
       </div>
     </div>
   </section>
 
-  <!-- CONTACT / FOOTER -->
-  <footer id="contact" class="py-16 bg-white border-t">
-    <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-3 gap-10">
+  <!-- ============================== IMPACT (Counters) ============================== -->
+  <section id="impact" class="section py-12 md:py-16 bg-slate-900/50">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="font-display text-3xl md:text-4xl mb-8 text-center">Our Impact</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="glass rounded-2xl p-6 text-center">
+          <div class="text-3xl font-extrabold" data-countup="120">0</div>
+          <div class="text-xs text-slate-400 mt-1">Clinics Partnered</div>
+        </div>
+        <div class="glass rounded-2xl p-6 text-center">
+          <div class="text-3xl font-extrabold" data-countup="50">0</div>
+          <div class="text-xs text-slate-400 mt-1">Doctors On Panel</div>
+        </div>
+        <div class="glass rounded-2xl p-6 text-center">
+          <div class="text-3xl font-extrabold" data-countup="95">0</div>
+          <div class="text-xs text-slate-400 mt-1">% Repeat Users</div>
+        </div>
+        <div class="glass rounded-2xl p-6 text-center">
+          <div class="text-3xl font-extrabold" data-countup="22">0</div>
+          <div class="text-xs text-slate-400 mt-1">States Served</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== TIMELINE ============================== -->
+  <section class="section py-12 md:py-16">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="font-display text-3xl md:text-4xl mb-8 text-center">Milestones</h2>
+      <div class="relative">
+        <div class="absolute left-4 md:left-1/2 top-0 bottom-0 w-1 bg-brand-700/40 rounded-full"></div>
+        <!-- items -->
+        <div class="space-y-8">
+          ${['Founded','First Clinic','GMP Facility','Doctor Network','Nationwide Reach'].map((label,idx)=>`
+          <div class="relative flex ${idx%2? 'md:justify-start':'md:justify-end'}">
+            <div class="w-full md:w-1/2 pl-12 md:pl-0">
+              <div class="glass rounded-2xl p-5 relative group" data-aos="${idx%2? 'fade-right':'fade-left'}">
+                <span class="absolute left-4 md:left-auto md:${idx%2? 'left-1/2 -translate-x-1/2':'right-1/2 translate-x-1/2'} -top-3 w-6 h-6 rounded-full bg-brand-400 ring-4 ring-slate-900"></span>
+                <div class="text-xs text-brand-300/90">${2010+idx}</div>
+                <div class="text-xl font-semibold">${label}</div>
+                <p class="text-slate-300 text-sm mt-1">A key moment in our growth with a focus on clean, effective care.</p>
+              </div>
+            </div>
+          </div>`).join('')}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== TESTIMONIALS ============================== -->
+  <section class="section py-12 md:py-16 bg-slate-900/40">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="font-display text-3xl md:text-4xl mb-8 text-center">What Patients Say</h2>
+
+      <div class="swiper testi-swiper">
+        <div class="swiper-wrapper">
+          ${[
+            {name:'Anita', msg:'Gentle & effective. My skin issues eased within weeks. Loved the guidance!'},
+            {name:'Rahul', msg:'Customer support was kind and quick. Great results for chronic cough.'},
+            {name:'Meera', msg:'Transparent ingredients & doctor follow-ups. Highly recommend.'},
+            {name:'Vikram', msg:'Fast relief without side effects. Smooth ordering & advice.'},
+            {name:'Sara', msg:'Holistic plan + lifestyle tips made a big difference.'}
+          ].map(t=>`
+          <div class="swiper-slide">
+            <div class="glass rounded-2xl p-6 h-full">
+              <div class="flex items-center gap-3">
+                <i class="fa-solid fa-quote-left text-brand-300 text-xl"></i>
+                <div class="font-semibold">${t.name}</div>
+              </div>
+              <p class="mt-3 text-slate-300">${t.msg}</p>
+              <div class="mt-4 text-xs text-slate-400">Verified Review</div>
+            </div>
+          </div>`).join('')}
+        </div>
+        <div class="mt-5 flex items-center justify-between">
+          <div class="swiper-pagination"></div>
+          <div class="flex gap-2">
+            <button class="testi-prev p-2 rounded-lg border border-slate-700 hover:border-brand-400"><i class="fa-solid fa-arrow-left"></i></button>
+            <button class="testi-next p-2 rounded-lg border border-slate-700 hover:border-brand-400"><i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== FAQ ============================== -->
+  <section id="faq" class="section py-12 md:py-16">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="font-display text-3xl md:text-4xl mb-8 text-center">FAQs</h2>
+      <div class="max-w-3xl mx-auto space-y-4">
+        ${[
+          ['Is homeopathy safe for long-term use?', 'Yes, when supervised by a qualified physician. Our products are crafted under GMP with clean labels. Always follow recommended guidance.'],
+          ['Can I take homeopathic and allopathic medicines together?', 'Often yes, but tell your doctor about everything you take. We design integrative plans and watch for interactions.'],
+          ['How soon will I see results?', 'Some see relief in days; chronic issues may take longer. Root-cause healing is steady, sustainable, and personalized.'],
+          ['Are your products lab-tested?', 'Every batch is tested for identity, purity, and potency. We maintain transparent records and traceability.'],
+          ['Do you ship across India?', 'Yes, we serve most pin codes with temperature-aware packaging and timely support.']
+        ].map((f, i)=>`
+        <details class="glass rounded-xl p-5" data-aos="fade-up" ${i===0?'open':''}>
+          <summary class="cursor-pointer font-semibold text-brand-200">${i+1}. ${f[0]}</summary>
+          <p class="mt-3 text-slate-300">${f[1]}</p>
+        </details>`).join('')}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== CALL TO ACTION ============================== -->
+  <section id="contact" class="section py-12 md:py-16">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <div class="glass rounded-2xl p-8 relative overflow-hidden">
+        <div class="absolute -right-10 -top-10 w-40 h-40 bg-brand-500/10 rounded-full animate-floaty"></div>
+        <div class="absolute -left-12 -bottom-12 w-52 h-52 bg-teal-500/10 rounded-full animate-floatySlow"></div>
+
+        <h2 class="font-display text-3xl md:text-4xl">Talk to a Care Guide</h2>
+        <p class="mt-2 text-slate-300">Message us on WhatsApp or call our helpline for quick, friendly support.</p>
+        <div class="mt-5 flex flex-wrap justify-center gap-3">
+          <a class="btn px-5 py-3 rounded-xl gradient-cta text-slate-900 font-semibold shadow-glow" href="https://wa.me/9120227101" target="_blank">
+            <i class="fa-brands fa-whatsapp mr-2"></i> WhatsApp
+          </a>
+          <a class="btn px-5 py-3 rounded-xl border border-slate-700 hover:border-brand-400 hover:text-brand-300" href="tel:9120227101">
+            <i class="fa-solid fa-phone mr-2"></i> Call Now
+          </a>
+          <a class="btn px-5 py-3 rounded-xl border border-slate-700 hover:border-brand-400 hover:text-brand-300" href="mailto:info@medstore.com">
+            <i class="fa-solid fa-envelope mr-2"></i> Email Us
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== FOOTER ============================== -->
+  <footer class="mt-10 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 py-8 grid md:grid-cols-4 gap-6">
       <div>
         <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-full ring-2 ring-primary ring-offset-2 ring-offset-white flex items-center justify-center bg-white overflow-hidden">
-            <!-- You can reuse your SVG here too -->
-            <svg viewBox="0 0 64 64" class="w-7 h-7" xmlns="http://www.w3.org/2000/svg"><circle cx="32" cy="32" r="20" fill="var(--primary-green)" opacity=".2"/><path d="M20 32h24" stroke="var(--primary-green)" stroke-width="4"/></svg>
-          </div>
-          <span class="font-semibold">Herbal Biologische</span>
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-400 to-teal-500 text-slate-900 flex items-center justify-center font-extrabold">HB</div>
+          <div class="font-semibold">Herbal Biologische</div>
         </div>
-        <p class="mt-3 text-sm text-slate-600">Evidence-based natural medicine for all.</p>
+        <p class="text-slate-400 text-sm mt-3">Doctor-led care, crafted with integrity and science.</p>
       </div>
       <div>
-        <h4 class="font-semibold mb-3">Reach us</h4>
-        <ul class="space-y-2 text-sm text-slate-700">
-          <li>Email: hello@example.com</li>
-          <li>Phone: +91-00000-00000</li>
-          <li>Address: Bhubaneswar, Odisha</li>
+        <div class="font-semibold mb-3">Company</div>
+        <ul class="space-y-2 text-sm text-slate-400">
+          <li><a href="#story" class="hover:text-brand-300">Our Story</a></li>
+          <li><a href="#team" class="hover:text-brand-300">Team</a></li>
+          <li><a href="#impact" class="hover:text-brand-300">Impact</a></li>
+          <li><a href="#faq" class="hover:text-brand-300">FAQ</a></li>
         </ul>
       </div>
       <div>
-        <h4 class="font-semibold mb-3">Quick links</h4>
-        <ul class="space-y-2 text-sm text-slate-700">
-          <li><a href="#about" class="hover:text-primary">About</a></li>
-          <li><a href="#team" class="hover:text-primary">Team</a></li>
-          <li><a href="#impact" class="hover:text-primary">Impact</a></li>
+        <div class="font-semibold mb-3">Help</div>
+        <ul class="space-y-2 text-sm text-slate-400">
+          <li><a href="#contact" class="hover:text-brand-300">Support</a></li>
+          <li><a href="#" class="hover:text-brand-300" data-clipboard-text="info@medstore.com">Copy Email</a></li>
         </ul>
+      </div>
+      <div>
+        <div class="font-semibold mb-3">Follow</div>
+        <div class="flex gap-3 text-slate-400">
+          <a class="hover:text-brand-300" href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a class="hover:text-brand-300" href="#"><i class="fa-brands fa-facebook"></i></a>
+          <a class="hover:text-brand-300" href="#"><i class="fa-brands fa-linkedin"></i></a>
+        </div>
       </div>
     </div>
-    <div class="mt-10 text-center text-xs text-slate-500">© <span id="yearSpan"></span> Herbal Biologische Pharmaceuticals</div>
+    <div class="text-center text-xs text-slate-500 py-4 border-t border-slate-800">
+      © <span id="year"></span> Herbal Biologische Pharmaceuticals Private Limited. All rights reserved.
+    </div>
   </footer>
-</div>
 
-<!-- JS: Bootstrap -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- ============================== SCRIPTS / INIT ============================== -->
+  <script>
+    // Smooth scroll with Lenis
+    const lenis = new Lenis({ lerp: 0.08, smoothWheel: true, wheelMultiplier: 0.9 });
+    function raf(time){ lenis.raf(time); requestAnimationFrame(raf); }
+    requestAnimationFrame(raf);
 
-<script>
-  const App = {
-    data(){
-      return {
-        mobileOpen:false,
-        founders:[
-          { name:'A. Sharma', title:'Founder & CEO', photo:'https://images.unsplash.com/photo-1544006659-f0b21884ce1d?q=80&w=800&auto=format&fit=crop', bio:'Leads strategy and research partnerships.' },
-          { name:'B. Gupta', title:'Co‑Founder & COO', photo:'https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?q=80&w=800&auto=format&fit=crop', bio:'Operations, quality, and compliance.' },
-          { name:'C. Iyer', title:'Co‑Founder & CTO', photo:'https://images.unsplash.com/photo-1544723795-3fb6469f5b39?q=80&w=800&auto=format&fit=crop', bio:'Technology, data, and product.' }
-        ],
-        doctors:[
-          { name:'Dr. Meera N.', speciality:'Ayurveda (MD)', photo:'https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=800&auto=format&fit=crop', bio:'Chronic care protocols.' },
-          { name:'Dr. R. Khan', speciality:'Homeopathy (BHMS)', photo:'https://images.unsplash.com/photo-1542131596-dea5384842c1?q=80&w=800&auto=format&fit=crop', bio:'Integrative therapeutics.' },
-          { name:'Dr. S. Patil', speciality:'Nutrition', photo:'https://images.unsplash.com/photo-1546421845-6471bdcf3edf?q=80&w=800&auto=format&fit=crop', bio:'Dietary frameworks.' }
-        ],
-        helpers:[
-          { name:'Priya Das', role:'Sr. Pharmacist', photo:'https://images.unsplash.com/photo-1554151228-14d9def656e4?q=80&w=800&auto=format&fit=crop', bio:'Dispensing & QA.' },
-          { name:'Arun J.', role:'Community Lead', photo:'https://images.unsplash.com/photo-1552053831-71594a27632d?q=80&w=800&auto=format&fit=crop', bio:'Outreach programs.' },
-          { name:'Kalpana R.', role:'Clinic Manager', photo:'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=800&auto=format&fit=crop', bio:'Patient experience.' }
-        ]
-      }
-    },
-    mounted(){
-      // Year
-      document.getElementById('yearSpan').textContent = new Date().getFullYear();
+    // AOS
+    document.addEventListener('DOMContentLoaded', () => AOS.init({ duration: 800, once: true, offset: 100 }));
 
-      // AOS
-      AOS.init({ once:true, duration:700, easing:'ease-out-cubic' });
-
-      // Swiper
-      new Swiper('.mySwiper', { pagination: { el: '.swiper-pagination', clickable: true }, loop:true, autoplay:{ delay: 3000 } });
-
-      // GSAP
-      gsap.from('#heroTitle', { y: 30, opacity: 0, duration: 0.9, ease: 'power2.out' });
-      gsap.utils.toArray('[data-aos]'); // keep gsap loaded for future custom effects
-
-      // Smooth scroll (Lenis)
-      const lenis = new Lenis({ lerp:0.08 });
-      function raf(time){ lenis.raf(time); requestAnimationFrame(raf) } requestAnimationFrame(raf);
-
-      // Pause video when modal closes
-      const modalEl = document.getElementById('introVideoModal');
-      modalEl.addEventListener('hidden.bs.modal', () => {
-        const v = document.getElementById('introVideo'); if (v) v.pause();
+    // Typed.js (hero subtitle) - 30+ micro animations via type & GSAP reveals
+    document.addEventListener('DOMContentLoaded', () => {
+      new Typed('#typed', {
+        strings: ['Homeopathy • Herbal • Doctor-Led', 'Clean • Safe • Compassionate', 'Nature • Science • Care'],
+        typeSpeed: 35, backSpeed: 16, loop: true, backDelay: 1500, smartBackspace: true
       });
-    },
-    methods:{
-      scrollTo(id){
-        document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
+    });
+
+    // tsParticles (leaf dust magic)
+    tsParticles.load("particles", {
+      background: { color: "transparent" },
+      fpsLimit: 60,
+      particles: {
+        number: { value: 40, density: { enable: true, area: 800 } },
+        color: { value: ["#34d399","#10b981","#06b6d4"] },
+        links: { enable: false },
+        move: { enable: true, speed: 0.7, direction: "none", outModes: { default: "out" } },
+        opacity: { value: 0.35 },
+        size: { value: { min: 1, max: 3 } },
+        shape: { type: "circle" }
+      },
+      detectRetina: true
+    });
+
+    // Swipers (team + testimonials)
+    const teamSwiper = new Swiper('.team-swiper', {
+      slidesPerView: 1.15, spaceBetween: 14,
+      breakpoints: { 640: { slidesPerView: 2 }, 1024: { slidesPerView: 3 } },
+      pagination: { el: '.team-swiper .swiper-pagination', clickable: true },
+      navigation: { nextEl: '.team-next', prevEl: '.team-prev' },
+      loop: true, autoplay: { delay: 3000, disableOnInteraction: false }
+    });
+
+    const testiSwiper = new Swiper('.testi-swiper', {
+      slidesPerView: 1.1, spaceBetween: 14,
+      breakpoints: { 640: { slidesPerView: 2 }, 1024: { slidesPerView: 3 } },
+      pagination: { el: '.testi-swiper .swiper-pagination', clickable: true },
+      navigation: { nextEl: '.testi-next', prevEl: '.testi-prev' },
+      loop: true, autoplay: { delay: 3500, disableOnInteraction: false }
+    });
+
+    // CountUp KPIs (hero + impact)
+    const counters = document.querySelectorAll('[data-countup]');
+    const observer = new IntersectionObserver(entries=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          const el = entry.target;
+          const val = parseInt(el.getAttribute('data-countup')||'0',10);
+          const c = new countUp.CountUp(el, val, { duration: 1.6, separator: ',' });
+          if(!c.error) c.start();
+          observer.unobserve(el);
+        }
+      });
+    }, { threshold: .4 });
+    counters.forEach(c=>observer.observe(c));
+
+    // GSAP title split + reveal (30 subtle motions total across headers)
+    document.addEventListener('DOMContentLoaded', ()=>{
+      const split = new SplitType('#title', { types: 'words' });
+      gsap.from(split.words, { opacity:0, y:20, stagger:.05, duration:.6, ease:'power2.out' });
+    });
+
+    // Progress Bar animation (Mission progress)
+    const pb = document.querySelector('#progressBar');
+    if (pb) {
+      let done = false;
+      const pbObs = new IntersectionObserver(([ent])=>{
+        if(ent.isIntersecting && !done){
+          anime({ targets: '#progressBar', width: '100%', duration: 2200, easing: 'easeInOutQuart' });
+          done = true; pbObs.disconnect();
+        }
+      }, { threshold: .4 });
+      pbObs.observe(pb);
     }
-  };
-  Vue.createApp(App).mount('#app');
-</script>
+
+    // Parallax seeds (Rellax)
+    new Rellax('.seed', { speed: -2, center: true });
+
+    // Tilt on cards
+    VanillaTilt.init(document.querySelectorAll('[data-tilt]'), { max: 10, speed: 400, glare: true, 'max-glare': .25 });
+
+    // Image lightbox (story gallery)
+    baguetteBox.run('[data-gallery="story"]');
+
+    // Tooltip examples
+    tippy('[data-tooltip]', { theme: 'light', animation: 'shift-away', delay: [150, 0] });
+
+    // Vivus example (inline SVG line animation) — optional if you add an inline SVG with id="sig"
+    // new Vivus('sig', { duration: 150, type: 'delayed' });
+
+    // Clipboard (copy email in footer)
+    new ClipboardJS('[data-clipboard-text]');
+
+    // Micromodal (for future content if needed)
+    MicroModal.init();
+
+    // Footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Small GSAP scroll reveals for sections to add richness (top ~30 micro-animations)
+    gsap.utils.toArray('.section h2').forEach((h, i)=>{
+      gsap.from(h, { scrollTrigger: { trigger: h, start: 'top 85%' }, y: 20, opacity: 0, duration: .6, ease: 'power2.out', delay: i*.03 });
+    });
+    gsap.utils.toArray('.glass').forEach((card, i)=>{
+      gsap.from(card, { scrollTrigger: { trigger: card, start: 'top 85%' }, y: 18, opacity: 0, duration: .5, ease: 'power2.out', delay: (i%10)*.02 });
+    });
+  </script>
+
 </body>
 </html>
-b
