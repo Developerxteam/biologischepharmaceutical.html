@@ -197,151 +197,278 @@
    Data – add all your meds here
    ------------------------------- */
 const meds = [
-  { 
-    id:1, 
-    name:"Cyston Drops", 
-    brand:"Herbal Biologische Pharmaceuticals Private Limited", 
-    price:200, 
-    mfg:"Jan 2023", 
-    exp:"Jan 2025", 
-    desc:"For Renal Stone And Colic", 
-    composition:"BERBERIS VULGARIS Q HPI 1 ml; CANTHARIS 3X HPI 0.5 ml; SARSAPARILLA Q 0.5 ml; SOLIDAGO VIRGAUREA Q 0.5 ml; AQUA DISTILLED BASE", 
-    effective:"Relieves kidney stone pain, burning during urination, and urinary discomfort", 
-    dosage:"15-20 drops in half cup of water, 4 times a day or as directed by physician", 
-    precautions:"Keep away from children; avoid during pregnancy; consult your doctor if symptoms persist", 
-    manufacturer:"Biologische Pharmaceuticals, Lucknow", 
-    image:"https://i.postimg.cc/jdHbc7NV/Screenshot-2025-08-11-at-10-12-43-PM.png", 
-    badge:"Best Seller", 
-    keywords:["Fever","Headache","Renal Stone","Kidney Stone Pain"] 
+  {
+    id: 1,
+    name: "Cyston Drops",
+    brand: "Herbal Biologische Pharmaceuticals Private Limited",
+    price: 200,
+    mfg: "2025",
+    exp: "2030",
+    desc: "For Renal Stone And Colic",
+    composition: `Each 5ml. Contains
+BERBERIS VULGARIS Q HPI 1 ml.
+CANTHARIS 3X HPI 0.5 ml.
+HYDRANGEA ARBORESCENS Q HPI 0.5 ml.
+OCIMUM CANUM Q HPI 0.5 ml.
+PAREIRA BRAVA Q HPI 0.5 ml.
+SENECIO AUREUS Q HPI 0.5 ml.
+SOLIDAGO VIRGAUREA Q HPI 0.5 ml.
+SARSAPARILLA Q HPI 0.5 ml.
+ALCOHOLIC CONTENT 50.04% v/v
+EXCIPIENT qs`,
+    effective: "Kidney stone pain, discomfort during urination",
+    dosage: `BIOLOGISCHE PHARMACEUTICALS
+B-39, Kisan Market, Vikalp Khand-1, Gomti Nagar, Lucknow-206010`,
+    precautions: `Keep away from direct sunlight
+* Keep out of the reach of children
+* Do not use if seal is broken off or missing
+KEEP IN A COOL & DARK PLACE`,
+    manufacturer: `Dr.Patels Homoeopathic Medicines Limited
+Plot No.: 738, Gurukrupa Ind. Estate,
+Manjusra, TA Savli Dist-Vadodara Gujarat-391775`,
+    image: "https://i.postimg.cc/jdHbc7NV/Screenshot-2025-08-11-at-10-12-43-PM.png",
+    badge: "Best Seller",
+    keywords: ["Fever", "Headache", "Renal Stone", "Kidney Stone Pain"]
   },
-  { 
-    id:2, 
-    name:"Spon-dy Drops", 
-    brand:"Herbal Biologische Pharmaceuticals Private Limited", 
-    price:120, 
-    mfg:"Jun 2022", 
-    exp:"Dec 2024", 
-    desc:"For Spondylitis", 
-    composition:"COLOCYNTHIS 3X; CONIUM 3X; RUTA GRAVEOLENS 3X; CALC FLUOR 6X; AQUA BASE", 
-    effective:"Supports relief from spondylitis, neck stiffness, and chronic back pain", 
-    dosage:"15 drops in half cup water, 3 times daily or as directed", 
-    precautions:"Avoid self-medication; not recommended for children under 12", 
-    manufacturer:"Dr. Patels Homoeopathic Medicines", 
-    image:"https://i.postimg.cc/6qynfKTq/Screenshot-2025-08-11-at-10-54-42-PM.png", 
-    badge:"20% OFF", 
-    keywords:["Back Pain","Joint Pain","Spondylitis"] 
+  {
+    id: 2,
+    name: "Spon-dy Drops",
+    brand: "Herbal Biologische Pharmaceuticals Private Limited",
+    price: 120,
+    mfg: "2025",
+    exp: "2030",
+    desc: "For Spondylitis",
+    composition: `Each 5ml. Contains
+COLOCYNTHIS 3X HPI 0.4 ml.
+CONIUM MACULATUM 3X HPI 0.4 ml.
+CUPRUM METALLICUM 8X HPI 0.8 ml.
+DULCAMARA 3X HPI 0.8 ml.
+HYPERICUM PERFORATUM 3X HPI 0.4 ml.
+LEDUMPALUSTRE 2X HPI 0.8 ml.
+RUTA GRAVEOLENS 3X HPI 0.4 ml.
+ALCOHOLIC CONTENT 68.64% v/v
+EXCIPIENT qs`,
+    effective: "Spondylitis, joint pain",
+    dosage: `BIOLOGISCHE PHARMACEUTICALS
+B-39, Kisan Market, Vikalp Khand-1, Gomti Nagar, Lucknow-206010`,
+    precautions: `Keep away from direct sunlight
+* Keep out of the reach of children
+* Do not use if seal is broken off or missing
+KEEP IN A COOL & DARK PLACE`,
+    manufacturer: `Dr.Patels Homoeopathic Medicines Limited
+Plot No.: 738, Gurukrupa Ind. Estate,
+Manjusra, TA Savli Dist-Vadodara Gujarat-391775`,
+    image: "https://i.postimg.cc/6qynfKTq/Screenshot-2025-08-11-at-10-54-42-PM.png",
+    badge: "20% OFF",
+    keywords: ["Back Pain", "Joint Pain", "Spondylitis"]
   },
-  { 
-    id:3, 
-    name:"D-Skin-Care", 
-    brand:"Herbal Biologische Pharmaceuticals Private Limited", 
-    price:120, 
-    mfg:"Jun 2022", 
-    exp:"Dec 2024", 
-    desc:"For Fungal Infection", 
-    composition:"GRAPHITES 3X; SULPHUR 3X; ARSENICUM ALBUM 3X; AQUA BASE", 
-    effective:"Relieves itching, fungal infections, and improves skin healing", 
-    dosage:"Apply externally or take orally as per doctor's advice", 
-    precautions:"For external use avoid contact with eyes; if taken orally follow prescribed dose", 
-    manufacturer:"Biologische Pharmaceuticals, Lucknow", 
-    image:"https://i.postimg.cc/KY01qW6M/Screenshot-2025-08-11-at-10-56-18-PM.png", 
-    keywords:["Fungal Infection","Itching"] 
+  {
+    id: 3,
+    name: "D-Skin-Care",
+    brand: "Herbal Biologische Pharmaceuticals Private Limited",
+    price: 120,
+    mfg: "2025",
+    exp: "2030",
+    desc: "For Fungal Infection",
+    composition: `Each 5ml. Contains
+BACILLINUM 200 HPI 0.4 ml.
+SULPHUR 6 HPI 0.4 ml.
+SEPIA 6 HPI 0.8 ml.
+CALCAREA CARBONICA 6 HPI 0.8 ml.
+TELLURIUM 6 HPI 1.6 ml.
+ALCOHOLIC CONTENT 72.8% v/v
+EXCIPIENT qs`,
+    effective: "Fungal skin infections, itching",
+    dosage: `BIOLOGISCHE PHARMACEUTICALS
+B-39, Kisan Market, Vikalp Khand-1, Gomti Nagar, Lucknow-206010`,
+    precautions: `Keep away from direct sunlight
+* Keep out of the reach of children
+* Do not use if seal is broken off or missing
+KEEP IN A COOL & DARK PLACE`,
+    manufacturer: `Dr.Patels Homoeopathic Medicines Limited
+Plot No.: 738, Gurukrupa Ind. Estate,
+Manjusra, TA Savli Dist-Vadodara Gujarat-391775`,
+    image: "https://i.postimg.cc/KY01qW6M/Screenshot-2025-08-11-at-10-56-18-PM.png",
+    keywords: ["Fungal Infection", "Itching"]
   },
-  { 
-    id:4, 
-    name:"Super Vigo 3 Gold Drops", 
-    brand:"Herbal Biologische Pharmaceuticals Private Limited", 
-    price:120, 
-    mfg:"Jun 2022", 
-    exp:"Dec 2024", 
-    desc:"For Accelerating Sex Drive", 
-    composition:"DAMINA 3X; TRIBULUS TERRESTRIS Q; ALOE SOCOTRINA 3X; AQUA BASE", 
-    effective:"Improves stamina, vitality, and male sexual performance", 
-    dosage:"15-20 drops in water twice daily or as advised", 
-    precautions:"Not for use by individuals under 18; avoid if hypertensive without medical advice", 
-    manufacturer:"Biologische Pharmaceuticals, Lucknow", 
-    image:"https://i.postimg.cc/PrbmHT0G/Screenshot-2025-08-11-at-10-57-42-PM.png", 
-    keywords:["Sex Health","Premature Ejaculation"] 
+  {
+    id: 4,
+    name: "Super Vigo 3 Gold Drops",
+    brand: "Herbal Biologische Pharmaceuticals Private Limited",
+    price: 120,
+    mfg: "2025",
+    exp: "2030",
+    desc: "For Accelerating Sex Drive",
+    composition: `Each 5ml. Contains
+DAMIANA Q HPI 1 ml.
+GINSENG Q HPI 1 ml.
+AGNUS CASTUS Q HPI 1 ml.
+NUPHAR LUTEA 2X HPI 1 ml.
+MUIRA PUAMA Q HPI 1 ml.
+ALCOHOLIC CONTENT 68.64% v/v
+EXCIPIENT qs`,
+    effective: "Sex health, vitality support",
+    dosage: `BIOLOGISCHE PHARMACEUTICALS
+B-39, Kisan Market, Vikalp Khand-1, Gomti Nagar, Lucknow-206010`,
+    precautions: `Keep away from direct sunlight
+* Keep out of the reach of children
+* Do not use if seal is broken off or missing
+KEEP IN A COOL & DARK PLACE`,
+    manufacturer: `Dr.Patels Homoeopathic Medicines Limited
+Plot No.: 738, Gurukrupa Ind. Estate,
+Manjusra, TA Savli Dist-Vadodara Gujarat-391775`,
+    image: "https://i.postimg.cc/PrbmHT0G/Screenshot-2025-08-11-at-10-57-42-PM.png",
+    keywords: ["Sex Health", "Premature Ejaculation"]
   },
-  { 
-    id:5, 
-    name:"Biologsce Coffez", 
-    brand:"Herbal Biologische Pharmaceuticals Private Limited", 
-    price:120, 
-    mfg:"Jun 2022", 
-    exp:"Dec 2024", 
-    desc:"Cold & Cough Syrup", 
-    composition:"BRYONIA ALBA 3X; IPECAC 3X; SPONGIA TOSTA 3X; AQUA BASE", 
-    effective:"Relieves dry and productive cough, throat irritation, and cold symptoms", 
-    dosage:"1 teaspoon 3-4 times a day or as directed", 
-    precautions:"Shake well before use; avoid chilled drinks during course", 
-    manufacturer:"Biologische Pharmaceuticals, Lucknow", 
-    image:"https://i.postimg.cc/zXM1JYhj/Screenshot-2025-08-11-at-11-01-16-PM.png", 
-    keywords:["Cough","Cold"] 
+  {
+    id: 5,
+    name: "Biologsce Coffez",
+    brand: "Herbal Biologische Pharmaceuticals Private Limited",
+    price: 120,
+    mfg: "2025",
+    exp: "2030",
+    desc: "Cold & Cough Syrup",
+    composition: `Each 5ml. Contains
+ACONITUM NAPELLUS 3X HPI 0.025 ml.
+JUSTICIA ADHATODA Q HPI 0.1 ml.
+DROSERA ROTUNDIFOLIA Q HPI 0.1 ml.
+IPECACUANHA 3X HPI 0.025 ml.
+OCIMUM SANCTUM Q HPI 0.1 ml.
+GELSEMIUM SEMPERVIRENS 3X HPI 0.05 ml.
+ALLIUM CEPA 3X HPI 0.05 ml.
+KALI SULPHURICUM 6 HPI 0.025 ml.
+KALI PHOSPHORICUM 6 HPI 0.025 ml.
+MAGNESIUM PHOSPHORICUM 6 HPI 0.025 ml.
+ALCOHOLIC CONTENT 7.78% v/v
+EXCIPIENT qs`,
+    effective: "Cough, cold relief",
+    dosage: `BIOLOGISCHE PHARMACEUTICALS
+B-39, Kisan Market, Vikalp Khand-1, Gomti Nagar, Lucknow-206010`,
+    precautions: `Keep away from direct sunlight
+* Keep out of the reach of children
+* Do not use if seal is broken off or missing
+KEEP IN A COOL & DARK PLACE`,
+    manufacturer: `Dr.Patels Homoeopathic Medicines Limited
+Plot No.: 738, Gurukrupa Ind. Estate,
+Manjusra, TA Savli Dist-Vadodara Gujarat-391775`,
+    image: "https://i.postimg.cc/zXM1JYhj/Screenshot-2025-08-11-at-11-01-16-PM.png",
+    keywords: ["Cough", "Cold"]
   },
-  { 
-    id:6, 
-    name:"Alfalfa Health Supplement Tonic", 
-    brand:"Herbal Biologische Pharmaceuticals Private Limited", 
-    price:120, 
-    mfg:"Jun 2022", 
-    exp:"Dec 2024", 
-    desc:"Supplement tonic", 
-    composition:"ALFALFA Q; Avena Sativa Q; Cinchona Officinalis Q; AQUA BASE", 
-    effective:"Supports digestion, improves appetite, helps recovery from weakness", 
-    dosage:"1 tablespoon twice daily or as prescribed", 
-    precautions:"Not to be used as sole nutrition source; consult doctor for long-term use", 
-    manufacturer:"Biologische Pharmaceuticals, Lucknow", 
-    image:"https://i.postimg.cc/JzntF8L5/Screenshot-2025-08-11-at-10-59-13-PM.png", 
-    keywords:["Anemia","Digestion","Stress"] 
+  {
+    id: 6,
+    name: "Alfalfa Health Supplement Tonic",
+    brand: "Herbal Biologische Pharmaceuticals Private Limited",
+    price: 120,
+    mfg: "2025",
+    exp: "2030",
+    desc: "Supplement tonic",
+    composition: `Each 5ml. Contains
+ALFALFA Q HPI 0.15 ml.
+AVENA SATIVA Q HPI 0.1 ml.
+GINSENG Q HPI 0.05 ml.
+CINCHONA OFFICINALIS Q HPI 0.05 ml.
+HYDRASTIS CANADENSIS Q HPI 0.05 ml.
+KALI PHOSPHORICUM 6 HPI 0.025 ml.
+KALI ARSENICOSUM 6 HPI 0.025 ml.
+FERRUM ACETICUM 6 HPI 0.025 ml.
+CALCAREA PHOSPHORICA 6 HPI 0.025 ml.
+ALCOHOLIC CONTENT 7.27% v/v
+EXCIPIENT qs`,
+    effective: "Anemia, digestion, stress relief",
+    dosage: `BIOLOGISCHE PHARMACEUTICALS
+B-39, Kisan Market, Vikalp Khand-1, Gomti Nagar, Lucknow-206010`,
+    precautions: `Keep away from direct sunlight
+* Keep out of the reach of children
+* Do not use if seal is broken off or missing
+KEEP IN A COOL & DARK PLACE`,
+    manufacturer: `Dr.Patels Homoeopathic Medicines Limited
+Plot No.: 738, Gurukrupa Ind. Estate,
+Manjusra, TA Savli Dist-Vadodara Gujarat-391775`,
+    image: "https://i.postimg.cc/JzntF8L5/Screenshot-2025-08-11-at-10-59-13-PM.png",
+    keywords: ["Anemia", "Digestion", "Stress"]
   },
-  { 
-    id:7, 
-    name:"Homoeo Cali Tablet", 
-    brand:"Herbal Biologische Pharmaceuticals Private Limited", 
-    price:120, 
-    mfg:"Jun 2022", 
-    exp:"Dec 2024", 
-    desc:"Homeopathic calcium Supplement", 
-    composition:"CALCAREA PHOSPHORICA 3X; CALCAREA FLUORICA 3X", 
-    effective:"Helps in bone growth, teeth development, and calcium deficiency", 
-    dosage:"2 tablets 3 times daily or as prescribed", 
-    precautions:"Consult doctor for children under 5 years", 
-    manufacturer:"Biologische Pharmaceuticals, Lucknow", 
-    image:"https://i.postimg.cc/Sxh5DQbJ/Screenshot-2025-08-11-at-11-04-57-PM.png", 
-    keywords:["Calcium Deficiency","Bone Growth"] 
+  {
+    id: 7,
+    name: "Homoeo Cali Tablet",
+    brand: "Herbal Biologische Pharmaceuticals Private Limited",
+    price: 120,
+    mfg: "2025",
+    exp: "2030",
+    desc: "Homeopathic calcium Supplement",
+    composition: `All in equal proportion
+CALCAREA CARBONICA 3X HPI
+CALCAREA FLUORICA 3X HPI
+CALCAREA PHOSPHORICA 3X HPI
+SILICEA 6X HPI
+EXCIPIENT Q.S`,
+    effective: "Calcium deficiency, bone growth",
+    dosage: `BIOLOGISCHE PHARMACEUTICALS
+B-39, Kisan Market, Vikalp Khand-1, Gomti Nagar, Lucknow-206010`,
+    precautions: `Keep away from direct sunlight
+* Keep out of the reach of children
+* Do not use if seal is broken off or missing
+KEEP IN A COOL & DARK PLACE`,
+    manufacturer: `Dr.Patels Homoeopathic Medicines Limited
+Plot No.: 738, Gurukrupa Ind. Estate,
+Manjusra, TA Savli Dist-Vadodara Gujarat-391775`,
+    image: "https://i.postimg.cc/Sxh5DQbJ/Screenshot-2025-08-11-at-11-04-57-PM.png",
+    keywords: ["Calcium Deficiency", "Bone Growth"]
   },
-  { 
-    id:8, 
-    name:"Homoeo Pilex Tablet", 
-    brand:"Herbal Biologische Pharmaceuticals Private Limited", 
-    price:120, 
-    mfg:"Jun 2022", 
-    exp:"Dec 2024", 
-    desc:"For Piles & Fissures", 
-    composition:"HAMAMELIS VIRGINIANA 3X; AESCULUS HIPPOCASTANUM 3X; AQUA BASE", 
-    effective:"Relieves pain, itching, and bleeding associated with piles", 
-    dosage:"2 tablets 3 times daily or as directed", 
-    precautions:"Avoid spicy food during course", 
-    manufacturer:"Biologische Pharmaceuticals, Lucknow", 
-    image:"https://i.postimg.cc/DyVYwfZB/Screenshot-2025-08-11-at-11-06-05-PM.png", 
-    keywords:["Piles","Fissures"] 
+  {
+    id: 8,
+    name: "Homoeo Pilex Tablet",
+    brand: "Herbal Biologische Pharmaceuticals Private Limited",
+    price: 120,
+    mfg: "2025",
+    exp: "2030",
+    desc: "For Piles & Fissures",
+    composition: `All in equal proportion
+RATANHIA 3X HPI
+HAMAMELIS VIRGINICA 3X HPI
+AESCULUS HIPPOCASTANUM 3X HPI
+ALOE SOCOTRINA 3X HPI
+CALCAREA FLUORICA 3X HPI
+EXCIPIENT Q.S`,
+    effective: "Piles, fissures relief",
+    dosage: `BIOLOGISCHE PHARMACEUTICALS
+B-39, Kisan Market, Vikalp Khand-1, Gomti Nagar, Lucknow-206010`,
+    precautions: `Keep away from direct sunlight
+* Keep out of the reach of children
+* Do not use if seal is broken off or missing
+KEEP IN A COOL & DARK PLACE`,
+    manufacturer: `Dr.Patels Homoeopathic Medicines Limited
+Plot No.: 738, Gurukrupa Ind. Estate,
+Manjusra, TA Savli Dist-Vadodara Gujarat-391775`,
+    image: "https://i.postimg.cc/DyVYwfZB/Screenshot-2025-08-11-at-11-06-05-PM.png",
+    keywords: ["Piles", "Fissures"]
   },
-  { 
-    id:9, 
-    name:"Homoeo Loose Tablet", 
-    brand:"Herbal Biologische Pharmaceuticals Private Limited", 
-    price:90, 
-    mfg:"Apr 2023", 
-    exp:"Apr 2026", 
-    desc:"Allergy relief", 
-    composition:"ALLIUM CEPA 3X; SABADILLA 3X; EUPHRASIA OFFICINALIS 3X", 
-    effective:"Relieves sneezing, watery eyes, and seasonal allergies", 
-    dosage:"2 tablets every 4 hours or as needed", 
-    precautions:"Not to be taken on empty stomach; consult doctor for children under 6", 
-    manufacturer:"Biologische Pharmaceuticals, Lucknow", 
-    image:"https://i.postimg.cc/RZp7qGd4/Screenshot-2025-08-11-at-11-09-43-PM.png", 
-    keywords:["Allergy","Cold"] 
+  {
+    id: 9,
+    name: "Homoeo Loose Tablet",
+    brand: "Herbal Biologische Pharmaceuticals Private Limited",
+    price: 90,
+    mfg: "2025",
+    exp: "2030",
+    desc: "Allergy relief",
+    composition: `PHENOLPHTHALEINUM 3X HPI 80 mg.
+SULPHUR 3X HPI 20 mg.
+SEENA 1X HPI 50 mg.
+TERMINALIA CHEBULA 1X HPI 50 mg.
+EMBELICA OFFICINALIS 1X HPI 50 mg.
+RICINUS COMMUNIS 1X HPI 50 mg.
+EXCIPIENT Q.S.`,
+    effective: "Allergy, cold relief",
+    dosage: `BIOLOGISCHE PHARMACEUTICALS
+B-39, Kisan Market, Vikalp Khand-1, Gomti Nagar, Lucknow-206010`,
+    precautions: `Keep away from direct sunlight
+* Keep out of the reach of children
+* Do not use if seal is broken off or missing
+KEEP IN A COOL & DARK PLACE`,
+    manufacturer: `Dr.Patels Homoeopathic Medicines Limited
+Plot No.: 738, Gurukrupa Ind. Estate,
+Manjusra, TA Savli Dist-Vadodara Gujarat-391775`,
+    image: "https://i.postimg.cc/RZp7qGd4/Screenshot-2025-08-11-at-11-09-43-PM.png",
+    keywords: ["Allergy", "Cold"]
   }
 ];
 
