@@ -4,8 +4,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-  <title>Herbal Biologische Pharmaceuticals — Ayurvedic & Homeopathic Medicines</title>
-  <meta name="description" content="Herbal Biologische Pharmaceuticals Private Limited — premium ayurvedic & homeopathic medicines. Search by name or symptoms. Fast delivery and trusted quality." />
+  <title>Herbal Biologische Pharmaceuticals — Homeopathic Medicines</title>
+  <meta name="description" content="Herbal Biologische Pharmaceuticals Private Limited — Homeopathic Medicines. Search by name or symptoms." />
   <meta name="keywords" content="ayurvedic, herbal, homeopathic, medicines, drops, tablets, syrup, Lucknow pharmacy" />
   <meta name="theme-color" content="#065f46" />
   <link rel="canonical" href="https://www.example.com/"/>
@@ -16,7 +16,7 @@
 
   <!-- Open Graph -->
   <meta property="og:title" content="Herbal Biologische Pharmaceuticals" />
-  <meta property="og:description" content="Premium ayurvedic & homeopathic medicines. Search by name or symptoms." />
+  <meta property="og:description" content="Homeopathic Medicines. Search by name or symptoms." />
   <meta property="og:image" content="https://i.postimg.cc/KjKgRbRr/PHOTO-2025-08-11-19-50-41.jpg" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.example.com/" />
@@ -24,7 +24,7 @@
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image"/>
   <meta name="twitter:title" content="Herbal Biologische Pharmaceuticals"/>
-  <meta name="twitter:description" content="Premium ayurvedic & homeopathic medicines."/>
+  <meta name="twitter:description" content="Homeopathic Medicines."/>
   <meta name="twitter:image" content="https://i.postimg.cc/KjKgRbRr/PHOTO-2025-08-11-19-50-41.jpg"/>
 
   <!-- Fonts -->
@@ -111,8 +111,8 @@ body {
   <div class="w-full bg-gradient-to-r from-emerald-600 via-emerald-500 to-teal-500 text-black text-[13px] py-2">
     <div class="container mx-auto px-4 flex items-center gap-3 whitespace-nowrap overflow-x-auto">
       <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4"><path fill="currentColor" d="M12 2 1 21h22L12 2zm0 5 7.53 13H4.47L12 7z"/></svg>
-      <span class="font-semibold">Trusted Herbal & Homeopathic Range</span>
-      <span class="opacity-70">Customer Care:</span>
+      <span class="font-semibold"> Trusted Homeopathic Range </span>
+      <span class="opacity-70">Customer Care: </span>
       <a class="underline" :href="callLink">9120227101</a>
       <span class="opacity-70">WhatsApp Orders:</span>
       <a class="underline" :href="waLink" target="_blank">Open</a>
@@ -138,9 +138,9 @@ body {
           </div>
           <div class="leading-tight">
             <div class="font-bold tracking-wide" style="font-family:'Bebas Neue',cursive;letter-spacing:.5px;font-size:20px;">
-              Herbal Biologische Pharmaceuticals
+             Herbal Biologische Pharmaceuticals
             </div>
-            <div class="text-xs text-slate-300">Ayurvedic • Homeopathic</div>
+            <div class="text-xs text-slate-300"> Homeopathic </div>
           </div>
         </a>
       </div>
@@ -162,7 +162,9 @@ body {
       <div class="px-4 py-3 flex flex-col gap-2">
         <a href="#home" @click.prevent="scrollTo('home'); mobileNav=false" class="py-2">Home</a>
         <a href="#medicines" @click.prevent="scrollTo('medicines'); mobileNav=false" class="py-2">Medicines</a>
+        <a href="#contact" @click.prevent="scrollTo('contact'); mobileNav=false" class="py-2">Contact</a>
         <a href="#about" @click.prevent="scrollTo('about'); mobileNav=false" class="py-2">About</a>
+        <a href="#contact" @click.prevent="scrollTo('contact'); mobileNav=false" class="py-2">Contact</a>
         <a href="#contact" @click.prevent="scrollTo('contact'); mobileNav=false" class="py-2">Contact</a>
       </div>
     </div>
@@ -182,8 +184,8 @@ body {
                   <h1 class="text-2xl md:text-3xl font-bold">{{ s.title }}</h1>
                   <p class="mt-1 text-slate-300">{{ s.desc }}</p>
                   <div class="mt-3 flex gap-2">
-                    <a :href="s.link" target="_blank" class="px-4 py-2 rounded bg-emerald-500 text-black font-semibold hover:bg-emerald-400">Order Now</a>
-                    <a :href="s.altLink" target="_blank" class="px-4 py-2 rounded border border-slate-600 hover:bg-slate-700">Call</a>
+                    <a :href="s.link" target="_blank" class="px-4 py-2 rounded bg-emerald-500 text-black font-semibold hover:bg-emerald-400"> Order Now </a>
+                    <a :href="s.altLink" target="_blank" class="px-4 py-2 rounded border border-slate-600 hover:bg-slate-700"> Call </a>
                   </div>
                 </div>
               </div>
@@ -195,12 +197,12 @@ body {
 
       <!-- Search -->
       <aside class="bg-slate-800 glass rounded-xl p-4 shadow-soft" data-aos="fade-up" data-aos-delay="100">
-        <h2 class="text-xl font-bold">Find Medicines</h2>
+        <h2 class="text-xl font-bold"> Find Medicines </h2>
         <p class="text-slate-400 text-sm">Search by medicine name or symptoms.</p>
 
         <div class="flex gap-2 mt-2">
           <input v-model="query" @input="searchFuse" type="search" aria-label="Search"
-                 placeholder="e.g. Cyston, headache, fungal infection"
+                 placeholder="e.g.Cyston or Headache,Fungal Infection"
                  class="flex-1 px-4 py-3 rounded-full bg-slate-900 border border-slate-700 focus:outline-none focus:border-emerald-500" />
           <button @click="clearSearch" class="w-12 h-12 rounded-full bg-slate-700 flex items-center justify-center" aria-label="Clear">
             <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 18L18 6M6 6l12 12"/></svg>
@@ -216,7 +218,7 @@ body {
         </div>
 
         <div class="text-sm text-slate-300 mt-2">
-          <template v-if="filtered.length">Showing <strong class="text-emerald-300">{{ filtered.length }}</strong> result(s)</template>
+          <template v-if="filtered.length"> Showing <strong class="text-emerald-300">{{ filtered.length }}</strong> result(s)</template>
           <template v-else>No results — try a different term.</template>
         </div>
       </aside>
@@ -224,7 +226,7 @@ body {
 
     <!-- Medicines -->
     <section id="medicines" class="mt-8">
-      <h3 class="text-xl font-semibold mb-3">Medicines</h3>
+      <h3 class="text-xl font-semibold mb-3"> Medicines </h3>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         <article v-for="m in filtered" :key="m.id" class="bg-slate-800 glass rounded-xl p-4 shadow-soft group" data-aos="fade-up">
           <!-- image area -->
@@ -293,10 +295,10 @@ body {
         </svg>
       </div>
       <!-- Title -->
-      <h3 class="text-xl font-bold mb-3 text-gray-800">Treatments</h3>
+      <h3 class="text-xl font-bold mb-3 text-gray-800">Quality</h3>
       <!-- Description -->
       <p class="text-gray-600 mb-5 leading-relaxed">
-        Dr. Patel’s™ Clinic is highly rated for treatments like infertility, skin & hair, kidney stone, respiratory care, and more — combining ancient wisdom with modern expertise.
+       Medicines from our brand are crafted with unmatched care, combining the finest natural ingredients and strict quality control to ensure every drop delivers real healing.
       </p>
       <!-- Link -->
       <a href="#" class="inline-flex items-center gap-1 text-green-700 font-semibold hover:text-green-900 transition">
@@ -320,9 +322,9 @@ body {
           <path d="M14 15h7v4h-7z"></path>
         </svg>
       </div>
-      <h3 class="text-xl font-bold mb-3 text-gray-800">Homeopathy</h3>
+      <h3 class="text-xl font-bold mb-3 text-gray-800">Trust</h3>
       <p class="text-gray-600 mb-5 leading-relaxed">
-        Personalized, non-surgical treatments with zero side effects. Experience natural healing backed by doctor-guided online consultations for your unique needs.
+         Trusted by thousands of patients across the country, our homeopathic solutions have a track record of consistent, measurable results in both acute and chronic conditions.
       </p>
       <a href="#" class="inline-flex items-center gap-1 text-green-700 font-semibold hover:text-green-900 transition">
         Explore
@@ -344,9 +346,9 @@ body {
           <path d="M12 8v4l3 3"></path>
         </svg>
       </div>
-      <h3 class="text-xl font-bold mb-3 text-gray-800">Diseases Management</h3>
+      <h3 class="text-xl font-bold mb-3 text-gray-800">Support</h3>
       <p class="text-gray-600 mb-5 leading-relaxed">
-        From acne to anxiety, asthma to piles, vitiligo to migraine — we bring 10+ years of proven results in holistic healing for complex and chronic health conditions.
+         Our dedicated customer care team is here to assist you with guidance, follow-ups, and answers — making your healing journey smooth and stress-free.
       </p>
       <a href="#" class="inline-flex items-center gap-1 text-green-700 font-semibold hover:text-green-900 transition">
         Explore
@@ -369,7 +371,7 @@ body {
           <h2 class="text-2xl md:text-3xl font-bold">About Us</h2>
         </div>
         <p class="text-slate-300 leading-relaxed">
-          We are a trusted pharmaceutical company based in Lucknow, committed to producing high-quality herbal and homeopathic medicines backed by research and care.
+         We are a trusted pharmaceutical company based in Lucknow, committed to producing high-quality homeopathic medicines backed by research and care.
         </p>
         <a href="ab.html" class="inline-block mt-4 px-5 py-3 rounded-lg bg-emerald-600 text-white hover:bg-emerald-500">Read More</a>
       </div>
@@ -415,13 +417,14 @@ body {
             </linearGradient>
           </defs>
           <text x="0" y="82" font-family="Poppins,system-ui" font-weight="700"
-                font-size="80" fill="url(#g1)">Customer Reviews</text>
+                font-size="80" fill="url(#g1)"> Customer Reviews </text>
         </svg>
         <!-- rating chip -->
-        <span class="testi-chip px-3 py-1 rounded-full text-sm font-semibold shadow">
+        
+        <!--  <span class="testi-chip px-3 py-1 rounded-full text-sm font-semibold shadow">
           4.8/5 • 2,400+ verified
         </span>
-      </div>
+      </div> --
 
       <!-- underline svg -->
       <svg width="160" height="10" class="mx-auto mt-3" aria-hidden="true">
@@ -429,7 +432,7 @@ body {
       </svg>
 
       <p class="text-green-100 max-w-2xl mx-auto mt-3">
-        Real stories from patients who chose our Ayurvedic & Homeopathic care.
+        What Our Customers Say's ?
       </p>
     </div>
 
@@ -449,7 +452,7 @@ body {
               </svg>
               <div>
                 <h4 class="font-semibold leading-tight">Ananya Khanna</h4>
-                <p class="text-xs text-slate-300">Mumbai, India</p>
+                <p class="text-xs text-slate-300">Lucknow, India</p>
               </div>
               <!-- Stars -->
               <div class="ml-auto flex">
@@ -487,15 +490,14 @@ body {
               </svg>
               <div>
                 <h4 class="font-semibold leading-tight">Rahul Joshi</h4>
-                <p class="text-xs text-slate-300">Pune, India</p>
+                <p class="text-xs text-slate-300"> Gujarat, India</p>
               </div>
               <div class="ml-auto flex">
                 <svg viewBox="0 0 24 24" class="w-5 h-5" fill="url(#g1)"><path d="M12 2l3.09 6.3 6.91 1-5 4.88L18.18 22 12 18.56 5.82 22 7 14.18 2 9.3l6.91-1L12 2z"/></svg><svg viewBox="0 0 24 24" class="w-5 h-5" fill="url(#g1)"><path d="M12 2l3.09 6.3 6.91 1-5 4.88L18.18 22 12 18.56 5.82 22 7 14.18 2 9.3l6.91-1L12 2z"/></svg><svg viewBox="0 0 24 24" class="w-5 h-5" fill="url(#g1)"><path d="M12 2l3.09 6.3 6.91 1-5 4.88L18.18 22 12 18.56 5.82 22 7 14.18 2 9.3l6.91-1L12 2z"/></svg><svg viewBox="0 0 24 24" class="w-5 h-5" fill="url(#g1)"><path d="M12 2l3.09 6.3 6.91 1-5 4.88L18.18 22 12 18.56 5.82 22 7 14.18 2 9.3l6.91-1L12 2z"/></svg><svg viewBox="0 0 24 24" class="w-5 h-5" fill="url(#g1)"><path d="M12 2l3.09 6.3 6.91 1-5 4.88L18.18 22 12 18.56 5.82 22 7 14.18 2 9.3l6.91-1L12 2z"/></svg>
               </div>
             </div>
             <p class="mt-4 text-slate-200">
-              My spondylitis pain reduced drastically. The customized drops and posture tips worked wonders without
-              drowsiness. Clinic support on WhatsApp was super helpful.
+              I had been struggling with persistent back pain for years, and nothing seemed to work. Within just weeks of taking their homeopathic medicine, the discomfort vanished. Their customer support team guided me with patience and expertise — a truly exceptional experience.
             </p>
             <div class="mt-4 flex items-center gap-2">
               <span class="text-xs text-slate-300">Verified Patient</span>
@@ -572,7 +574,7 @@ body {
     <section id="contact" class="mt-12 grid md:grid-cols-2 gap-6">
       <div class="bg-slate-800 glass rounded-xl p-5">
         <h3 class="text-lg font-semibold">Contact</h3>
-        <p class="text-slate-300 mt-2">Call or email us for bulk & retail orders.</p>
+        <p class="text-slate-300 mt-2"> Call or Email for Enquiry.  </p>
         <div class="mt-4 flex gap-2">
           <a :href="callLink" class="px-4 py-2 rounded bg-emerald-500 text-black font-semibold hover:bg-emerald-400">Call</a>
           <a :href="mailtoLink" class="px-4 py-2 rounded border border-slate-700 hover:bg-slate-700">Email</a>
@@ -629,11 +631,15 @@ body {
 <section class="bg-gradient-to-b from-green-900 via-green-800 to-green-900 text-white py-16 px-6">
   <div class="max-w-6xl mx-auto">
     <h2 class="text-4xl font-bold text-center mb-6 text-green-200" data-aos="fade-down">
-      Homeopathy – Doctor Approved FAQ
+      Homeopathy – FAQ
     </h2>
     <p class="text-lg text-center max-w-3xl mx-auto mb-12 text-green-100" data-aos="fade-up">
-      Our homeopathic treatments are backed by decades of clinical experience, blending centuries-old wisdom 
-      with scientific preparation. Here are answers to the most frequently asked questions to guide you on your natural healing journey.
+     
+  Our homeopathic medicines are crafted with decades of expertise, uniting time-tested remedies 
+  with modern scientific precision. Designed for safe, gentle, and effective healing, they address 
+  the root cause of ailments without side effects. Experience the purity, potency, and trust that 
+  have made us a preferred choice for natural health solutions.
+    
     </p>
 
     <div class="space-y-4">
@@ -753,17 +759,7 @@ body {
   </div>
 </section>
       
-    </div>
-    <!-- Footer -->
-  <footer class="bg-slate-900 border-t border-slate-800 mt-10">
-    <div class="container mx-auto px-4 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
-      <div class="text-slate-400 text-sm">© <span id="year"></span> Herbal Biologische Pharmaceuticals</div>
-      <div class="flex gap-3">
-        <a :href="waLink" target="_blank" class="px-3 py-2 rounded bg-emerald-500 text-black hover:bg-emerald-400">WhatsApp</a>
-        <a :href="callLink" class="px-3 py-2 rounded border border-slate-700 hover:bg-slate-700">Call</a>
-      </div>
-    </div>
-  </footer>
+</div>
   
     <!-- AOS Animation -->
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -850,47 +846,37 @@ body {
       </p>
     </div>
 
-    <!-- Services -->
-    <div data-aos="fade-up" data-aos-delay="100">
-      <h3>Our Services</h3>
-      <ul>
-        <li><a href="#"><span class="icon">➤</span> Skin Care Treatment</a></li>
-        <li><a href="#"><span class="icon">➤</span> Hair Treatment</a></li>
-        <li><a href="#"><span class="icon">➤</span> Infertility Treatment</a></li>
-        <li><a href="#"><span class="icon">➤</span> Diseases</a></li>
-      </ul>
-    </div>
+   
 
     <!-- Quick Links -->
     <div data-aos="fade-up" data-aos-delay="200">
       <h3>Quick Links</h3>
       <ul>
-        <li><a href="#"><span class="icon">➤</span> Home</a></li>
-        <li><a href="#"><span class="icon">➤</span> About</a></li>
-        <li><a href="#"><span class="icon">➤</span> Gallery</a></li>
-        <li><a href="#"><span class="icon">➤</span> Treatments</a></li>
+        <li><a href="index.html"><span class="icon">➤</span> Home</a></li>
+        <li><a href="ab.html"><span class="icon">➤</span> About</a></li>
+        <li><a href="#medicines"><span class="icon">➤</span> Medicines </a></li>
         <li><a href="#"><span class="icon">➤</span> Contact</a></li>
-        <li><a href="#"><span class="icon">➤</span> Privacy Policy</a></li>
-        <li><a href="#"><span class="icon">➤</span> Terms & Conditions</a></li>
-        <li><a href="#"><span class="icon">➤</span> Refund Policy</a></li>
+        <li><a href="#"><span class="icon">➤</span> Customer Reviews </a></li>
+        <li><a href="#"><span class="icon">➤</span> FYQ'S Corner </a></li>
+        <li><a href="#"><span class="icon">➤</span> Call Us </a></li>
+        <li><a href="#"><span class="icon">➤</span> Email Us </a></li>
       </ul>
     </div>
 
     <!-- Contact -->
     <div data-aos="fade-left" data-aos-delay="300">
-      <h3>Clinic Address</h3>
+      <h3> Head Office </h3>
       <p>
-        GUJARAT: 1st Floor Khushi Heights, Next to BSNL Office, Somnath Road, Bilimora (Navsari) - 396321, India.
+      UTTAR PRADESH :BIOLOGISCHE PHARMACEUTICALS private limited B-39,Kisan Market,Vikalp Khand-1,Gomti Nagar ,Lucknow-206010 India.
       </p>
-      <p>Email: <a href="mailto:care@drpatels.in">care@drpatels.in</a></p>
-      <p>+91 972-633-3556</p>
-      <p>+91 972-633-3557</p>
+      <p>Email: <a href="mailto:pharmaceuticals22@gmail.com">pharmaceuticals22@gmail.com</a></p>
+      <p>+91 9120227101 </p>
     </div>
   </div>
 
   <!-- Footer Bottom -->
   <div class="footer-bottom" data-aos="fade-up" data-aos-delay="400">
-    © 2025-2026 Dr. Patel's. All Rights Reserved
+    © 2025-2026 HERBAL BIOLOGISCHE PHARMACEUTICALS. All Rights Reserved
   </div>
 
   <!-- Decorative Herbal SVG -->
@@ -904,7 +890,7 @@ body {
 <script>
   const WHATSAPP_NUMBER = "9120227101";
   const PHONE_NUMBER = "9120227101";
-  const EMAIL_ADDRESS = "info@medstore.com";
+  const EMAIL_ADDRESS = "pharmaceuticals22@gmail.com";
 
   const { createApp } = Vue;
 
@@ -921,7 +907,7 @@ body {
         query:"",
         activeTag:"",
         slides:[
-          { title:"Nature-Powered Medicines", desc:"Trusted ayurvedic & homeopathic formulations.", image:"https://i.postimg.cc/Xq29yhMw/pexels-asphotograpy-105028.jpg", link:"#medicines", altLink:"#contact" },
+          { title:"Best Homeopathic Medicines", desc:"Trusted homeopathic formulations.", image:"https://i.postimg.cc/Xq29yhMw/pexels-asphotograpy-105028.jpg", link:"#medicines", altLink:"#contact" },
           { title:"Order on Call or WhatsApp", desc:"Quick ordering assistance.", image:"https://i.postimg.cc/rmVdCJNg/pexels-chokniti-khongchum-1197604-2280551.jpg", link:"#contact", altLink:"#contact" },
           { title:"Quality You Can Trust", desc:"Manufactured with care and research.", image:"https://i.postimg.cc/254vx3Rj/pexels-n-voitkevich-7615574.jpg", link:"#about", altLink:"#about" }
         ],
