@@ -749,7 +749,11 @@ body {
           but some should be avoided. Always consult a qualified homeopath.
         </p>
       </details>
+       </div>
+  </div>
+</section>
       
+    </div>
     <!-- Footer -->
   <footer class="bg-slate-900 border-t border-slate-800 mt-10">
     <div class="container mx-auto px-4 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
@@ -760,15 +764,142 @@ body {
       </div>
     </div>
   </footer>
-    
+  
+    <!-- AOS Animation -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({ duration: 1000, once: true });
+</script>
 
-      <!-- Continue adding up to 20 in the same format -->
-      
+<style>
+  .footer {
+    background: linear-gradient(135deg, #054A29, #1FAB54);
+    color: white;
+    padding: 50px 20px;
+    position: relative;
+    overflow: hidden;
+  }
+  .footer h3 {
+    font-weight: bold;
+    margin-bottom: 10px;
+    position: relative;
+  }
+  .footer h3::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 3px;
+    background: #C9A635;
+    margin-top: 5px;
+    transition: width 0.3s;
+  }
+  .footer h3:hover::after {
+    width: 70px;
+  }
+  .footer a {
+    color: #DFF2E0;
+    text-decoration: none;
+    transition: color 0.3s, padding-left 0.3s;
+  }
+  .footer a:hover {
+    color: #C9A635;
+    padding-left: 5px;
+  }
+  .footer .icon {
+    font-size: 20px;
+    margin-right: 10px;
+    transition: transform 0.3s, color 0.3s;
+  }
+  .footer a:hover .icon {
+    color: #C9A635;
+    transform: scale(1.2);
+  }
+  .footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    margin-top: 30px;
+    padding-top: 15px;
+    font-size: 14px;
+    text-align: center;
+    color: #DFF2E0;
+  }
+  /* Decorative Herbal Element */
+  .herbal-deco {
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    width: 150px;
+    opacity: 0.08;
+    animation: float 6s ease-in-out infinite;
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+</style>
+
+<footer class="footer" data-aos="fade-up">
+  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+
+    <!-- Logo & About -->
+    <div data-aos="fade-right">
+      <img src="your-logo.png" alt="Logo" class="mb-4 w-40">
+      <p>
+        We are a team of dedicated doctors with years of expertise in Homeopathy and modern techniques to provide
+        natural, safe, and effective healing for our patients.
+      </p>
+    </div>
+
+    <!-- Services -->
+    <div data-aos="fade-up" data-aos-delay="100">
+      <h3>Our Services</h3>
+      <ul>
+        <li><a href="#"><span class="icon">➤</span> Skin Care Treatment</a></li>
+        <li><a href="#"><span class="icon">➤</span> Hair Treatment</a></li>
+        <li><a href="#"><span class="icon">➤</span> Infertility Treatment</a></li>
+        <li><a href="#"><span class="icon">➤</span> Diseases</a></li>
+      </ul>
+    </div>
+
+    <!-- Quick Links -->
+    <div data-aos="fade-up" data-aos-delay="200">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="#"><span class="icon">➤</span> Home</a></li>
+        <li><a href="#"><span class="icon">➤</span> About</a></li>
+        <li><a href="#"><span class="icon">➤</span> Gallery</a></li>
+        <li><a href="#"><span class="icon">➤</span> Treatments</a></li>
+        <li><a href="#"><span class="icon">➤</span> Contact</a></li>
+        <li><a href="#"><span class="icon">➤</span> Privacy Policy</a></li>
+        <li><a href="#"><span class="icon">➤</span> Terms & Conditions</a></li>
+        <li><a href="#"><span class="icon">➤</span> Refund Policy</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact -->
+    <div data-aos="fade-left" data-aos-delay="300">
+      <h3>Clinic Address</h3>
+      <p>
+        GUJARAT: 1st Floor Khushi Heights, Next to BSNL Office, Somnath Road, Bilimora (Navsari) - 396321, India.
+      </p>
+      <p>Email: <a href="mailto:care@drpatels.in">care@drpatels.in</a></p>
+      <p>+91 972-633-3556</p>
+      <p>+91 972-633-3557</p>
     </div>
   </div>
-</section>
+
+  <!-- Footer Bottom -->
+  <div class="footer-bottom" data-aos="fade-up" data-aos-delay="400">
+    © 2025-2026 Dr. Patel's. All Rights Reserved
+  </div>
+
+  <!-- Decorative Herbal SVG -->
+  <svg class="herbal-deco" xmlns="http://www.w3.org/2000/svg" fill="#DFF2E0" viewBox="0 0 64 64">
+    <path d="M32 2C24 14 24 34 32 48C40 34 40 14 32 2zM2 32C14 24 34 24 48 32C34 40 14 40 2 32z"/>
+  </svg>
+</footer>
       
-    </div>
+   
 <!-- Data + App -->
 <script>
   const WHATSAPP_NUMBER = "9120227101";
