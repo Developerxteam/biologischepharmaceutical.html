@@ -112,10 +112,6 @@ body {
     <div class="container mx-auto px-4 flex items-center gap-3 whitespace-nowrap overflow-x-auto">
       <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4"><path fill="currentColor" d="M12 2 1 21h22L12 2zm0 5 7.53 13H4.47L12 7z"/></svg>
       <span class="font-semibold"> Trusted Homeopathic Range </span>
-      <span class="opacity-70">Customer Care: </span>
-      <a class="underline" :href="callLink">9120227101</a>
-      <span class="opacity-70">WhatsApp Orders:</span>
-      <a class="underline" :href="waLink" target="_blank">Open</a>
     </div>
   </div>
 
@@ -138,15 +134,15 @@ body {
     <div class="font-bold tracking-wide" style="font-family:'Bebas Neue',cursive;letter-spacing:.5px;font-size:20px;">
       Herbal Biologische Pharmaceuticals
     </div>
-    <div class="text-xs text-slate-300"> Homeopathic </div>
+    <div class="text-xs text-slate-300"> Homeopathic Pharmacy </div>
   </div>
 </a>
 
       <!-- Desktop links -->
       <nav class="hidden md:flex items-center gap-6 text-sm">
         <a href="#medicines" class="hover:text-emerald-400">Medicines</a>
-      <a href="minihelpbox.html" class="hover:text-emerald-400"> Helper : Chat Bot </a>
-        <a href="#about" class="hover:text-emerald-400">About</a>
+      <a href="minihelpbox.html" class="hover:text-emerald-400"> Chat Bot </a>
+        <a href="#about" class="hover:text-emerald-400">About Us.</a>
         <a href="#contact" class="hover:text-emerald-400">Contact</a>
       </nav>
 
@@ -160,12 +156,12 @@ body {
       <div class="px-4 py-3 flex flex-col gap-2">
         <a href="#home" @click.prevent="scrollTo('home'); mobileNav=false" class="py-2">Home</a>
         <a href="#medicines" @click.prevent="scrollTo('medicines'); mobileNav=false" class="py-2">Medicines</a>
+         <a href="minihelpbox.html" target="_blank" @click="mobileNav=false" class="py-2">
+  Helper : Chat Bot
+</a>
         <a href="#contact" @click.prevent="scrollTo('contact'); mobileNav=false" class="py-2">Contact</a>
        <a href="ab.html" target="_blank" @click="mobileNav=false" class="py-2">
- About
-</a>
-        <a href="minihelpbox.html" target="_blank" @click="mobileNav=false" class="py-2">
-  Helper : Chat Bot
+ About Us
 </a>
       </div>
     </div>
@@ -220,7 +216,7 @@ body {
 
         <div class="text-sm text-slate-300 mt-2">
           <template v-if="filtered.length"> Showing <strong class="text-emerald-300">{{ filtered.length }}</strong> result(s)</template>
-          <template v-else>No results — try a different term.</template>
+          <template v-else>No results — try with different words .</template>
         </div>
       </aside>
     </div>
@@ -264,7 +260,7 @@ body {
               </button>
               <a :href="'details.html?id=' + m.id"
                  class="flex-1 px-3 py-2 rounded border border-slate-700 hover:bg-slate-700 text-center">
-                Details
+                Detail
               </a>
             </div>
           </div>
@@ -299,10 +295,10 @@ body {
       <h3 class="text-xl font-bold mb-3 text-gray-800">Quality</h3>
       <!-- Description -->
       <p class="text-gray-600 mb-5 leading-relaxed">
-       Medicines from our brand are crafted with unmatched care, combining the finest natural ingredients and strict quality control to ensure every drop delivers real healing.
+       Medicines from our brand are crafted with unmatched care, combining the top ingredients and strict quality control to ensure every drop delivers real healing.
       </p>
       <!-- Link -->
-      <a href="#" class="inline-flex items-center gap-1 text-green-700 font-semibold hover:text-green-900 transition">
+      <a href="ab.html" class="inline-flex items-center gap-1 text-green-700 font-semibold hover:text-green-900 transition">
         Explore
         <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5-5-5-5"/></svg>
       </a>
@@ -327,7 +323,7 @@ body {
       <p class="text-gray-600 mb-5 leading-relaxed">
          Trusted by thousands of patients across the country, our homeopathic solutions have a track record of consistent, measurable results in both acute and chronic conditions.
       </p>
-      <a href="#" class="inline-flex items-center gap-1 text-green-700 font-semibold hover:text-green-900 transition">
+      <a href="ab.html" class="inline-flex items-center gap-1 text-green-700 font-semibold hover:text-green-900 transition">
         Explore
         <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5-5-5-5"/></svg>
       </a>
@@ -351,7 +347,7 @@ body {
       <p class="text-gray-600 mb-5 leading-relaxed">
          Our dedicated customer care team is here to assist you with guidance, follow-ups, and answers — making your healing journey smooth and stress-free.
       </p>
-      <a href="#" class="inline-flex items-center gap-1 text-green-700 font-semibold hover:text-green-900 transition">
+      <a href="ab.html" class="inline-flex items-center gap-1 text-green-700 font-semibold hover:text-green-900 transition">
         Explore
         <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5-5-5-5"/></svg>
       </a>
@@ -418,14 +414,14 @@ body {
             </linearGradient>
           </defs>
           <text x="0" y="82" font-family="Poppins,system-ui" font-weight="700"
-                font-size="80" fill="url(#g1)"> Customer Reviews </text>
+                font-size="80" fill="url(#g1)"> Customers Reviews</text>
         </svg>
-        <!-- rating chip -->
+        <!- rating chip -->
         
-        <!--  <span class="testi-chip px-3 py-1 rounded-full text-sm font-semibold shadow">
-          4.8/5 • 2,400+ verified
+          <span class="testi-chip px-3 py-1 rounded-full text-sm font-semibold shadow">
+          4.3/5 • 100+ verified
         </span>
-      </div> --
+      </div> 
 
       <!-- underline svg -->
       <svg width="160" height="10" class="mx-auto mt-3" aria-hidden="true">
@@ -433,7 +429,7 @@ body {
       </svg>
 
       <p class="text-green-100 max-w-2xl mx-auto mt-3">
-        What Our Customers Say's ?
+        What Our Customers Says ?
       </p>
     </div>
 
@@ -449,11 +445,11 @@ body {
               <svg width="48" height="48" viewBox="0 0 48 48" class="shrink-0">
                 <circle cx="24" cy="24" r="24" fill="var(--light-green)"/>
                 <text x="50%" y="56%" text-anchor="middle" font-size="18" font-weight="700"
-                      fill="var(--dark-green)" font-family="Poppins,system-ui">AK</text>
+                      fill="var(--dark-green)" font-family="Poppins,system-ui">P</text>
               </svg>
               <div>
-                <h4 class="font-semibold leading-tight">Ananya Khanna</h4>
-                <p class="text-xs text-slate-300">Lucknow, India</p>
+                <h4 class="font-semibold leading-tight">Prachi Dixit</h4>
+                <p class="text-xs text-slate-300">Lucknow,India</p>
               </div>
               <!-- Stars -->
               <div class="ml-auto flex">
@@ -470,12 +466,12 @@ body {
               <path d="M7 7h4v4H9a2 2 0 00-2 2v4H3v-4a6 6 0 016-6zm10 0h4v4h-2a2 2 0 00-2 2v4h-4v-4a6 6 0 016-6z"/>
             </svg>
             <p class="mt-2 text-slate-200 leading-relaxed">
-              Suffering from recurrent migraines for years—your herbal protocol calmed my system within three weeks.
-              Loved the dietary guidance and follow-ups. Feeling balanced and energized!
+              Alfalfa tonic improved appetite and stamina.  
+              Great guidance on meal timing and sleep.
             </p>
             <div class="mt-4 flex items-center gap-2">
               <span class="text-xs text-slate-300">Verified Patient</span>
-              <span class="ml-auto text-xs px-2 py-0.5 rounded-full testi-chip">Ayurvedic Care</span>
+              <span class="ml-auto text-xs px-2 py-0.5 rounded-full testi-chip">Homoepathic</span>
             </div>
           </article>
         </div>
@@ -487,7 +483,7 @@ body {
               <svg width="48" height="48" viewBox="0 0 48 48">
                 <circle cx="24" cy="24" r="24" fill="var(--light-green)"/>
                 <text x="50%" y="56%" text-anchor="middle" font-size="18" font-weight="700"
-                      fill="var(--dark-green)" font-family="Poppins,system-ui">RJ</text>
+                      fill="var(--dark-green)" font-family="Poppins,system-ui">Ro</text>
               </svg>
               <div>
                 <h4 class="font-semibold leading-tight">Rahul Joshi</h4>
@@ -577,8 +573,8 @@ body {
         <h3 class="text-lg font-semibold">Contact</h3>
         <p class="text-slate-300 mt-2"> Call or Email for Enquiry.  </p>
         <div class="mt-4 flex gap-2">
-          <a :href="callLink" class="px-4 py-2 rounded bg-emerald-500 text-black font-semibold hover:bg-emerald-400">Call</a>
-          <a :href="mailtoLink" class="px-4 py-2 rounded border border-slate-700 hover:bg-slate-700">Email</a>
+          <a :href="callLink" class="px-4 py-2 rounded bg-emerald-500 text-black font-semibold hover:bg-emerald-400">Call Us</a>
+          <a :href="mailtoLink" class="px-4 py-2 rounded border border-slate-700 hover:bg-slate-700">Email Us</a>
         </div>
       </div>
       <div class="rounded-xl overflow-hidden border border-slate-700">
@@ -638,7 +634,7 @@ body {
      
   Our homeopathic medicines are crafted with decades of expertise, uniting time-tested remedies 
   with modern scientific precision. Designed for safe, gentle, and effective healing, they address 
-  the root cause of ailments without side effects. Experience the purity, potency, and trust that 
+  the root cause of ailments without any acute side effects. Experience the purity, potency, and trust that 
   have made us a preferred choice for natural health solutions.
     
     </p>
@@ -652,8 +648,6 @@ body {
         <p class="mt-3 text-green-200 leading-relaxed">
           Homeopathy has been practiced for over 200 years and is recognized by many countries as a valid medical system. 
           Several peer-reviewed studies have shown its effectiveness in conditions like allergies, migraines, and skin disorders. 
-          Our remedies are prepared according to the Hahnemannian principles and tested under strict quality control, 
-          ensuring both safety and efficacy.
         </p>
       </details>
 
@@ -664,7 +658,7 @@ body {
         <p class="mt-3 text-green-200 leading-relaxed">
           The response time depends on the nature and duration of the illness. 
           Acute conditions like colds or fevers may improve within hours to days, while chronic diseases 
-          like arthritis or asthma may require 3–6 months. Homeopathy works by stimulating the body’s 
+          like arthritis or asthma may require many months. Homeopathy works by stimulating the body’s 
           self-healing capacity, so results are gradual but lasting.
         </p>
       </details>
@@ -688,7 +682,7 @@ body {
         <p class="mt-3 text-green-200 leading-relaxed">
           Yes, in most cases, Homeopathy can be safely taken alongside conventional treatments. 
           It often complements allopathy by reducing side effects and improving overall recovery. 
-          However, always inform your doctor about all medications you are taking to avoid any interaction.
+          However, always ask from your doctor about all medications you are taking to avoid any interaction.
         </p>
       </details>
 
@@ -752,8 +746,8 @@ body {
         </summary>
         <p class="mt-3 text-green-200 leading-relaxed">
           Yes, but only under professional guidance. 
-          Certain remedies are highly beneficial for morning sickness, heartburn, or back pain in pregnancy, 
-          but some should be avoided. Always consult a qualified homeopath.
+          Certain remedies are highly beneficial for heartburn, or back pain in pregnancy, 
+          but some should be avoided. Always consult a doctor before.
         </p>
       </details>
        </div>
@@ -842,12 +836,13 @@ body {
     <div data-aos="fade-right">
       <img src="https://i.postimg.cc/KjKgRbRr/PHOTO-2025-08-11-19-50-41.jpg" alt="Logo" class="mb-4 w-40">
       <p>
-        We are a team of dedicated doctors with years of expertise in Homeopathy and modern techniques to provide
-        natural, safe, and effective healing for our patients.
+        With years of research, expertise, and a commitment to natural wellness, we create remedies that are safe, effective, and affordable. Our goal is to make the benefits of homeopathy accessible to everyone, offering a wide range of medicines for different health needs — from everyday ailments to long-term wellness support.
       </p>
     </div>
 
-   
+
+
+    
 
     <!-- Quick Links -->
     <div data-aos="fade-up" data-aos-delay="200">
@@ -858,9 +853,9 @@ body {
         <li><a href="#medicines"><span class="icon">➤</span> Medicines </a></li>
         <li><a href="#contact"><span class="icon">➤</span> Contact</a></li>
         <li><a href="#"><span class="icon">➤</span> Customer Reviews </a></li>
-        <li><a href="#"><span class="icon">➤</span> FYQ'S Corner </a></li>
-        <li><a href="#callLink"><span class="icon">➤</span> Call Us </a></li>
-        <li><a href="#mailtoLink"><span class="icon">➤</span> Email Us </a></li>
+        <li><a href="minihelpbox.html"><span class="icon">➤</span> Need HELP </a></li>
+        <li><a href="tel:9120227101"><span class="icon">➤</span> Call Us </a></li>
+        <li><a href="mailto:herbalbiologischepharma1103@gmail.com"><span class="icon">➤</span> Email Us </a></li>
       </ul>
     </div>
 
@@ -868,18 +863,24 @@ body {
     <div data-aos="fade-left" data-aos-delay="300">
       <h3> Head Office </h3>
       <p>
-      UTTAR PRADESH:BIOLOGISCHE PHARMACEUTICALS private limited B-39 ,Kisan Market ,Vikalp Khand-1, Gomti Nagar, Lucknow-206010 India.
+      Uttar Pradesh : BIOLOGISCHE PHARMACEUTICALS PRIVATE LIMITED B-39,Kisan Market ,Vikalp Khand-1 ,Gomti Nagar,Lucknow - 206010 India.
       </p>
-      <p>Email: <a href="mailto:pharmaceuticals22@gmail.com">pharmaceuticals22@gmail.com</a></p>
+      <p>Email: <a href="mailto:herbalbiologischepharma1103@gmail.com"> herbalbiologischepharma1103@gmail.com </a></p>
       <p>+91 9120227101 </p>
     </div>
   </div>
 
   <!-- Footer Bottom -->
-  <div class="footer-bottom" data-aos="fade-up" data-aos-delay="400">
-    © 2025-2026 HERBAL BIOLOGISCHE PHARMACEUTICALS.
-      All Rights Reserved
-  </div>
+<div class="footer-bottom" data-aos="fade-up" data-aos-delay="400">
+  © <span id="year"></span> HERBAL BIOLOGISCHE PHARMACEUTICALS PRIVATE LIMITED  
+  All Rights Reserved
+</div>
+
+<script>
+  const yearSpan = document.getElementById("year");
+  const currentYear = new Date().getFullYear();
+  yearSpan.textContent = currentYear;
+</script>
 
   <!-- Decorative Herbal SVG -->
   <svg class="herbal-deco" xmlns="http://www.w3.org/2000/svg" fill="#DFF2E0" viewBox="0 0 64 64">
@@ -892,7 +893,7 @@ body {
 <script>
   const WHATSAPP_NUMBER = "9120227101";
   const PHONE_NUMBER = "9120227101";
-  const EMAIL_ADDRESS = "pharmaceuticals22@gmail.com";
+  const EMAIL_ADDRESS = "herbalbiologischepharma1103@gmail.com";
 
   const { createApp } = Vue;
 
@@ -997,8 +998,8 @@ body {
       // Tooltips example
       tippy('[data-tippy]',{animation:'shift-away',theme:'light-border'});
 
-      // Footer year
-      document.getElementById('year').textContent=new Date().getFullYear();
+     // Footer year
+    // document.getElementById('year').textContent=new Date().getFullYear();
     }
   }).mount('#app');
 </script>
