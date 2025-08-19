@@ -10,55 +10,55 @@
 
   <!-- Products -->
   <url>
-    <loc>https://www.biologischepharmaceutical.com/product.html?id=1</loc>
+    <loc>https://www.biologischepharmaceutical.com/details.html?id=1</loc>
     <lastmod>2025-08-19</lastmod>
     <priority>0.9</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://www.biologischepharmaceutical.com/product.html?id=2</loc>
+    <loc>https://www.biologischepharmaceutical.com/details.html?id=2</loc>
     <lastmod>2025-08-19</lastmod>
     <priority>0.9</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://www.biologischepharmaceutical.com/product.html?id=3</loc>
+    <loc>https://www.biologischepharmaceutical.com/details.html?id=3</loc>
     <lastmod>2025-08-19</lastmod>
     <priority>0.9</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://www.biologischepharmaceutical.com/product.html?id=4</loc>
+    <loc>https://www.biologischepharmaceutical.com/details.html?id=4</loc>
     <lastmod>2025-08-19</lastmod>
     <priority>0.9</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://www.biologischepharmaceutical.com/product.html?id=5</loc>
+    <loc>https://www.biologischepharmaceutical.com/details.html?id=5</loc>
     <lastmod>2025-08-19</lastmod>
     <priority>0.9</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://www.biologischepharmaceutical.com/product.html?id=6</loc>
+    <loc>https://www.biologischepharmaceutical.com/details.html?id=6</loc>
     <lastmod>2025-08-19</lastmod>
     <priority>0.9</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://www.biologischepharmaceutical.com/product.html?id=7</loc>
+    <loc>https://www.biologischepharmaceutical.com/details.html?id=7</loc>
     <lastmod>2025-08-19</lastmod>
     <priority>0.9</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://www.biologischepharmaceutical.com/product.html?id=8</loc>
+    <loc>https://www.biologischepharmaceutical.com/details.html?id=8</loc>
     <lastmod>2025-08-19</lastmod>
     <priority>0.9</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://www.biologischepharmaceutical.com/product.html?id=9</loc>
+    <loc>https://www.biologischepharmaceutical.com/details.html?id=9</loc>
     <lastmod>2025-08-19</lastmod>
     <priority>0.9</priority>
     <changefreq>weekly</changefreq>
@@ -66,14 +66,14 @@
 
   <!-- About Page -->
   <url>
-    <loc>https://www.biologischepharmaceutical.com/about.html</loc>
+    <loc>https://www.biologischepharmaceutical.com/ab.html</loc>
     <priority>0.6</priority>
     <changefreq>monthly</changefreq>
   </url>
 
   <!-- Contact Page -->
   <url>
-    <loc>https://www.biologischepharmaceutical.com/contact.html</loc>
+    <loc>https://www.biologischepharmaceutical.com/minihelpbox.html</loc>
     <priority>0.6</priority>
     <changefreq>monthly</changefreq>
   </url>
