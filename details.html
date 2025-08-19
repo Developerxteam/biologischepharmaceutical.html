@@ -534,6 +534,135 @@ if(item.images && item.images.length>1){
 }
 */
 </script>
+<script>
+const params = new URLSearchParams(window.location.search);
+const id = params.get('id');
 
+const seoData = {
+  1: {
+    url: "https://biologischepharmaceutical.com/products/cyston-drops",
+    title: "Cyston Drops - Homeopathic Medicine for Kidney Stones",
+    description: "Cyston Drops by Biologische Pharmaceuticals – natural homeopathic remedy for kidney stones, pain, and urinary issues.",
+    image: "https://biologischepharmaceutical.com/images/cyston-drops.jpg",
+    price: "215"
+  },
+  2: {
+    url: "https://biologischepharmaceutical.com/products/spondy-drops",
+    title: "Spon-dy Drops - Homeopathic Medicine for Spondylitis",
+    description: "Spon-dy Drops provide natural relief from spondylitis, back pain, and stiffness in joints.",
+    image: "https://biologischepharmaceutical.com/images/spondy-drops.jpg",
+    price: "215"
+  },
+  3: {
+    url: "https://biologischepharmaceutical.com/products/d-skin-care",
+    title: "D-Skin-Care Drops - Homeopathic Medicine for Fungal Infection",
+    description: "D-Skin-Care Drops – effective natural homeopathic treatment for fungal skin infections and itching.",
+    image: "https://biologischepharmaceutical.com/images/d-skin-care.jpg",
+    price: "215"
+  },
+  4: {
+    url: "https://biologischepharmaceutical.com/products/super-vigo-3-gold",
+    title: "Super Vigo 3 Gold Drops - Natural Support for Vitality",
+    description: "Super Vigo 3 Gold Drops – premium homeopathic formula for enhancing vitality, stamina, and sex drive.",
+    image: "https://biologischepharmaceutical.com/images/super-vigo-3-gold.jpg",
+    price: "495"
+  },
+  5: {
+    url: "https://biologischepharmaceutical.com/products/coffez",
+    title: "Biologsce Coffez Syrup - Homeopathic Medicine for Cough & Cold",
+    description: "Biologsce Coffez Syrup – natural homeopathic remedy for cough, cold, throat irritation, and seasonal relief.",
+    image: "https://biologischepharmaceutical.com/images/coffez.jpg",
+    price: "130"
+  },
+  6: {
+    url: "https://biologischepharmaceutical.com/products/alfalfa-tonic",
+    title: "Alfalfa Health Supplement Tonic - Natural Energy & Digestion Support",
+    description: "Alfalfa Tonic – homeopathic supplement for anemia, weak digestion, stress relief, and overall strength.",
+    image: "https://biologischepharmaceutical.com/images/alfalfa-tonic.jpg",
+    price: "130"
+  },
+  7: {
+    url: "https://biologischepharmaceutical.com/products/cali-tablet",
+    title: "Homoeo Cali Tablet - Homeopathic Calcium Supplement",
+    description: "Homoeo Cali Tablet – supports calcium deficiency, bone strength, and healthy growth naturally.",
+    image: "https://biologischepharmaceutical.com/images/cali-tablet.jpg",
+    price: "200"
+  },
+  8: {
+    url: "https://biologischepharmaceutical.com/products/pilex-tablet",
+    title: "Homoeo Pilex Tablet - Homeopathic Medicine for Piles & Fissures",
+    description: "Pilex Tablet – natural relief for piles, fissures, pain, and burning sensation with trusted homeopathy.",
+    image: "https://biologischepharmaceutical.com/images/pilex-tablet.jpg",
+    price: "200"
+  },
+  9: {
+    url: "https://biologischepharmaceutical.com/products/loose-tablet",
+    title: "Homoeo Loose Tablet - Homeopathic Medicine for Indigestion & Allergy",
+    description: "Loose Tablet – effective natural homeopathic remedy for indigestion, allergy, and stomach discomfort.",
+    image: "https://biologischepharmaceutical.com/images/loose-tablet.jpg",
+    price: "200"
+  }
+};
+
+if (seoData[id]) {
+  // Canonical link
+  const link = document.createElement("link");
+  link.rel = "canonical";
+  link.href = seoData[id].url;
+  document.head.appendChild(link);
+
+  // Title + Meta Description
+  document.title = seoData[id].title;
+  const meta = document.createElement("meta");
+  meta.name = "description";
+  meta.content = seoData[id].description;
+  document.head.appendChild(meta);
+
+  // Open Graph (for social sharing like WhatsApp, FB, etc.)
+  const ogTitle = document.createElement("meta");
+  ogTitle.setAttribute("property", "og:title");
+  ogTitle.content = seoData[id].title;
+  document.head.appendChild(ogTitle);
+
+  const ogDesc = document.createElement("meta");
+  ogDesc.setAttribute("property", "og:description");
+  ogDesc.content = seoData[id].description;
+  document.head.appendChild(ogDesc);
+
+  const ogImage = document.createElement("meta");
+  ogImage.setAttribute("property", "og:image");
+  ogImage.content = seoData[id].image;
+  document.head.appendChild(ogImage);
+
+  const ogUrl = document.createElement("meta");
+  ogUrl.setAttribute("property", "og:url");
+  ogUrl.content = seoData[id].url;
+  document.head.appendChild(ogUrl);
+
+  // Schema.org JSON-LD
+  const schema = {
+    "@context": "https://schema.org/",
+    "@type": "Product",
+    "name": seoData[id].title,
+    "image": seoData[id].image,
+    "description": seoData[id].description,
+    "brand": { "@type": "Brand", "name": "Biologische Pharmaceuticals" },
+    "offers": {
+      "@type": "Offer",
+      "url": seoData[id].url,
+      "priceCurrency": "INR",
+      "price": seoData[id].price,
+      "availability": "https://schema.org/InStock"
+    }
+  };
+  const script = document.createElement("script");
+  script.type = "application/ld+json";
+  script.textContent = JSON.stringify(schema);
+  document.head.appendChild(script);
+}
+</script>
+
+
+        
 </body>
 </html>
