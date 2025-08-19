@@ -8,57 +8,57 @@
     <changefreq>daily</changefreq>
   </url>
 
-  <!-- Products -->
+  <!-- Products (Clean Canonical URLs) -->
   <url>
-    <loc>https://www.biologischepharmaceutical.com/details.html?id=1</loc>
+    <loc>https://www.biologischepharmaceutical.com/products/cyston-drops</loc>
     <lastmod>2025-08-19</lastmod>
     <priority>0.9</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://www.biologischepharmaceutical.com/details.html?id=2</loc>
+    <loc>https://www.biologischepharmaceutical.com/products/spondy-drops</loc>
     <lastmod>2025-08-19</lastmod>
     <priority>0.9</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://www.biologischepharmaceutical.com/details.html?id=3</loc>
+    <loc>https://www.biologischepharmaceutical.com/products/d-skin-care</loc>
     <lastmod>2025-08-19</lastmod>
     <priority>0.9</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://www.biologischepharmaceutical.com/details.html?id=4</loc>
+    <loc>https://www.biologischepharmaceutical.com/products/super-vigo-3-gold</loc>
     <lastmod>2025-08-19</lastmod>
     <priority>0.9</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://www.biologischepharmaceutical.com/details.html?id=5</loc>
+    <loc>https://www.biologischepharmaceutical.com/products/biologsce-coffez</loc>
     <lastmod>2025-08-19</lastmod>
     <priority>0.9</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://www.biologischepharmaceutical.com/details.html?id=6</loc>
+    <loc>https://www.biologischepharmaceutical.com/products/alfalfa-health-tonic</loc>
     <lastmod>2025-08-19</lastmod>
     <priority>0.9</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://www.biologischepharmaceutical.com/details.html?id=7</loc>
+    <loc>https://www.biologischepharmaceutical.com/products/homoeo-cali-tablet</loc>
     <lastmod>2025-08-19</lastmod>
     <priority>0.9</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://www.biologischepharmaceutical.com/details.html?id=8</loc>
+    <loc>https://www.biologischepharmaceutical.com/products/homoeo-pilex-tablet</loc>
     <lastmod>2025-08-19</lastmod>
     <priority>0.9</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://www.biologischepharmaceutical.com/details.html?id=9</loc>
+    <loc>https://www.biologischepharmaceutical.com/products/homoeo-loose-tablet</loc>
     <lastmod>2025-08-19</lastmod>
     <priority>0.9</priority>
     <changefreq>weekly</changefreq>
