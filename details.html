@@ -536,95 +536,312 @@ if(item.images && item.images.length>1){
 </script>
 
   <script>
-const params = new URLSearchParams(window.location.search);
-const id = params.get('id');
+/* ===== Dynamic SEO for details.html?id=…  ===== */
 
-const seoData = {
-  1: {
-    url: "https://www.biologischepharmaceutical.com/details.html?id=1",
-    title: "Cyston Drops - Homeopathic Medicine for Kidney Stones",
-    description: "Cyston Drops by Biologische Pharmaceuticals – natural homeopathic remedy for kidney stones, pain, and urinary issues.",
-    image: "https://www.biologischepharmaceutical.com/images/cyston-drops.jpg",
-    price: "215"
-  },
-  2: {
-    url: "https://www.biologischepharmaceutical.com/details.html?id=2",
-    title: "Spon-dy Drops - Homeopathic Medicine for Spondylitis",
-    description: "Spon-dy Drops provide natural relief from spondylitis, joint stiffness, and back pain.",
-    image: "https://www.biologischepharmaceutical.com/images/spondy-drops.jpg",
-    price: "215"
-  },
-  // ... repeat for all products
-};
+(function () {
+  const params = new URLSearchParams(location.search);
+  const id = (params.get("id") || "").trim();
 
-if (seoData[id]) {
-  const data = seoData[id];
-
-  // Canonical URL
-  const link = document.createElement("link");
-  link.rel = "canonical";
-  link.href = data.url;
-  document.head.appendChild(link);
-
-  // Title
-  document.title = data.title;
-
-  // Meta description
-  const metaDesc = document.createElement("meta");
-  metaDesc.name = "description";
-  metaDesc.content = data.description;
-  document.head.appendChild(metaDesc);
-
-  // Open Graph
-  const ogTags = [
-    { property: "og:title", content: data.title },
-    { property: "og:description", content: data.description },
-    { property: "og:image", content: data.image },
-    { property: "og:url", content: data.url },
-    { property: "og:type", content: "product" }
-  ];
-  ogTags.forEach(tagData => {
-    const tag = document.createElement("meta");
-    tag.setAttribute(tagData.property.startsWith("og") ? "property" : "name", tagData.property);
-    tag.content = tagData.content;
-    document.head.appendChild(tag);
-  });
-
-  // Twitter Card
-  const twitterTags = [
-    { name: "twitter:card", content: "summary_large_image" },
-    { name: "twitter:title", content: data.title },
-    { name: "twitter:description", content: data.description },
-    { name: "twitter:image", content: data.image }
-  ];
-  twitterTags.forEach(tagData => {
-    const tag = document.createElement("meta");
-    tag.name = tagData.name;
-    tag.content = tagData.content;
-    document.head.appendChild(tag);
-  });
-
-  // Schema.org JSON-LD
-  const schema = {
-    "@context": "https://schema.org/",
-    "@type": "Product",
-    "name": data.title,
-    "image": data.image,
-    "description": data.description,
-    "brand": { "@type": "Brand", "name": "Biologische Pharmaceuticals" },
-    "offers": {
-      "@type": "Offer",
-      "url": data.url,
-      "priceCurrency": "INR",
-      "price": data.price,
-      "availability": "https://schema.org/InStock"
+  // --- MASTER SEO DATA (all 9 products) ---
+  const P = {
+    "1": {
+      slug: "cyston-drops",
+      name: "Cyston Drops",
+      title: "Cyston Drops – Homeopathic Medicine for Kidney Stones & Pain",
+      description:
+        "Cyston Drops by Biologische Pharmaceuticals: homeopathic support for kidney stones, renal colic and urinary discomfort.",
+      image: "https://i.postimg.cc/jdHbc7NV/Screenshot-2025-08-11-at-10-12-43-PM.png",
+      category: "Homeopathic > Kidney & Urinary",
+      price: "215",
+      keywords: [
+        "kidney stone medicine",
+        "renal colic",
+        "urinary pain",
+        "homeopathic kidney",
+        "Biologische Cyston Drops"
+      ]
+    },
+    "2": {
+      slug: "spondy-drops",
+      name: "Spon-dy Drops",
+      title: "Spon-dy Drops – Homeopathic Relief for Spondylitis & Back Pain",
+      description:
+        "Spon-dy Drops help reduce spondylitis symptoms, neck and back stiffness, and joint pain with a gentle homeopathic blend.",
+      image: "https://i.postimg.cc/6qynfKTq/Screenshot-2025-08-11-at-10-54-42-PM.png",
+      category: "Homeopathic > Bones, Joints & Muscles",
+      price: "215",
+      keywords: [
+        "spondylitis medicine",
+        "neck pain",
+        "back pain relief",
+        "homeopathic joint pain",
+        "Biologische Spondy Drops"
+      ]
+    },
+    "3": {
+      slug: "d-skin-care",
+      name: "D-Skin-Care",
+      title: "D-Skin-Care – Homeopathic Drops for Fungal Skin Infection & Itching",
+      description:
+        "D-Skin-Care drops formulated for fungal skin infections, itching and irritation—gentle homeopathic care.",
+      image: "https://i.postimg.cc/KY01qW6M/Screenshot-2025-08-11-at-10-56-18-PM.png",
+      category: "Homeopathic > Skin Care",
+      price: "215",
+      keywords: [
+        "fungal infection",
+        "itching relief",
+        "homeopathic skin",
+        "tinea remedy",
+        "Biologische D Skin Care"
+      ]
+    },
+    "4": {
+      slug: "super-vigo-3-gold-drops",
+      name: "Super Vigo 3 Gold Drops",
+      title: "Super Vigo 3 Gold Drops – Homeopathic Support for Vitality",
+      description:
+        "Super Vigo 3 Gold Drops support men’s vitality and drive with classic homeopathic actives.",
+      image: "https://i.postimg.cc/PrbmHT0G/Screenshot-2025-08-11-at-10-57-42-PM.png",
+      category: "Homeopathic > Men’s Health",
+      price: "495",
+      keywords: [
+        "vitality support",
+        "men stamina",
+        "homeopathic sexual wellness",
+        "Biologische Super Vigo 3"
+      ]
+    },
+    "5": {
+      slug: "biologsce-coffez",
+      name: "Biologsce Coffez",
+      title: "Biologsce Coffez – Homeopathic Cold & Cough Syrup",
+      description:
+        "Biologsce Coffez cough syrup for relief from cough, cold and throat irritation with a soothing homeopathic formulation.",
+      image: "https://i.postimg.cc/zXM1JYhj/Screenshot-2025-08-11-at-11-01-16-PM.png",
+      category: "Homeopathic > Cold & Cough",
+      price: "130",
+      keywords: [
+        "cough syrup",
+        "cold remedy",
+        "homeopathic cough",
+        "Biologische Coffez"
+      ]
+    },
+    "6": {
+      slug: "alfalfa-health-supplement-tonic",
+      name: "Alfalfa Health Supplement Tonic",
+      title: "Alfalfa Health Supplement Tonic – Appetite, Energy & Recovery",
+      description:
+        "Alfalfa Health Supplement Tonic to support appetite, digestion, recovery and everyday energy the homeopathic way.",
+      image: "https://i.postimg.cc/JzntF8L5/Screenshot-2025-08-11-at-10-59-13-PM.png",
+      category: "Homeopathic > General Health",
+      price: "130",
+      keywords: [
+        "alfalfa tonic",
+        "appetite support",
+        "homeopathic supplement",
+        "energy tonic"
+      ]
+    },
+    "7": {
+      slug: "homoeo-cali-tablet",
+      name: "Homoeo Cali Tablet",
+      title: "Homoeo Cali Tablet – Homeopathic Calcium Support",
+      description:
+        "Homoeo Cali Tablet for calcium support, bone strength and growth with trusted homeopathic salts.",
+      image: "https://i.postimg.cc/Sxh5DQbJ/Screenshot-2025-08-11-at-11-04-57-PM.png",
+      category: "Homeopathic > Bone & Calcium",
+      price: "200",
+      keywords: [
+        "calcium tablets homeopathic",
+        "bone strength",
+        "Biologische Cali Tablet"
+      ]
+    },
+    "8": {
+      slug: "homoeo-pilex-tablet",
+      name: "Homoeo Pilex Tablet",
+      title: "Homoeo Pilex Tablet – Homeopathic Support for Piles & Fissures",
+      description:
+        "Homoeo Pilex Tablet helps relieve discomfort from piles and fissures using a balanced homeopathic combination.",
+      image: "https://i.postimg.cc/DyVYwfZB/Screenshot-2025-08-11-at-11-06-05-PM.png",
+      category: "Homeopathic > Digestive & Anorectal",
+      price: "200",
+      keywords: [
+        "piles medicine",
+        "fissure relief",
+        "homeopathic piles tablet",
+        "Biologische Pilex"
+      ]
+    },
+    "9": {
+      slug: "homoeo-loose-tablet",
+      name: "Homoeo Loose Tablet",
+      title: "Homoeo Loose Tablet – Homeopathic Support for Allergies & Cold",
+      description:
+        "Homoeo Loose Tablet offers homeopathic support for allergy symptoms and common cold discomfort.",
+      image: "https://i.postimg.cc/RZp7qGd4/Screenshot-2025-08-11-at-11-09-43-PM.png",
+      category: "Homeopathic > Allergy & Cold",
+      price: "200",
+      keywords: [
+        "allergy tablet",
+        "cold relief",
+        "homeopathic allergy",
+        "Biologische Loose Tablet"
+      ]
     }
   };
-  const script = document.createElement("script");
-  script.type = "application/ld+json";
-  script.textContent = JSON.stringify(schema);
-  document.head.appendChild(script);
-}
+
+  // guard: if no/invalid id, don’t crash
+  if (!P[id]) return;
+
+  // Build page URLs
+  const site = "https://www.biologischepharmaceutical.com";
+  const pageUrl = `${site}/details.html?id=${encodeURIComponent(id)}`; // the REAL working URL
+  const prettyUrl = `${site}/products/${P[id].slug}`; // optional pretty path (not indexed yet)
+
+  // ---- Canonical to the working URL (critical for indexing) ----
+  const linkCanonical = document.createElement("link");
+  linkCanonical.rel = "canonical";
+  linkCanonical.href = pageUrl;
+  document.head.appendChild(linkCanonical);
+
+  // (Optional) tell bots the pretty URL is an alternate for future migration
+  const linkAlt = document.createElement("link");
+  linkAlt.rel = "alternate";
+  linkAlt.href = prettyUrl;
+  document.head.appendChild(linkAlt);
+
+  // ---- Basic SEO tags ----
+  document.title = P[id].title + " | Biologische Pharmaceuticals";
+  const metaDesc = document.createElement("meta");
+  metaDesc.name = "description";
+  metaDesc.content = P[id].description;
+  document.head.appendChild(metaDesc);
+
+  const metaRobots = document.createElement("meta");
+  metaRobots.name = "robots";
+  metaRobots.content = "index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1";
+  document.head.appendChild(metaRobots);
+
+  // (legacy but fine)
+  const metaKeywords = document.createElement("meta");
+  metaKeywords.name = "keywords";
+  metaKeywords.content = P[id].keywords.join(", ");
+  document.head.appendChild(metaKeywords);
+
+  // ---- Open Graph (Facebook/WhatsApp) ----
+  const ogPairs = {
+    "og:title": P[id].title,
+    "og:description": P[id].description,
+    "og:type": "product",
+    "og:url": pageUrl,
+    "og:image": P[id].image,
+    "product:price:amount": P[id].price,
+    "product:price:currency": "INR",
+    "og:site_name": "Biologische Pharmaceuticals"
+  };
+  Object.entries(ogPairs).forEach(([p, v]) => {
+    const m = document.createElement("meta");
+    m.setAttribute("property", p);
+    m.setAttribute("content", v);
+    document.head.appendChild(m);
+  });
+
+  // ---- Twitter Card ----
+  const twPairs = {
+    "twitter:card": "summary_large_image",
+    "twitter:title": P[id].title,
+    "twitter:description": P[id].description,
+    "twitter:image": P[id].image
+  };
+  Object.entries(twPairs).forEach(([n, v]) => {
+    const m = document.createElement("meta");
+    m.name = n;
+    m.content = v;
+    document.head.appendChild(m);
+  });
+
+  // ---- JSON-LD: Product + Breadcrumb + (optional) Organization/WebSite ----
+  const productLD = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": P[id].name,
+    "image": [P[id].image],
+    "description": P[id].description,
+    "category": P[id].category,
+    "brand": { "@type": "Brand", "name": "Biologische Pharmaceuticals" },
+    "sku": id,
+    "url": pageUrl,
+    "offers": {
+      "@type": "Offer",
+      "url": pageUrl,
+      "priceCurrency": "INR",
+      "price": P[id].price,
+      "availability": "https://schema.org/InStock",
+      "itemCondition": "https://schema.org/NewCondition"
+    }
+  };
+
+  const breadcrumbLD = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": site + "/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Products",
+        "item": site + "/#products"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": P[id].name,
+        "item": pageUrl
+      }
+    ]
+  };
+
+  const orgLD = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Biologische Pharmaceuticals",
+    "url": site,
+    "logo": site + "/logo.png"
+  };
+
+  const webSiteLD = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Biologische Pharmaceuticals",
+    "url": site,
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": site + "/search.html?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  };
+
+  [productLD, breadcrumbLD, orgLD, webSiteLD].forEach(obj => {
+    const s = document.createElement("script");
+    s.type = "application/ld+json";
+    s.textContent = JSON.stringify(obj);
+    document.head.appendChild(s);
+  });
+
+  // Optional: set <link rel="preload"> for product image (minor boost)
+  const preload = document.createElement("link");
+  preload.rel = "preload";
+  preload.as = "image";
+  preload.href = P[id].image;
+  document.head.appendChild(preload);
+})();
 </script>
         
 </body>
