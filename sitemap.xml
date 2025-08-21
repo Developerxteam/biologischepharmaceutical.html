@@ -9,7 +9,7 @@
     <changefreq>daily</changefreq>
   </url>
 
-  <!-- Product Pages -->
+  <!-- Product Pages (details.html?id=...) -->
   <url>
     <loc>https://www.biologischepharmaceutical.com/details.html?id=1</loc>
     <lastmod>2025-08-19</lastmod>
@@ -73,7 +73,7 @@
     <changefreq>monthly</changefreq>
   </url>
 
-  <!-- Contact / Mini Help Bot Page -->
+  <!-- Contact / Help -->
   <url>
     <loc>https://www.biologischepharmaceutical.com/minihelpbox.html</loc>
     <lastmod>2025-08-19</lastmod>
