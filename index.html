@@ -433,13 +433,17 @@ input:focus {
               <div class="text-emerald-300 font-bold whitespace-nowrap">₹{{ m.price }}</div>
             </div>
 
-            <div class="text-xs text-slate-400 mt-2">MFG: {{ m.mfg }} • EXP: {{ m.exp }}</div>
+            <div class="text-xs text-slate-400 mt-2">MFG: {{ m.mfg }} • EXP: {{ m.exp }}</div4
             <p class="text-sm text-slate-300 mt-2 line-clamp-3">{{ m.desc }}</p>
 
             <div class="mt-auto pt-4 flex gap-2">
               <button @click="openBuy(m)" class="flex-1 px-3 py-2 rounded bg-emerald-500 text-black font-semibold hover:bg-emerald-400">
                 Buy
               </button>
+              <button onclick="addToCart()" 
+class="flex-1 px-3 py-2 rounded bg-emerald-500 text-black font-semibold hover:bg-emerald-400">
+Add to Cart
+</button>
               <a :href="'details.html?id=' + m.id"
                  class="flex-1 px-3 py-2 rounded border border-slate-700 hover:bg-slate-700 text-center">
                 Detail
