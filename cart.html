@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Cart - Herbal Biologische</title>
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-green-50">
+
+<div class="max-w-5xl mx-auto p-4">
+
+<h1 class="text-3xl font-bold text-green-800 mb-4">🛒 Your Cart</h1>
+
+<!-- CART ITEMS -->
+<div id="cartItems"></div>
+
+<!-- COUPONS -->
+<div class="bg-white p-4 rounded-xl shadow mt-4">
+  <h2 class="font-bold text-lg mb-2">🎟 Apply Coupon</h2>
+
+  <div class="flex gap-2">
+    <input id="couponInput" placeholder="Enter Coupon Code"
+    class="border p-2 w-full rounded">
+
+    <button onclick="applyCouponManual()"
+    class="bg-green-600 text-white px-3 rounded">
+    Apply
+    </button>
+  </div>
+
+  <button onclick="toggleCoupons()" 
+  class="text-green-700 mt-2 text-sm underline">
+  View Available Coupons
+  </button>
+
+  <div id="couponList" class="hidden mt-3 flex flex-wrap gap-2"></div>
+</div>
+
+<!-- CUSTOMER DETAILS -->
+<div class="bg-white p-5 rounded-xl shadow mt-4">
+  <h2 class="font-bold text-lg mb-3">📦 Delivery Details</h2>
+
+  <input id="name" placeholder="Full Name" class="input">
+  <input id="phone" placeholder="Phone Number" class="input">
+
+  <input id="address" placeholder="Full Address" class="input">
+  <input id="landmark" placeholder="Landmark" class="input">
+
+  <div class="grid grid-cols-2 gap-2">
+    <input id="city" placeholder="City" class="input">
+    <input id="state" placeholder="State" class="input">
+  </div>
+
+  <div class="grid grid-cols-2 gap-2 mt-2">
+    <input id="pincode" placeholder="Pincode" class="input">
+    <select id="type" class="input">
+      <option>Home</option>
+      <option>Office</option>
+    </select>
+  </div>
+</div>
+
+<!-- NOTES -->
+<div class="bg-white p-4 rounded-xl shadow mt-4">
+  <textarea id="notes" placeholder="Add notes (optional)" 
+  class="w-full border p-2 rounded"></textarea>
+</div>
+
+<!-- BILL -->
+<div class="bg-white p-5 rounded-xl shadow mt-4">
+  <p id="subtotal"></p>
+  <p id="delivery"></p>
+  <p id="discount"></p>
+
+  <h2 id="total" class="text-xl font-bold text-green-700"></h2>
+
+  <button onclick="checkout()" 
+  class="bg-green-700 text-white w-full mt-4 py-3 rounded-lg font-bold">
+  Place Order on WhatsApp
+  </button>
+
+  <button onclick="shareBill()" 
+  class="bg-pink-300 w-full mt-3 py-2 rounded font-semibold">
+  Share Bill
+  </button>
+</div>
+
+</div>
+
+<style>
+.input{
+  width:100%;
+  border:1px solid #ddd;
+  padding:10px;
+  margin-top:8px;
+  border-radius:8px;
+}
+</style>
+
+<script>
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+let discount = 0;
+
+// COUPONS
+const coupons = [
+  {code:"SAVE10", discount:50, min:200},
+  {code:"SAVE50", discount:100, min:500}
+];
+
+// RENDER CART
+function renderCart(){
+  let html="";
+  let subtotal=0;
+
+  cart.forEach(item=>{
+    subtotal += item.price * item.qty;
+
+    html += `
+    <div class="bg-white p-4 mb-3 rounded-lg shadow flex justify-between">
+      <div>
+        <h2 class="font-bold">${item.name}</h2>
+        <p>₹${item.price}</p>
+
+        <div class="flex gap-2 mt-2">
+          <button onclick="qty(${item.id},-1)" class="px-2 bg-gray-200">-</button>
+          <span>${item.qty}</span>
+          <button onclick="qty(${item.id},1)" class="px-2 bg-gray-200">+</button>
+        </div>
+      </div>
+
+      <button onclick="removeItem(${item.id})" class="text-red-500">❌</button>
+    </div>`;
+  });
+
+  let delivery = 0;
+  let total = subtotal - discount;
+
+  document.getElementById("cartItems").innerHTML = html;
+  document.getElementById("subtotal").innerText="Subtotal: ₹"+subtotal;
+  document.getElementById("delivery").innerText="Pickup: From Shop Only 🏪";
+  document.getElementById("discount").innerText="Discount: ₹"+discount;
+  document.getElementById("total").innerText="Total: ₹"+total;
+
+  renderCoupons();
+}
+
+// SHOW COUPONS
+function toggleCoupons(){
+  const div = document.getElementById("couponList");
+  div.classList.toggle("hidden");
+
+  let html="";
+  coupons.forEach(c=>{
+    html += `
+    <button onclick="applyCoupon('${c.code}')"
+    class="bg-green-200 px-3 py-1 rounded">
+    ${c.code}
+    </button>`;
+  });
+
+  div.innerHTML = html;
+}
+
+// APPLY CLICK
+function applyCoupon(code){
+  document.getElementById("couponInput").value = code;
+  applyCouponManual();
+}
+
+// APPLY INPUT
+function applyCouponManual(){
+  const code = document.getElementById("couponInput").value;
+  let subtotal = cart.reduce((s,i)=>s+i.price*i.qty,0);
+
+  const found = coupons.find(c=>c.code===code);
+
+  if(found && subtotal >= found.min){
+    discount = found.discount;
+    alert("Coupon Applied ✅");
+  } else {
+    discount = 0;
+    alert("Invalid or not applicable ❌");
+  }
+
+  renderCart();
+}
+
+// QUANTITY
+function qty(id,change){
+  cart = cart.map(i=>{
+    if(i.id===id){
+      i.qty += change;
+      if(i.qty<1) i.qty=1;
+    }
+    return i;
+  });
+
+  localStorage.setItem("cart",JSON.stringify(cart));
+  renderCart();
+}
+
+// REMOVE
+function removeItem(id){
+  cart = cart.filter(i=>i.id!==id);
+  localStorage.setItem("cart",JSON.stringify(cart));
+  renderCart();
+}
+
+// GENERATE BILL
+function generateBill(){
+  let subtotal=0;
+  let text="🧾 *ORDER BILL*\n\n";
+
+  cart.forEach(i=>{
+    subtotal += i.price*i.qty;
+    text += `• ${i.name} x${i.qty} = ₹${i.price*i.qty}\n`;
+  });
+
+  let total = subtotal - discount;
+
+  text += `\nSubtotal: ₹${subtotal}`;
+  text += `\nDiscount: ₹${discount}`;
+  text += `\n\n💰 *Total Payable: ₹${total}*`;
+
+  text += `\n\n📍 Pickup from Shop Only (No Delivery)`;
+
+  text += "\n\n👤 Customer Details\n";
+  text += "Name: "+document.getElementById("name").value+"\n";
+  text += "Phone: "+document.getElementById("phone").value+"\n";
+
+  text += "\nAddress:\n";
+  text += document.getElementById("address").value+"\n";
+  text += document.getElementById("city").value+"\n";
+
+  text += "\n📝 Notes: "+document.getElementById("notes").value;
+
+  return text;
+}
+
+// CHECKOUT
+function checkout(){
+
+  const confirmMsg = confirm(
+`⚠️ IMPORTANT
+
+You have to visit our shop to collect your order.
+
+✔ No home delivery available
+✔ Pay at shop
+✔ Collect your medicines directly
+
+Do you want to continue?`
+  );
+
+  if(!confirmMsg) return;
+
+  const msg = generateBill();
+
+  window.open("https://wa.me/9120227101?text="+encodeURIComponent(msg));
+
+  alert("✅ Your order bill has been sent!\nPlease visit shop to collect.");
+
+  localStorage.removeItem("cart");
+}
+
+// SHARE
+function shareBill(){
+  const msg = generateBill();
+
+  if(navigator.share){
+    navigator.share({text:msg});
+  }else{
+    alert("Copy this:\n"+msg);
+  }
+}
+
+renderCart();
+</script>
+
+</body>
+</html>
