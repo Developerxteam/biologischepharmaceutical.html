@@ -21,45 +21,235 @@
 <script src="https://unpkg.com/medium-zoom/dist/medium-zoom.min.js"></script>
 
 <style>
-  :root{
-    --accent-1: #059669; /* emerald */
-    --accent-2: #0ea5a4; /* teal */
-    --gold-1: #ffb800;
+root {
+  --primary-green: #22c55e;   /* light green */
+  --dark-green: #065f46;      /* strong green for price */
+  --soft-green: #ecfdf5;      /* very light green */
+  --light-pink: #fff1f2;      /* soft pink */
+}
+
+/* BODY */
+body {
+  background: var(--soft-green);
+  color: #111;
+}
+
+/* CARDS */
+.glass {
+  background: white !important;
+  border: 1px solid #e5e7eb;
+  color: #111 !important;
+}
+
+/* ===== PRICE (IMPORTANT FIX) ===== */
+.text-emerald-300 {
+  color: var(--dark-green) !important;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+/* ===== BUY BUTTON (MINIMAL LIGHT GREEN) ===== */
+button,
+.bg-emerald-500 {
+  background: var(--primary-green) !important;
+  color: white !important;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: var(--dark-green) !important;
+}
+
+/* ===== TAGS (NO BLUE, CLEAN GREEN) ===== */
+.chip {
+  background: var(--soft-green) !important;
+  border: 1px solid var(--primary-green) !important;
+  color: var(--dark-green) !important;
+  border-radius: 999px;
+  padding: 6px 14px;
+  transition: 0.25s;
+}
+
+.chip:hover {
+  background: var(--primary-green) !important;
+  color: white !important;
+}
+
+/* ===== SEARCH BOX ===== */
+input[type="search"] {
+  background: white !important;
+  border: 1px solid #d1d5db !important;
+}
+
+input[type="search"]:focus {
+  border-color: var(--primary-green) !important;
+  box-shadow: 0 0 0 2px rgba(34,197,94,0.2);
+}
+
+/* ===== LIGHT PINK SECTIONS (SOFT PREMIUM LOOK) ===== */
+.bg-pink-soft {
+  background: var(--light-pink);
+}
+
+/* ===== REMOVE BLUE COMPLETELY ===== */
+.bg-teal-500,
+.bg-gradient-to-r,
+.from-emerald-600,
+.to-teal-500 {
+  background: var(--primary-green) !important;
+}
+
+/* ===== NAVBAR ===== */
+header {
+  background: white !important;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+/* TEXT COLORS */
+.text-slate-300,
+.text-slate-400 {
+  color: #374151 !important;
+}
+
+/* LINKS */
+a {
+  color: var(--primary-green);
+}
+
+a:hover {
+  color: var(--dark-green);
+}
+
+</style>
+    
+<style>
+:root {
+  --primary-green: #16a34a;
+  --dark-green: #065f46;
+  --light-green: #ecfdf5;
+  --medical-blue: #2563eb;
+  --soft-blue: #e0f2fe;
+  --accent-gold: #c9a635;
+}
+
+/* FIXED + CLEAN BACKGROUND */
+body {
+  background: linear-gradient(180deg, var(--light-green), #ffffff);
+  color: #0f172a;
+}
+
+/* NAVBAR */
+header {
+  background: rgba(255,255,255,0.9) !important;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+
+/* CARDS */
+.bg-slate-800 {
+  background: #ffffff !important;
+  color: #0f172a !important;
+}
+
+.bg-slate-900 {
+  background: #f8fafc !important;
+  color: #0f172a !important;
+}
+
+/* TEXT FIX */
+.text-slate-100,
+.text-slate-200,
+.text-slate-300 {
+  color: #334155 !important;
+}
+
+.text-slate-400 {
+  color: #64748b !important;
+}
+
+/* BUTTONS */
+.bg-emerald-500,
+button {
+  background: linear-gradient(90deg, var(--primary-green), var(--medical-blue)) !important;
+  color: white !important;
+}
+
+.bg-emerald-500:hover {
+  opacity: 0.9;
+}
+
+/* INPUT */
+input {
+  background: white !important;
+  border: 1px solid #d1fae5 !important;
+}
+
+input:focus {
+  border-color: var(--primary-green) !important;
+  box-shadow: 0 0 0 2px rgba(22,163,74,0.2);
+}
+
+/* TAGS */
+.chip {
+  background: #f0fdf4;
+  border-color: #bbf7d0 !important;
+  color: #065f46 !important;
+}
+
+.chip:hover {
+  background: var(--primary-green);
+  color: white !important;
+}
+
+/* TOP STRIP */
+.bg-gradient-to-r {
+  background: linear-gradient(90deg, var(--primary-green), var(--medical-blue)) !important;
+  color: white !important;
+}
+
+/* GLASS */
+.glass {
+  background: rgba(255,255,255,0.75);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(22,163,74,0.15);
+}
+
+/* TESTIMONIAL FIX */
+#testimonials {
+  background: #f8fafc !important;
+  color: #0f172a !important;
+}
+
+/* SHADOW */
+.shadow-soft {
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+</style>
+ 
+
+  <!-- JSON-LD (Organization + Sitelinks Search) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"Herbal Biologische Pharmaceuticals Private Limited",
+    "url":"https://www.example.com/",
+    "logo":"https://i.postimg.cc/KjKgRbRr/PHOTO-2025-08-11-19-50-41.jpg",
+    "sameAs":[]
   }
-  body { font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; background:#fff; color:#0f172a; }
-  /* Header gradient accent */
-  .brand-grad { background: linear-gradient(90deg, rgba(5,150,105,1), rgba(14,165,164,1)); -webkit-background-clip: text; background-clip: text; color: transparent; }
-
-  /* badge */
-  .badge {
-    background: linear-gradient(135deg,#ff5f6d,#ffc371); color:#fff;
-    padding:.35rem .65rem; border-radius:999px; font-weight:700; font-size:.82rem;
-    box-shadow:0 6px 18px rgba(16,24,40,.12); transform-origin:center; will-change:transform;
-  }
-  .badge.anim { animation: floatBadge 2.6s ease-in-out infinite; }
-  @keyframes floatBadge { 0%{transform:translateY(0)}50%{transform:translateY(-6px)}100%{transform:translateY(0)} }
-
-  /* image container sizing */
-  .img-mobile { max-height:18rem; }   /* mobile */
-  .img-sm { max-height:24rem; }       /* small screens */
-  .img-md { max-height:32rem; }       /* desktop */
-
-  /* subtle card */
-  .card { background: linear-gradient(180deg, #ffffff, #fbfbfd); border:1px solid rgba(15,23,42,0.04); border-radius:12px; box-shadow: 0 8px 30px rgba(2,6,23,.06); }
-
-  /* Icon circle */
-  .icon-circle { width:44px;height:44px;border-radius:10px;display:inline-flex;align-items:center;justify-content:center;background:linear-gradient(135deg,rgba(5,150,105,0.08),rgba(14,165,164,0.05)); }
-
-  /* CTA gradients */
-  .btn-primary { background: linear-gradient(90deg,var(--accent-1),var(--accent-2)); color: #fff; }
-  .btn-ghost { border:1px solid rgba(5,150,105,.14); color: var(--accent-1); background:transparent; }
-
-  /* responsive tweaks */
-  @media(min-width:768px){
-    .img-mobile { max-height:24rem; } 
-  }
-  @media(min-width:1024px){
-    .img-mobile { max-height:36rem; } 
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebSite",
+    "name":"Herbal Biologische Pharmaceuticals",
+    "url":"https://www.example.com/",
+    "potentialAction":{
+      "@type":"SearchAction",
+      "target":"https://www.example.com/?q={search_term_string}",
+      "query-input":"required name=search_term_string"
+    }
   }
 </style>
 </head>
