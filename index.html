@@ -778,7 +778,7 @@ input:focus {
   </button> -->
 
   <!-- Chat panel -->
-  <div v-if="chatOpen" class="fixed bottom-24 right-5 w-[320px] bg-slate-900 border border-slate-700 rounded-xl shadow-soft overflow-hidden z-50">
+  <!--<div v-if="chatOpen" class="fixed bottom-24 right-5 w-[320px] bg-slate-900 border border-slate-700 rounded-xl shadow-soft overflow-hidden z-50">
     <div class="px-4 py-3 flex items-center justify-between bg-slate-800">
       <div class="flex items-center gap-2">
         <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-emerald-400" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 1 21h22L12 2z"/></svg>
@@ -800,7 +800,7 @@ input:focus {
       <button @click="sendChat" class="px-3 py-2 rounded bg-emerald-500 text-black font-semibold">Send</button>
     </div>
   </div>
-</div>
+</div>    -->
 <!-- Include AOS Animation CSS/JS -->
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -813,15 +813,8 @@ input:focus {
     <h2 class="text-4xl font-bold text-center mb-6 text-green-200" data-aos="fade-down">
       Homeopathy – FAQ
     </h2>
-    <p class="text-lg text-center max-w-3xl mx-auto mb-12 text-green-100" data-aos="fade-up">
-     
-  Our homeopathic medicines are crafted with decades of expertise, uniting time-tested remedies 
-  with modern scientific precision. Designed for safe, gentle, and effective healing, they address 
-  the root cause of ailments without any acute side effects. Experience the purity, potency, and trust that 
-  have made us a preferred choice for natural health solutions.
-    
-    </p>
-
+    <p class="text-lg text-center max-w-3xl mx-auto mb-12 text-green-100" data-aos="fade-up">    
+  All informations is based on personal experience and is for general guidance only; it is not medical advice. Please consult a qualified doctor before acting on it.
     <div class="space-y-4">
       
       <details class="bg-green-800 rounded-lg p-6 shadow-lg" data-aos="fade-up">
@@ -830,7 +823,7 @@ input:focus {
         </summary>
         <p class="mt-3 text-green-200 leading-relaxed">
           Homeopathy has been practiced for over 200 years and is recognized by many countries as a valid medical system. 
-          Several peer-reviewed studies have shown its effectiveness in conditions like allergies, migraines, and skin disorders. 
+          Several peer-reviewed studies have shown its effectiveness in conditions like allergies, migraines, and skin disorders. Always consult a doctor before relying on this advice.
         </p>
       </details>
 
@@ -841,8 +834,8 @@ input:focus {
         <p class="mt-3 text-green-200 leading-relaxed">
           The response time depends on the nature and duration of the illness. 
           Acute conditions like colds or fevers may improve within hours to days, while chronic diseases 
-          like arthritis or asthma may require many months. Homeopathy works by stimulating the body’s 
-          self-healing capacity, so results are gradual but lasting.
+          like arthritis or asthma may require many months or it can many years. Homeopathy works by stimulating the body’s 
+          self-healing capacity, so results are gradual but lasting. Always consult a doctor before relying on this advice.
         </p>
       </details>
 
@@ -854,7 +847,7 @@ input:focus {
           Homeopathic medicines are extremely safe when prescribed correctly. 
           They are prepared in ultra-diluted doses, making them non-toxic and free from harmful chemicals. 
           Occasionally, a mild and temporary aggravation of symptoms may occur, which indicates the body’s healing response. 
-          These usually subside quickly without harm.
+          These usually subside quickly without harm. Always consult a doctor before relying on this advice.
         </p>
       </details>
 
@@ -865,7 +858,7 @@ input:focus {
         <p class="mt-3 text-green-200 leading-relaxed">
           Yes, in most cases, Homeopathy can be safely taken alongside conventional treatments. 
           It often complements allopathy by reducing side effects and improving overall recovery. 
-          However, always ask from your doctor about all medications you are taking to avoid any interaction.
+          However, always ask from your doctor about all medications you are taking to avoid any interaction. Always consult a doctor before relying on this advice.
         </p>
       </details>
 
@@ -877,7 +870,7 @@ input:focus {
           Yes, Homeopathy has shown remarkable results in treating chronic diseases like eczema, 
           asthma, thyroid disorders, migraines, arthritis, and depression. 
           It addresses the root cause of illness and works on the body-mind connection, 
-          leading to long-term relief and prevention of recurrence.
+          leading to long-term relief and prevention of recurrence. Always consult a doctor before relying on this advice.
         </p>
       </details>
 
@@ -888,7 +881,7 @@ input:focus {
         <p class="mt-3 text-green-200 leading-relaxed">
           Absolutely. Homeopathy is one of the safest treatment options for infants and children. 
           It can help with teething problems, colds, coughs, allergies, digestive issues, and even behavioral concerns — 
-          without causing drowsiness or side effects.
+          without causing drowsiness or side effects. Always consult a doctor before relying on this advice.
         </p>
       </details>
 
@@ -899,6 +892,7 @@ input:focus {
         <p class="mt-3 text-green-200 leading-relaxed">
           Not necessarily. In acute cases like flu, diarrhea, or injuries, homeopathic remedies can act very quickly — 
           often faster than conventional medicine. For chronic issues, it may take longer as the focus is on deep healing.
+          Always consult a doctor before relying on this advice.
         </p>
       </details>
 
@@ -910,6 +904,7 @@ input:focus {
           Remedies are prepared from natural sources — plants, minerals, and some animal products — 
           using a process of dilution and succussion (vigorous shaking). 
           This method enhances their healing properties while eliminating toxicity.
+          Always consult a doctor before relying on this advice.
         </p>
       </details>
 
@@ -930,7 +925,7 @@ input:focus {
         <p class="mt-3 text-green-200 leading-relaxed">
           Yes, but only under professional guidance. 
           Certain remedies are highly beneficial for heartburn, or back pain in pregnancy, 
-          but some should be avoided. Always consult a doctor before.
+          but some should be avoided. Always consult a doctor before relying on this advice.
         </p>
       </details>
        </div>
@@ -1019,7 +1014,9 @@ input:focus {
     <div data-aos="fade-right">
       <img src="https://i.postimg.cc/KjKgRbRr/PHOTO-2025-08-11-19-50-41.jpg" alt="Logo" class="mb-4 w-40">
       <p>
-        With years of research, expertise, and a commitment to natural wellness, we create remedies that are safe, effective, and affordable. Our goal is to make the benefits of homeopathy accessible to everyone, offering a wide range of medicines for different health needs — from everyday ailments to long-term wellness support.
+      Our intentions is to make the benefits of homeopathy accessible to everyone, offering a wide range of medicines for different health needs — from everyday ailments to long-term wellness support.
+      All content on the website ( products details, images, and advices or any part of all pages of site ) is provided for general informational purposes only and may contain errors and inaccuracies.
+      users should consult a qualified healthcare professional before relying on any details provided in this website.
       </p>
     </div>
 
@@ -1036,7 +1033,7 @@ input:focus {
         <li><a href="#medicines"><span class="icon">➤</span> Medicines </a></li>
         <li><a href="#contact"><span class="icon">➤</span> Contact</a></li>
         <li><a href="#"><span class="icon">➤</span> Customer Reviews </a></li>
-        <li><a href="minihelpbox.html"><span class="icon">➤</span> Need HELP </a></li>
+        <li><a href="minihelpbox.html"><span class="icon">➤</span> Need Help </a></li>
         <li><a href="tel:9120227101"><span class="icon">➤</span> Call Us </a></li>
         <li><a href="mailto:herbalbiologischepharma1103@gmail.com"><span class="icon">➤</span> Email Us </a></li>
       </ul>
@@ -1046,7 +1043,8 @@ input:focus {
     <div data-aos="fade-left" data-aos-delay="300">
       <h3> Head Office </h3>
       <p>
-      Uttar Pradesh : BIOLOGISCHE PHARMACEUTICALS PRIVATE LIMITED B-39,Kisan Market ,Vikalp Khand-1 ,Gomti Nagar,Lucknow - 206010 India.
+     HERBAL BIOLOGISCHE PHARMACEUTICALS PVT. LTD.
+592/3B/214/1, Gopal Nagar Near Defence Colony Lucknow 226025
       </p>
       <p>Email: <a href="mailto:herbalbiologischepharma1103@gmail.com"> herbalbiologischepharma1103@gmail.com </a></p>
       <p>+91 9120227101 </p>
