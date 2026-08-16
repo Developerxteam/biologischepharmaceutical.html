@@ -1,1390 +1,3047 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Product of — Herbal Biologische pharmaceuticals </title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-<!-- Tailwind (no build) -->
-<script src="https://cdn.tailwindcss.com"></script>
+  <title>Herbal Biologische Pharmaceuticals — Homeopathic Medicines</title>
+  <meta name="description" content="Herbal Biologische Pharmaceuticals Private Limited — Homeopathic Medicines. Search by name or symptoms." />
+  <meta name="keywords" content="ayurvedic, herbal, homeopathic, medicines, drops, tablets, syrup, Lucknow pharmacy" />
+  <meta name="theme-color" content="#065f46" />
+  <link rel="canonical" href="https://www.example.com/"/>
 
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" href="https://i.postimg.cc/QC7hFSff/android-chrome-512x512.png">
+  <link rel="apple-touch-icon" href="https://i.postimg.cc/KjKgRbRr/PHOTO-2025-08-11-19-50-41.jpg">
 
-<!-- AOS (scroll reveal) -->
-<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Herbal Biologische Pharmaceuticals" />
+  <meta property="og:description" content="Homeopathic Medicines. Search by name or symptoms." />
+  <meta property="og:image" content="https://i.postimg.cc/KjKgRbRr/PHOTO-2025-08-11-19-50-41.jpg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.example.com/" />
 
-<!-- GSAP -->
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Herbal Biologische Pharmaceuticals"/>
+  <meta name="twitter:description" content="Homeopathic Medicines."/>
+  <meta name="twitter:image" content="https://i.postimg.cc/KjKgRbRr/PHOTO-2025-08-11-19-50-41.jpg"/>
 
-<!-- medium-zoom for image zoom on click/tap -->
-<script src="https://unpkg.com/medium-zoom/dist/medium-zoom.min.js"></script>
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
 
-<style>
-  :root{
-    --accent-1: #059669; /* emerald */
-    --accent-2: #0ea5a4; /* teal */
-    --gold-1: #ffb800;
-  }
-  body { font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; background:#fff; color:#0f172a; }
-  /* Header gradient accent */
-  .brand-grad { background: linear-gradient(90deg, rgba(5,150,105,1), rgba(14,165,164,1)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  <!-- CSS/JS libraries -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://unpkg.com/swiper@9/swiper-bundle.min.css" />
+  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2/dist/fuse.min.js"></script>
+  <script src="https://unpkg.com/swiper@9/swiper-bundle.min.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css"/>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.0.45/dist/lenis.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js" async></script>
+  <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css"/>
+  <script src="https://unpkg.com/@popperjs/core@2"></script>
+  <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.min.js"></script>
 
-  /* badge */
-  .badge {
-    background: linear-gradient(135deg,#ff5f6d,#ffc371); color:#fff;
-    padding:.35rem .65rem; border-radius:999px; font-weight:700; font-size:.82rem;
-    box-shadow:0 6px 18px rgba(16,24,40,.12); transform-origin:center; will-change:transform;
-  }
-  .badge.anim { animation: floatBadge 2.6s ease-in-out infinite; }
-  @keyframes floatBadge { 0%{transform:translateY(0)}50%{transform:translateY(-6px)}100%{transform:translateY(0)} }
+ 
+    <style>
+    
+:root {
+  --primary-green: #22c55e;   /* light green */
+  --dark-green: #065f46;      /* strong green for price */
+  --soft-green: #ecfdf5;      /* very light green */
+  --light-pink: #fff1f2;      /* soft pink */
+}
 
-  /* image container sizing */
-  .img-mobile { max-height:18rem; }   /* mobile */
-  .img-sm { max-height:24rem; }       /* small screens */
-  .img-md { max-height:32rem; }       /* desktop */
+/* BODY */
+body {
+  background: var(--soft-green);
+  color: #111;
+}
 
-  /* subtle card */
-  .card { background: linear-gradient(180deg, #ffffff, #fbfbfd); border:1px solid rgba(15,23,42,0.04); border-radius:12px; box-shadow: 0 8px 30px rgba(2,6,23,.06); }
+/* CARDS */
+.glass {
+  background: white !important;
+  border: 1px solid #e5e7eb;
+  color: #111 !important;
+}
 
-  /* Icon circle */
-  .icon-circle { width:44px;height:44px;border-radius:10px;display:inline-flex;align-items:center;justify-content:center;background:linear-gradient(135deg,rgba(5,150,105,0.08),rgba(14,165,164,0.05)); }
+/* ===== PRICE (IMPORTANT FIX) ===== */
+.text-emerald-300 {
+  color: var(--dark-green) !important;
+  font-weight: bold;
+  font-size: 18px;
+}
 
-  /* CTA gradients */
-  .btn-primary { background: linear-gradient(90deg,var(--accent-1),var(--accent-2)); color: #fff; }
-  .btn-ghost { border:1px solid rgba(5,150,105,.14); color: var(--accent-1); background:transparent; }
+/* ===== BUY BUTTON (MINIMAL LIGHT GREEN) ===== */
+button,
+.bg-emerald-500 {
+  background: var(--primary-green) !important;
+  color: white !important;
+  border-radius: 8px;
+  transition: 0.3s;
+}
 
-  /* responsive tweaks */
-  @media(min-width:768px){
-    .img-mobile { max-height:24rem; } 
-  }
-  @media(min-width:1024px){
-    .img-mobile { max-height:36rem; } 
-  }
+button:hover {
+  background: var(--dark-green) !important;
+}
+
+/* ===== TAGS (NO BLUE, CLEAN GREEN) ===== */
+.chip {
+  background: var(--soft-green) !important;
+  border: 1px solid var(--primary-green) !important;
+  color: var(--dark-green) !important;
+  border-radius: 999px;
+  padding: 6px 14px;
+  transition: 0.25s;
+}
+
+.chip:hover {
+  background: var(--primary-green) !important;
+  color: white !important;
+}
+
+/* ===== SEARCH BOX ===== */
+input[type="search"] {
+  background: white !important;
+  border: 1px solid #d1d5db !important;
+}
+
+input[type="search"]:focus {
+  border-color: var(--primary-green) !important;
+  box-shadow: 0 0 0 2px rgba(34,197,94,0.2);
+}
+
+/* ===== LIGHT PINK SECTIONS (SOFT PREMIUM LOOK) ===== */
+.bg-pink-soft {
+  background: var(--light-pink);
+}
+
+/* ===== REMOVE BLUE COMPLETELY ===== */
+.bg-teal-500,
+.bg-gradient-to-r,
+.from-emerald-600,
+.to-teal-500 {
+  background: var(--primary-green) !important;
+}
+
+/* ===== NAVBAR ===== */
+header {
+  background: white !important;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+/* TEXT COLORS */
+.text-slate-300,
+.text-slate-400 {
+  color: #374151 !important;
+}
+
+/* LINKS */
+a {
+  color: var(--primary-green);
+}
+
+a:hover {
+  color: var(--dark-green);
+}
+
 </style>
+    
+<style>
+:root {
+  --primary-green: #16a34a;
+  --dark-green: #065f46;
+  --light-green: #ecfdf5;
+  --medical-blue: #2563eb;
+  --soft-blue: #e0f2fe;
+  --accent-gold: #c9a635;
+}
+
+/* FIXED + CLEAN BACKGROUND */
+body {
+  background: linear-gradient(180deg, var(--light-green), #ffffff);
+  color: #0f172a;
+}
+
+/* NAVBAR */
+header {
+  background: rgba(255,255,255,0.9) !important;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+
+/* CARDS */
+.bg-slate-800 {
+  background: #ffffff !important;
+  color: #0f172a !important;
+}
+
+.bg-slate-900 {
+  background: #f8fafc !important;
+  color: #0f172a !important;
+}
+
+/* TEXT FIX */
+.text-slate-100,
+.text-slate-200,
+.text-slate-300 {
+  color: #334155 !important;
+}
+
+.text-slate-400 {
+  color: #64748b !important;
+}
+
+/* BUTTONS */
+.bg-emerald-500,
+button {
+  background: linear-gradient(90deg, var(--primary-green), var(--medical-blue)) !important;
+  color: white !important;
+}
+
+.bg-emerald-500:hover {
+  opacity: 0.9;
+}
+
+/* INPUT */
+input {
+  background: white !important;
+  border: 1px solid #d1fae5 !important;
+}
+
+input:focus {
+  border-color: var(--primary-green) !important;
+  box-shadow: 0 0 0 2px rgba(22,163,74,0.2);
+}
+
+/* TAGS */
+.chip {
+  background: #f0fdf4;
+  border-color: #bbf7d0 !important;
+  color: #065f46 !important;
+}
+
+.chip:hover {
+  background: var(--primary-green);
+  color: white !important;
+}
+
+/* TOP STRIP */
+.bg-gradient-to-r {
+  background: linear-gradient(90deg, var(--primary-green), var(--medical-blue)) !important;
+  color: white !important;
+}
+
+/* GLASS */
+.glass {
+  background: rgba(255,255,255,0.75);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(22,163,74,0.15);
+}
+
+/* TESTIMONIAL FIX */
+#testimonials {
+  background: #f8fafc !important;
+  color: #0f172a !important;
+}
+
+/* SHADOW */
+.shadow-soft {
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+
+</style>
+ 
+
+  <!-- JSON-LD (Organization + Sitelinks Search) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"Herbal Biologische Pharmaceuticals Private Limited",
+    "url":"https://www.example.com/",
+    "logo":"https://i.postimg.cc/KjKgRbRr/PHOTO-2025-08-11-19-50-41.jpg",
+    "sameAs":[]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebSite",
+    "name":"Herbal Biologische Pharmaceuticals",
+    "url":"https://www.example.com/",
+    "potentialAction":{
+      "@type":"SearchAction",
+      "target":"https://www.example.com/?q={search_term_string}",
+      "query-input":"required name=search_term_string"
+    }
+  }
+  </script>
 </head>
-<body>
 
-<!-- header -->
-<header class="sticky top-0 z-40 bg-white/95 backdrop-blur-sm border-b">
-  <div class="container mx-auto px-4 py-3 flex items-center justify-between">
-    <div class="flex items-center gap-3">
+<body class="bg-slate-900 text-slate-100">
+<div id="app" class="min-h-screen flex flex-col">
+
+  <!-- Top announcement (no emojis) -->
+  <div class="w-full bg-gradient-to-r from-emerald-600 via-emerald-500 to-teal-500 text-black text-[13px] py-2">
+    <div class="container mx-auto px-4 flex items-center gap-3 whitespace-nowrap overflow-x-auto">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4"><path fill="currentColor" d="M12 2 1 21h22L12 2zm0 5 7.53 13H4.47L12 7z"/></svg>
+      <span class="font-semibold"> Trusted Homeopathic Range </span>
+    </div>
+  </div>
+
+  <!-- NAV -->
+  <header class="sticky top-0 z-40 bg-slate-800/80 backdrop-blur border-b border-slate-700">
+    <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <button @click="mobileNav=!mobileNav" class="md:hidden p-2 rounded hover:bg-slate-700" aria-label="Open Menu">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 6h18M3 12h18M3 18h18" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </button>
+
       
-     <!-- Logo (PNG or JPG instead of SVG) -->
-<img src="https://i.postimg.cc/KjKgRbRr/PHOTO-2025-08-11-19-50-41.jpg" 
-     alt="Herbal Biologische Pharmaceuticals Logo" 
-     width="44" height="44" 
-     class="rounded-md p-1" />
+       <!-- Logo + Name -->
+<a href="#" class="flex items-center gap-3" @click.prevent="scrollTo('home')">
+  <!-- LOGO JPG -->
+  <div class="w-10 h-10 rounded-full ring-2 ring-emerald-500 ring-offset-2 ring-offset-slate-800 flex items-center justify-center bg-white overflow-hidden">
+    <img src="https://i.postimg.cc/QC7hFSff/android-chrome-512x512.png" alt="Logo" class="w-7 h-7 object-cover">
+  </div>
+  <div class="leading-tight">
+    <div class="font-bold tracking-wide" style="font-family:'Bebas Neue',cursive;letter-spacing:.5px;font-size:20px;">
+      Herbal Biologische Pharmaceuticals
+    </div>
+    <div class="text-xs text-slate-300"> Homeopathic Pharmacy </div>
+  </div>
+</a>
 
-      <div>
-        <div class="text-sm font-semibold brand-grad" style="font-family:'Poppins',sans-serif;"> Herbal Biologische</div>
-        <div class="text-xs text-slate-500 -mt-0.5"> Pharmaceuticals Pvt.Ltd. </div>
+      <!-- Desktop links -->
+      <nav class="hidden md:flex items-center gap-6 text-sm">
+        <a href="#medicines" class="hover:text-emerald-400">Medicines</a>
+      <a href="minihelpbox.html" class="hover:text-emerald-400"> Chat Bot </a>
+        <a href="#about" class="hover:text-emerald-400">About Us.</a>
+        <a href="#contact" class="hover:text-emerald-400">Contact</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <a :href="waLink" target="_blank" class="hidden md:inline-flex items-center px-3 py-2 rounded bg-emerald-400 text-black font-semibold hover:opacity-90">WhatsApp</a>
       </div>
     </div>
 
-    <a href="index.html" class="text-sm font-semibold text-slate-700 hover:text-slate-900">Back to Home</a>
-  </div>
-</header>
-
-<!-- main -->
-<main class="container mx-auto px-4 py-8">
-  <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-
-    <!-- left: image -->
-    <section class="card p-4 relative overflow-hidden">
-      <!-- animated badge -->
-      <div id="badge" class="badge anim absolute top-4 left-4 hidden">New</div>
-
-      <!-- image (object-contain) -->
-      <div class="flex items-center justify-center p-3">
-        <img id="productImage" src="" alt="Product" class="w-full object-contain rounded-lg img-mobile sm:img-sm md:img-md transition-transform duration-400" />
+    <!-- Mobile drawer -->
+    <div v-if="mobileNav" class="md:hidden bg-slate-900 border-t border-slate-700 animate-slideDown">
+      <div class="px-4 py-3 flex flex-col gap-2">
+        <a href="#home" @click.prevent="scrollTo('home'); mobileNav=false" class="py-2">Home</a>
+        <a href="#medicines" @click.prevent="scrollTo('medicines'); mobileNav=false" class="py-2">Medicines</a>
+         <a href="minihelpbox.html" target="_blank" @click="mobileNav=false" class="py-2">
+  Helper : Chat Bot
+</a>
+        <a href="#contact" @click.prevent="scrollTo('contact'); mobileNav=false" class="py-2">Contact</a>
+       <a href="ab.html" target="_blank" @click="mobileNav=false" class="py-2">
+ About Us
+</a>
       </div>
+    </div>
+  </header>
 
-      <!-- optional small gallery row on mobile (shows thumbnails) -->
-      <div id="thumbs" class="mt-3 flex gap-3 overflow-auto"></div>
+  <!-- MAIN -->
+  <main id="home" class="flex-1 container mx-auto px-4 py-6">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <!-- Hero Carousel -->
+      <section class="md:col-span-2 bg-slate-800 glass rounded-xl p-4 shadow-soft" data-aos="fade-up">
+        <div class="swiper mySwiper rounded-lg overflow-hidden">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide p-3" v-for="(s,i) in slides" :key="i">
+              <div class="md:flex md:gap-4 items-center">
+                <img :src="s.image" alt="" class="w-full md:w-2/5 h-44 md:h-56 object-cover rounded-lg ring-brand" />
+                <div class="mt-3 md:mt-0">
+                  <h1 class="text-2xl md:text-3xl font-bold">{{ s.title }}</h1>
+                  <p class="mt-1 text-slate-300">{{ s.desc }}</p>
+                  <div class="mt-3 flex gap-2">
+                    <a :href="s.link" target="_blank" class="px-4 py-2 rounded bg-emerald-500 text-black font-semibold hover:bg-emerald-400"> Order Now </a>
+                    <a :href="s.altLink" target="_blank" class="px-4 py-2 rounded border border-slate-600 hover:bg-slate-700"> Call </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-pagination mt-3"></div>
+        </div>
+      </section>
+
+      <!-- Search -->
+      <aside class="bg-slate-800 glass rounded-xl p-4 shadow-soft" data-aos="fade-up" data-aos-delay="100">
+        <h2 class="text-xl font-bold"> Find Medicines </h2>
+        <p class="text-slate-400 text-sm">Search by medicine name or symptoms.</p>
+
+        <div class="flex gap-2 mt-2">
+          <input v-model="query" @input="searchFuse" type="search" aria-label="Search"
+                 placeholder="e.g.Cyston or Headache,Fungal Infection"
+                 class="flex-1 px-4 py-3 rounded-full bg-slate-900 border border-slate-700 focus:outline-none focus:border-emerald-500" />
+          <button @click="clearSearch" class="w-12 h-12 rounded-full bg-slate-700 flex items-center justify-center" aria-label="Clear">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 18L18 6M6 6l12 12"/></svg>
+          </button>
+        </div>
+
+        <!-- Tags -->
+        <div class="flex flex-wrap gap-2 mt-3">
+          <button v-for="t in tags" :key="t" @click="applyTag(t)"
+                  class="chip px-3 py-1 rounded-full border border-slate-700 text-sm text-slate-200 hover:bg-emerald-700">
+            {{ t }}
+          </button>
+        </div>
+
+        <div class="text-sm text-slate-300 mt-2">
+          <template v-if="filtered.length"> Showing <strong class="text-emerald-300">{{ filtered.length }}</strong> result(s)</template>
+          <template v-else>No results — try with different words .</template>
+        </div>
+      </aside>
+    </div>
+
+    <!-- Medicines -->
+    <section id="medicines" class="mt-8">
+      <h3 class="text-xl font-semibold mb-3"> Medicines </h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <article v-for="m in filtered" :key="m.id" class="bg-slate-800 glass rounded-xl p-4 shadow-soft group" data-aos="fade-up">
+          <!-- image area -->
+          <div class="relative bg-white rounded-lg p-2 h-48 flex items-center justify-center overflow-hidden">
+            <!-- floating badge -->
+            <span v-if="m.badge" class="absolute top-3 left-3 text-[11px] font-semibold px-2 py-1 rounded-full bg-emerald-500/90 text-black">
+              {{ m.badge }}
+            </span>
+            <!-- discount label slot example -->
+            <span v-if="m.discount" class="absolute top-3 right-3 text-[11px] font-semibold px-2 py-1 rounded-full bg-teal-500/90 text-black">
+              {{ m.discount }}
+            </span>
+
+            <!-- medium responsive image -->
+            <img :data-src="m.image" alt="" class="lazyload max-h-full max-w-full object-contain" />
+          </div>
+
+          <!-- content -->
+          <div class="mt-4 flex-1 flex flex-col">
+            <div class="flex justify-between items-start gap-3">
+              <div>
+                <h4 class="font-semibold text-lg leading-snug">{{ m.name }}</h4>
+                <div class="text-xs text-slate-400">{{ m.brand }}</div>
+              </div>
+              <div class="text-emerald-300 font-bold whitespace-nowrap">₹{{ m.price }}</div>
+            </div>
+
+            <div class="text-xs text-slate-400 mt-2">MFG: {{ m.mfg }} • EXP: {{ m.exp }}</div4
+            <p class="text-sm text-slate-300 mt-2 line-clamp-3">{{ m.desc }}</p>
+
+            <div class="mt-auto pt-4 flex gap-2">
+              <button @click="openBuy(m)" class="flex-1 px-3 py-2 rounded bg-emerald-500 text-black font-semibold hover:bg-emerald-400">
+                Buy
+              </button> 
+              <a :href="'details.html?id=' + m.id"
+                 class="flex-1 px-3 py-2 rounded border border-slate-700 hover:bg-slate-700 text-center">
+                Detail
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- empty state -->
+        <div v-if="filtered.length===0" class="col-span-full text-center text-slate-400 py-10">
+          Nothing found.
+        </div>
+      </div>
     </section>
+<section class="bg-white py-14 px-6">
+  <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-10 text-center">
 
-    <!-- right: details -->
-    <section class="space-y-4">
-      <div class="flex items-start justify-between gap-4">
-        <div>
-          <h1 id="productName" class="text-2xl md:text-3xl font-extrabold leading-tight">Product Name</h1>
-          <p id="productBrand" class="text-sm text-slate-500 mt-1">Brand name</p>
-        </div>
-
-        <div class="text-right">
-          <div id="price" class="text-2xl md:text-3xl font-bold text-emerald-600">₹0</div>
-          <div class="text-xs text-slate-400 mt-1">Inclusive of all taxes</div>
-        </div>
+    <!-- Card 1 -->
+    <div class="group p-8 rounded-3xl shadow-lg border border-green-100 bg-gradient-to-b from-white to-green-50 hover:shadow-xl transition duration-500">
+      <!-- Icon -->
+      <div class="mx-auto w-16 h-16 flex items-center justify-center rounded-full bg-green-100 mb-6 group-hover:scale-110 transition">
+        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="none" stroke="url(#grad1)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <defs>
+            <linearGradient id="grad1" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#1FAB54"/>
+              <stop offset="100%" stop-color="#C9A635"/>
+            </linearGradient>
+          </defs>
+          <path d="M12 20h9"></path>
+          <path d="M19 10v9"></path>
+          <path d="M22 7.24l-7.19-4.15a2 2 0 0 0-1.94 0L5.68 7.24a2 2 0 0 0-1 1.74v8.04a2 2 0 0 0 1 1.74l7.19 4.15a2 2 0 0 0 1.94 0l7.19-4.15a2 2 0 0 0 1-1.74V8.98a2 2 0 0 0-1-1.74z"></path>
+        </svg>
       </div>
+      <!-- Title -->
+      <h3 class="text-xl font-bold mb-3 text-gray-800">Quality</h3>
+      <!-- Description -->
+      <p class="text-gray-600 mb-5 leading-relaxed">
+       Medicines from our brand are crafted with unmatched care, combining the top ingredients and strict quality control to ensure every drop delivers real healing.
+      </p>
+      <!-- Link -->
+      <a href="ab.html" class="inline-flex items-center gap-1 text-green-700 font-semibold hover:text-green-900 transition">
+        Explore
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5-5-5-5"/></svg>
+      </a>
+    </div>
 
-      <!-- quick details row -->
-      <div class="flex flex-wrap gap-3">
-        <div class="px-3 py-2 rounded-lg bg-slate-50 text-slate-700 text-sm">MFG: <span id="mfg"></span></div>
-        <div class="px-3 py-2 rounded-lg bg-slate-50 text-slate-700 text-sm">EXP: <span id="exp"></span></div>
-        <div class="px-3 py-2 rounded-lg bg-slate-50 text-slate-700 text-sm">Stock: <span id="stock">In Stock</span></div>
+    <!-- Card 2 -->
+    <div class="group p-8 rounded-3xl shadow-lg border border-green-100 bg-gradient-to-b from-white to-green-50 hover:shadow-xl transition duration-500">
+      <div class="mx-auto w-16 h-16 flex items-center justify-center rounded-full bg-green-100 mb-6 group-hover:scale-110 transition">
+        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="none" stroke="url(#grad2)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <defs>
+            <linearGradient id="grad2" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#1FAB54"/>
+              <stop offset="100%" stop-color="#C9A635"/>
+            </linearGradient>
+          </defs>
+          <path d="M10 22v-6a2 2 0 0 1 2-2h0a2 2 0 0 0 2-2V7"></path>
+          <path d="M14 7h7v4h-7z"></path>
+          <path d="M14 15h7v4h-7z"></path>
+        </svg>
       </div>
+      <h3 class="text-xl font-bold mb-3 text-gray-800">Trust</h3>
+      <p class="text-gray-600 mb-5 leading-relaxed">
+         Trusted by thousands of patients across the country, our homeopathic solutions have a track record of consistent, measurable results in both acute and chronic conditions.
+      </p>
+      <a href="ab.html" class="inline-flex items-center gap-1 text-green-700 font-semibold hover:text-green-900 transition">
+        Explore
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5-5-5-5"/></svg>
+      </a>
+    </div>
 
-      <!-- description -->
-      <div class="card p-4">
-        <h3 class="text-lg font-semibold flex items-center gap-2">
-          <!-- svg icon -->
-          <span class="icon-circle"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" stroke="#059669" stroke-width="1.6" viewBox="0 0 24 24"><path d="M12 2v6l4 2"></path><path d="M21 12v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-6"></path></svg></span>
-          Product information
-        </h3>
-        <p id="desc" class="mt-3 text-slate-700 leading-relaxed">Description text</p>
+    <!-- Card 3 -->
+    <div class="group p-8 rounded-3xl shadow-lg border border-green-100 bg-gradient-to-b from-white to-green-50 hover:shadow-xl transition duration-500">
+      <div class="mx-auto w-16 h-16 flex items-center justify-center rounded-full bg-green-100 mb-6 group-hover:scale-110 transition">
+        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="none" stroke="url(#grad3)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <defs>
+            <linearGradient id="grad3" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#1FAB54"/>
+              <stop offset="100%" stop-color="#C9A635"/>
+            </linearGradient>
+          </defs>
+          <circle cx="12" cy="12" r="10"></circle>
+          <path d="M12 8v4l3 3"></path>
+        </svg>
       </div>
+      <h3 class="text-xl font-bold mb-3 text-gray-800">Support</h3>
+      <p class="text-gray-600 mb-5 leading-relaxed">
+         Our dedicated customer care team is here to assist you with guidance, follow-ups, and answers — making your healing journey smooth and stress-free.
+      </p>
+      <a href="ab.html" class="inline-flex items-center gap-1 text-green-700 font-semibold hover:text-green-900 transition">
+        Explore
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5-5-5-5"/></svg>
+      </a>
+    </div>
 
-      <!-- big details sections (composition, effective-in, dosage, precautions, manufactured by) -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div class="p-4 card">
-          <h4 class="font-semibold text-emerald-600 mb-2">Composition</h4>
-          <p id="composition" class="text-slate-700 text-sm">—</p>
-        </div>
-        <div class="p-4 card">
-          <h4 class="font-semibold text-emerald-600 mb-2">Effective In</h4>
-          <p id="effective" class="text-slate-700 text-sm">—</p>
-        </div>
-        <div class="p-4 card">
-          <h4 class="font-semibold text-emerald-600 mb-2">Manufactured Exclusively For</h4>
-          <p id="dosage" class="text-slate-700 text-sm">—</p>
-        </div>
-        <div class="p-4 card">
-          <h4 class="font-semibold text-emerald-600 mb-2">Precaution for using the medicines</h4>
-          <p id="precautions" class="text-slate-700 text-sm">—</p>
-        </div>
-      </div>
-
-      <!-- manufacturer block + action row -->
-     <!-- <div class="flex items-center justify-between gap-4">
-        <div>
-          <div class="text-xs text-slate-400">Manufactured by</div>
-          <div id="manufacturer" class="font-semibold">—</div>
-        </div>    -->
-
-        <!--<div class="flex gap-3">
-          <a id="whatsappBtn" href="#" target="_blank" class="btn-primary px-4 py-2 rounded-lg inline-flex items-center gap-2 shadow-md text-white hover:brightness-95">
-            <!-- SVG phone/wa 
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-1l-1-2a2 2 0 0 0-2-1H9a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg>
-            Order via (WhatsApp)
-          </a>
-          <a id="callBtn" href="#" class="btn-ghost px-4 py-2 rounded-lg inline-flex items-center gap-2 font-semibold">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M22 16.92V21a1 1 0 0 1-1 1c-10.493 0-19-8.506-19-19a1 1 0 0 1 1-1h4.08a1 1 0 0 1 1 .76c.3 1.64 1.02 3.58 2.1 5.5a1 1 0 0 1-.24 1.12L8.91 9.09a13.24 13.24 0 0 0 6 6l-3.88 3.88a1 1 0 0 1-1.12.24c-1.92-1.08-3.86-1.8-5.5-2.1a1 1 0 0 1-.76-1V4"></path></svg>
-            Call
-          </a>
-        </div>
-      </div>
-
-    </section>
   </div>
-</main> 
-<!-- mobile sticky CTA -->
-<div class="fixed bottom-0 left-0 right-0 md:hidden p-3 bg-white border-t shadow-lg flex gap-3">
-  <a id="mobileOrder" href="#" target="_blank" class="flex-1 btn-primary py-3 rounded-lg text-center font-semibold">Order Now</a>
-  <a id="mobileCall" href="tel:9120227101" class="flex-1 border border-emerald-600 text-emerald-600 py-3 rounded-lg text-center font-semibold">Call Us</a>
-</div>
+</section>
+   <!-- About -->
+<section id="about" class="mt-16 px-4">
+  <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 items-center">
 
-<!-- AOS -->
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <!-- Image -->
+    <div data-aos="fade-right">
+      <div class="rounded-2xl overflow-hidden border border-slate-200 shadow-lg">
+        <img
+        
+          src="https://i.ibb.co/Mx9P28pd/Screenshot-2026-08-16-at-11-56-32-AM.png"
+          alt="About our pharmacy"
+          
+        />
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div data-aos="fade-left">
+
+      <div class="flex items-center gap-3 mb-3">
+        <div class="w-10 h-10 rounded-xl bg-emerald-50 flex items-center justify-center">
+          <svg class="w-5 h-5 text-emerald-600" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2C9 2 6.3 3 4.3 5.1 2.2 7.2 1 9.9 1 13c0 4.2 2.2 7.9 5.6 9.9.4.2.9.1 1.2-.2l4.2-4.2 4.2 4.2c.3.3.8.4 1.2.2C20.8 20.9 23 17.2 23 13c0-3.1-1.2-5.8-3.3-7.9C17.7 3 15 2 12 2z"/>
+          </svg>
+        </div>
+
+        <h2 class="text-2xl md:text-3xl font-bold text-[#062E4F]">
+          About Us
+        </h2>
+      </div>
+
+      <p class="text-slate-600 leading-relaxed">
+       We are a trusted pharmaceutical company
+        based in Lucknow, committed to providing quality homeopathic medicines
+        with care and customer trust.
+      </p>
+
+      <a
+        href="ab.html"
+        class="inline-flex items-center gap-2 mt-5 px-5 py-3 rounded-xl
+               bg-emerald-600 text-white font-semibold
+               hover:bg-emerald-700 transition"
+      >
+        Read More
+
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/>
+        </svg>
+      </a>
+
+    </div>
+
+  </div>
+</section>
+    
+    <!-- =========================================================
+     TESTIMONIALS — COMPLETE WORKING VERSION
+     Replace your OLD testimonials code with this ENTIRE block
+========================================================= -->
+
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+
+<style>
+  :root {
+    --primary-green: #1FAB54;
+    --dark-green: #054A29;
+    --light-green: #DFF2E0;
+    --accent-gold: #C9A635;
+  }
+
+  /* =========================
+     TESTIMONIAL CARD
+  ========================= */
+  .testi-card {
+    background: linear-gradient(
+      180deg,
+      rgba(255,255,255,.06),
+      rgba(255,255,255,.02)
+    );
+    border: 1px solid rgba(255,255,255,.08);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+  }
+
+  .testi-chip {
+    background: linear-gradient(
+      90deg,
+      var(--primary-green),
+      var(--accent-gold)
+    );
+    color: #08210f;
+  }
+
+  /* =========================
+     SWIPER CONTAINER
+  ========================= */
+  #reviewSwiper {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+
+    /* Important for phone touch */
+    touch-action: pan-y;
+    -webkit-user-select: none;
+    user-select: none;
+
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  #reviewSwiper .swiper-wrapper {
+    align-items: stretch;
+  }
+
+  #reviewSwiper .swiper-slide {
+    height: auto;
+    display: flex;
+    box-sizing: border-box;
+
+    /* Important for phone swipe */
+    touch-action: pan-y;
+
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  #reviewSwiper .testi-card {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* =========================
+     PAGINATION
+  ========================= */
+  #reviewSwiper .swiper-pagination {
+    position: static !important;
+    width: 100% !important;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 6px;
+  }
+
+  #reviewSwiper .swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+    margin: 0 !important;
+    opacity: .45;
+  }
+
+  #reviewSwiper .swiper-pagination-bullet-active {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+
+  /* Prevent page from moving sideways */
+  #testimonials {
+    overflow: hidden;
+  }
+</style>
+
+
+<section
+  id="testimonials"
+  class="relative py-14 px-4 sm:px-6 bg-slate-900 text-white"
+>
+
+  <div class="max-w-7xl mx-auto">
+
+    <!-- =========================
+         HEADING
+    ========================= -->
+    <div class="text-center mb-8">
+
+      <div class="inline-flex items-center gap-3">
+
+        <svg
+          width="180"
+          height="36"
+          viewBox="0 0 600 120"
+          aria-hidden="true"
+        >
+          <defs>
+            <linearGradient id="reviewsGradient" x1="0" x2="1">
+              <stop
+                offset="0"
+                stop-color="var(--primary-green)"
+              />
+              <stop
+                offset="1"
+                stop-color="var(--accent-gold)"
+              />
+            </linearGradient>
+          </defs>
+
+          <text
+            x="0"
+            y="82"
+            font-family="Poppins,system-ui"
+            font-weight="700"
+            font-size="80"
+            fill="url(#reviewsGradient)"
+          >
+            Reviews
+          </text>
+        </svg>
+
+
+        <span
+          class="testi-chip px-3 py-1 rounded-full text-sm font-semibold shadow"
+        >
+          4.34/5 • 100+ verified
+        </span>
+
+      </div>
+
+
+      <svg
+        width="160"
+        height="10"
+        class="mx-auto mt-3"
+        aria-hidden="true"
+      >
+        <rect
+          x="0"
+          y="4"
+          width="160"
+          height="2"
+          fill="url(#reviewsGradient)"
+        ></rect>
+      </svg>
+
+
+      <p class="text-green-100 max-w-2xl mx-auto mt-3">
+        What Our Customers Say? — Customer Reviews
+      </p>
+
+    </div>
+
+
+    <!-- =====================================================
+         SWIPER
+    ====================================================== -->
+
+    <div
+      class="swiper"
+      id="reviewSwiper"
+    >
+
+      <div class="swiper-wrapper">
+
+
+        <!-- =========================
+             SLIDE 1
+        ========================= -->
+        <div class="swiper-slide">
+
+          <article
+            class="testi-card rounded-2xl p-5 h-full flex flex-col shadow-lg"
+          >
+
+            <div class="flex items-center gap-3">
+
+              <svg
+                width="48"
+                height="48"
+                viewBox="0 0 48 48"
+                class="shrink-0"
+              >
+                <circle
+                  cx="24"
+                  cy="24"
+                  r="24"
+                  fill="var(--light-green)"
+                />
+
+                <text
+                  x="50%"
+                  y="56%"
+                  text-anchor="middle"
+                  font-size="18"
+                  font-weight="700"
+                  fill="var(--dark-green)"
+                  font-family="Poppins,system-ui"
+                >
+                  H
+                </text>
+              </svg>
+
+
+              <div>
+                <h4 class="font-semibold leading-tight">
+                  Harsh
+                </h4>
+
+                <p class="text-xs text-slate-300">
+                  Agra, India
+                </p>
+              </div>
+
+
+              <div class="ml-auto flex">
+
+                <span class="text-yellow-400 text-lg">★</span>
+                <span class="text-yellow-400 text-lg">★</span>
+                <span class="text-yellow-400 text-lg">★</span>
+                <span class="text-yellow-400 text-lg">★</span>
+                <span class="text-yellow-400 text-lg opacity-70">★</span>
+
+              </div>
+
+            </div>
+
+
+            <div class="text-green-400 text-3xl mt-3">
+              “
+            </div>
+
+
+            <p class="mt-1 text-slate-200 leading-relaxed">
+              I had been struggling with persistent back pain for years,
+              and nothing seemed to work. Within just weeks of taking
+              their homeopathic medicine, the discomfort vanished.
+              Their customer support team guided me with patience and
+              expertise — a truly exceptional experience.
+            </p>
+
+
+            <div class="mt-4 flex items-center gap-2">
+
+              <span class="text-xs text-slate-300">
+                Verified Patient
+              </span>
+
+              <span
+                class="ml-auto text-xs px-2 py-0.5 rounded-full testi-chip"
+              >
+                Homeopathic
+              </span>
+
+            </div>
+
+          </article>
+
+        </div>
+
+
+        <!-- =========================
+             SLIDE 2
+        ========================= -->
+        <div class="swiper-slide">
+
+          <article
+            class="testi-card rounded-2xl p-5 h-full flex flex-col shadow-lg"
+          >
+
+            <div class="flex items-center gap-3">
+
+              <svg width="48" height="48" viewBox="0 0 48 48">
+
+                <circle
+                  cx="24"
+                  cy="24"
+                  r="24"
+                  fill="var(--light-green)"
+                />
+
+                <text
+                  x="50%"
+                  y="56%"
+                  text-anchor="middle"
+                  font-size="18"
+                  font-weight="700"
+                  fill="var(--dark-green)"
+                >
+                  P
+                </text>
+
+              </svg>
+
+
+              <div>
+
+                <h4 class="font-semibold leading-tight">
+                  Prachi Dixit
+                </h4>
+
+                <p class="text-xs text-slate-300">
+                  Lucknow, India
+                </p>
+
+              </div>
+
+
+              <div class="ml-auto flex">
+
+                <span class="text-yellow-400 text-lg">★</span>
+                <span class="text-yellow-400 text-lg">★</span>
+                <span class="text-yellow-400 text-lg">★</span>
+                <span class="text-yellow-400 text-lg">★</span>
+                <span class="text-yellow-400 text-lg">★</span>
+
+              </div>
+
+            </div>
+
+
+            <p class="mt-4 text-slate-200">
+              Alfalfa tonic improved appetite and stamina.
+              Great guidance on meal timing and sleep.
+            </p>
+
+
+            <div class="mt-4 flex items-center gap-2">
+
+              <span class="text-xs text-slate-300">
+                Verified Patient
+              </span>
+
+              <span
+                class="ml-auto text-xs px-2 py-0.5 rounded-full testi-chip"
+              >
+                Homeopathic Medicine
+              </span>
+
+            </div>
+
+          </article>
+
+        </div>
+
+
+        <!-- =========================
+             SLIDE 3
+        ========================= -->
+        <div class="swiper-slide">
+
+          <article
+            class="testi-card rounded-2xl p-5 h-full flex flex-col shadow-lg"
+          >
+
+            <div class="flex items-center gap-3">
+
+              <svg width="48" height="48" viewBox="0 0 48 48">
+
+                <circle
+                  cx="24"
+                  cy="24"
+                  r="24"
+                  fill="var(--light-green)"
+                />
+
+                <text
+                  x="50%"
+                  y="56%"
+                  text-anchor="middle"
+                  font-size="17"
+                  font-weight="700"
+                  fill="var(--dark-green)"
+                >
+                  SS
+                </text>
+
+              </svg>
+
+
+              <div>
+
+                <h4 class="font-semibold leading-tight">
+                  Simran Singh
+                </h4>
+
+                <p class="text-xs text-slate-300">
+                  Delhi, India
+                </p>
+
+              </div>
+
+
+              <div class="ml-auto flex">
+                <span class="text-yellow-400 text-lg">★</span>
+                <span class="text-yellow-400 text-lg">★</span>
+                <span class="text-yellow-400 text-lg">★</span>
+                <span class="text-yellow-400 text-lg">★</span>
+                <span class="text-yellow-400 text-lg opacity-70">★</span>
+              </div>
+
+            </div>
+
+
+            <p class="mt-4 text-slate-200">
+              Skin rash cleared with D-Skin-Care drops and neem
+              wash routine. Itching gone; marks fading steadily.
+            </p>
+
+
+            <div class="mt-4 flex items-center gap-2">
+
+              <span class="text-xs text-slate-300">
+                Verified Patient
+              </span>
+
+              <span
+                class="ml-auto text-xs px-2 py-0.5 rounded-full testi-chip"
+              >
+                Skin Health
+              </span>
+
+            </div>
+
+          </article>
+
+        </div>
+
+
+        <!-- =========================
+             SLIDE 4
+        ========================= -->
+        <div class="swiper-slide">
+
+          <article
+            class="testi-card rounded-2xl p-5 h-full flex flex-col shadow-lg"
+          >
+
+            <div class="flex items-center gap-3">
+
+              <svg width="48" height="48" viewBox="0 0 48 48">
+
+                <circle
+                  cx="24"
+                  cy="24"
+                  r="24"
+                  fill="var(--light-green)"
+                />
+
+                <text
+                  x="50%"
+                  y="56%"
+                  text-anchor="middle"
+                  font-size="17"
+                  font-weight="700"
+                  fill="var(--dark-green)"
+                >
+                  MK
+                </text>
+
+              </svg>
+
+
+              <div>
+
+                <h4 class="font-semibold leading-tight">
+                  Mayank Kapoor
+                </h4>
+
+                <p class="text-xs text-slate-300">
+                  Noida, India
+                </p>
+
+              </div>
+
+
+              <div class="ml-auto flex">
+                <span class="text-yellow-400 text-lg">★</span>
+                <span class="text-yellow-400 text-lg">★</span>
+                <span class="text-yellow-400 text-lg">★</span>
+                <span class="text-yellow-400 text-lg">★</span>
+                <span class="text-yellow-400 text-lg">★</span>
+              </div>
+
+            </div>
+
+
+            <p class="mt-4 text-slate-200">
+              Allergy episodes have dropped sharply with Homoeo
+              Loose Tablet. Sleeping better, breathing easier.
+            </p>
+
+
+            <div class="mt-4 flex items-center gap-2">
+
+              <span class="text-xs text-slate-300">
+                Verified Patient
+              </span>
+
+              <span
+                class="ml-auto text-xs px-2 py-0.5 rounded-full testi-chip"
+              >
+                Allergy Care
+              </span>
+
+            </div>
+
+          </article>
+
+        </div>
+
+
+        <!-- =========================
+             SLIDE 5
+        ========================= -->
+        <div class="swiper-slide">
+
+          <article
+            class="testi-card rounded-2xl p-5 h-full flex flex-col shadow-lg"
+          >
+
+            <div class="flex items-center gap-3">
+
+              <svg width="48" height="48" viewBox="0 0 48 48">
+
+                <circle
+                  cx="24"
+                  cy="24"
+                  r="24"
+                  fill="var(--light-green)"
+                />
+
+                <text
+                  x="50%"
+                  y="56%"
+                  text-anchor="middle"
+                  font-size="17"
+                  font-weight="700"
+                  fill="var(--dark-green)"
+                >
+                  VD
+                </text>
+
+              </svg>
+
+
+              <div>
+
+                <h4 class="font-semibold leading-tight">
+                  Vidhi Desai
+                </h4>
+
+                <p class="text-xs text-slate-300">
+                  Ahmedabad
+                </p>
+
+              </div>
+
+
+              <div class="ml-auto flex">
+                <span class="text-yellow-400 text-lg">★</span>
+                <span class="text-yellow-400 text-lg">★</span>
+                <span class="text-yellow-400 text-lg">★</span>
+                <span class="text-yellow-400 text-lg">★</span>
+                <span class="text-yellow-400 text-lg opacity-70">★</span>
+              </div>
+
+            </div>
+
+
+            <p class="mt-4 text-slate-200">
+              Cyston Drops eased kidney stone discomfort fast.
+              Hydration and diet guidance made a big difference.
+            </p>
+
+
+            <div class="mt-4 flex items-center gap-2">
+
+              <span class="text-xs text-slate-300">
+                Verified Patient
+              </span>
+
+              <span
+                class="ml-auto text-xs px-2 py-0.5 rounded-full testi-chip"
+              >
+                Renal Care
+              </span>
+
+            </div>
+
+          </article>
+
+        </div>
+
+
+        <!-- =========================
+             SLIDE 6
+        ========================= -->
+        <div class="swiper-slide">
+
+          <article
+            class="testi-card rounded-2xl p-5 h-full flex flex-col shadow-lg"
+          >
+
+            <div class="flex items-center gap-3">
+
+              <svg width="48" height="48" viewBox="0 0 48 48">
+
+                <circle
+                  cx="24"
+                  cy="24"
+                  r="24"
+                  fill="var(--light-green)"
+                />
+
+                <text
+                  x="50%"
+                  y="56%"
+                  text-anchor="middle"
+                  font-size="17"
+                  font-weight="700"
+                  fill="var(--dark-green)"
+                >
+                  NP
+                </text>
+
+              </svg>
+
+
+              <div>
+
+                <h4 class="font-semibold leading-tight">
+                  Nishant Patel
+                </h4>
+
+                <p class="text-xs text-slate-300">
+                  Surat
+                </p>
+
+              </div>
+
+
+              <div class="ml-auto flex">
+                <span class="text-yellow-400 text-lg">★</span>
+                <span class="text-yellow-400 text-lg">★</span>
+                <span class="text-yellow-400 text-lg">★</span>
+                <span class="text-yellow-400 text-lg">★</span>
+                <span class="text-yellow-400 text-lg">★</span>
+              </div>
+
+            </div>
+
+
+            <p class="mt-4 text-slate-200">
+              Alfalfa tonic improved appetite and stamina.
+              Great guidance on meal timing and sleep.
+            </p>
+
+
+            <div class="mt-4 flex items-center gap-2">
+
+              <span class="text-xs text-slate-300">
+                Verified Patient
+              </span>
+
+              <span
+                class="ml-auto text-xs px-2 py-0.5 rounded-full testi-chip"
+              >
+                Wellness
+              </span>
+
+            </div>
+
+          </article>
+
+        </div>
+
+
+        <!-- =========================
+             SLIDE 7
+        ========================= -->
+        <div class="swiper-slide">
+
+          <article
+            class="testi-card rounded-2xl p-5 h-full flex flex-col shadow-lg"
+          >
+
+            <div class="flex items-center gap-3">
+
+              <svg width="48" height="48" viewBox="0 0 48 48">
+
+                <circle
+                  cx="24"
+                  cy="24"
+                  r="24"
+                  fill="var(--light-green)"
+                />
+
+                <text
+                  x="50%"
+                  y="56%"
+                  text-anchor="middle"
+                  font-size="17"
+                  font-weight="700"
+                  fill="var(--dark-green)"
+                >
+                  RS
+                </text>
+
+              </svg>
+
+
+              <div>
+
+                <h4 class="font-semibold leading-tight">
+                  Ritika Shah
+                </h4>
+
+                <p class="text-xs text-slate-300">
+                  Bengaluru
+                </p>
+
+              </div>
+
+
+              <div class="ml-auto flex">
+                <span class="text-yellow-400 text-lg">★</span>
+                <span class="text-yellow-400 text-lg">★</span>
+                <span class="text-yellow-400 text-lg">★</span>
+                <span class="text-yellow-400 text-lg">★</span>
+                <span class="text-yellow-400 text-lg opacity-70">★</span>
+              </div>
+
+            </div>
+
+
+            <p class="mt-4 text-slate-200">
+              Pilex tablets soothed fissure discomfort.
+              Followed the recommended lifestyle routine and
+              noticed steady improvement.
+            </p>
+
+
+            <div class="mt-4 flex items-center gap-2">
+
+              <span class="text-xs text-slate-300">
+                Verified Patient
+              </span>
+
+              <span
+                class="ml-auto text-xs px-2 py-0.5 rounded-full testi-chip"
+              >
+                Digestive Care
+              </span>
+
+            </div>
+
+          </article>
+
+        </div>
+
+
+        <!-- =========================
+             SLIDE 8
+        ========================= -->
+        <div class="swiper-slide">
+
+          <article
+            class="testi-card rounded-2xl p-5 h-full flex flex-col shadow-lg"
+          >
+
+            <div class="flex items-center gap-3">
+
+              <svg width="48" height="48" viewBox="0 0 48 48">
+
+                <circle
+                  cx="24"
+                  cy="24"
+                  r="24"
+                  fill="var(--light-green)"
+                />
+
+                <text
+                  x="50%"
+                  y="56%"
+                  text-anchor="middle"
+                  font-size="17"
+                  font-weight="700"
+                  fill="var(--dark-green)"
+                >
+                  KB
+                </text>
+
+              </svg>
+
+
+              <div>
+
+                <h4 class="font-semibold leading-tight">
+                  Karan Bedi
+                </h4>
+
+                <p class="text-xs text-slate-300">
+                  Gurugram
+                </p>
+
+              </div>
+
+
+              <div class="ml-auto flex">
+                <span class="text-yellow-400 text-lg">★</span>
+                <span class="text-yellow-400 text-lg">★</span>
+                <span class="text-yellow-400 text-lg">★</span>
+                <span class="text-yellow-400 text-lg">★</span>
+                <span class="text-yellow-400 text-lg">★</span>
+              </div>
+
+            </div>
+
+
+            <p class="mt-4 text-slate-200">
+              Super Vigo drops helped me feel more confident and
+              energetic. The guidance was discreet and easy to follow.
+            </p>
+
+
+            <div class="mt-4 flex items-center gap-2">
+
+              <span class="text-xs text-slate-300">
+                Verified Patient
+              </span>
+
+              <span
+                class="ml-auto text-xs px-2 py-0.5 rounded-full testi-chip"
+              >
+                Wellness
+              </span>
+
+            </div>
+
+          </article>
+
+        </div>
+
+
+        <!-- =========================
+             SLIDE 9
+        ========================= -->
+        <div class="swiper-slide">
+
+          <article
+            class="testi-card rounded-2xl p-5 h-full flex flex-col shadow-lg"
+          >
+
+            <div class="flex items-center gap-3">
+
+              <svg width="48" height="48" viewBox="0 0 48 48">
+
+                <circle
+                  cx="24"
+                  cy="24"
+                  r="24"
+                  fill="var(--light-green)"
+                />
+
+                <text
+                  x="50%"
+                  y="56%"
+                  text-anchor="middle"
+                  font-size="17"
+                  font-weight="700"
+                  fill="var(--dark-green)"
+                >
+                  PR
+                </text>
+
+              </svg>
+
+
+              <div>
+
+                <h4 class="font-semibold leading-tight">
+                  Priya Rao
+                </h4>
+
+                <p class="text-xs text-slate-300">
+                  Hyderabad
+                </p>
+
+              </div>
+
+
+              <div class="ml-auto flex">
+                <span class="text-yellow-400 text-lg">★</span>
+                <span class="text-yellow-400 text-lg">★</span>
+                <span class="text-yellow-400 text-lg">★</span>
+                <span class="text-yellow-400 text-lg">★</span>
+                <span class="text-yellow-400 text-lg opacity-70">★</span>
+              </div>
+
+            </div>
+
+
+            <p class="mt-4 text-slate-200">
+              Coffez syrup was easy to take and the dosage
+              instructions were clear. The customer guidance
+              was helpful throughout.
+            </p>
+
+
+            <div class="mt-4 flex items-center gap-2">
+
+              <span class="text-xs text-slate-300">
+                Verified Patient
+              </span>
+
+              <span
+                class="ml-auto text-xs px-2 py-0.5 rounded-full testi-chip"
+              >
+                Respiratory
+              </span>
+
+            </div>
+
+          </article>
+
+        </div>
+
+
+        <!-- =========================
+             SLIDE 10
+        ========================= -->
+        <div class="swiper-slide">
+
+          <article
+            class="testi-card rounded-2xl p-5 h-full flex flex-col shadow-lg"
+          >
+
+            <div class="flex items-center gap-3">
+
+              <svg width="48" height="48" viewBox="0 0 48 48">
+
+                <circle
+                  cx="24"
+                  cy="24"
+                  r="24"
+                  fill="var(--light-green)"
+                />
+
+                <text
+                  x="50%"
+                  y="56%"
+                  text-anchor="middle"
+                  font-size="17"
+                  font-weight="700"
+                  fill="var(--dark-green)"
+                >
+                  AS
+                </text>
+
+              </svg>
+
+
+              <div>
+
+                <h4 class="font-semibold leading-tight">
+                  Ayesha Sheikh
+                </h4>
+
+                <p class="text-xs text-slate-300">
+                  Lucknow
+                </p>
+
+              </div>
+
+
+              <div class="ml-auto flex">
+                <span class="text-yellow-400 text-lg">★</span>
+                <span class="text-yellow-400 text-lg">★</span>
+                <span class="text-yellow-400 text-lg">★</span>
+                <span class="text-yellow-400 text-lg">★</span>
+                <span class="text-yellow-400 text-lg">★</span>
+              </div>
+
+            </div>
+
+
+            <p class="mt-4 text-slate-200">
+              Calcium tablets were easy to include in my daily
+              routine. The guidance and follow-up made the
+              experience convenient.
+            </p>
+
+
+            <div class="mt-4 flex items-center gap-2">
+
+              <span class="text-xs text-slate-300">
+                Verified Patient
+              </span>
+
+              <span
+                class="ml-auto text-xs px-2 py-0.5 rounded-full testi-chip"
+              >
+                Bone Health
+              </span>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+
+
+      <!-- =========================
+           PAGINATION
+      ========================= -->
+      <div class="mt-6 flex items-center justify-center">
+
+        <div
+          class="swiper-pagination"
+        ></div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     SWIPER JAVASCRIPT
+========================================================= -->
+
+<script
+  src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
+></script>
 
 <script>
-/* -------------------------------
-   Data – add all your meds here
-   ------------------------------- */
-const meds = [
-  {
-    id: 1,
-    name: "Cyston Drops",
-    brand: "Herbal Biologische Pharmaceuticals Private Limited",
-    price: 202,
-    mfg: "2025",
-    exp: "2030",
-    desc: "For Renal Stone And Colic",
-    composition: `Each 5ml. Contains --
-BERBERIS VULGARIS Q HPI 1 ml.
-CANTHARIS 3X HPI 0.5 ml.
-HYDRANGEA ARBORESCENS Q HPI 0.5 ml.
-OCIMUM CANUM Q HPI 0.5 ml.
-PAREIRA BRAVA Q HPI 0.5 ml.
-SENECIO AUREUS Q HPI 0.5 ml.
-SOLIDAGO VIRGAUREA Q HPI 0.5 ml.
-SARSAPARILLA Q HPI 0.5 ml.
-ALCOHOLIC CONTENT 50.04% v/v
-EXCIPIENT qs`,
-    effective: "Kidney stone pain, discomfort during urination",
-    dosage: `HERBAL BIOLOGISCHE PHARMACEUTICALS PVT. LTD.
-592/3B/214/1, Gopal Nagar Near Defence Colony Lucknow 226025`,
-    precautions: `Keep away from direct sunlight
-•⁠  ⁠Keep out of the reach of children
-•⁠  ⁠Do not use if seal is broken off or missing
-KEEP IN A COOL & DARK PLACE`,
-    manufacturer: `Dr.Patels Homoeopathic Medicines Limited
-Plot No.: 738, Gurukrupa Ind. Estate,
-Manjusra, TA Savli Dist-Vadodara Gujarat-391775`,
-    image: "https://i.postimg.cc/jdHbc7NV/Screenshot-2025-08-11-at-10-12-43-PM.png",
-    badge: "Best Seller",
-    keywords: ["Fever", "Headache", "Renal Stone", "Kidney Stone Pain"]
-  },
-  {
-    id: 2,
-    name: "Spon-dy Drops",
-    brand: "Herbal Biologische Pharmaceuticals Private Limited",
-    price: 202,
-    mfg: "2025",
-    exp: "2030",
-    desc: "For Spondylitis",
-    composition: `Each 5ml. Contains
-COLOCYNTHIS 3X HPI 0.4 ml.
-CONIUM MACULATUM 3X HPI 0.4 ml.
-CUPRUM METALLICUM 8X HPI 0.8 ml.
-DULCAMARA 3X HPI 0.8 ml.
-HYPERICUM PERFORATUM 3X HPI 0.4 ml.
-LEDUMPALUSTRE 2X HPI 0.8 ml.
-RUTA GRAVEOLENS 3X HPI 0.4 ml.
-ALCOHOLIC CONTENT 68.64% v/v
-EXCIPIENT qs`,
-    effective: "Spondylitis, joint pain",
-    dosage: `HERBAL BIOLOGISCHE PHARMACEUTICALS PVT. LTD.
-592/3B/214/1, Gopal Nagar Near Defence Colony Lucknow 226025`,
-    precautions: `Keep away from direct sunlight
-•⁠  ⁠Keep out of the reach of children
-•⁠  ⁠Do not use if seal is broken off or missing
-KEEP IN A COOL & DARK PLACE`,
-    manufacturer: `Dr.Patels Homoeopathic Medicines Limited
-Plot No.: 738, Gurukrupa Ind. Estate,
-Manjusra, TA Savli Dist-Vadodara Gujarat-391775`,
-    image: "https://i.postimg.cc/6qynfKTq/Screenshot-2025-08-11-at-10-54-42-PM.png",
-    badge: "Best Seller",
-    keywords: ["Back Pain", "Joint Pain", "Spondylitis"]
-  },
-  {
-    id: 3,
-    name: "D-Skin-Care",
-    brand: "Herbal Biologische Pharmaceuticals Private Limited",
-    price: 202,
-    mfg: "2025",
-    exp: "2030",
-    desc: "For Fungal Infection",
-    composition: `Each 5ml. Contains
-BACILLINUM 200 HPI 0.4 ml.
-SULPHUR 6 HPI 0.4 ml.
-SEPIA 6 HPI 0.8 ml.
-CALCAREA CARBONICA 6 HPI 0.8 ml.
-TELLURIUM 6 HPI 1.6 ml.
-ALCOHOLIC CONTENT 72.8% v/v
-EXCIPIENT qs`,
-    effective: "Fungal skin infections, itching",
-    dosage: `HERBAL BIOLOGISCHE PHARMACEUTICALS PVT. LTD.
-592/3B/214/1, Gopal Nagar Near Defence Colony Lucknow 226025`,
-    precautions: `Keep away from direct sunlight
-•⁠  ⁠Keep out of the reach of children
-•⁠  ⁠Do not use if seal is broken off or missing
-KEEP IN A COOL & DARK PLACE`,
-    manufacturer: `Dr.Patels Homoeopathic Medicines Limited
-Plot No.: 738, Gurukrupa Ind. Estate,
-Manjusra, TA Savli Dist-Vadodara Gujarat-391775`,
-    image: "https://i.postimg.cc/KY01qW6M/Screenshot-2025-08-11-at-10-56-18-PM.png",
-    keywords: ["Fungal Infection", "Itching"]
-  },
-  {
-    id: 4,
-    name: "Super Vigo 3 Gold Drops",
-    brand: "Herbal Biologische Pharmaceuticals Private Limited",
-    price: 495,
-    mfg: "2025",
-    exp: "2030",
-    desc: "For Accelerating Sex Drive",
-    composition: `Each 5ml. Contains
-DAMIANA Q HPI 1 ml.
-GINSENG Q HPI 1 ml.
-AGNUS CASTUS Q HPI 1 ml.
-NUPHAR LUTEA 2X HPI 1 ml.
-MUIRA PUAMA Q HPI 1 ml.
-ALCOHOLIC CONTENT 68.64% v/v
-EXCIPIENT qs`,
-    effective: "Sex health, vitality support",
-    dosage: `BIOLOGISCHE PHARMACEUTICALS
-B-39, Kisan Market, Vikalp Khand-1, Gomti Nagar, Lucknow-206010`,
-    precautions: `Keep away from direct sunlight
-•⁠  ⁠Keep out of the reach of children
-•⁠  ⁠Do not use if seal is broken off or missing
-KEEP IN A COOL & DARK PLACE`,
-    manufacturer: `Dr.Patels Homoeopathic Medicines Limited
-Plot No.: 738, Gurukrupa Ind. Estate,
-Manjusra, TA Savli Dist-Vadodara Gujarat-391775`,
-    image: "https://i.postimg.cc/PrbmHT0G/Screenshot-2025-08-11-at-10-57-42-PM.png",
-    keywords: ["Sex Health", "Premature Ejaculation"]
-  },
-  {
-    id: 5,
-    name: "Biologsce Coffez",
-    brand: "Herbal Biologische Pharmaceuticals Private Limited",
-    price: 122,
-    mfg: "2025",
-    exp: "2030",
-    desc: "Cold & Cough Syrup",
-    composition: `Each 5ml. Contains
-ACONITUM NAPELLUS 3X HPI 0.025 ml.
-JUSTICIA ADHATODA Q HPI 0.1 ml.
-DROSERA ROTUNDIFOLIA Q HPI 0.1 ml.
-IPECACUANHA 3X HPI 0.025 ml.
-OCIMUM SANCTUM Q HPI 0.1 ml.
-GELSEMIUM SEMPERVIRENS 3X HPI 0.05 ml.
-ALLIUM CEPA 3X HPI 0.05 ml.
-KALI SULPHURICUM 6 HPI 0.025 ml.
-KALI PHOSPHORICUM 6 HPI 0.025 ml.
-MAGNESIUM PHOSPHORICUM 6 HPI 0.025 ml.
-ALCOHOLIC CONTENT 7.78% v/v
-EXCIPIENT qs`,
-    effective: "Cough, Cold Relief",
-    dosage: `BIOLOGISCHE PHARMACEUTICALS
-B-39, Kisan Market, Vikalp Khand-1, Gomti Nagar, Lucknow-206010`,
-    precautions: `Keep away from direct sunlight
-•⁠  ⁠Keep out of the reach of children
-•⁠  ⁠Do not use if seal is broken off or missing
-KEEP IN A COOL & DARK PLACE`,
-    manufacturer: `Dr.Patels Homoeopathic Medicines Limited
-Plot No.: 738, Gurukrupa Ind. Estate,
-Manjusra, TA Savli Dist-Vadodara Gujarat-391775`,
-    image: "https://i.postimg.cc/zXM1JYhj/Screenshot-2025-08-11-at-11-01-16-PM.png",
-    keywords: ["Cough", "Cold"]
-  },
-  {
-    id: 6,
-    name: "Alfalfa Health Supplement Tonic",
-    brand: "Herbal Biologische Pharmaceuticals Private Limited",
-    price: 122,
-    mfg: "2025",
-    exp: "2030",
-    desc: "Supplement tonic",
-    composition: `Each 5ml. Contains
-ALFALFA Q HPI 0.15 ml.
-AVENA SATIVA Q HPI 0.1 ml.
-GINSENG Q HPI 0.05 ml.
-CINCHONA OFFICINALIS Q HPI 0.05 ml.
-HYDRASTIS CANADENSIS Q HPI 0.05 ml.
-KALI PHOSPHORICUM 6 HPI 0.025 ml.
-KALI ARSENICOSUM 6 HPI 0.025 ml.
-FERRUM ACETICUM 6 HPI 0.025 ml.
-CALCAREA PHOSPHORICA 6 HPI 0.025 ml.
-ALCOHOLIC CONTENT 7.27% v/v
-EXCIPIENT qs`,
-    effective: "Anemia, digestion, stress relief",
-    dosage: `HERBAL BIOLOGISCHE PHARMACEUTICALS PVT. LTD.
-592/3B/214/1, Gopal Nagar Near Defence Colony Lucknow 226025`,
-    precautions: `Keep away from direct sunlight
-•⁠  ⁠Keep out of the reach of children
-•⁠  ⁠Do not use if seal is broken off or missing
-KEEP IN A COOL & DARK PLACE`,
-    manufacturer: `Dr.Patels Homoeopathic Medicines Limited
-Plot No.: 738, Gurukrupa Ind. Estate,
-Manjusra, TA Savli Dist-Vadodara Gujarat-391775`,
-    image: "https://i.postimg.cc/JzntF8L5/Screenshot-2025-08-11-at-10-59-13-PM.png",
-    keywords: ["Anemia", "Digestion", "Stress"]
-  },
-  {
-    id: 7,
-    name: "Homoeo Cali Tablet",
-    brand: "Herbal Biologische Pharmaceuticals Private Limited",
-    price: 185,
-    mfg: "2025",
-    exp: "2030",
-    desc: "Homeopathic calcium Supplement",
-    composition: `All in equal proportion
-CALCAREA CARBONICA 3X HPI
-CALCAREA FLUORICA 3X HPI
-CALCAREA PHOSPHORICA 3X HPI
-SILICEA 6X HPI
-EXCIPIENT Q.S`,
-    effective: "Calcium deficiency, bone growth",
-    dosage: `BIOLOGISCHE PHARMACEUTICALS
-B-39, Kisan Market, Vikalp Khand-1, Gomti Nagar, Lucknow-206010`,
-    precautions: `Keep away from direct sunlight
-•⁠  ⁠Keep out of the reach of children
-•⁠  ⁠Do not use if seal is broken off or missing
-KEEP IN A COOL & DARK PLACE`,
-    manufacturer: `Dr.Patels Homoeopathic Medicines Limited
-Plot No.: 738, Gurukrupa Ind. Estate,
-Manjusra, TA Savli Dist-Vadodara Gujarat-391775`,
-    image: "https://i.postimg.cc/Sxh5DQbJ/Screenshot-2025-08-11-at-11-04-57-PM.png",
-    keywords: ["Calcium Deficiency", "Bone Growth"]
-  },
-  {
-    id: 8,
-    name: "Homoeo Pilex Tablet",
-    brand: "Herbal Biologische Pharmaceuticals Private Limited",
-    price: 185,
-    mfg: "2025",
-    exp: "2030",
-    desc: "For Piles & Fissures",
-    composition: `All in equal proportion
-RATANHIA 3X HPI
-HAMAMELIS VIRGINICA 3X HPI
-AESCULUS HIPPOCASTANUM 3X HPI
-ALOE SOCOTRINA 3X HPI
-CALCAREA FLUORICA 3X HPI
-EXCIPIENT Q.S`,
-    effective: "Piles, fissures relief",
-    dosage: `BIOLOGISCHE PHARMACEUTICALS
-B-39, Kisan Market, Vikalp Khand-1, Gomti Nagar, Lucknow-206010`,
-    precautions: `Keep away from direct sunlight
-•⁠  ⁠Keep out of the reach of children
-•⁠  ⁠Do not use if seal is broken off or missing
-KEEP IN A COOL & DARK PLACE`,
-    manufacturer: `Dr.Patels Homoeopathic Medicines Limited
-Plot No.: 738, Gurukrupa Ind. Estate,
-Manjusra, TA Savli Dist-Vadodara Gujarat-391775`,
-    image: "https://i.postimg.cc/DyVYwfZB/Screenshot-2025-08-11-at-11-06-05-PM.png",
-    keywords: ["Piles", "Fissures"]
-  },
-  {
-    id: 9,
-    name: "Homoeo Loose Tablet",
-    brand: "Herbal Biologische Pharmaceuticals Private Limited",
-    price: 185,
-    mfg: "2025",
-    exp: "2030",
-    desc: "Allergy relief",
-    composition: `PHENOLPHTHALEINUM 3X HPI 80 mg.
-SULPHUR 3X HPI 20 mg.
-SEENA 1X HPI 50 mg.
-TERMINALIA CHEBULA 1X HPI 50 mg.
-EMBELICA OFFICINALIS 1X HPI 50 mg.
-RICINUS COMMUNIS 1X HPI 50 mg.
-EXCIPIENT Q.S.`,
-    effective: "Allergy, cold relief",
-    dosage: `BIOLOGISCHE PHARMACEUTICALS
-B-39, Kisan Market, Vikalp Khand-1, Gomti Nagar, Lucknow-206010`,
-    precautions: `Keep away from direct sunlight
-•⁠  ⁠Keep out of the reach of children
-•⁠  ⁠Do not use if seal is broken off or missing
-KEEP IN A COOL & DARK PLACE`,
-    manufacturer: `Dr.Patels Homoeopathic Medicines Limited
-Plot No.: 738, Gurukrupa Ind. Estate,
-Manjusra, TA Savli Dist-Vadodara Gujarat-391775`,
-    image: "https://i.postimg.cc/RZp7qGd4/Screenshot-2025-08-11-at-11-09-43-PM.png",
-    keywords: ["Allergy", "Cold"]
-  },
-  {
-    id: 10,
-    name: "H-1 LYMPH & TUMOR DROP",
-    brand: "Herbal Biologische Pharmaceuticals Private Limited",
-    price: 215,
-    mfg: "2025",
-    exp: "2030",
-    desc: "For Lymph & Tumor",
-    composition: `EACH 5ML CONTAINS
-BARYTA CARBONICA
-CALCAREA CARBONICA
-CALCAREA ARSENICOSA
-LAPIS ALBUS
-RADIUM BROMIDE
-SPIGELIA
-SILICEA
-THUJA OCCIDENTALIS
-ALCOHOL CONTENT
-EXCIPIENTS`,
-    effective: "Lipoma,It also helps in stopping tumor like growth, prevents Sebaceous & Adenomas recurrence",
-    dosage: `HERBAL BIOLOGISCHE PHARMACEUTICALS PVT. LTD.
-592/3B/214/1, Gopal Nagar Near Defence Colony Lucknow 226025`,
-    precautions: `Keep away from direct sunlight
-•⁠  ⁠Keep out of the reach of children
-•⁠  ⁠Do not use if seal is broken off or missing
-KEEP IN A COOL & DARK PLACE`,
-    manufacturer: `Dr.Patels Homoeopathic Medicines Limited
-Plot No.: 738, Gurukrupa Ind. Estate,
-Manjusra, TA Savli Dist-Vadodara Gujarat-391775`,
-    image: "https://i.postimg.cc/pXP7n4kZ/Screenshot-2026-03-31-at-10-03-42-PM.png",
-    keywords: ["Piles", "Fissures"]
-  },
-  {
-    id: 11,
-    name: "H-2 SCIATICA DROPS ",
-    brand: "Herbal Biologische Pharmaceuticals Private Limited",
-    price: 215,
-    mfg: "2025",
-    exp: "2030",
-    desc: "THE SCIATICA DROPS",
-    composition: `EACH 10GM CONTAINS
-ACONITUM NAPELLUS
-ARSENICUM ALBUM
-COLOCYNTHIS
-GNAPHALIUM POLYCEPHALUM
-MAGNESIUM PHOSPHORICUM
-ALCOHOL CONTENT
-EXCIPIENTS`,
-    effective: "aresthesia, Formication in leg,  Constant Pain, Lower back pain in the hip and outer side on legs",
-    dosage: `HERBAL BIOLOGISCHE PHARMACEUTICALS PVT. LTD.
-592/3B/214/1, Gopal Nagar Near Defence Colony Lucknow 226025`,
-    precautions: `Keep away from direct sunlight
-•⁠  ⁠Keep out of the reach of children
-•⁠  ⁠Do not use if seal is broken off or missing
-KEEP IN A COOL & DARK PLACE`,
-    manufacturer: `Dr.Patels Homoeopathic Medicines Limited
-Plot No.: 738, Gurukrupa Ind. Estate,
-Manjusra, TA Savli Dist-Vadodara Gujarat-391775`,
-    image: "https://i.postimg.cc/zfNRJwqd/Screenshot-2026-03-31-at-10-04-52-PM.png",
-    keywords: ["aresthesia", "constant pain", "Formication of legs", "leg" ,"pain in legs", " Pain in hips", "pain in outer side legs"]
-  },
-{
-    id: 12,
-    name: "H-4 HAIR ROOT DROPS ",
-    brand: "Herbal Biologische Pharmaceuticals Private Limited",
-    price: 215,
-    mfg: "2025",
-    exp: "2030",
-    desc: "HAIR ROOT DROP",
-    composition: `EACH 10ML CONTAINS
-ALFALFA
-HYPOPHYSINE
-JUGLANS REGIA
-KALI PHOSPHORICA
-LECITHINUM
-OENOTHERA BIENNIS
-TESTIS
-ALCOHOL CONTENT
-EXCIPIENTS`,
-    effective: "reduce prematur hair los, grey hair, alopecia, baldness",
-    dosage: `HERBAL BIOLOGISCHE PHARMACEUTICALS PVT. LTD.
-592/3B/214/1, Gopal Nagar Near Defence Colony Lucknow 226025`,
-    precautions: `Keep away from direct sunlight
-•⁠  ⁠Keep out of the reach of children
-•⁠  ⁠Do not use if seal is broken off or missing
-KEEP IN A COOL & DARK PLACE`,
-    manufacturer: `Dr.Patels Homoeopathic Medicines Limited
-Plot No.: 738, Gurukrupa Ind. Estate,
-Manjusra, TA Savli Dist-Vadodara Gujarat-391775`,
-    image: "https://i.postimg.cc/d1pCcb3G/Screenshot-2026-03-31-at-10-05-39-PM.png",
-    keywords: ["grey hair", "any head issue", "hair", "baldness" ," hair relted th", "alopecia"]
-  },     
-  {
-    id: 13,
-    name: "H-5 SINUS-C DROPS ",
-    brand: "Herbal Biologische Pharmaceuticals Private Limited",
-    price: 215,
-    mfg: "2025",
-    exp: "2030",
-    desc: "THE SINUS-C DROPS",
-    composition: `EACH 10ML CONTAINS
-ARSENICUM ALBUM
-CALCAREA CARBONICA
-CINNABARIS
-KALI BICHROMICUM
-MERCURIUS SOLUBILIS
-PULSATILLA NIGRICANS
-SEPIA
-SULPHUR
-ALCOHOL CONTENT
-EXCIPIENTS
-`,
-    effective: "Coryza,sensation pain, Stiffness of nose,Post Nasal Discharge,Lack of smell and taste,Acute & Chronic catarrh",
-    dosage: `HERBAL BIOLOGISCHE PHARMACEUTICALS PVT. LTD.
-592/3B/214/1, Gopal Nagar Near Defence Colony Lucknow 226025`,
-    precautions: `Keep away from direct sunlight
-•⁠  ⁠Keep out of the reach of children
-•⁠  ⁠Do not use if seal is broken off or missing
-KEEP IN A COOL & DARK PLACE`,
-    manufacturer: `Dr.Patels Homoeopathic Medicines Limited
-Plot No.: 738, Gurukrupa Ind. Estate,
-Manjusra, TA Savli Dist-Vadodara Gujarat-391775`,
-    image: "https://i.postimg.cc/MHTWjP9b/Screenshot-2026-04-01-at-4-17-09-AM.png",
-    keywords: ["Acute & Chronic catarrh of the nose", "Post nasal discharge", "Stiffness of nose", "Coryza", "sensation pain" ,"Lack of smell and taste",]
-  },
-     {
-    id: 14,
-    name: "H-6 HAEMORRHOIDS DROPS ",
-    brand: "Herbal Biologische Pharmaceuticals Private Limited",
-    price: 215,
-    mfg: "2025",
-    exp: "2030",
-    desc: "THE H-6 HAEMORRHOIDS DROPS",
-    composition: `EACH 10ML CONTAINS
-ACIDUM NITRICUM
-AESCULUS HIPPOCASTANUM
-COLLINSONIA CANADENSIS
-HAMAMELIS VIRGINICA
-KALI CARBONICUM
-LYCOPODIUM CLAVATUM
-PAEONIA OFFICINALIS
-SULPHUR
-GRAPHITES
-NUX VOMICA
-ALCOHOL CONTENT
-EXCIPIENTS
-   `,effective: "Haemorrhoids, Itching around anus, Anal fissures, Anal prolapsus, Anal eczema, Burning pain ,Bleeding piles",
-    dosage: `HERBAL BIOLOGISCHE PHARMACEUTICALS PVT. LTD.
-592/3B/214/1, Gopal Nagar Near Defence Colony Lucknow 226025`,
-    precautions: `Keep away from direct sunlight
-•⁠  ⁠Keep out of the reach of children
-•⁠  ⁠Do not use if seal is broken off or missing
-KEEP IN A COOL & DARK PLACE`,
-    manufacturer: `Dr.Patels Homoeopathic Medicines Limited
-Plot No.: 738, Gurukrupa Ind. Estate,
-Manjusra, TA Savli Dist-Vadodara Gujarat-391775`,
-    image: "https://i.postimg.cc/yNyBp45c/Screenshot-2026-04-01-at-4-18-23-AM.png",
-    keywords: ["Acute & Chronic catarrh of the nose", "Post nasal discharge", "Stiffness of nose", "Coryza", "sensation pain" ,"Lack of smell and taste"]
-  },
-  {
-    id: 15,
-    name: "H-7 PAIN RELIEF DROPS ",
-    brand: "Herbal Biologische Pharmaceuticals Private Limited",
-    price: 215,
-    mfg: "2025",
-    exp: "2030",
-    desc: "PAIN RELIEF DROPS",
-    composition: `EACH 10 ML CONTAINS
-ARANEA DIADEMA
-CIMICIFUGA RACEMOSA
-COCCULUS INDICUS
-COLOCYNTHIS
-CYCLAMEN EUROPAEUM
-GELSEMIUM SEMPERVIRENS
-GINKGO BILOBA
-SPIGELIA
-ALCOHOL CONTENT
-EXCIPIENTS`,
-    effective: "reduce body pain such as the Arthralgia pain, Myalgic pain, Neuralgic pain, Headache, Weariness malaise",
-    dosage: `HERBAL BIOLOGISCHE PHARMACEUTICALS PVT. LTD.
-592/3B/214/1, Gopal Nagar Near Defence Colony Lucknow 226025`,
-    precautions: `Keep away from direct sunlight
-•⁠  ⁠Keep out of the reach of children
-•⁠  ⁠Do not use if seal is broken off or missing
-KEEP IN A COOL & DARK PLACE`,
-    manufacturer: `Dr.Patels Homoeopathic Medicines Limited
-Plot No.: 738, Gurukrupa Ind. Estate,
-Manjusra, TA Savli Dist-Vadodara Gujarat-391775`,
-    image: "https://i.postimg.cc/SNY4Fz5H/Screenshot-2026-04-01-at-4-19-26-AM.png",
-    keywords: ["Arthralgia pain", "Myalgic pain", "Neuralgic pain", "Headache" ," Weariness malaise"]
-  },   
-  {
-    id: 16,
-    name: "H-8 HAEMORRHOIDS DROPS ",
-    brand: "Herbal Biologische Pharmaceuticals Private Limited",
-    price: 215,
-    mfg: "2025",
-    exp: "2030",
-    desc: "THE H-8 HAEMORRHOIDS DROPS",
-    composition: `EACH 10ML CONTAINS
-ACIDUM SULPHURICUM
-ARGENTUM METALLICUM
-ARNICA MONTANA
-BRYONIA ALBA
-CAUSTICUM
-LEDUM PALUSTRE
-ALCOHOL CONTENT
-EXCIPENTS
-   `,effective: "Painful joints, Swollen joints, Stiff joints, Arthralgia in different joints, Worse to movement, Cramping pain in hip area",
-    dosage: `HERBAL BIOLOGISCHE PHARMACEUTICALS PVT. LTD.
-592/3B/214/1, Gopal Nagar Near Defence Colony Lucknow 226025`,
-    precautions: `Keep away from direct sunlight
-•⁠  ⁠Keep out of the reach of children
-•⁠  ⁠Do not use if seal is broken off or missing
-KEEP IN A COOL & DARK PLACE`,
-    manufacturer: `Dr.Patels Homoeopathic Medicines Limited
-Plot No.: 738, Gurukrupa Ind. Estate,
-Manjusra, TA Savli Dist-Vadodara Gujarat-391775`,
-    image: "https://i.postimg.cc/pdCbYQh5/Screenshot-2026-04-01-at-4-19-56-AM.png",
-    keywords: ["Arthralgia in different joints", "Painful joints", "Swollen joints", "Stiff joints", "Worse to movement" ,"Cramping pain in hip area"]
-  },
-  {
-    id: 17,
-    name: "H-9 DIABO CARE DROPS  ",
-    brand: "Herbal Biologische Pharmaceuticals Private Limited",
-    price: 215,
-    mfg: "2025",
-    exp: "2030",
-    desc: "THE H-9 DIABO CARE DROPS",
-    composition: `EACH 10ML CONTAINS
-CEPHALANDRA INDICA
-GYMNEMA SYLVESTRE
-SYZYGIUM JAMBOLANUM
-CRATAEGUS OXYACANTHA
-ACIDUM PHOSPHORICUM
-ABROMA AUGUSTA
-HELONIAS DIOICA
-ALCOHOL CONTENT
-EXCIPIENTS
-   `,effective: "Excessive urge to urinate, Increased appetite and thirsts, Weakness, Cramps, Maintains blood suagr levels",
-    dosage: `HERBAL BIOLOGISCHE PHARMACEUTICALS PVT. LTD.
-592/3B/214/1, Gopal Nagar Near Defence Colony Lucknow 226025`,
-    precautions: `Keep away from direct sunlight
-•⁠  ⁠Keep out of the reach of children
-•⁠  ⁠Do not use if seal is broken off or missing
-KEEP IN A COOL & DARK PLACE`,
-    manufacturer: `Dr.Patels Homoeopathic Medicines Limited
-Plot No.: 738, Gurukrupa Ind. Estate,
-Manjusra, TA Savli Dist-Vadodara Gujarat-391775`,
-    image: "https://i.postimg.cc/yxJMHwQz/Screenshot-2026-04-01-at-4-20-35-AM.png",
-    keywords: ["Cramps", "Excessive urge to urinate", "Increased appetite and thirts", "Weaknes", "Maintains blood sugar levels"]
-  },
-  {
-    id: 18,
-    name: "H-10 LIVER & GALL DROPS ",
-    brand: "Herbal Biologische Pharmaceuticals Private Limited",
-    price: 215,
-    mfg: "2025",
-    exp: "2030",
-    desc: "THE H-10 LIVER & GALL DROPS",
-    composition: `EACH 10ML CONTAINS
-CARDUUS MARIANUS
-CHELIDONIUM MAJUS
-CHOLESTERINUM
-COLOCYNTHIS
-LYCOPODIUM CLAVATUM
-NUX VOMICA
-CINCHONA OFFICINALIS
-ALCOHOL CONTENT
-EXCIPENTS
-   `,effective: "Hepatopathy, Cholecystitis, Constipation, Lack of appetite, Abnormal biliary secreations, Flatulence,Irritability, Bitter taste in mouth",
-    dosage: `HERBAL BIOLOGISCHE PHARMACEUTICALS PVT. LTD.
-592/3B/214/1, Gopal Nagar Near Defence Colony Lucknow 226025`,
-    precautions: `Keep away from direct sunlight
-•⁠  ⁠Keep out of the reach of children
-•⁠  ⁠Do not use if seal is broken off or missing
-KEEP IN A COOL & DARK PLACE`,
-    manufacturer: `Dr.Patels Homoeopathic Medicines Limited
-Plot No.: 738, Gurukrupa Ind. Estate,
-Manjusra, TA Savli Dist-Vadodara Gujarat-391775`,
-    image: "https://i.postimg.cc/6pVDtVhj/Screenshot-2026-04-01-at-4-21-11-AM.png",
-    keywords: ["Hepatopathy","Cholecystitis","Constipation","Lack of appetite","Abnormal biliary seceations","Flatulence","Irritability","Bitter taste in mouth"]
-  },
-  {
-    id: 19,
-    name: "H-2 DIGESTIVE TONIC ",
-    brand: "Herbal Biologische Pharmaceuticals Private Limited",
-    price: 130,
-    mfg: "2025",
-    exp: "2030",
-    desc: "THE H-2 DIGESTIVE TONIC",
-    composition: `EACH 100ML CONTAINS
-FOENICULUM VULGARE
-MENTHA PIPERITA
-NUX MOSCHATA
-ZINGIBER OFFICINALIS
-ASAFOETIDA
-CARUM CARVI
-TERMINALIA ARJUNA
-ALCOHOL CONTENT
-EXCIPIENTS
-   `,effective: "Improves digestion, Heart Burn, Acidity, Gastric pain, Bloating, Dyspepsia",
-    dosage: `HERBAL BIOLOGISCHE PHARMACEUTICALS PVT. LTD.
-592/3B/214/1, Gopal Nagar Near Defence Colony Lucknow 226025`,
-    precautions: `Keep away from direct sunlight
-•⁠  ⁠Keep out of the reach of children
-•⁠  ⁠Do not use if seal is broken off or missing
-KEEP IN A COOL & DARK PLACE`,
-    manufacturer: `Dr.Patels Homoeopathic Medicines Limited
-Plot No.: 738, Gurukrupa Ind. Estate,
-Manjusra, TA Savli Dist-Vadodara Gujarat-391775`,
-    image: "https://i.postimg.cc/8Ct9r19n/Screenshot-2026-04-01-at-4-21-39-AM.png",
-    keywords: ["H-2 Digestive Tonic","Digestion","Acidity","Bloating","Dyspepsia","Heart Burn","H2 Toni"]
-  },
-  {
-    id: 20,
-    name: "H-11 AALLER-G DROPS ",
-    brand: "Herbal Biologische Pharmaceuticals Private Limited",
-    price: 215,
-    mfg: "2025",
-    exp: "2030",
-    desc: "H-11 AALLER-G DROPS",
-    composition: `Allium Cepa, Lycopersicum Esculentum, Eucalyptus Globulus, Gelsemium, Sabadilla, Euphrasia, Arsenicum Album, Camphora, Natrum Muriaticum,ALCOHOL CONTENT,
-EXCIPENTS
-   `,effective: "H-11 AALLER- G DROPS provide comfort if you are facing issues like sneezing, runny nose or water eyes. It soothes irritation caused by rhinitis and sinusitis.It will provide relief if you are facing symptoms of allergies.",
-    dosage: ` HERBAL BIOLOGISCHE PHARMACEUTICALS PVT. LTD.
-592/3B/214/1, Gopal Nagar Near Defence Colony Lucknow 226025`,
-    precautions: `Keep away from direct sunlight
-•⁠  ⁠Keep out of the reach of children
-•⁠  ⁠Do not use if seal is broken off or missing
-KEEP IN A COOL & DARK PLACE`,
-    manufacturer: `Dr.Patels Homoeopathic Medicines Limited
-Plot No.: 738, Gurukrupa Ind. Estate,
-Manjusra, TA Savli Dist-Vadodara Gujarat-391775`,
-    image: "https://i.postimg.cc/jSMdRJtJ/Screenshot-2026-04-01-at-5-41-09-AM.png",
-    keywords: ["AALLER-G DROPS","Running nose","Watering Eyes","Rhinitis","Sinusitis"]
-  },
-  {
-    id: 21,
-    name: "H-12 GUATERIA GAUMERIA ",
-    brand: "Herbal Biologische Pharmaceuticals Private Limited",
-    price: 215,
-    mfg: "2025",
-    exp: "2030",
-    desc: "H-12 GUATERIA GAUMERIA",
-    composition: `EACH 100ML CONTAINS
-GUATTERIA GAUMERIA
-ALCOHOL CONTENT
-EXCIPENTS
-   `,effective: "H-12 GUATERIA GAUMERIA is naturally against hypercholesterolemia. This supplement targets high cholesterol, supporting heart function.",
-    dosage: ` HERBAL BIOLOGISCHE PHARMACEUTICALS PVT. LTD.
-592/3B/214/1, Gopal Nagar Near Defence Colony Lucknow 226025`,
-    precautions: `Keep away from direct sunlight
-•⁠  ⁠Keep out of the reach of children
-•⁠  ⁠Do not use if seal is broken off or missing
-KEEP IN A COOL & DARK PLACE`,
-    manufacturer: `Dr.Patels Homoeopathic Medicines Limited
-Plot No.: 738, Gurukrupa Ind. Estate,
-Manjusra, TA Savli Dist-Vadodara Gujarat-391775`,
-    image: "https://i.postimg.cc/3NjYVktv/Screenshot-2026-04-01-at-5-43-20-AM.png",
-    keywords: ["H-12 Guateria Gaumeria","Hypercholesterolemia","Supports heart and vascular health"]
-  },
-   {
-    id: 22,
-    name: "H-13 OVERON-F DROPS ",
-    brand: "Herbal Biologische Pharmaceuticals Private Limited",
-    price: 215,
-    mfg: "2025",
-    exp: "2030",
-    desc: "H-13 OVERON-F DROPS",
-    composition: `EACH 100ML CONTAIN
-Apis Mellifica, Arsenicum Album, Calcarea Carbonica, Belladonna, Conium Maculatum, Hepar Sulph, Iodium, Lac Caninum, Lilium Tigrinum, Palladium, Alcohol Content q.s., Excipients q.s.
-   `,effective: "H-13 OVERON-F DROPS helps to restore body’s natural balance. Specially formulated to help to regulate menstrual cycles and support a healthy normal flow, these drops are also useful in order to recover from common hormonal concerns like acne, pimples, and premenstrual discomfort.",
-    dosage: ` HERBAL BIOLOGISCHE PHARMACEUTICALS PVT. LTD.
-592/3B/214/1, Gopal Nagar Near Defence Colony Lucknow 226025`,
-    precautions: `Keep away from direct sunlight
-•⁠  ⁠Keep out of the reach of children
-•⁠  ⁠Do not use if seal is broken off or missing
-KEEP IN A COOL & DARK PLACE`,
-    manufacturer: `Dr.Patels Homoeopathic Medicines Limited
-Plot No.: 738, Gurukrupa Ind. Estate,
-Manjusra, TA Savli Dist-Vadodara Gujarat-391775`,
-    image: "https://i.postimg.cc/GmmdghG0/Screenshot-2026-04-01-at-5-43-57-AM.png",
-    keywords: ["H-13 OVERON-F DROPS"]
-  },
-  {
-    id: 23,
-    name: "H-14 HBP-PROSTO DROPS ",
-    brand: "Herbal Biologische Pharmaceuticals Private Limited",
-    price: 215,
-    mfg: "2025",
-    exp: "2030",
-    desc: "H-14 HBP-PROSTO DROPS",
-    composition: `EACH 10ML CONTAIN
-Sabal Serrulata, Chimaphila Umbellata, Clematis Erecta, Conium Maculatum, Ferrum Picricum, Pareira Brava, Populus Tremuloides, Pulsatilla Nigricans, Alcohol Content q.s., Excipients q.s.
-   `,effective: "H-14 HBP- PROSTO DROPS helps to reclaim your comfort for acute and chronic prostatitis, paralytic asthenia, weak urinary flow, sharp pain during urination, and even hypertrophy of the prostate gland.",
-    dosage: ` HERBAL BIOLOGISCHE PHARMACEUTICALS PVT. LTD.
-592/3B/214/1, Gopal Nagar Near Defence Colony Lucknow 226025`,
-    precautions: `Keep away from direct sunlight
-•⁠  ⁠Keep out of the reach of children
-•⁠  ⁠Do not use if seal is broken off or missing
-KEEP IN A COOL & DARK PLACE`,
-    manufacturer: `Dr.Patels Homoeopathic Medicines Limited
-Plot No.: 738, Gurukrupa Ind. Estate,
-Manjusra, TA Savli Dist-Vadodara Gujarat-391775`,
-    image: "https://i.postimg.cc/8cCgKZf0/Screenshot-2026-04-01-at-6-12-19-AM.png",
-    keywords: ["H-14 HBP-PROSTO DROPS"]
-  },
-  {
-    id: 24,
-    name: "H-15 HBP-URICOM DROPS ",
-    brand: "Herbal Biologische Pharmaceuticals Private Limited",
-    price: 215,
-    mfg: "2025",
-    exp: "2030",
-    desc: "H-15 HBP-URICOM DROPS ",
-    composition: `EACH 5 ML CONTAIN
-Acidum Benzoicum, Berberis Vulgaris, Epigaea Repens, Lithium Carbonicum, Stigmata Maydis, Urtica Urens, Alcohol Content q.s., Excipients q.s.
-   `,effective: "H-15 HBP- URICOM DROPS helps to normalize uric acid, these drops works fast to ease discomfort in your knees, ankles, wrists and other joints.",
-    dosage: ` HERBAL BIOLOGISCHE PHARMACEUTICALS PVT. LTD.
-592/3B/214/1, Gopal Nagar Near Defence Colony Lucknow 226025`,
-    precautions: `Keep away from direct sunlight
-•⁠  ⁠Keep out of the reach of children
-•⁠  ⁠Do not use if seal is broken off or missing
-KEEP IN A COOL & DARK PLACE`,
-    manufacturer: `Dr.Patels Homoeopathic Medicines Limited
-Plot No.: 738, Gurukrupa Ind. Estate,
-Manjusra, TA Savli Dist-Vadodara Gujarat-391775`,
-    image: "https://i.postimg.cc/gjpPVYG9/Screenshot-2026-04-01-at-5-45-15-AM.png",
-    keywords: ["H-15 HBP-URICOM DROPS"]
-  },
-  {
-    id: 25,
-    name: "H-16 TIMP-X DROPS ",
-    brand: "Herbal Biologische Pharmaceuticals Private Limited",
-    price: 215,
-    mfg: "2025",
-    exp: "2030",
-    desc: "H-16 TIMP-X DROPS ",
-    composition: `EACH 5 ML CONTAIN
-Baptisia Tinctoria, Bryonia Alba, Causticum, Eucalyptus Globulus, Eupatorium Perfoliatum, Ferrum Phosphoricum, Gelsemium, Sabadilla, Alcohol Content q.s., Excipients q.s.
-   `,effective: "H-16 TIMP-X Drops are here to bring you relief from the symptoms of colds and flu- like runny nose, sore throat, headache from nasal congestion, and even hoarse -ness of voice.",
-    dosage: ` HERBAL BIOLOGISCHE PHARMACEUTICALS PVT. LTD.
-592/3B/214/1, Gopal Nagar Near Defence Colony Lucknow 226025`,
-    precautions: `Keep away from direct sunlight
-•⁠  ⁠Keep out of the reach of children
-•⁠  ⁠Do not use if seal is broken off or missing
-KEEP IN A COOL & DARK PLACE`,
-    manufacturer: `Dr.Patels Homoeopathic Medicines Limited
-Plot No.: 738, Gurukrupa Ind. Estate,
-Manjusra, TA Savli Dist-Vadodara Gujarat-391775`,
-    image: "https://i.postimg.cc/SNyhjNZ9/Screenshot-2026-04-01-at-5-45-42-AM.png",
-    keywords: ["H-16 TIMP-X DROPS"]
-  },
-  {
-    id: 26,
-    name: "H-17 HBP-NERVO DROPS ",
-    brand: "Herbal Biologische Pharmaceuticals Private Limited",
-    price: 215,
-    mfg: "2025",
-    exp: "2030",
-    desc: "H-17 HBP-NERVO DROP",
-    composition: `EACH 10 ML CONTAIN
-Avena Sativa, Coffea Cruda, Ignatia Amara, Zincum Metallicum, Valeriana Officinalis, Kali Phosphoricum, Eschscholtzia Californica, Passiflora Incarnata, Alcohol Content q.s., Excipients q.s.
-   `,effective: "H-17 HBP- NERVO DROPS oﬀer a natural and eﬀective solution to restore your peace of mind. These drops support to those dealing with insomnia, depression & over excitement of the nervous system. These drops help to calm your system and promote restful sleep.",
-    dosage: ` HERBAL BIOLOGISCHE PHARMACEUTICALS PVT. LTD.
-592/3B/214/1, Gopal Nagar Near Defence Colony Lucknow 226025`,
-    precautions: `Keep away from direct sunlight
-•⁠  ⁠Keep out of the reach of children
-•⁠  ⁠Do not use if seal is broken off or missing
-KEEP IN A COOL & DARK PLACE`,
-    manufacturer: `Dr.Patels Homoeopathic Medicines Limited
-Plot No.: 738, Gurukrupa Ind. Estate,
-Manjusra, TA Savli Dist-Vadodara Gujarat-391775`,
-    image: "https://i.postimg.cc/RZhxQpx0/Screenshot-2026-04-01-at-5-46-07-AM.png",
-    keywords: ["H-17 HBP-NERVO DROPS"]
-  },
-   {
-    id: 27,
-    name: "H-18 GASTRO DROPS ",
-    brand: "Herbal Biologische Pharmaceuticals Private Limited",
-    price: 215,
-    mfg: "2025",
-    exp: "2030",
-    desc: "H-18 GASTRO DROPS",
-    composition: `EACH 10 ML CONTAIN
-Baptisia Tinctoria, Chamomilla, Chininum Arsenicosum, Colocynthis, Ferrum Phosphoricum, Mercurius Corrosivus, Oleander, Acidum Phosphoricum, Rhus Toxicodendron, Veratrum Album, Alcohol Content q.s., Excipients q.s.
-   `,effective: "H-18 GASTRO DROPS oﬀer eﬀective relief from gastro-enteritis, colitis, dysentery, irritable bowel syndrome, flatulence, and indigestion. These drops helps to soothe your digestive tract and restore balance.",
-    dosage: ` HERBAL BIOLOGISCHE PHARMACEUTICALS PVT. LTD.
-592/3B/214/1, Gopal Nagar Near Defence Colony Lucknow 226025`,
-    precautions: `Keep away from direct sunlight
-•⁠  ⁠Keep out of the reach of children
-•⁠  ⁠Do not use if seal is broken off or missing
-KEEP IN A COOL & DARK PLACE`,
-    manufacturer: `Dr.Patels Homoeopathic Medicines Limited
-Plot No.: 738, Gurukrupa Ind. Estate,
-Manjusra, TA Savli Dist-Vadodara Gujarat-391775`,
-    image: "https://i.postimg.cc/hjWFnSzP/Screenshot-2026-04-01-at-5-46-41-AM.png",
-    keywords: ["H-18 GASTRO DROPS"]
-  },
-  {
-    id: 28,
-    name: "RHEUMALOGISCHE Z+ SYRUP ",
-    brand: "Herbal Biologische Pharmaceuticals Private Limited",
-    price: 390,
-    mfg: "2025",
-    exp: "2030",
-    desc: "RHEUMALOGISCHE Z+ SYRUP",
-    composition: `EACH 10 GM CONTAIN
-Allium Sativa, Apis Mellifica, Arnica Montana, Bryonia Alba, Cimicifuga Racemosa, Dioscorea Villosa, Eupatorium Perfoliatum, Guaiacum Officinale, Mimosa Pudica, Ruta Graveolens, Spigelia Marilandica, Rhus Toxicodendron, Magnesium Phosphoricum, Natrum Phosphoricum, Calcarea Carbonica, Alcohol Content q.s., Excipients syrup & aromatics, color caramel, purified water
-   `,effective: "Rheumalogische Z+ Syrup is solution for all kinds of pain like muscle pain, & even solution of inflammatory pain of muscles and joints. It provides relief to body aches ,backache.",
-    dosage: `HERBAL BIOLOGISCHE PHARMACEUTICALS PVT. LTD.
-592/3B/214/1, Gopal Nagar Near Defence Colony Lucknow 226025
-`,
-    precautions: `Keep away from direct sunlight
-•⁠  ⁠Keep out of the reach of children
-•⁠  ⁠Do not use if seal is broken off or missing
-KEEP IN A COOL & DARK PLACE`,
-    manufacturer: `Dr.Patels Homoeopathic Medicines Limited
-Plot No.: 738, Gurukrupa Ind. Estate,
-Manjusra, TA Savli Dist-Vadodara Gujarat-391775`,
-    image: "https://i.postimg.cc/jSQjyWzW/PHOTO-2026-04-01-21-44-26.jpg",
-    keywords: ["RHEUMALOGISCHE Z+ SYRUP"]
-  },
-  {
-    id: 29,
-    name: "RHEUMALOGISCHE Z+ PAIN RELIEF OIL ",
-    brand: "Herbal Biologische Pharmaceuticals Private Limited",
-    price: 160,
-    mfg: "2025",
-    exp: "2030",
-    desc: "RHEUMALOGISCHE Z+ PAIN RELIEF OIL",
-    composition: `EACH 10 ML CONTAIN
-Arnica Montana, Cantharis, Gaultheria Procumbens, Methyl Salicylate, BHT, Vegetable Oil & Liquid Paraffin
-   `,effective: "Rheumalogische-Z + Pain relief oil solution if you are having muscle pain, joint pain. It’s also helpful if you are facing stiﬀness, backache, reduce pain and swelling associated with arthritis.",
-     dosage: `HERBAL BIOLOGISCHE PHARMACEUTICALS PVT. LTD.
-592/3B/214/1, Gopal Nagar Near Defence Colony Lucknow 226025
-`,
-    precautions: `Keep away from direct sunlight
-•⁠  ⁠Keep out of the reach of children
-•⁠  ⁠Do not use if seal is broken off or missing
-KEEP IN A COOL & DARK PLACE`,
-    manufacturer: `Dr.Patels Homoeopathic Medicines Limited
-Plot No.: 738, Gurukrupa Ind. Estate,
-Manjusra, TA Savli Dist-Vadodara Gujarat-391775`,
-    image: "https://i.postimg.cc/PJtyrvz4/PHOTO-2026-04-01-21-45-30.jpg",
-    keywords: ["RHEUMALOGISCHE Z+  PAIN RELIE SYRUP"]
-  },
-  
-];
-  
-  
+(function () {
 
-/* --------------------------------
-   Read id from URL and populate
-   -------------------------------- */
-const params = new URLSearchParams(window.location.search);
-const id = parseInt(params.get('id')) || 1;
-const item = meds.find(m=>m.id===id);
+  "use strict";
 
-if (!item) {
-  document.body.innerHTML = "<div class='min-h-screen flex items-center justify-center'>Product not found.</div>";
-} else {
-  // fill page
-  document.getElementById('productImage').src = item.image;
-  document.getElementById('productName').textContent = item.name;
-  document.getElementById('productBrand').textContent = item.brand;
-  document.getElementById('price').textContent = '₹' + item.price;
-  document.getElementById('mfg').textContent = item.mfg;
-  document.getElementById('exp').textContent = item.exp;
-  document.getElementById('desc').textContent = item.desc;
-  document.getElementById('composition').textContent = item.composition || 'Not available';
-  document.getElementById('effective').textContent = item.effective || 'Not available';
-  document.getElementById('dosage').textContent = item.dosage || 'Not available';
-  document.getElementById('precautions').textContent = item.precautions || 'Not available';
-  document.getElementById('manufacturer').textContent = item.manufacturer || '';
-  // badge
-  if (item.badge) {
-    const b = document.getElementById('badge');
-    b.textContent = item.badge;
-    b.classList.remove('hidden');
+  function startTestimonials() {
+
+    const slider = document.getElementById("reviewSwiper");
+
+    if (!slider) {
+      console.error("Testimonials: reviewSwiper not found.");
+      return;
+    }
+
+
+    /* -----------------------------------------
+       Prevent duplicate initialization
+    ----------------------------------------- */
+
+    if (slider.swiper) {
+      slider.swiper.destroy(true, true);
+    }
+
+
+    /* -----------------------------------------
+       Check Swiper
+    ----------------------------------------- */
+
+    if (typeof Swiper === "undefined") {
+
+      console.error(
+        "Testimonials: Swiper library failed to load."
+      );
+
+      return;
+    }
+
+
+    /* -----------------------------------------
+       Initialize
+    ----------------------------------------- */
+
+    const testimonialsSwiper = new Swiper(
+      "#reviewSwiper",
+      {
+
+        /* Infinite loop */
+        loop: true,
+
+        /* Slow smooth movement */
+        speed: 5000,
+
+        /* Continuous automatic movement */
+        autoplay: {
+          delay: 1,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true,
+          waitForTransition: false
+        },
+
+        /* Phone swipe */
+        allowTouchMove: true,
+
+        /* Desktop mouse dragging */
+        simulateTouch: true,
+
+        /* Grab cursor */
+        grabCursor: true,
+
+        /* Free scrolling */
+        freeMode: {
+          enabled: true,
+          momentum: false,
+          momentumRatio: 0,
+          momentumVelocityRatio: 0
+        },
+
+        /* Mobile */
+        slidesPerView: 1.1,
+
+        spaceBetween: 16,
+
+
+        /* Responsive */
+        breakpoints: {
+
+          480: {
+            slidesPerView: 1.2,
+            spaceBetween: 16
+          },
+
+          640: {
+            slidesPerView: 2,
+            spaceBetween: 18
+          },
+
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 20
+          },
+
+          1440: {
+            slidesPerView: 4,
+            spaceBetween: 22
+          }
+
+        },
+
+
+        /* Dots */
+        pagination: {
+          el: "#reviewSwiper .swiper-pagination",
+          clickable: true
+        },
+
+
+        /* Accessibility */
+        a11y: {
+          enabled: true
+        },
+
+
+        /* Automatically update */
+        observer: true,
+        observeParents: true,
+        resizeObserver: true,
+
+
+        /* -------------------------------------
+           Events
+        ------------------------------------- */
+
+        on: {
+
+          init: function (swiper) {
+
+            console.log(
+              "Testimonials: Swiper started successfully."
+            );
+
+            swiper.update();
+
+            if (
+              swiper.autoplay &&
+              !swiper.autoplay.running
+            ) {
+              swiper.autoplay.start();
+            }
+
+          },
+
+
+          resize: function (swiper) {
+
+            swiper.update();
+
+          },
+
+
+          orientationchange: function (swiper) {
+
+            swiper.update();
+
+          }
+
+        }
+
+      }
+    );
+
+
+    /* -----------------------------------------
+       IMPORTANT:
+       Keep autoplay after manual swipe
+    ----------------------------------------- */
+
+    testimonialsSwiper.on(
+      "touchEnd",
+      function () {
+
+        setTimeout(function () {
+
+          if (
+            testimonialsSwiper.autoplay &&
+            !testimonialsSwiper.autoplay.running
+          ) {
+
+            testimonialsSwiper.autoplay.start();
+
+          }
+
+        }, 150);
+
+      }
+    );
+
+
+    /* -----------------------------------------
+       Make instance available globally
+    ----------------------------------------- */
+
+    window.reviewTestimonialsSwiper =
+      testimonialsSwiper;
+
   }
-  // links
-  const wa = 'https://wa.me/9120227101?text=' + encodeURIComponent('Hello, I want to order medicine ' + item.name);
-  document.getElementById('whatsappBtn').href = wa;
-  document.getElementById('mobileOrder').href = wa;
-  document.getElementById('orderBtn')?.setAttribute('href', wa);
-  document.getElementById('callBtn').href = 'tel:9120227101';
-  document.getElementById('mobileCall').href = 'tel:9120227101';
-}
 
-/* -----------------------------
-   Init AOS & animations
-   ----------------------------- */
-AOS.init({ duration:700, once:true });
 
-gsap.from('#productName', { opacity:0, y:-12, duration:0.6 });
-gsap.from('#productImage', { opacity:0, scale:.98, duration:0.7, delay:0.05 });
+  /* -------------------------------------------
+     Start after DOM is ready
+  ------------------------------------------- */
 
-/* -----------------------------
-   medium-zoom
-   ----------------------------- */
-mediumZoom('#productImage', { background: 'rgba(0,0,0,0.85)', margin:48 });
+  if (
+    document.readyState === "loading"
+  ) {
 
-/* -----------------------------
-   optional: thumbnails (if you add more images)
-   ----------------------------- */
-/* Example (if item.images array provided)
-if(item.images && item.images.length>1){
-  const thumbs = document.getElementById('thumbs');
-  item.images.forEach(src=>{
-    const img = document.createElement('img');
-    img.src = src;
-    img.className = 'w-20 h-20 object-cover rounded-md border cursor-pointer';
-    img.onclick = ()=> document.getElementById('productImage').src = src;
-    thumbs.appendChild(img);
-  });
-}
-*/
+    document.addEventListener(
+      "DOMContentLoaded",
+      startTestimonials
+    );
+
+  } else {
+
+    startTestimonials();
+
+  }
+
+})();
+</script>
+    
+   <!-- =========================================================
+     MODERN PHARMACY CONTACT + LOCATION
+     WHITE / GREEN / NAVY THEME
+========================================================= -->
+
+<section
+  id="contact"
+  class="relative mt-16 px-4 sm:px-6 lg:px-8
+         bg-white"
+>
+
+  <div class="max-w-7xl mx-auto">
+
+
+    <!-- =====================================================
+         SECTION HEADER
+    ====================================================== -->
+
+    <div
+      class="flex flex-col lg:flex-row
+             lg:items-end lg:justify-between
+             gap-6 mb-10"
+    >
+
+      <!-- LEFT -->
+
+      <div>
+
+        <div
+          class="inline-flex items-center gap-2
+                 px-4 py-2 rounded-full
+                 bg-emerald-50
+                 border border-emerald-100
+                 text-emerald-700
+                 text-sm font-semibold"
+        >
+
+          <span
+            class="relative flex h-2.5 w-2.5"
+          >
+
+            <span
+              class="absolute inline-flex
+                     h-full w-full
+                     rounded-full
+                     bg-emerald-400
+                     opacity-60
+                     animate-ping"
+            ></span>
+
+            <span
+              class="relative inline-flex
+                     rounded-full
+                     h-2.5 w-2.5
+                     bg-emerald-500"
+            ></span>
+
+          </span>
+
+          We're here to help
+
+        </div>
+
+
+        <h2
+          class="mt-4
+                 text-3xl sm:text-4xl lg:text-5xl
+                 font-extrabold
+                 tracking-tight
+                 text-[#062E4F]"
+        >
+         Contact Us
+        </h2>
+
+
+        <p
+          class="mt-3 max-w-2xl
+                 text-slate-500
+                 text-sm sm:text-base
+                 leading-relaxed"
+        >
+          Have a question about our medicines or services?
+          Our team is ready to assist you.
+        </p>
+
+      </div>
+    <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
+
+    <div
+      class="grid
+             lg:grid-cols-[0.82fr_1.18fr]
+             gap-6 lg:gap-8"
+    >
+
+
+      <!-- =================================================
+           CONTACT INFORMATION CARD
+      ================================================== -->
+
+      <div
+        class="relative
+               overflow-hidden
+               rounded-[28px]
+               bg-[#F3FBF7]
+               border border-emerald-100
+               p-6 sm:p-8"
+      >
+
+        <!-- Decorative circle -->
+
+        <div
+          class="absolute
+                 -right-20 -top-20
+                 w-56 h-56
+                 rounded-full
+                 bg-emerald-200/30
+                 blur-3xl
+                 pointer-events-none"
+        ></div>
+
+
+        <div
+          class="relative z-10"
+        >
+
+          <!-- Heading -->
+
+          <div>
+
+            <span
+              class="text-xs
+                     uppercase
+                     tracking-[0.18em]
+                     font-bold
+                     text-emerald-600"
+            >
+              Contact information
+            </span>
+
+
+            <h3
+              class="mt-2
+                     text-2xl
+                     font-extrabold
+                     text-[#062E4F]"
+            >
+              We're happy to help
+            </h3>
+
+
+            <p
+              class="mt-2
+                     text-sm
+                     text-slate-500
+                     leading-relaxed"
+            >
+              Reach us through your preferred channel
+              and we'll help you with your enquiry.
+            </p>
+
+          </div>
+ 
+          <!-- =================================================
+               CONTACT ITEMS
+          ================================================== -->
+
+      <div class="mt-7 space-y-3">
+ <!-- WHATSAPP -->
+
+          <a
+  href="https://wa.me/919120227101"
+  target="_blank"
+  rel="noopener noreferrer"
+  class="group
+         flex items-center gap-4
+         p-4
+         rounded-2xl
+         bg-white
+         border border-slate-100
+         shadow-sm
+         hover:border-emerald-200
+         hover:shadow-md
+         hover:-translate-y-0.5
+         transition-all duration-300"
+>
+              <div
+                class="w-12 h-12
+                       shrink-0
+                       rounded-2xl
+                       bg-emerald-50
+                       text-emerald-600
+                       flex items-center
+                       justify-center
+                       group-hover:bg-emerald-500
+                       group-hover:text-white
+                       transition-colors"
+              >
+
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
+
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M20.5 3.5A11.9 11.9 0 0012.05 0
+                C5.5 0 .18 5.32.18 11.87c0 2.09.55 4.13
+                1.59 5.93L.08 24l6.34-1.66a11.88 11.88
+                0 005.63 1.43h.01c6.55 0 11.87-5.32
+                11.87-11.87 0-3.17-1.23-6.15-3.43-8.4z
+                M12.06 21.77h-.01a9.88 9.88 0 01-5.03-1.38
+                l-.36-.21-3.76.98 1-3.66-.24-.38a9.87
+                9.87 0 01-1.52-5.25c0-5.45 4.44-9.88
+                9.9-9.88 2.64 0 5.12 1.03 6.99 2.9
+                a9.83 9.83 0 012.89 7c0 5.44-4.43 9.88-9.86
+                9.88z"
+                  />
+
+                </svg>
+
+              </div>
+
+
+              <div class="flex-1">
+
+                <p
+                  class="text-xs
+                         text-slate-400"
+                >
+                  WhatsApp
+                </p>
+
+                <p
+                  class="mt-0.5
+                         text-sm
+                         font-bold
+                         text-[#062E4F]"
+                >
+                 Type a message to us
+                </p>
+
+              </div>
+
+
+              <svg
+                class="w-5 h-5
+                       text-slate-300
+                       group-hover:text-emerald-500
+                       group-hover:translate-x-1
+                       transition-all"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+              >
+
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M9 5l7 7-7 7"
+                />
+
+              </svg>
+
+            </a>  
+            <!-- CALL -->
+
+            <a
+              :href="callLink"
+              class="group
+                     flex items-center gap-4
+                     p-4
+                     rounded-2xl
+                     bg-white
+                     border border-slate-100
+                     shadow-sm
+                     hover:border-emerald-200
+                     hover:shadow-md
+                     hover:-translate-y-0.5
+                     transition-all duration-300"
+            >
+
+              <div
+                class="w-12 h-12
+                       shrink-0
+                       rounded-2xl
+                       bg-emerald-50
+                       text-emerald-600
+                       flex items-center
+                       justify-center
+                       group-hover:bg-emerald-500
+                       group-hover:text-white
+                       transition-colors"
+              >
+
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
+
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M3 5.5A2.5 2.5 0 015.5 3h1.2c.7 0 1.3.45 1.5 1.1l1 3.1a1.6 1.6 0 01-.4 1.6L7.4 10.2a14.2 14.2 0 006.4 6.4l1.4-1.4a1.6 1.6 0 011.6-.4l3.1 1c.65.2 1.1.8 1.1 1.5v1.2a2.5 2.5 0 01-2.5 2.5C10.5 21 3 13.5 3 5.5z"
+                  />
+
+                </svg>
+
+              </div>
+
+
+              <div class="flex-1">
+
+                <p
+                  class="text-xs
+                         text-slate-400"
+                >
+                  Phone
+                </p>
+
+                <p
+                  class="mt-0.5
+                         text-sm
+                         font-bold
+                         text-[#062E4F]"
+                >
+                  Call Us
+                </p>
+
+              </div>
+
+
+              <svg
+                class="w-5 h-5
+                       text-slate-300
+                       group-hover:text-emerald-500
+                       group-hover:translate-x-1
+                       transition-all"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+              >
+
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M9 5l7 7-7 7"
+                />
+
+              </svg>
+
+            </a>
+
+
+            <!-- EMAIL -->
+
+            <a
+              :href="mailtoLink"
+              class="group
+                     flex items-center gap-4
+                     p-4
+                     rounded-2xl
+                     bg-white
+                     border border-slate-100
+                     shadow-sm
+                     hover:border-emerald-200
+                     hover:shadow-md
+                     hover:-translate-y-0.5
+                     transition-all duration-300"
+            >
+
+              <div
+                class="w-12 h-12
+                       shrink-0
+                       rounded-2xl
+                       bg-blue-50
+                       text-[#1467A3]
+                       flex items-center
+                       justify-center
+                       group-hover:bg-[#062E4F]
+                       group-hover:text-white
+                       transition-colors"
+              >
+
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
+
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M3 7l9 6 9-6"
+                  />
+
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                  />
+
+                </svg>
+
+              </div>
+
+
+              <div class="flex-1">
+
+                <p
+                  class="text-xs
+                         text-slate-400"
+                >
+                  Email
+                </p>
+
+                <p
+                  class="mt-0.5
+                         text-sm
+                         font-bold
+                         text-[#062E4F]"
+                >
+                  Send an enquiry
+                </p>
+
+              </div>
+
+
+              <svg
+                class="w-5 h-5
+                       text-slate-300
+                       group-hover:text-[#062E4F]
+                       group-hover:translate-x-1
+                       transition-all"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+              >
+
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M9 5l7 7-7 7"
+                />
+
+              </svg>
+
+            </a>
+
+
+            <!-- LOCATION -->
+
+            <div
+              class="flex items-center gap-4
+                     p-4
+                     rounded-2xl
+                     bg-white
+                     border border-slate-100
+                     shadow-sm"
+            >
+
+              <div
+                class="w-12 h-12
+                       shrink-0
+                       rounded-2xl
+                       bg-blue-50
+                       text-[#1467A3]
+                       flex items-center
+                       justify-center"
+              >
+
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
+
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M12 21s7-6.2 7-12a7 7 0 10-14 0c0 5.8 7 12 7 12z"
+                  />
+
+                  <circle
+                    cx="12"
+                    cy="9"
+                    r="2.5"
+                  />
+
+                </svg>
+
+              </div>
+
+
+              <div>
+
+                <p
+                  class="text-xs
+                         text-slate-400"
+                >
+                  Visit us
+                </p>
+
+                <p
+                  class="mt-0.5
+                         text-sm
+                         font-bold
+                         text-[#062E4F]"
+                >
+                  HERBAL BIOLOGISCHE PHARMACEUTICALS PVT. LTD.
+592/3B/214/1, Gopal Nagar Near Defence Colony Lucknow 226025
+                </p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- =================================================
+           MODERN MAP CARD
+      ================================================== -->
+
+      <div
+        class="relative
+               min-h-[450px]
+               lg:min-h-[590px]
+               overflow-hidden
+               rounded-[28px]
+               border border-slate-200
+               bg-slate-100
+               shadow-xl
+               shadow-slate-200/50"
+      >
+
+        <!-- MAP -->
+
+        <iframe
+          class="absolute inset-0
+                 w-full h-full"
+          loading="lazy"
+          allowfullscreen
+          referrerpolicy="strict-origin-when-cross-origin"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10659.981781679417!2d80.93528398377893!3d26.793645461562093!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399bfbdcf3691f57%3A0x7214bda93e171b1e!2sHerbal%20biologische%20pharmaceuticals%20private%20limited!5e0!3m2!1sen!2sin!4v1786884711792!5m2!1sen!2sin"
+        ></iframe>
+
+        <!-- =================================================
+             TOP LOCATION BADGE
+        ================================================== -->
+
+        <div
+          class="absolute
+                 top-4 left-4 right-4
+                 flex justify-between
+                 items-start
+                 pointer-events-none"
+        >
+
+          <div
+            class="pointer-events-auto
+                   flex items-center gap-3
+                   bg-white/95
+                   backdrop-blur-md
+                   rounded-2xl
+                   px-4 py-3
+                   border border-white
+                   shadow-xl"
+          >
+
+            <div
+              class="w-10 h-10
+                     rounded-xl
+                     bg-emerald-50
+                     text-emerald-600
+                     flex items-center
+                     justify-center"
+            >
+
+              <svg
+                class="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+              >
+
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M12 21s7-6.2 7-12a7 7 0 10-14 0c0 5.8 7 12 7 12z"
+                />
+
+                <circle
+                  cx="12"
+                  cy="9"
+                  r="2.5"
+                />
+
+              </svg>
+
+            </div>
+
+
+            <div>
+
+              <p
+                class="text-[11px]
+                       uppercase
+                       tracking-wider
+                       font-semibold
+                       text-slate-400"
+              >
+                Our location
+              </p>
+
+              <p
+                class="text-sm
+                       font-extrabold
+                       text-[#062E4F]"
+              >
+                HERBAL BIOLOGISCHE PHARMACEUTICALS PVT. LTD.
+592/3B/214/1, Gopal Nagar Near Defence Colony Lucknow 226025
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- =================================================
+             BOTTOM MAP ACTION
+        ================================================== -->
+
+        <div
+          class="absolute
+                 bottom-4
+                 left-4
+                 right-4
+                 flex
+                 flex-col sm:flex-row
+                 sm:items-end
+                 justify-between
+                 gap-3"
+        >
+                 <!-- DIRECTIONS BUTTON -->
+
+          <a
+            href="https://maps.app.goo.gl/LEVkwLVG2HmZCGbs8"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group
+                   inline-flex
+                   items-center
+                   justify-center
+                   gap-2
+                   px-5 py-3.5
+                   rounded-2xl
+                   bg-[#0B9F55]
+                   text-white
+                   font-bold
+                   shadow-xl
+                   shadow-emerald-600/20
+                   hover:bg-[#078B49]
+                   hover:-translate-y-1
+                   transition-all duration-300"
+          >
+
+            <svg
+              class="w-4 h-4
+                     group-hover:scale-110
+                     transition-transform"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M12 19l-7-7 7-7"
+              />
+
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M5 12h14"
+              />
+
+            </svg>
+
+            Get Directions
+
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+  </main>
+
+  
+<!-- Include AOS Animation CSS/JS -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({ duration: 1000, once: true });
 </script>
 
-  <script>
-/* ===== Dynamic SEO for details.html?id=…  ===== */
+<section class="bg-gradient-to-b from-green-900 via-green-800 to-green-900 text-white py-16 px-6">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-4xl font-bold text-center mb-6 text-green-200" data-aos="fade-down">
+      Homeopathy – FAQ
+    </h2>
+    <p class="text-lg text-center max-w-3xl mx-auto mb-12 text-green-100" data-aos="fade-up">    
+  All informations is based on personal experience and is for general guidance only; it is not medical advice. Please consult a qualified doctor before acting on it.
+    <div class="space-y-4">
+      
+      <details class="bg-green-800 rounded-lg p-6 shadow-lg" data-aos="fade-up">
+        <summary class="cursor-pointer text-xl font-semibold text-green-100 hover:text-green-300 transition">
+          1. Is Homeopathy scientifically proven?
+        </summary>
+        <p class="mt-3 text-green-200 leading-relaxed">
+          Homeopathy has been practiced for over 200 years and is recognized by many countries as a valid medical system. 
+          Several peer-reviewed studies have shown its effectiveness in conditions like allergies, migraines, and skin disorders. Always consult a doctor before relying on this advice.
+        </p>
+      </details>
 
-(function () {
-  const params = new URLSearchParams(location.search);
-  const id = (params.get("id") || "").trim();
+      <details class="bg-green-800 rounded-lg p-6 shadow-lg" data-aos="fade-up" data-aos-delay="100">
+        <summary class="cursor-pointer text-xl font-semibold text-green-100 hover:text-green-300 transition">
+          2. How long does it take for Homeopathic medicines to work?
+        </summary>
+        <p class="mt-3 text-green-200 leading-relaxed">
+          The response time depends on the nature and duration of the illness. 
+          Acute conditions like colds or fevers may improve within hours to days, while chronic diseases 
+          like arthritis or asthma may require many months or it can many years. Homeopathy works by stimulating the body’s 
+          self-healing capacity, so results are gradual but lasting. Always consult a doctor before relying on this advice.
+        </p>
+      </details>
 
-  // --- MASTER SEO DATA (all 9 products) ---
-  const P = {
-    "1": {
-      slug: "cyston-drops",
-      name: "Cyston Drops",
-      title: "Cyston Drops – Homeopathic Medicine for Kidney Stones & Pain",
-      description:
-        "Cyston Drops by Biologische Pharmaceuticals: homeopathic support for kidney stones, renal colic and urinary discomfort.",
-      image: "https://i.postimg.cc/jdHbc7NV/Screenshot-2025-08-11-at-10-12-43-PM.png",
-      category: "Homeopathic > Kidney & Urinary",
-      price: "215",
-      keywords: [
-        "kidney stone medicine",
-        "renal colic",
-        "urinary pain",
-        "homeopathic kidney",
-        "Biologische Cyston Drops"
-      ]
-    },
-    "2": {
-      slug: "spondy-drops",
-      name: "Spon-dy Drops",
-      title: "Spon-dy Drops – Homeopathic Relief for Spondylitis & Back Pain",
-      description:
-        "Spon-dy Drops help reduce spondylitis symptoms, neck and back stiffness, and joint pain with a gentle homeopathic blend.",
-      image: "https://i.postimg.cc/6qynfKTq/Screenshot-2025-08-11-at-10-54-42-PM.png",
-      category: "Homeopathic > Bones, Joints & Muscles",
-      price: "215",
-      keywords: [
-        "spondylitis medicine",
-        "neck pain",
-        "back pain relief",
-        "homeopathic joint pain",
-        "Biologische Spondy Drops"
-      ]
-    },
-    "3": {
-      slug: "d-skin-care",
-      name: "D-Skin-Care",
-      title: "D-Skin-Care – Homeopathic Drops for Fungal Skin Infection & Itching",
-      description:
-        "D-Skin-Care drops formulated for fungal skin infections, itching and irritation—gentle homeopathic care.",
-      image: "https://i.postimg.cc/KY01qW6M/Screenshot-2025-08-11-at-10-56-18-PM.png",
-      category: "Homeopathic > Skin Care",
-      price: "215",
-      keywords: [
-        "fungal infection",
-        "itching relief",
-        "homeopathic skin",
-        "tinea remedy",
-        "Biologische D Skin Care"
-      ]
-    },
-    "4": {
-      slug: "super-vigo-3-gold-drops",
-      name: "Super Vigo 3 Gold Drops",
-      title: "Super Vigo 3 Gold Drops – Homeopathic Support for Vitality",
-      description:
-        "Super Vigo 3 Gold Drops support men’s vitality and drive with classic homeopathic actives.",
-      image: "https://i.postimg.cc/PrbmHT0G/Screenshot-2025-08-11-at-10-57-42-PM.png",
-      category: "Homeopathic > Men’s Health",
-      price: "495",
-      keywords: [
-        "vitality support",
-        "men stamina",
-        "homeopathic sexual wellness",
-        "Biologische Super Vigo 3"
-      ]
-    },
-    "5": {
-      slug: "biologsce-coffez",
-      name: "Biologsce Coffez",
-      title: "Biologsce Coffez – Homeopathic Cold & Cough Syrup",
-      description:
-        "Biologsce Coffez cough syrup for relief from cough, cold and throat irritation with a soothing homeopathic formulation.",
-      image: "https://i.postimg.cc/zXM1JYhj/Screenshot-2025-08-11-at-11-01-16-PM.png",
-      category: "Homeopathic > Cold & Cough",
-      price: "130",
-      keywords: [
-        "cough syrup",
-        "cold remedy",
-        "homeopathic cough",
-        "Biologische Coffez"
-      ]
-    },
-    "6": {
-      slug: "alfalfa-health-supplement-tonic",
-      name: "Alfalfa Health Supplement Tonic",
-      title: "Alfalfa Health Supplement Tonic – Appetite, Energy & Recovery",
-      description:
-        "Alfalfa Health Supplement Tonic to support appetite, digestion, recovery and everyday energy the homeopathic way.",
-      image: "https://i.postimg.cc/JzntF8L5/Screenshot-2025-08-11-at-10-59-13-PM.png",
-      category: "Homeopathic > General Health",
-      price: "130",
-      keywords: [
-        "alfalfa tonic",
-        "appetite support",
-        "homeopathic supplement",
-        "energy tonic"
-      ]
-    },
-    "7": {
-      slug: "homoeo-cali-tablet",
-      name: "Homoeo Cali Tablet",
-      title: "Homoeo Cali Tablet – Homeopathic Calcium Support",
-      description:
-        "Homoeo Cali Tablet for calcium support, bone strength and growth with trusted homeopathic salts.",
-      image: "https://i.postimg.cc/Sxh5DQbJ/Screenshot-2025-08-11-at-11-04-57-PM.png",
-      category: "Homeopathic > Bone & Calcium",
-      price: "200",
-      keywords: [
-        "calcium tablets homeopathic",
-        "bone strength",
-        "Biologische Cali Tablet"
-      ]
-    },
-    "8": {
-      slug: "homoeo-pilex-tablet",
-      name: "Homoeo Pilex Tablet",
-      title: "Homoeo Pilex Tablet – Homeopathic Support for Piles & Fissures",
-      description:
-        "Homoeo Pilex Tablet helps relieve discomfort from piles and fissures using a balanced homeopathic combination.",
-      image: "https://i.postimg.cc/DyVYwfZB/Screenshot-2025-08-11-at-11-06-05-PM.png",
-      category: "Homeopathic > Digestive & Anorectal",
-      price: "200",
-      keywords: [
-        "piles medicine",
-        "fissure relief",
-        "homeopathic piles tablet",
-        "Biologische Pilex"
-      ]
-    },
-    "9": {
-      slug: "homoeo-loose-tablet",
-      name: "Homoeo Loose Tablet",
-      title: "Homoeo Loose Tablet – Homeopathic Support for Allergies & Cold",
-      description:
-        "Homoeo Loose Tablet offers homeopathic support for allergy symptoms and common cold discomfort.",
-      image: "https://i.postimg.cc/RZp7qGd4/Screenshot-2025-08-11-at-11-09-43-PM.png",
-      category: "Homeopathic > Allergy & Cold",
-      price: "200",
-      keywords: [
-        "allergy tablet",
-        "cold relief",
-        "homeopathic allergy",
-        "Biologische Loose Tablet"
-      ]
-    }
-  };
+      <details class="bg-green-800 rounded-lg p-6 shadow-lg" data-aos="fade-up" data-aos-delay="200">
+        <summary class="cursor-pointer text-xl font-semibold text-green-100 hover:text-green-300 transition">
+          3. Are there any side effects in Homeopathy?
+        </summary>
+        <p class="mt-3 text-green-200 leading-relaxed">
+          Homeopathic medicines are extremely safe when prescribed correctly. 
+          They are prepared in ultra-diluted doses, making them non-toxic and free from harmful chemicals. 
+          Occasionally, a mild and temporary aggravation of symptoms may occur, which indicates the body’s healing response. 
+          These usually subside quickly without harm. Always consult a doctor before relying on this advice.
+        </p>
+      </details>
 
-  // guard: if no/invalid id, don’t crash
-  if (!P[id]) return;
+      <details class="bg-green-800 rounded-lg p-6 shadow-lg" data-aos="fade-up" data-aos-delay="300">
+        <summary class="cursor-pointer text-xl font-semibold text-green-100 hover:text-green-300 transition">
+          4. Can Homeopathy be taken alongside allopathic medicine?
+        </summary>
+        <p class="mt-3 text-green-200 leading-relaxed">
+          Yes, in most cases, Homeopathy can be safely taken alongside conventional treatments. 
+          It often complements allopathy by reducing side effects and improving overall recovery. 
+          However, always ask from your doctor about all medications you are taking to avoid any interaction. Always consult a doctor before relying on this advice.
+        </p>
+      </details>
 
-  // Build page URLs
-  const site = "https://www.biologischepharmaceutical.com";
-  const pageUrl = ⁠ ${site}/details.html?id=${encodeURIComponent(id)} ⁠; // the REAL working URL
-  const prettyUrl = ⁠ ${site}/products/${P[id].slug} ⁠; // optional pretty path (not indexed yet)
+      <details class="bg-green-800 rounded-lg p-6 shadow-lg" data-aos="fade-up" data-aos-delay="400">
+        <summary class="cursor-pointer text-xl font-semibold text-green-100 hover:text-green-300 transition">
+          5. Is Homeopathy effective for chronic illnesses?
+        </summary>
+        <p class="mt-3 text-green-200 leading-relaxed">
+          Yes, Homeopathy has shown remarkable results in treating chronic diseases like eczema, 
+          asthma, thyroid disorders, migraines, arthritis, and depression. 
+          It addresses the root cause of illness and works on the body-mind connection, 
+          leading to long-term relief and prevention of recurrence. Always consult a doctor before relying on this advice.
+        </p>
+      </details>
 
-  // ---- Canonical to the working URL (critical for indexing) ----
-  const linkCanonical = document.createElement("link");
-  linkCanonical.rel = "canonical";
-  linkCanonical.href = pageUrl;
-  document.head.appendChild(linkCanonical);
+      <details class="bg-green-800 rounded-lg p-6 shadow-lg" data-aos="fade-up" data-aos-delay="500">
+        <summary class="cursor-pointer text-xl font-semibold text-green-100 hover:text-green-300 transition">
+          6. Are Homeopathic medicines safe for children?
+        </summary>
+        <p class="mt-3 text-green-200 leading-relaxed">
+          Absolutely. Homeopathy is one of the safest treatment options for infants and children. 
+          It can help with teething problems, colds, coughs, allergies, digestive issues, and even behavioral concerns — 
+          without causing drowsiness or side effects. Always consult a doctor before relying on this advice.
+        </p>
+      </details>
 
-  // (Optional) tell bots the pretty URL is an alternate for future migration
-  const linkAlt = document.createElement("link");
-  linkAlt.rel = "alternate";
-  linkAlt.href = prettyUrl;
-  document.head.appendChild(linkAlt);
+      <details class="bg-green-800 rounded-lg p-6 shadow-lg" data-aos="fade-up" data-aos-delay="600">
+        <summary class="cursor-pointer text-xl font-semibold text-green-100 hover:text-green-300 transition">
+          7. Is Homeopathy slow to act?
+        </summary>
+        <p class="mt-3 text-green-200 leading-relaxed">
+          Not necessarily. In acute cases like flu, diarrhea, or injuries, homeopathic remedies can act very quickly — 
+          often faster than conventional medicine. For chronic issues, it may take longer as the focus is on deep healing.
+          Always consult a doctor before relying on this advice.
+        </p>
+      </details>
 
-  // ---- Basic SEO tags ----
-  document.title = P[id].title + " | Biologische Pharmaceuticals";
-  const metaDesc = document.createElement("meta");
-  metaDesc.name = "description";
-  metaDesc.content = P[id].description;
-  document.head.appendChild(metaDesc);
+      <details class="bg-green-800 rounded-lg p-6 shadow-lg" data-aos="fade-up" data-aos-delay="700">
+        <summary class="cursor-pointer text-xl font-semibold text-green-100 hover:text-green-300 transition">
+          8. How are Homeopathic medicines prepared?
+        </summary>
+        <p class="mt-3 text-green-200 leading-relaxed">
+          Remedies are prepared from natural sources — plants, minerals, and some animal products — 
+          using a process of dilution and succussion (vigorous shaking). 
+          This method enhances their healing properties while eliminating toxicity.
+          Always consult a doctor before relying on this advice.
+        </p>
+      </details>
 
-  const metaRobots = document.createElement("meta");
-  metaRobots.name = "robots";
-  metaRobots.content = "index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1";
-  document.head.appendChild(metaRobots);
+      <details class="bg-green-800 rounded-lg p-6 shadow-lg" data-aos="fade-up" data-aos-delay="800">
+        <summary class="cursor-pointer text-xl font-semibold text-green-100 hover:text-green-300 transition">
+          9. Do I need to follow dietary restrictions during treatment?
+        </summary>
+        <p class="mt-3 text-green-200 leading-relaxed">
+          Some foods like coffee, mint, and raw onion/garlic can interfere with the action of certain remedies. 
+          Your doctor will advise you on specific dietary guidelines to ensure the best results.
+        </p>
+      </details>
 
-  // (legacy but fine)
-  const metaKeywords = document.createElement("meta");
-  metaKeywords.name = "keywords";
-  metaKeywords.content = P[id].keywords.join(", ");
-  document.head.appendChild(metaKeywords);
+      <details class="bg-green-800 rounded-lg p-6 shadow-lg" data-aos="fade-up" data-aos-delay="900">
+        <summary class="cursor-pointer text-xl font-semibold text-green-100 hover:text-green-300 transition">
+          10. Is Homeopathy safe during pregnancy?
+        </summary>
+        <p class="mt-3 text-green-200 leading-relaxed">
+          Yes, but only under professional guidance. 
+          Certain remedies are highly beneficial for heartburn, or back pain in pregnancy, 
+          but some should be avoided. Always consult a doctor before relying on this advice.
+        </p>
+      </details>
+       </div>
+  </div>
+</section>
+      
+</div>
+  
+    <!-- AOS Animation -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({ duration: 1000, once: true });
+</script>
 
-  // ---- Open Graph (Facebook/WhatsApp) ----
-  const ogPairs = {
-    "og:title": P[id].title,
-    "og:description": P[id].description,
-    "og:type": "product",
-    "og:url": pageUrl,
-    "og:image": P[id].image,
-    "product:price:amount": P[id].price,
-    "product:price:currency": "INR",
-    "og:site_name": "Biologische Pharmaceuticals"
-  };
-  Object.entries(ogPairs).forEach(([p, v]) => {
-    const m = document.createElement("meta");
-    m.setAttribute("property", p);
-    m.setAttribute("content", v);
-    document.head.appendChild(m);
-  });
+<style>
+  .footer {
+    background: linear-gradient(135deg, #054A29, #1FAB54);
+    color: white;
+    padding: 50px 20px;
+    position: relative;
+    overflow: hidden;
+  }
+  .footer h3 {
+    font-weight: bold;
+    margin-bottom: 10px;
+    position: relative;
+  }
+  .footer h3::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 3px;
+    background: #C9A635;
+    margin-top: 5px;
+    transition: width 0.3s;
+  }
+  .footer h3:hover::after {
+    width: 70px;
+  }
+  .footer a {
+    color: #DFF2E0;
+    text-decoration: none;
+    transition: color 0.3s, padding-left 0.3s;
+  }
+  .footer a:hover {
+    color: #C9A635;
+    padding-left: 5px;
+  }
+  .footer .icon {
+    font-size: 20px;
+    margin-right: 10px;
+    transition: transform 0.3s, color 0.3s;
+  }
+  .footer a:hover .icon {
+    color: #C9A635;
+    transform: scale(1.2);
+  }
+  .footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    margin-top: 30px;
+    padding-top: 15px;
+    font-size: 14px;
+    text-align: center;
+    color: #DFF2E0;
+  }
+  /* Decorative Herbal Element */
+  .herbal-deco {
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    width: 150px;
+    opacity: 0.08;
+    animation: float 6s ease-in-out infinite;
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+</style>
 
-  // ---- Twitter Card ----
-  const twPairs = {
-    "twitter:card": "summary_large_image",
-    "twitter:title": P[id].title,
-    "twitter:description": P[id].description,
-    "twitter:image": P[id].image
-  };
-  Object.entries(twPairs).forEach(([n, v]) => {
-    const m = document.createElement("meta");
-    m.name = n;
-    m.content = v;
-    document.head.appendChild(m);
-  });
+<footer class="footer" data-aos="fade-up">
+  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
 
-  // ---- JSON-LD: Product + Breadcrumb + (optional) Organization/WebSite ----
-  const productLD = {
-    "@context": "https://schema.org",
-    "@type": "Product",
-    "name": P[id].name,
-    "image": [P[id].image],
-    "description": P[id].description,
-    "category": P[id].category,
-    "brand": { "@type": "Brand", "name": "Biologische Pharmaceuticals" },
-    "sku": id,
-    "url": pageUrl,
-    "offers": {
-      "@type": "Offer",
-      "url": pageUrl,
-      "priceCurrency": "INR",
-      "price": P[id].price,
-      "availability": "https://schema.org/InStock",
-      "itemCondition": "https://schema.org/NewCondition"
-    }
-  };
+    <!-- Logo & About -->
+    <div data-aos="fade-right">
+      <img src="https://i.postimg.cc/KjKgRbRr/PHOTO-2025-08-11-19-50-41.jpg" alt="Logo" class="mb-4 w-40">
+      <p>
+      Our intentions is to make the benefits of homeopathy accessible to everyone, offering a wide range of medicines for different health needs — from everyday ailments to long-term wellness support.
+      All content on the website ( products details, images, and advices or any part of all pages of site ) is provided for general informational purposes only and may contain errors and inaccuracies.
+      users should consult a qualified healthcare professional before relying on any details provided in this website.
+      </p>
+    </div>
 
-  const breadcrumbLD = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": site + "/"
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Products",
-        "item": site + "/#products"
-      },
-      {
-        "@type": "ListItem",
-        "position": 3,
-        "name": P[id].name,
-        "item": pageUrl
+
+
+    
+
+    <!-- Quick Links -->
+    <div data-aos="fade-up" data-aos-delay="200">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="index.html"><span class="icon">➤</span> Home</a></li>
+        <li><a href="ab.html"><span class="icon">➤</span> About</a></li>
+        <li><a href="#medicines"><span class="icon">➤</span> Medicines </a></li>
+        <li><a href="#contact"><span class="icon">➤</span> Contact</a></li>
+        <li><a href="#"><span class="icon">➤</span> Customer Reviews </a></li>
+        <li><a href="minihelpbox.html"><span class="icon">➤</span> Need Help </a></li>
+        <li><a href="tel:9120227101"><span class="icon">➤</span> Call Us </a></li>
+        <li><a href="mailto:herbalbiologischepharma1103@gmail.com"><span class="icon">➤</span> Email Us </a></li>
+      </ul>
+    </div>
+
+    <!-- Contact -->
+    <div data-aos="fade-left" data-aos-delay="300">
+      <h3> Head Office </h3>
+      <p>
+     HERBAL BIOLOGISCHE PHARMACEUTICALS PVT. LTD.
+592/3B/214/1, Gopal Nagar Near Defence Colony Lucknow 226025
+      </p>
+      <p>Email: <a href="mailto:herbalbiologischepharma1103@gmail.com"> herbalbiologischepharma1103@gmail.com </a></p>
+      <p>+91 9120227101 </p>
+    </div>
+  </div>
+
+  <!-- Footer Bottom -->
+<div class="footer-bottom" data-aos="fade-up" data-aos-delay="400">
+  © <span id="year"></span> HERBAL BIOLOGISCHE PHARMACEUTICALS PRIVATE LIMITED  
+  All Rights Reserved
+</div>
+
+<script>
+  const yearSpan = document.getElementById("year");
+  const currentYear = new Date().getFullYear();
+  yearSpan.textContent = currentYear;
+</script>
+
+  <!-- Decorative Herbal SVG -->
+  <svg class="herbal-deco" xmlns="http://www.w3.org/2000/svg" fill="#DFF2E0" viewBox="0 0 64 64">
+    <path d="M32 2C24 14 24 34 32 48C40 34 40 14 32 2zM2 32C14 24 34 24 48 32C34 40 14 40 2 32z"/>
+  </svg>
+</footer>
+      
+   
+<!-- Data + App -->
+<script>
+  const WHATSAPP_NUMBER = "9120227101";
+  const PHONE_NUMBER = "9120227101";
+  const EMAIL_ADDRESS = "herbalbiologischepharma1103@gmail.com";
+
+  const { createApp } = Vue;
+
+  createApp({
+    data(){
+      return {
+        mobileNav:false,
+        chatOpen:false,
+        chat:[
+          {text:"Hello! How can we help you today?", me:false},
+          {text:"Try: type a symptom like ‘Headache’ to see medicines.", me:false}
+        ],
+        chatInput:"",
+        query:"",
+        activeTag:"",
+        slides:[
+          { title:"Best Homeopathic Medicines", desc:"Trusted homeopathic formulations.", image:"https://i.postimg.cc/Xq29yhMw/pexels-asphotograpy-105028.jpg", link:"#medicines", altLink:"#contact" },
+          { title:"Order on Call or WhatsApp", desc:"Quick ordering assistance.", image:"https://i.postimg.cc/rmVdCJNg/pexels-chokniti-khongchum-1197604-2280551.jpg", link:"#contact", altLink:"#contact" },
+          { title:"Quality You Can Trust", desc:"Manufactured with care and research.", image:"https://i.postimg.cc/fLs51fP6/pexels-pixabay-163186.jpg", link:"#about", altLink:"#about" }
+        ],
+       tags: ["Headache","Backache","Body ache ","Muscle pain","Joint pain", "Premenstrual syndrome","Hormonal imbalance","Hypercholesterolemia","Sneezing","Watering eyes","Sinusitis","Running Nose","Pain in joints,knees,ankles and wrists","Stress and Irritability","Weak urinary system","Nervousness","Tension and Depression","Calcium Deficiency","Insomia","Indigestion","Dysentery","Seasonal flu","Sore throat","Body Ache","Lipom a","Paresthesia","Grey hair","Alopecia","Fever","Stiffness of pain","Anal fissures, prolapsus,piles,eczema","Fever","Options finished"],
+        meds:[
+          { id:1, name:"Cyston Drops", brand:"Herbal Biologische Pharmaceuticals Private Limited", price:202, mfg:"2025", exp:"2030", desc:"For Renal Stone And Colic", image:"https://i.postimg.cc/jdHbc7NV/Screenshot-2025-08-11-at-10-12-43-PM.png", badge:"Best Seller", keywords:["Fever","Headache","Renal Stone","Kidney Stone Pain"] },
+          { id:2, name:"Spon-dy Drops", brand:"Herbal Biologische Pharmaceuticals Private Limited", price:202, mfg:"2025", exp:"2030", desc:"For Spondylitis", image:"https://i.postimg.cc/6qynfKTq/Screenshot-2025-08-11-at-10-54-42-PM.png", badge:"20% OFF", keywords:["Back Pain","Joint Pain","Spondylitis"] },
+          { id:3, name:"D-Skin-Care", brand:"Herbal Biologische Pharmaceuticals Private Limited", price:202, mfg:"2025", exp:"2030", desc:"For Fungal Infection", image:"https://i.postimg.cc/KY01qW6M/Screenshot-2025-08-11-at-10-56-18-PM.png", keywords:["Fungal Infection","Itching"] },
+          { id:4, name:"Super Vigo 3 Gold Drops", brand:"Herbal Biologische Pharmaceuticals Private Limited", price:495, mfg:"2025", exp:"2030", desc:"For Accelerating Sex Drive", image:"https://i.postimg.cc/PrbmHT0G/Screenshot-2025-08-11-at-10-57-42-PM.png", keywords:["Sex Health","Premature Ejaculation"] },
+          { id:5, name:"Biologsce Coffez", brand:"Herbal Biologische Pharmaceuticals Private Limited", price:122, mfg:"2025", exp:"2030", desc:"Cold & Cough Syrup", image:"https://i.postimg.cc/zXM1JYhj/Screenshot-2025-08-11-at-11-01-16-PM.png", keywords:["Cough","Cold"] },
+          { id:6, name:"Alfalfa Health Supplement Tonic", brand:"Herbal Biologische Pharmaceuticals Private Limited", price:122, mfg:"2025", exp:"2030", desc:"Supplement tonic", image:"https://i.postimg.cc/JzntF8L5/Screenshot-2025-08-11-at-10-59-13-PM.png", keywords:["Anemia","Digestion","Stress"] },
+          { id:7, name:"Homoeo Cali Tablet", brand:"Herbal Biologische Pharmaceuticals Private Limited", price:185, mfg:"2025", exp:"2030", desc:"Homeopathic calcium Supplement", image:"https://i.postimg.cc/Sxh5DQbJ/Screenshot-2025-08-11-at-11-04-57-PM.png", keywords:["Calcium Deficiency","Bone Growth"] },
+          { id:8, name:"Homoeo Pilex Tablet", brand:"Herbal Biologische Pharmaceuticals Private Limited", price:185, mfg:"2025", exp:"2030", desc:"For Piles & Fissures", image:"https://i.postimg.cc/DyVYwfZB/Screenshot-2025-08-11-at-11-06-05-PM.png", keywords:["Piles","Fissures"] },
+          { id:9, name:"Homoeo Loose Tablet", brand:"Herbal Biologische Pharmaceuticals Private Limited", price:185, mfg:"2025", exp:"2030", desc:"Allergy relief", image:"https://i.postimg.cc/RZp7qGd4/Screenshot-2025-08-11-at-11-09-43-PM.png", keywords:["Allergy","Cold"] },
+
+        { id:10, name:"H-1 LYMPH & TUMOR DROPS", brand:"Herbal Biologische Pharmaceuticals Private Limited", price:215, mfg:"2025", exp:"2030", desc:"LYMPH & TUMOR RELIEF", image:"https://i.postimg.cc/pXP7n4kZ/Screenshot-2026-03-31-at-10-03-42-PM.png", keywords:["Lipoma","Tumor","Adenomas recurrence"] },
+        { id:11, name:"H-2 SCIATICA DROPS", brand:"Herbal Biologische Pharmaceuticals Private Limited", price:215, mfg:"2025", exp:"2030", desc:"SCIATICA DROPS", image:"https://i.postimg.cc/zfNRJwqd/Screenshot-2026-03-31-at-10-04-52-PM.png", keywords:["Paresthesia","Formication in legs","Constant Pain","Lower back pain","Pain from the back into the hip and outer side of the legs"] },
+        { id:12, name:"H-4 HAIR ROOT DROPS", brand:"Herbal Biologische Pharmaceuticals Private Limited", price:215, mfg:"2025", exp:"2030", desc:"HAIR ROOTS DROPS", image:"https://i.postimg.cc/d1pCcb3G/Screenshot-2026-03-31-at-10-05-39-PM.png", keywords:["Reduce premature hair loss","Gray hair","Alopecia","Baldness"] },
+        { id:13, name:"H-5 SINUS-C DROPS", brand:"Herbal Biologische Pharmaceuticals Private Limited", price:215, mfg:"2025", exp:"2030", desc:"SINUC-C DROPS", image:"https://i.postimg.cc/MHTWjP9b/Screenshot-2026-04-01-at-4-17-09-AM.png", keywords:["Acute & chronic catarrh of the nose","Post nasal discharge","Stiffness of nose","Coryza","Sensation pain","Lack of smell and taste"] },
+        { id:14, name:"H-6 HAEMORRHOIDS DROPS", brand:"Herbal Biologische Pharmaceuticals Private Limited", price:215, mfg:"2025", exp:"2030", desc:"IT IS USED TO TREAT HAEMORRHOIDS ", image:"https://i.postimg.cc/yNyBp45c/Screenshot-2026-04-01-at-4-18-23-AM.png", keywords:["Haemorrhoids","Itching of anus","Anal fissures","Anal prolapsus","Anal eczema","Burning pain","Bleeding piles"] },
+        { id:15, name:"H-7 PAIN RELIEF DROPS", brand:"Herbal Biologische Pharmaceuticals Private Limited", price:215, mfg:"2025", exp:"2030", desc:"A PAIN RELIEF DROP", image:"https://i.postimg.cc/SNY4Fz5H/Screenshot-2026-04-01-at-4-19-26-AM.png", keywords:["Arthralgia pain","Myalgic pain","Neuralgic pain","Headache","Weariness malaise"] },
+        { id:16, name:"H-8 ARTHRI CARE DROPS", brand:"Herbal Biologische Pharmaceuticals Private Limited", price:215, mfg:"2025", exp:"2030", desc:"ARTHRI CARE DROPS", image:"https://i.postimg.cc/pdCbYQh5/Screenshot-2026-04-01-at-4-19-56-AM.png", keywords:["Arthralgia in different joints","Painful joints","Swollen joints","Stiff joints","Worse to movement","Cramping pain in hip area"] },
+        { id:17, name:"H-9 DIABO CARE DROPS", brand:"Herbal Biologische Pharmaceuticals Private Limited", price:215, mfg:"2025", exp:"2030", desc:"DIABO CARE DROPS", image:"https://i.postimg.cc/yxJMHwQz/Screenshot-2026-04-01-at-4-20-35-AM.png", keywords:["Excessive urge to urinate","Cramps","Weakness","Increased appetite and thirst","Maintains blood sugar level"] },
+        { id:18, name:"H-10 LIVER & GALL DROPS", brand:"Herbal Biologische Pharmaceuticals Private Limited", price:215, mfg:"2025", exp:"2030", desc:"LIVER & HALL DROPS", image:"https://i.postimg.cc/6pVDtVhj/Screenshot-2026-04-01-at-4-21-11-AM.png", keywords:["Hepatopathy","Cholecystitis","Constipation","Lack of appetite","Abnormal biliary secretions","Flatulence","Irritability","Bitter taste in mouth"] },
+        { id:19, name:"H-2 DIGESTIVE TONIC", brand:"Herbal Biologische Pharmaceuticals Private Limited", price:130, mfg:"2025", exp:"2030", desc:"SOME DIGESTIVE TONIC", image:"https://i.postimg.cc/8Ct9r19n/Screenshot-2026-04-01-at-4-21-39-AM.png", keywords:["Improves digestion","Heart burn","Acidity","Gastric pain","Bloating","Dyspepsia"] },
+
+          { id:20, name:"H-11 AALLER-G DROPS", brand:"Herbal Biologische Pharmaceuticals Private Limited", price:215, mfg:"2025", exp:"2030", desc:"H-11 ALLER-G DROPS", image:"https://i.postimg.cc/jSMdRJtJ/Screenshot-2026-04-01-at-5-41-09-AM.png", keywords:["Running Nose","Sneezing","Watering Eyes","Rhinitis","Sinusitis"] },
+          { id:21, name:"H-12 GUATERIA GAUMERIA", brand:"Herbal Biologische Pharmaceuticals Private Limited", price:215, mfg:"2025", exp:"2030", desc:"H-12 GUATERIA GAUMERIA", image:"https://i.postimg.cc/3NjYVktv/Screenshot-2026-04-01-at-5-43-20-AM.png", keywords:["Hypercholesterolemia","Supports heart and vascular health"] },
+          { id:22, name:"H-13 OVERON-F DROPS", brand:"Herbal Biologische Pharmaceuticals Private Limited", price:215, mfg:"2025", exp:"2030", desc:"H-13 OVERON-F DROPS", image:"https://i.postimg.cc/GmmdghG0/Screenshot-2026-04-01-at-5-43-57-AM.png", keywords:["For Menstrual Cycle","Premenstrual syndrome","Hormonal imbalance","A Mensuration"] },
+          { id:23, name:"H-14 HBP-PROSTO DROPS", brand:"Herbal Biologische Pharmaceuticals Private Limited", price:215, mfg:"2025", exp:"2030", desc:"H-14 HBP-PROSTO DROPS", image:"https://i.postimg.cc/8cCgKZf0/Screenshot-2026-04-01-at-6-12-19-AM.png", keywords:["Acute & chronic prostatitis","Paralytic asthenia","Weak urinary system","Sharp pain while urinating"] },
+          { id:24, name:"H-15 HBP-URICOM DROPS", brand:"Herbal Biologische Pharmaceuticals Private Limited", price:215, mfg:"2025", exp:"2030", desc:"H-15 HBP-URICOM DROPS", image:"https://i.postimg.cc/gjpPVYG9/Screenshot-2026-04-01-at-5-45-15-AM.png", keywords:["Urea","pain in the joints","Pain in the knees","maintain urea level","For pain in ankles and writs"] },
+          { id:25, name:"H-16 TIMP-X DROPS", brand:"Herbal Biologische Pharmaceuticals Private Limited", price:215, mfg:"2025", exp:"2030", desc:"H-16 TIMP-X DROPS", image:"https://i.postimg.cc/SNyhjNZ9/Screenshot-2026-04-01-at-5-45-42-AM.png", keywords:["Body Ache","Sore throat","Seasonal flu","fever","Congestion","Hoarseness"] },
+          { id:26, name:"H-17 HBP-NERVO DROPS", brand:"Herbal Biologische Pharmaceuticals Private Limited", price:215, mfg:"2025", exp:"2030", desc:"H-17 HBP-NERVO DROPS", image:"https://i.postimg.cc/RZhxQpx0/Screenshot-2026-04-01-at-5-46-07-AM.png", keywords:["Restlessness","Depression","Over-excitement","a tension","Insomia"] },
+          { id:27, name:"H-18 GASTRO DROPS", brand:"Herbal Biologische Pharmaceuticals Private Limited", price:215, mfg:"2025", exp:"2030", desc:"H-18 GASTRO DROPS", image:"https://i.postimg.cc/hjWFnSzP/Screenshot-2026-04-01-at-5-46-41-AM.png", keywords:["Indigestion","Flatulence","Irritable bowel syndrome","Gastro entero colitis","Dysentery"] },
+          { id:28, name:"RHEUMALOGISCHE Z+ SYRUP", brand:"Herbal Biologische Pharmaceuticals Private Limited", price:390, mfg:"2025", exp:"2030", desc:"RHEUMALOGISCHE Z+ SYRUP", image:"https://i.postimg.cc/jSQjyWzW/PHOTO-2026-04-01-21-44-26.jpg", keywords:["Muscle pain","Body ache","Backache","Inflammatory pain"] },
+          { id:29, name:"RHEUMALOGISCHE Z+ PAIN RELIEF OIL", brand:"Herbal Biologische Pharmaceuticals Private Limited", price:160, mfg:"2025", exp:"2030", desc:"RHEUMALOGISCHE Z+ PAIN RELIEF OIL", image:"https://i.postimg.cc/PJtyrvz4/PHOTO-2026-04-01-21-45-30.jpg", keywords:["Muscle Pain","Joint Pain","Stiffness","Backache","Arthritis"] },
+          
+    
+        ],
+
+        fuse:null,
+        notyf:null
       }
-    ]
-  };
+    },
+    computed:{
+      waLink(){ return `https://wa.me/${WHATSAPP_NUMBER}`; },
+      callLink(){ return `tel:${PHONE_NUMBER}`; },
+      mailtoLink(){ return `mailto:${EMAIL_ADDRESS}`; },
+      filtered(){
+        if(this.activeTag){
+          return this.meds.filter(m=>m.keywords.map(k=>k.toLowerCase()).includes(this.activeTag.toLowerCase()));
+        }
+        if(!this.query) return this.meds;
+        return this.fuse.search(this.query).map(r=>r.item);
+      }
+    },
+    methods:{
+      scrollTo(id){
+        if(id==='home'){ window.scrollTo({top:0,behavior:'smooth'}); return; }
+        const el=document.getElementById(id);
+        if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
+      },
+      clearSearch(){ this.query=''; this.activeTag=''; },
+      applyTag(tag){ this.activeTag=tag; this.query=''; this.scrollTo('medicines'); },
+      openBuy(m){
+        this.notyf.open({type:'success', message:`Opening WhatsApp for ${m.name}…`});
+        window.open(this.waLink,'_blank');
+      },
+      sendChat(){
+        const t=this.chatInput.trim(); if(!t) return;
+        this.chat.push({text:t, me:true}); this.chatInput='';
+        // very light “bot”
+        if(/headache|pain|stone|cough|cold|fungus|skin/i.test(t)){
+          const match=this.meds.find(x=> new RegExp(t,'i').test(x.name) || x.keywords.some(k=>new RegExp(t,'i').test(k)));
+          if(match){
+            this.chat.push({text:`You can check “${match.name}”. Tap Details on the product card.`, me:false});
+          }else{
+            this.chat.push({text:`For any help, Call Us”.`, me:false});
+          }
+        }else{
+          this.chat.push({text:`Thanks! Our team will connect with you soon. For urgent chat use WhatsApp.`, me:false});
+        }
+        this.$nextTick(()=>{ const panel=document.querySelector('.h-56'); panel.scrollTop=panel.scrollHeight; });
+      },
+      searchFuse(){ this.activeTag=''; }
+    },
+    mounted(){
+      // Fuse
+      this.fuse=new Fuse(this.meds,{keys:['name','brand','desc','keywords'],threshold:.35,ignoreLocation:true});
 
-  const orgLD = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Biologische Pharmaceuticals",
-    "url": site,
-    "logo": site + "/logo.png"
-  };
+      // Swiper
+      new Swiper('.mySwiper',{loop:true,autoplay:{delay:3500},pagination:{el:'.swiper-pagination',clickable:true}});
 
-  const webSiteLD = {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "Biologische Pharmaceuticals",
-    "url": site,
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": site + "/search.html?q={search_term_string}",
-      "query-input": "required name=search_term_string"
+      // AOS + GSAP
+      AOS.init({ once:true, duration:600, offset:40 });
+      gsap.from('header',{y:-30,opacity:0,duration:.6,ease:'power2'});
+
+
+
+
+      
+      // Lenis smooth scroll
+      const lenis=new Lenis();
+      function raf(time){ lenis.raf(time); requestAnimationFrame(raf) }
+      requestAnimationFrame(raf);
+
+      // Notyf
+      this.notyf=new Notyf({duration:1400, position:{x:'right',y:'top'}});
+
+      // Tooltips example
+      tippy('[data-tippy]',{animation:'shift-away',theme:'light-border'});
+
+     // Footer year
+    // document.getElementById('year').textContent=new Date().getFullYear();
     }
-  };
-
-  [productLD, breadcrumbLD, orgLD, webSiteLD].forEach(obj => {
-    const s = document.createElement("script");
-    s.type = "application/ld+json";
-    s.textContent = JSON.stringify(obj);
-    document.head.appendChild(s);
-  });
+  }).mount('#app');
 </script>
 </body>
 </html>
+    
