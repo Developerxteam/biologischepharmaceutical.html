@@ -537,270 +537,2260 @@ input:focus {
 
   </div>
 </section>
-    <!-- About -->
-    <section id="about" class="mt-12 grid md:grid-cols-2 gap-8 items-center">
-      <div data-aos="fade-right">
-        <img src="https://i.postimg.cc/8k9f5zpC/Screenshot-2025-08-15-at-8-50-19-PM.png" alt="About us" class="w-full max-w-md mx-auto rounded-xl shadow-soft object-cover" />
+   <!-- About -->
+<section id="about" class="mt-16 px-4">
+  <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 items-center">
+
+    <!-- Image -->
+    <div data-aos="fade-right">
+      <div class="rounded-2xl overflow-hidden border border-slate-200 shadow-lg">
+        <img
+        
+          src="https://i.ibb.co/Mx9P28pd/Screenshot-2026-08-16-at-11-56-32-AM.png"
+          alt="About our pharmacy"
+          
+        />
       </div>
-      <div data-aos="fade-left">
-        <div class="flex items-center gap-3 mb-3">
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-emerald-500" viewBox="0 0 24 24" fill="currentColor">
+    </div>
+
+    <!-- Content -->
+    <div data-aos="fade-left">
+
+      <div class="flex items-center gap-3 mb-3">
+        <div class="w-10 h-10 rounded-xl bg-emerald-50 flex items-center justify-center">
+          <svg class="w-5 h-5 text-emerald-600" fill="currentColor" viewBox="0 0 24 24">
             <path d="M12 2C9 2 6.3 3 4.3 5.1 2.2 7.2 1 9.9 1 13c0 4.2 2.2 7.9 5.6 9.9.4.2.9.1 1.2-.2l4.2-4.2 4.2 4.2c.3.3.8.4 1.2.2C20.8 20.9 23 17.2 23 13c0-3.1-1.2-5.8-3.3-7.9C17.7 3 15 2 12 2z"/>
           </svg>
-          <h2 class="text-2xl md:text-3xl font-bold">About Us</h2>
         </div>
-        <p class="text-slate-300 leading-relaxed">
-         We are a trusted pharmaceutical company based in Lucknow, committed to producing high-quality homeopathic medicines backed by research and care.
-        </p>
-        <a href="ab.html" class="inline-block mt-4 px-5 py-3 rounded-lg bg-emerald-600 text-white hover:bg-emerald-500">Read More</a>
+
+        <h2 class="text-2xl md:text-3xl font-bold text-[#062E4F]">
+          About Us
+        </h2>
       </div>
-    </section>
+
+      <p class="text-slate-600 leading-relaxed">
+        With 10+ years of experience, we are a trusted pharmaceutical company
+        based in Lucknow, committed to providing quality homeopathic medicines
+        with care, consistency, and customer trust.
+      </p>
+
+      <a
+        href="ab.html"
+        class="inline-flex items-center gap-2 mt-5 px-5 py-3 rounded-xl
+               bg-emerald-600 text-white font-semibold
+               hover:bg-emerald-700 transition"
+      >
+        Read More
+
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/>
+        </svg>
+      </a>
+
+    </div>
+
+  </div>
+</section>
     
-    
-    
- <!-- ===== Testimonials (Horizontal Auto-Scroll) ===== -->
-<!-- Swiper (keep these if not already on the page) -->
-<link rel="stylesheet" href="https://unpkg.com/swiper@9/swiper-bundle.min.css" />
-<script src="https://unpkg.com/swiper@9/swiper-bundle.min.js"></script>
+    <!-- =========================================================
+     TESTIMONIALS — COMPLETE WORKING VERSION
+     Replace your OLD testimonials code with this ENTIRE block
+========================================================= -->
+
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
 
 <style>
-  /* uses your site-level theme variables */
-  :root{
-    --primary-green:#1FAB54;
-    --dark-green:#054A29;
-    --light-green:#DFF2E0;
-    --accent-gold:#C9A635;
+  :root {
+    --primary-green: #1FAB54;
+    --dark-green: #054A29;
+    --light-green: #DFF2E0;
+    --accent-gold: #C9A635;
   }
-  .testi-card{
-    background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+
+  /* =========================
+     TESTIMONIAL CARD
+  ========================= */
+  .testi-card {
+    background: linear-gradient(
+      180deg,
+      rgba(255,255,255,.06),
+      rgba(255,255,255,.02)
+    );
     border: 1px solid rgba(255,255,255,.08);
     backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
   }
+
   .testi-chip {
-    background: linear-gradient(90deg, var(--primary-green), var(--accent-gold));
-    color:#08210f;
+    background: linear-gradient(
+      90deg,
+      var(--primary-green),
+      var(--accent-gold)
+    );
+    color: #08210f;
+  }
+
+  /* =========================
+     SWIPER CONTAINER
+  ========================= */
+  #reviewSwiper {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+
+    /* Important for phone touch */
+    touch-action: pan-y;
+    -webkit-user-select: none;
+    user-select: none;
+
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  #reviewSwiper .swiper-wrapper {
+    align-items: stretch;
+  }
+
+  #reviewSwiper .swiper-slide {
+    height: auto;
+    display: flex;
+    box-sizing: border-box;
+
+    /* Important for phone swipe */
+    touch-action: pan-y;
+
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  #reviewSwiper .testi-card {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* =========================
+     PAGINATION
+  ========================= */
+  #reviewSwiper .swiper-pagination {
+    position: static !important;
+    width: 100% !important;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 6px;
+  }
+
+  #reviewSwiper .swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+    margin: 0 !important;
+    opacity: .45;
+  }
+
+  #reviewSwiper .swiper-pagination-bullet-active {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+
+  /* Prevent page from moving sideways */
+  #testimonials {
+    overflow: hidden;
   }
 </style>
 
-<section id="testimonials" class="relative py-14 px-4 sm:px-6 bg-slate-900 text-white">
+
+<section
+  id="testimonials"
+  class="relative py-14 px-4 sm:px-6 bg-slate-900 text-white"
+>
+
   <div class="max-w-7xl mx-auto">
-    <!-- Heading -->
+
+    <!-- =========================
+         HEADING
+    ========================= -->
     <div class="text-center mb-8">
+
       <div class="inline-flex items-center gap-3">
-        <!-- Reviews SVG wordmark -->
-        <svg width="180" height="36" viewBox="0 0 600 120" aria-hidden="true">
+
+        <svg
+          width="180"
+          height="36"
+          viewBox="0 0 600 120"
+          aria-hidden="true"
+        >
           <defs>
-            <linearGradient id="g1" x1="0" x2="1">
-              <stop offset="0" stop-color="var(--primary-green)"/>
-              <stop offset="1" stop-color="var(--accent-gold)"/>
+            <linearGradient id="reviewsGradient" x1="0" x2="1">
+              <stop
+                offset="0"
+                stop-color="var(--primary-green)"
+              />
+              <stop
+                offset="1"
+                stop-color="var(--accent-gold)"
+              />
             </linearGradient>
           </defs>
-          <text x="0" y="82" font-family="Poppins,system-ui" font-weight="700"
-                font-size="80" fill="url(#g1)">Reviews</text>
+
+          <text
+            x="0"
+            y="82"
+            font-family="Poppins,system-ui"
+            font-weight="700"
+            font-size="80"
+            fill="url(#reviewsGradient)"
+          >
+            Reviews
+          </text>
         </svg>
-        <!- rating chip -->
-        
-          <span class="testi-chip px-3 py-1 rounded-full text-sm font-semibold shadow">
+
+
+        <span
+          class="testi-chip px-3 py-1 rounded-full text-sm font-semibold shadow"
+        >
           4.34/5 • 100+ verified
         </span>
-      </div> 
 
-      <!-- underline svg -->
-      <svg width="160" height="10" class="mx-auto mt-3" aria-hidden="true">
-        <rect x="0" y="4" width="160" height="2" fill="url(#g1)"></rect>
+      </div>
+
+
+      <svg
+        width="160"
+        height="10"
+        class="mx-auto mt-3"
+        aria-hidden="true"
+      >
+        <rect
+          x="0"
+          y="4"
+          width="160"
+          height="2"
+          fill="url(#reviewsGradient)"
+        ></rect>
       </svg>
 
+
       <p class="text-green-100 max-w-2xl mx-auto mt-3">
-        What Our Customers Says ?-Customer Reviews
+        What Our Customers Say? — Customer Reviews
       </p>
+
     </div>
 
-    <!-- Swiper -->
-    <div class="swiper group" id="reviewSwiper">
+
+    <!-- =====================================================
+         SWIPER
+    ====================================================== -->
+
+    <div
+      class="swiper"
+      id="reviewSwiper"
+    >
+
       <div class="swiper-wrapper">
-        <!-- repeat: 10 slides -->
-        <!-- Slide 1 -->
+
+
+        <!-- =========================
+             SLIDE 1
+        ========================= -->
         <div class="swiper-slide">
-          <article class="testi-card rounded-2xl p-5 h-full flex flex-col shadow-lg">
+
+          <article
+            class="testi-card rounded-2xl p-5 h-full flex flex-col shadow-lg"
+          >
+
             <div class="flex items-center gap-3">
-              <!-- SVG avatar with initials -->
-              <svg width="48" height="48" viewBox="0 0 48 48" class="shrink-0">
-                <circle cx="24" cy="24" r="24" fill="var(--light-green)"/>
-                <text x="50%" y="56%" text-anchor="middle" font-size="18" font-weight="700"
-                      fill="var(--dark-green)" font-family="Poppins,system-ui">P</text>
+
+              <svg
+                width="48"
+                height="48"
+                viewBox="0 0 48 48"
+                class="shrink-0"
+              >
+                <circle
+                  cx="24"
+                  cy="24"
+                  r="24"
+                  fill="var(--light-green)"
+                />
+
+                <text
+                  x="50%"
+                  y="56%"
+                  text-anchor="middle"
+                  font-size="18"
+                  font-weight="700"
+                  fill="var(--dark-green)"
+                  font-family="Poppins,system-ui"
+                >
+                  H
+                </text>
               </svg>
+
+
               <div>
-                <h4 class="font-semibold leading-tight">Harsh</h4>
-                <p class="text-xs text-slate-300">Agra,India</p>
+                <h4 class="font-semibold leading-tight">
+                  Harsh
+                </h4>
+
+                <p class="text-xs text-slate-300">
+                  Agra, India
+                </p>
               </div>
-              <!-- Stars -->
+
+
               <div class="ml-auto flex">
-                <!-- 5 svg stars -->
-                <svg viewBox="0 0 24 24" class="w-5 h-5" fill="url(#g1)"><path d="M12 2l3.09 6.3 6.91 1-5 4.88L18.18 22 12 18.56 5.82 22 7 14.18 2 9.3l6.91-1L12 2z"/></svg>
-                <svg viewBox="0 0 24 24" class="w-5 h-5" fill="url(#g1)"><path d="M12 2l3.09 6.3 6.91 1-5 4.88L18.18 22 12 18.56 5.82 22 7 14.18 2 9.3l6.91-1L12 2z"/></svg>
-                <svg viewBox="0 0 24 24" class="w-5 h-5" fill="url(#g1)"><path d="M12 2l3.09 6.3 6.91 1-5 4.88L18.18 22 12 18.56 5.82 22 7 14.18 2 9.3l6.91-1L12 2z"/></svg>
-                <svg viewBox="0 0 24 24" class="w-5 h-5" fill="url(#g1)"><path d="M12 2l3.09 6.3 6.91 1-5 4.88L18.18 22 12 18.56 5.82 22 7 14.18 2 9.3l6.91-1L12 2z"/></svg>
-                <svg viewBox="0 0 24 24" class="w-5 h-5" fill="url(#g1)" opacity=".7"><path d="M12 2l3.09 6.3 6.91 1-5 4.88L18.18 22 12 18.56 5.82 22 7 14.18 2 9.3l6.91-1L12 2z"/></svg>
+
+                <span class="text-yellow-400 text-lg">★</span>
+                <span class="text-yellow-400 text-lg">★</span>
+                <span class="text-yellow-400 text-lg">★</span>
+                <span class="text-yellow-400 text-lg">★</span>
+                <span class="text-yellow-400 text-lg opacity-70">★</span>
+
               </div>
+
             </div>
-            <!-- Quote line -->
-            <svg viewBox="0 0 24 24" class="w-6 h-6 mt-3" fill="url(#g1)" aria-hidden="true">
-              <path d="M7 7h4v4H9a2 2 0 00-2 2v4H3v-4a6 6 0 016-6zm10 0h4v4h-2a2 2 0 00-2 2v4h-4v-4a6 6 0 016-6z"/>
-            </svg>
-            <p class="mt-2 text-slate-200 leading-relaxed">
-             I had been struggling with persistent back pain for years, and nothing seemed to work. Within just weeks of taking their homeopathic medicine, the discomfort vanished. Their customer support team guided me with patience and expertise — a truly exceptional experience.
-            
+
+
+            <div class="text-green-400 text-3xl mt-3">
+              “
+            </div>
+
+
+            <p class="mt-1 text-slate-200 leading-relaxed">
+              I had been struggling with persistent back pain for years,
+              and nothing seemed to work. Within just weeks of taking
+              their homeopathic medicine, the discomfort vanished.
+              Their customer support team guided me with patience and
+              expertise — a truly exceptional experience.
             </p>
+
+
             <div class="mt-4 flex items-center gap-2">
-              <span class="text-xs text-slate-300">Verified Patient</span>
-              <span class="ml-auto text-xs px-2 py-0.5 rounded-full testi-chip">Homoepathic</span>
+
+              <span class="text-xs text-slate-300">
+                Verified Patient
+              </span>
+
+              <span
+                class="ml-auto text-xs px-2 py-0.5 rounded-full testi-chip"
+              >
+                Homeopathic
+              </span>
+
             </div>
+
           </article>
+
         </div>
 
-        <!-- Slide 2 -->
+
+        <!-- =========================
+             SLIDE 2
+        ========================= -->
         <div class="swiper-slide">
-          <article class="testi-card rounded-2xl p-5 h-full flex flex-col shadow-lg">
+
+          <article
+            class="testi-card rounded-2xl p-5 h-full flex flex-col shadow-lg"
+          >
+
             <div class="flex items-center gap-3">
+
               <svg width="48" height="48" viewBox="0 0 48 48">
-                <circle cx="24" cy="24" r="24" fill="var(--light-green)"/>
-                <text x="50%" y="56%" text-anchor="middle" font-size="18" font-weight="700"
-                      fill="var(--dark-green)" font-family="Poppins,system-ui">P</text>
+
+                <circle
+                  cx="24"
+                  cy="24"
+                  r="24"
+                  fill="var(--light-green)"
+                />
+
+                <text
+                  x="50%"
+                  y="56%"
+                  text-anchor="middle"
+                  font-size="18"
+                  font-weight="700"
+                  fill="var(--dark-green)"
+                >
+                  P
+                </text>
+
               </svg>
+
+
               <div>
-                <h4 class="font-semibold leading-tight">Prachi Dixit</h4>
-                <p class="text-xs text-slate-300"> Lucknow, India</p>
+
+                <h4 class="font-semibold leading-tight">
+                  Prachi Dixit
+                </h4>
+
+                <p class="text-xs text-slate-300">
+                  Lucknow, India
+                </p>
+
               </div>
+
+
               <div class="ml-auto flex">
-                <svg viewBox="0 0 24 24" class="w-5 h-5" fill="url(#g1)"><path d="M12 2l3.09 6.3 6.91 1-5 4.88L18.18 22 12 18.56 5.82 22 7 14.18 2 9.3l6.91-1L12 2z"/></svg><svg viewBox="0 0 24 24" class="w-5 h-5" fill="url(#g1)"><path d="M12 2l3.09 6.3 6.91 1-5 4.88L18.18 22 12 18.56 5.82 22 7 14.18 2 9.3l6.91-1L12 2z"/></svg><svg viewBox="0 0 24 24" class="w-5 h-5" fill="url(#g1)"><path d="M12 2l3.09 6.3 6.91 1-5 4.88L18.18 22 12 18.56 5.82 22 7 14.18 2 9.3l6.91-1L12 2z"/></svg><svg viewBox="0 0 24 24" class="w-5 h-5" fill="url(#g1)"><path d="M12 2l3.09 6.3 6.91 1-5 4.88L18.18 22 12 18.56 5.82 22 7 14.18 2 9.3l6.91-1L12 2z"/></svg><svg viewBox="0 0 24 24" class="w-5 h-5" fill="url(#g1)"><path d="M12 2l3.09 6.3 6.91 1-5 4.88L18.18 22 12 18.56 5.82 22 7 14.18 2 9.3l6.91-1L12 2z"/></svg>
+
+                <span class="text-yellow-400 text-lg">★</span>
+                <span class="text-yellow-400 text-lg">★</span>
+                <span class="text-yellow-400 text-lg">★</span>
+                <span class="text-yellow-400 text-lg">★</span>
+                <span class="text-yellow-400 text-lg">★</span>
+
               </div>
+
             </div>
+
+
             <p class="mt-4 text-slate-200">
-               Alfalfa tonic improved appetite and stamina.  
+              Alfalfa tonic improved appetite and stamina.
               Great guidance on meal timing and sleep.
-              </p>
+            </p>
+
+
             <div class="mt-4 flex items-center gap-2">
-              <span class="text-xs text-slate-300">Verified Patient</span>
-              <span class="ml-auto text-xs px-2 py-0.5 rounded-full testi-chip">Homeopathic Medicine</span>
+
+              <span class="text-xs text-slate-300">
+                Verified Patient
+              </span>
+
+              <span
+                class="ml-auto text-xs px-2 py-0.5 rounded-full testi-chip"
+              >
+                Homeopathic Medicine
+              </span>
+
             </div>
+
           </article>
+
         </div>
 
-        <!-- Slides 3–10 (8 more) -->
-        <!-- You can edit the text/names; structure kept same -->
-        <template id="more-slides">
-          <!-- 3 -->
-          <div class="swiper-slide"><article class="testi-card rounded-2xl p-5 h-full flex flex-col shadow-lg"><div class="flex items-center gap-3"><svg width="48" height="48" viewBox="0 0 48 48"><circle cx="24" cy="24" r="24" fill="var(--light-green)"/><text x="50%" y="56%" text-anchor="middle" font-size="18" font-weight="700" fill="var(--dark-green)" font-family="Poppins,system-ui">SS</text></svg><div><h4 class="font-semibold leading-tight">Simran Singh</h4><p class="text-xs text-slate-300">Delhi, India</p></div><div class="ml-auto flex"><svg viewBox="0 0 24 24" class="w-5 h-5" fill="url(#g1)"><path d="M12 2l3.09 6.3 6.91 1-5 4.88L18.18 22 12 18.56 5.82 22 7 14.18 2 9.3l6.91-1L12 2z"/></svg><svg viewBox="0 0 24 24" class="w-5 h-5" fill="url(#g1)"><path d="M12 2l3.09 6.3 6.91 1-5 4.88L18.18 22 12 18.56 5.82 22 7 14.18 2 9.3l6.91-1L12 2z"/></svg><svg viewBox="0 0 24 24" class="w-5 h-5" fill="url(#g1)"><path d="M12 2l3.09 6.3 6.91 1-5 4.88L18.18 22 12 18.56 5.82 22 7 14.18 2 9.3l6.91-1L12 2z"/></svg><svg viewBox="0 0 24 24" class="w-5 h-5" fill="url(#g1)"><path d="M12 2l3.09 6.3 6.91 1-5 4.88L18.18 22 12 18.56 5.82 22 7 14.18 2 9.3l6.91-1L12 2z"/></svg><svg viewBox="0 0 24 24" class="w-5 h-5" fill="url(#g1)" opacity=".7"><path d="M12 2l3.09 6.3 6.91 1-5 4.88L18.18 22 12 18.56 5.82 22 7 14.18 2 9.3l6.91-1L12 2z"/></svg></div></div><p class="mt-4 text-slate-200">Skin rash cleared with D-Skin-Care drops and neem wash routine. Itching gone; marks fading steadily.</p><div class="mt-4 flex items-center gap-2"><span class="text-xs text-slate-300">Verified Patient</span><span class="ml-auto text-xs px-2 py-0.5 rounded-full testi-chip">Skin Health</span></div></article></div>
-          <!-- 4 -->
-          <div class="swiper-slide"><article class="testi-card rounded-2xl p-5 h-full flex flex-col shadow-lg"><div class="flex items-center gap-3"><svg width="48" height="48" viewBox="0 0 48 48"><circle cx="24" cy="24" r="24" fill="var(--light-green)"/><text x="50%" y="56%" text-anchor="middle" font-size="18" font-weight="700" fill="var(--dark-green)">MK</text></svg><div><h4 class="font-semibold leading-tight">Mayank Kapoor</h4><p class="text-xs text-slate-300">Noida, India</p></div><div class="ml-auto flex"><svg viewBox="0 0 24 24" class="w-5 h-5" fill="url(#g1)"><path d="M12 2l3.09 6.3 6.91 1-5 4.88L18.18 22 12 18.56 5.82 22 7 14.18 2 9.3l6.91-1L12 2z"/></svg><svg viewBox="0 0 24 24" class="w-5 h-5" fill="url(#g1)"><path d="M12 2l3.09 6.3 6.91 1-5 4.88L18.18 22 12 18.56 5.82 22 7 14.18 2 9.3l6.91-1L12 2z"/></svg><svg viewBox="0 0 24 24" class="w-5 h-5" fill="url(#g1)"><path d="M12 2l3.09 6.3 6.91 1-5 4.88L18.18 22 12 18.56 5.82 22 7 14.18 2 9.3l6.91-1L12 2z"/></svg><svg viewBox="0 0 24 24" class="w-5 h-5" fill="url(#g1)"><path d="M12 2l3.09 6.3 6.91 1-5 4.88L18.18 22 12 18.56 5.82 22 7 14.18 2 9.3l6.91-1L12 2z"/></svg><svg viewBox="0 0 24 24" class="w-5 h-5" fill="url(#g1)"><path d="M12 2l3.09 6.3 6.91 1-5 4.88L18.18 22 12 18.56 5.82 22 7 14.18 2 9.3l6.91-1L12 2z"/></svg></div></div><p class="mt-4 text-slate-200">Allergy episodes have dropped sharply with Homoeo Loose Tablet. Sleeping better, breathing easier.</p><div class="mt-4 flex items-center gap-2"><span class="text-xs text-slate-300">Verified Patient</span><span class="ml-auto text-xs px-2 py-0.5 rounded-full testi-chip">Allergy Care</span></div></article></div>
-          <!-- 5 -->
-          <div class="swiper-slide"><article class="testi-card rounded-2xl p-5 h-full flex flex-col shadow-lg"><div class="flex items-center gap-3"><svg width="48" height="48" viewBox="0 0 48 48"><circle cx="24" cy="24" r="24" fill="var(--light-green)"/><text x="50%" y="56%" text-anchor="middle" font-size="18" font-weight="700" fill="var(--dark-green)">VD</text></svg><div><h4 class="font-semibold leading-tight">Vidhi Desai</h4><p class="text-xs text-slate-300">Ahmedabad</p></div><div class="ml-auto flex"><svg viewBox="0 0 24 24" class="w-5 h-5" fill="url(#g1)"><path d="M12 2l3.09 6.3 6.91 1-5 4.88L18.18 22 12 18.56 5.82 22 7 14.18 2 9.3l6.91-1L12 2z"/></svg><svg viewBox="0 0 24 24" class="w-5 h-5" fill="url(#g1)"><path d="M12 2l3.09 6.3 6.91 1-5 4.88L18.18 22 12 18.56 5.82 22 7 14.18 2 9.3l6.91-1L12 2z"/></svg><svg viewBox="0 0 24 24" class="w-5 h-5" fill="url(#g1)"><path d="M12 2l3.09 6.3 6.91 1-5 4.88L18.18 22 12 18.56 5.82 22 7 14.18 2 9.3l6.91-1L12 2z"/></svg><svg viewBox="0 0 24 24" class="w-5 h-5" fill="url(#g1)"><path d="M12 2l3.09 6.3 6.91 1-5 4.88L18.18 22 12 18.56 5.82 22 7 14.18 2 9.3l6.91-1L12 2z"/></svg><svg viewBox="0 0 24 24" class="w-5 h-5" fill="url(#g1)" opacity=".7"><path d="M12 2l3.09 6.3 6.91 1-5 4.88L18.18 22 12 18.56 5.82 22 7 14.18 2 9.3l6.91-1L12 2z"/></svg></div></div><p class="mt-4 text-slate-200">Cyston Drops eased kidney stone discomfort fast. Hydration + diet plan made a huge difference.</p><div class="mt-4 flex items-center gap-2"><span class="text-xs text-slate-300">Verified Patient</span><span class="ml-auto text-xs px-2 py-0.5 rounded-full testi-chip">Renal Care</span></div></article></div>
-          <!-- 6 -->
-          <div class="swiper-slide"><article class="testi-card rounded-2xl p-5 h-full flex flex-col shadow-lg"><div class="flex items-center gap-3"><svg width="48" height="48" viewBox="0 0 48 48"><circle cx="24" cy="24" r="24" fill="var(--light-green)"/><text x="50%" y="56%" text-anchor="middle" font-size="18" font-weight="700" fill="var(--dark-green)">NP</text></svg><div><h4 class="font-semibold leading-tight">Nishant Patel</h4><p class="text-xs text-slate-300">Surat</p></div><div class="ml-auto flex"><svg viewBox="0 0 24 24" class="w-5 h-5" fill="url(#g1)"><path d="M12 2l3.09 6.3 6.91 1-5 4.88L18.18 22 12 18.56 5.82 22 7 14.18 2 9.3l6.91-1L12 2z"/></svg><svg viewBox="0 0 24 24" class="w-5 h-5" fill="url(#g1)"><path d="M12 2l3.09 6.3 6.91 1-5 4.88L18.18 22 12 18.56 5.82 22 7 14.18 2 9.3l6.91-1L12 2z"/></svg><svg viewBox="0 0 24 24" class="w-5 h-5" fill="url(#g1)"><path d="M12 2l3.09 6.3 6.91 1-5 4.88L18.18 22 12 18.56 5.82 22 7 14.18 2 9.3l6.91-1L12 2z"/></svg><svg viewBox="0 0 24 24" class="w-5 h-5" fill="url(#g1)"><path d="M12 2l3.09 6.3 6.91 1-5 4.88L18.18 22 12 18.56 5.82 22 7 14.18 2 9.3l6.91-1L12 2z"/></svg><svg viewBox="0 0 24 24" class="w-5 h-5" fill="url(#g1)"><path d="M12 2l3.09 6.3 6.91 1-5 4.88L18.18 22 12 18.56 5.82 22 7 14.18 2 9.3l6.91-1L12 2z"/></svg></div></div><p class="mt-4 text-slate-200">Alfalfa tonic improved appetite and stamina. Great guidance on meal timing and sleep.</p><div class="mt-4 flex items-center gap-2"><span class="text-xs text-slate-300">Verified Patient</span><span class="ml-auto text-xs px-2 py-0.5 rounded-full testi-chip">Wellness</span></div></article></div>
-          <!-- 7 -->
-          <div class="swiper-slide"><article class="testi-card rounded-2xl p-5 h-full flex flex-col shadow-lg"><div class="flex items-center gap-3"><svg width="48" height="48" viewBox="0 0 48 48"><circle cx="24" cy="24" r="24" fill="var(--light-green)"/><text x="50%" y="56%" text-anchor="middle" font-size="18" font-weight="700" fill="var(--dark-green)">RS</text></svg><div><h4 class="font-semibold leading-tight">Ritika Shah</h4><p class="text-xs text-slate-300">Bengaluru</p></div><div class="ml-auto flex"><svg viewBox="0 0 24 24" class="w-5 h-5" fill="url(#g1)"><path d="M12 2l3.09 6.3 6.91 1-5 4.88L18.18 22 12 18.56 5.82 22 7 14.18 2 9.3l6.91-1L12 2z"/></svg><svg viewBox="0 0 24 24" class="w-5 h-5" fill="url(#g1)"><path d="M12 2l3.09 6.3 6.91 1-5 4.88L18.18 22 12 18.56 5.82 22 7 14.18 2 9.3l6.91-1L12 2z"/></svg><svg viewBox="0 0 24 24" class="w-5 h-5" fill="url(#g1)"><path d="M12 2l3.09 6.3 6.91 1-5 4.88L18.18 22 12 18.56 5.82 22 7 14.18 2 9.3l6.91-1L12 2z"/></svg><svg viewBox="0 0 24 24" class="w-5 h-5" fill="url(#g1)"><path d="M12 2l3.09 6.3 6.91 1-5 4.88L18.18 22 12 18.56 5.82 22 7 14.18 2 9.3l6.91-1L12 2z"/></svg><svg viewBox="0 0 24 24" class="w-5 h-5" fill="url(#g1)" opacity=".7"><path d="M12 2l3.09 6.3 6.91 1-5 4.88L18.18 22 12 18.56 5.82 22 7 14.18 2 9.3l6.91-1L12 2z"/></svg></div></div><p class="mt-4 text-slate-200">Pilex tablets soothed fissure pain quickly. Followed sitz bath & fiber plan; no relapse so far.</p><div class="mt-4 flex items-center gap-2"><span class="text-xs text-slate-300">Verified Patient</span><span class="ml-auto text-xs px-2 py-0.5 rounded-full testi-chip">Digestive Care</span></div></article></div>
-          <!-- 8 -->
-          <div class="swiper-slide"><article class="testi-card rounded-2xl p-5 h-full flex flex-col shadow-lg"><div class="flex items-center gap-3"><svg width="48" height="48" viewBox="0 0 48 48"><circle cx="24" cy="24" r="24" fill="var(--light-green)"/><text x="50%" y="56%" text-anchor="middle" font-size="18" font-weight="700" fill="var(--dark-green)">KB</text></svg><div><h4 class="font-semibold leading-tight">Karan Bedi</h4><p class="text-xs text-slate-300">Gurugram</p></div><div class="ml-auto flex"><svg viewBox="0 0 24 24" class="w-5 h-5" fill="url(#g1)"><path d="M12 2l3.09 6.3 6.91 1-5 4.88L18.18 22 12 18.56 5.82 22 7 14.18 2 9.3l6.91-1L12 2z"/></svg><svg viewBox="0 0 24 24" class="w-5 h-5" fill="url(#g1)"><path d="M12 2l3.09 6.3 6.91 1-5 4.88L18.18 22 12 18.56 5.82 22 7 14.18 2 9.3l6.91-1L12 2z"/></svg><svg viewBox="0 0 24 24" class="w-5 h-5" fill="url(#g1)"><path d="M12 2l3.09 6.3 6.91 1-5 4.88L18.18 22 12 18.56 5.82 22 7 14.18 2 9.3l6.91-1L12 2z"/></svg><svg viewBox="0 0 24 24" class="w-5 h-5" fill="url(#g1)"><path d="M12 2l3.09 6.3 6.91 1-5 4.88L18.18 22 12 18.56 5.82 22 7 14.18 2 9.3l6.91-1L12 2z"/></svg><svg viewBox="0 0 24 24" class="w-5 h-5" fill="url(#g1)"><path d="M12 2l3.09 6.3 6.91 1-5 4.88L18.18 22 12 18.56 5.82 22 7 14.18 2 9.3l6.91-1L12 2z"/></svg></div></div><p class="mt-4 text-slate-200">Super Vigo drops restored confidence & energy. Discreet guidance and measurable progress.</p><div class="mt-4 flex items-center gap-2"><span class="text-xs text-slate-300">Verified Patient</span><span class="ml-auto text-xs px-2 py-0.5 rounded-full testi-chip">Men’s Health</span></div></article></div>
-          <!-- 9 -->
-          <div class="swiper-slide"><article class="testi-card rounded-2xl p-5 h-full flex flex-col shadow-lg"><div class="flex items-center gap-3"><svg width="48" height="48" viewBox="0 0 48 48"><circle cx="24" cy="24" r="24" fill="var(--light-green)"/><text x="50%" y="56%" text-anchor="middle" font-size="18" font-weight="700" fill="var(--dark-green)">PR</text></svg><div><h4 class="font-semibold leading-tight">Priya Rao</h4><p class="text-xs text-slate-300">Hyderabad</p></div><div class="ml-auto flex"><svg viewBox="0 0 24 24" class="w-5 h-5" fill="url(#g1)"><path d="M12 2l3.09 6.3 6.91 1-5 4.88L18.18 22 12 18.56 5.82 22 7 14.18 2 9.3l6.91-1L12 2z"/></svg><svg viewBox="0 0 24 24" class="w-5 h-5" fill="url(#g1)"><path d="M12 2l3.09 6.3 6.91 1-5 4.88L18.18 22 12 18.56 5.82 22 7 14.18 2 9.3l6.91-1L12 2z"/></svg><svg viewBox="0 0 24 24" class="w-5 h-5" fill="url(#g1)"><path d="M12 2l3.09 6.3 6.91 1-5 4.88L18.18 22 12 18.56 5.82 22 7 14.18 2 9.3l6.91-1L12 2z"/></svg><svg viewBox="0 0 24 24" class="w-5 h-5" fill="url(#g1)"><path d="M12 2l3.09 6.3 6.91 1-5 4.88L18.18 22 12 18.56 5.82 22 7 14.18 2 9.3l6.91-1L12 2z"/></svg><svg viewBox="0 0 24 24" class="w-5 h-5" fill="url(#g1)" opacity=".7"><path d="M12 2l3.09 6.3 6.91 1-5 4.88L18.18 22 12 18.56 5.82 22 7 14.18 2 9.3l6.91-1L12 2z"/></svg></div></div><p class="mt-4 text-slate-200">Coffez syrup relieved night cough without sedation. Kid-friendly taste and clear dosage chart.</p><div class="mt-4 flex items-center gap-2"><span class="text-xs text-slate-300">Verified Patient</span><span class="ml-auto text-xs px-2 py-0.5 rounded-full testi-chip">Respiratory</span></div></article></div>
-          <!-- 10 -->
-          <div class="swiper-slide"><article class="testi-card rounded-2xl p-5 h-full flex flex-col shadow-lg"><div class="flex items-center gap-3"><svg width="48" height="48" viewBox="0 0 48 48"><circle cx="24" cy="24" r="24" fill="var(--light-green)"/><text x="50%" y="56%" text-anchor="middle" font-size="18" font-weight="700" fill="var(--dark-green)">AS</text></svg><div><h4 class="font-semibold leading-tight">Ayesha Sheikh</h4><p class="text-xs text-slate-300">Lucknow</p></div><div class="ml-auto flex"><svg viewBox="0 0 24 24" class="w-5 h-5" fill="url(#g1)"><path d="M12 2l3.09 6.3 6.91 1-5 4.88L18.18 22 12 18.56 5.82 22 7 14.18 2 9.3l6.91-1L12 2z"/></svg><svg viewBox="0 0 24 24" class="w-5 h-5" fill="url(#g1)"><path d="M12 2l3.09 6.3 6.91 1-5 4.88L18.18 22 12 18.56 5.82 22 7 14.18 2 9.3l6.91-1L12 2z"/></svg><svg viewBox="0 0 24 24" class="w-5 h-5" fill="url(#g1)"><path d="M12 2l3.09 6.3 6.91 1-5 4.88L18.18 22 12 18.56 5.82 22 7 14.18 2 9.3l6.91-1L12 2z"/></svg><svg viewBox="0 0 24 24" class="w-5 h-5" fill="url(#g1)"><path d="M12 2l3.09 6.3 6.91 1-5 4.88L18.18 22 12 18.56 5.82 22 7 14.18 2 9.3l6.91-1L12 2z"/></svg><svg viewBox="0 0 24 24" class="w-5 h-5" fill="url(#g1)"><path d="M12 2l3.09 6.3 6.91 1-5 4.88L18.18 22 12 18.56 5.82 22 7 14.18 2 9.3l6.91-1L12 2z"/></svg></div></div><p class="mt-4 text-slate-200">Calcium tablets improved bone ache post-delivery. No acidity; steady improvement in strength.</p><div class="mt-4 flex items-center gap-2"><span class="text-xs text-slate-300">Verified Patient</span><span class="ml-auto text-xs px-2 py-0.5 rounded-full testi-chip">Bone Health</span></div></article></div>
-        </template>
+
+        <!-- =========================
+             SLIDE 3
+        ========================= -->
+        <div class="swiper-slide">
+
+          <article
+            class="testi-card rounded-2xl p-5 h-full flex flex-col shadow-lg"
+          >
+
+            <div class="flex items-center gap-3">
+
+              <svg width="48" height="48" viewBox="0 0 48 48">
+
+                <circle
+                  cx="24"
+                  cy="24"
+                  r="24"
+                  fill="var(--light-green)"
+                />
+
+                <text
+                  x="50%"
+                  y="56%"
+                  text-anchor="middle"
+                  font-size="17"
+                  font-weight="700"
+                  fill="var(--dark-green)"
+                >
+                  SS
+                </text>
+
+              </svg>
+
+
+              <div>
+
+                <h4 class="font-semibold leading-tight">
+                  Simran Singh
+                </h4>
+
+                <p class="text-xs text-slate-300">
+                  Delhi, India
+                </p>
+
+              </div>
+
+
+              <div class="ml-auto flex">
+                <span class="text-yellow-400 text-lg">★</span>
+                <span class="text-yellow-400 text-lg">★</span>
+                <span class="text-yellow-400 text-lg">★</span>
+                <span class="text-yellow-400 text-lg">★</span>
+                <span class="text-yellow-400 text-lg opacity-70">★</span>
+              </div>
+
+            </div>
+
+
+            <p class="mt-4 text-slate-200">
+              Skin rash cleared with D-Skin-Care drops and neem
+              wash routine. Itching gone; marks fading steadily.
+            </p>
+
+
+            <div class="mt-4 flex items-center gap-2">
+
+              <span class="text-xs text-slate-300">
+                Verified Patient
+              </span>
+
+              <span
+                class="ml-auto text-xs px-2 py-0.5 rounded-full testi-chip"
+              >
+                Skin Health
+              </span>
+
+            </div>
+
+          </article>
+
+        </div>
+
+
+        <!-- =========================
+             SLIDE 4
+        ========================= -->
+        <div class="swiper-slide">
+
+          <article
+            class="testi-card rounded-2xl p-5 h-full flex flex-col shadow-lg"
+          >
+
+            <div class="flex items-center gap-3">
+
+              <svg width="48" height="48" viewBox="0 0 48 48">
+
+                <circle
+                  cx="24"
+                  cy="24"
+                  r="24"
+                  fill="var(--light-green)"
+                />
+
+                <text
+                  x="50%"
+                  y="56%"
+                  text-anchor="middle"
+                  font-size="17"
+                  font-weight="700"
+                  fill="var(--dark-green)"
+                >
+                  MK
+                </text>
+
+              </svg>
+
+
+              <div>
+
+                <h4 class="font-semibold leading-tight">
+                  Mayank Kapoor
+                </h4>
+
+                <p class="text-xs text-slate-300">
+                  Noida, India
+                </p>
+
+              </div>
+
+
+              <div class="ml-auto flex">
+                <span class="text-yellow-400 text-lg">★</span>
+                <span class="text-yellow-400 text-lg">★</span>
+                <span class="text-yellow-400 text-lg">★</span>
+                <span class="text-yellow-400 text-lg">★</span>
+                <span class="text-yellow-400 text-lg">★</span>
+              </div>
+
+            </div>
+
+
+            <p class="mt-4 text-slate-200">
+              Allergy episodes have dropped sharply with Homoeo
+              Loose Tablet. Sleeping better, breathing easier.
+            </p>
+
+
+            <div class="mt-4 flex items-center gap-2">
+
+              <span class="text-xs text-slate-300">
+                Verified Patient
+              </span>
+
+              <span
+                class="ml-auto text-xs px-2 py-0.5 rounded-full testi-chip"
+              >
+                Allergy Care
+              </span>
+
+            </div>
+
+          </article>
+
+        </div>
+
+
+        <!-- =========================
+             SLIDE 5
+        ========================= -->
+        <div class="swiper-slide">
+
+          <article
+            class="testi-card rounded-2xl p-5 h-full flex flex-col shadow-lg"
+          >
+
+            <div class="flex items-center gap-3">
+
+              <svg width="48" height="48" viewBox="0 0 48 48">
+
+                <circle
+                  cx="24"
+                  cy="24"
+                  r="24"
+                  fill="var(--light-green)"
+                />
+
+                <text
+                  x="50%"
+                  y="56%"
+                  text-anchor="middle"
+                  font-size="17"
+                  font-weight="700"
+                  fill="var(--dark-green)"
+                >
+                  VD
+                </text>
+
+              </svg>
+
+
+              <div>
+
+                <h4 class="font-semibold leading-tight">
+                  Vidhi Desai
+                </h4>
+
+                <p class="text-xs text-slate-300">
+                  Ahmedabad
+                </p>
+
+              </div>
+
+
+              <div class="ml-auto flex">
+                <span class="text-yellow-400 text-lg">★</span>
+                <span class="text-yellow-400 text-lg">★</span>
+                <span class="text-yellow-400 text-lg">★</span>
+                <span class="text-yellow-400 text-lg">★</span>
+                <span class="text-yellow-400 text-lg opacity-70">★</span>
+              </div>
+
+            </div>
+
+
+            <p class="mt-4 text-slate-200">
+              Cyston Drops eased kidney stone discomfort fast.
+              Hydration and diet guidance made a big difference.
+            </p>
+
+
+            <div class="mt-4 flex items-center gap-2">
+
+              <span class="text-xs text-slate-300">
+                Verified Patient
+              </span>
+
+              <span
+                class="ml-auto text-xs px-2 py-0.5 rounded-full testi-chip"
+              >
+                Renal Care
+              </span>
+
+            </div>
+
+          </article>
+
+        </div>
+
+
+        <!-- =========================
+             SLIDE 6
+        ========================= -->
+        <div class="swiper-slide">
+
+          <article
+            class="testi-card rounded-2xl p-5 h-full flex flex-col shadow-lg"
+          >
+
+            <div class="flex items-center gap-3">
+
+              <svg width="48" height="48" viewBox="0 0 48 48">
+
+                <circle
+                  cx="24"
+                  cy="24"
+                  r="24"
+                  fill="var(--light-green)"
+                />
+
+                <text
+                  x="50%"
+                  y="56%"
+                  text-anchor="middle"
+                  font-size="17"
+                  font-weight="700"
+                  fill="var(--dark-green)"
+                >
+                  NP
+                </text>
+
+              </svg>
+
+
+              <div>
+
+                <h4 class="font-semibold leading-tight">
+                  Nishant Patel
+                </h4>
+
+                <p class="text-xs text-slate-300">
+                  Surat
+                </p>
+
+              </div>
+
+
+              <div class="ml-auto flex">
+                <span class="text-yellow-400 text-lg">★</span>
+                <span class="text-yellow-400 text-lg">★</span>
+                <span class="text-yellow-400 text-lg">★</span>
+                <span class="text-yellow-400 text-lg">★</span>
+                <span class="text-yellow-400 text-lg">★</span>
+              </div>
+
+            </div>
+
+
+            <p class="mt-4 text-slate-200">
+              Alfalfa tonic improved appetite and stamina.
+              Great guidance on meal timing and sleep.
+            </p>
+
+
+            <div class="mt-4 flex items-center gap-2">
+
+              <span class="text-xs text-slate-300">
+                Verified Patient
+              </span>
+
+              <span
+                class="ml-auto text-xs px-2 py-0.5 rounded-full testi-chip"
+              >
+                Wellness
+              </span>
+
+            </div>
+
+          </article>
+
+        </div>
+
+
+        <!-- =========================
+             SLIDE 7
+        ========================= -->
+        <div class="swiper-slide">
+
+          <article
+            class="testi-card rounded-2xl p-5 h-full flex flex-col shadow-lg"
+          >
+
+            <div class="flex items-center gap-3">
+
+              <svg width="48" height="48" viewBox="0 0 48 48">
+
+                <circle
+                  cx="24"
+                  cy="24"
+                  r="24"
+                  fill="var(--light-green)"
+                />
+
+                <text
+                  x="50%"
+                  y="56%"
+                  text-anchor="middle"
+                  font-size="17"
+                  font-weight="700"
+                  fill="var(--dark-green)"
+                >
+                  RS
+                </text>
+
+              </svg>
+
+
+              <div>
+
+                <h4 class="font-semibold leading-tight">
+                  Ritika Shah
+                </h4>
+
+                <p class="text-xs text-slate-300">
+                  Bengaluru
+                </p>
+
+              </div>
+
+
+              <div class="ml-auto flex">
+                <span class="text-yellow-400 text-lg">★</span>
+                <span class="text-yellow-400 text-lg">★</span>
+                <span class="text-yellow-400 text-lg">★</span>
+                <span class="text-yellow-400 text-lg">★</span>
+                <span class="text-yellow-400 text-lg opacity-70">★</span>
+              </div>
+
+            </div>
+
+
+            <p class="mt-4 text-slate-200">
+              Pilex tablets soothed fissure discomfort.
+              Followed the recommended lifestyle routine and
+              noticed steady improvement.
+            </p>
+
+
+            <div class="mt-4 flex items-center gap-2">
+
+              <span class="text-xs text-slate-300">
+                Verified Patient
+              </span>
+
+              <span
+                class="ml-auto text-xs px-2 py-0.5 rounded-full testi-chip"
+              >
+                Digestive Care
+              </span>
+
+            </div>
+
+          </article>
+
+        </div>
+
+
+        <!-- =========================
+             SLIDE 8
+        ========================= -->
+        <div class="swiper-slide">
+
+          <article
+            class="testi-card rounded-2xl p-5 h-full flex flex-col shadow-lg"
+          >
+
+            <div class="flex items-center gap-3">
+
+              <svg width="48" height="48" viewBox="0 0 48 48">
+
+                <circle
+                  cx="24"
+                  cy="24"
+                  r="24"
+                  fill="var(--light-green)"
+                />
+
+                <text
+                  x="50%"
+                  y="56%"
+                  text-anchor="middle"
+                  font-size="17"
+                  font-weight="700"
+                  fill="var(--dark-green)"
+                >
+                  KB
+                </text>
+
+              </svg>
+
+
+              <div>
+
+                <h4 class="font-semibold leading-tight">
+                  Karan Bedi
+                </h4>
+
+                <p class="text-xs text-slate-300">
+                  Gurugram
+                </p>
+
+              </div>
+
+
+              <div class="ml-auto flex">
+                <span class="text-yellow-400 text-lg">★</span>
+                <span class="text-yellow-400 text-lg">★</span>
+                <span class="text-yellow-400 text-lg">★</span>
+                <span class="text-yellow-400 text-lg">★</span>
+                <span class="text-yellow-400 text-lg">★</span>
+              </div>
+
+            </div>
+
+
+            <p class="mt-4 text-slate-200">
+              Super Vigo drops helped me feel more confident and
+              energetic. The guidance was discreet and easy to follow.
+            </p>
+
+
+            <div class="mt-4 flex items-center gap-2">
+
+              <span class="text-xs text-slate-300">
+                Verified Patient
+              </span>
+
+              <span
+                class="ml-auto text-xs px-2 py-0.5 rounded-full testi-chip"
+              >
+                Wellness
+              </span>
+
+            </div>
+
+          </article>
+
+        </div>
+
+
+        <!-- =========================
+             SLIDE 9
+        ========================= -->
+        <div class="swiper-slide">
+
+          <article
+            class="testi-card rounded-2xl p-5 h-full flex flex-col shadow-lg"
+          >
+
+            <div class="flex items-center gap-3">
+
+              <svg width="48" height="48" viewBox="0 0 48 48">
+
+                <circle
+                  cx="24"
+                  cy="24"
+                  r="24"
+                  fill="var(--light-green)"
+                />
+
+                <text
+                  x="50%"
+                  y="56%"
+                  text-anchor="middle"
+                  font-size="17"
+                  font-weight="700"
+                  fill="var(--dark-green)"
+                >
+                  PR
+                </text>
+
+              </svg>
+
+
+              <div>
+
+                <h4 class="font-semibold leading-tight">
+                  Priya Rao
+                </h4>
+
+                <p class="text-xs text-slate-300">
+                  Hyderabad
+                </p>
+
+              </div>
+
+
+              <div class="ml-auto flex">
+                <span class="text-yellow-400 text-lg">★</span>
+                <span class="text-yellow-400 text-lg">★</span>
+                <span class="text-yellow-400 text-lg">★</span>
+                <span class="text-yellow-400 text-lg">★</span>
+                <span class="text-yellow-400 text-lg opacity-70">★</span>
+              </div>
+
+            </div>
+
+
+            <p class="mt-4 text-slate-200">
+              Coffez syrup was easy to take and the dosage
+              instructions were clear. The customer guidance
+              was helpful throughout.
+            </p>
+
+
+            <div class="mt-4 flex items-center gap-2">
+
+              <span class="text-xs text-slate-300">
+                Verified Patient
+              </span>
+
+              <span
+                class="ml-auto text-xs px-2 py-0.5 rounded-full testi-chip"
+              >
+                Respiratory
+              </span>
+
+            </div>
+
+          </article>
+
+        </div>
+
+
+        <!-- =========================
+             SLIDE 10
+        ========================= -->
+        <div class="swiper-slide">
+
+          <article
+            class="testi-card rounded-2xl p-5 h-full flex flex-col shadow-lg"
+          >
+
+            <div class="flex items-center gap-3">
+
+              <svg width="48" height="48" viewBox="0 0 48 48">
+
+                <circle
+                  cx="24"
+                  cy="24"
+                  r="24"
+                  fill="var(--light-green)"
+                />
+
+                <text
+                  x="50%"
+                  y="56%"
+                  text-anchor="middle"
+                  font-size="17"
+                  font-weight="700"
+                  fill="var(--dark-green)"
+                >
+                  AS
+                </text>
+
+              </svg>
+
+
+              <div>
+
+                <h4 class="font-semibold leading-tight">
+                  Ayesha Sheikh
+                </h4>
+
+                <p class="text-xs text-slate-300">
+                  Lucknow
+                </p>
+
+              </div>
+
+
+              <div class="ml-auto flex">
+                <span class="text-yellow-400 text-lg">★</span>
+                <span class="text-yellow-400 text-lg">★</span>
+                <span class="text-yellow-400 text-lg">★</span>
+                <span class="text-yellow-400 text-lg">★</span>
+                <span class="text-yellow-400 text-lg">★</span>
+              </div>
+
+            </div>
+
+
+            <p class="mt-4 text-slate-200">
+              Calcium tablets were easy to include in my daily
+              routine. The guidance and follow-up made the
+              experience convenient.
+            </p>
+
+
+            <div class="mt-4 flex items-center gap-2">
+
+              <span class="text-xs text-slate-300">
+                Verified Patient
+              </span>
+
+              <span
+                class="ml-auto text-xs px-2 py-0.5 rounded-full testi-chip"
+              >
+                Bone Health
+              </span>
+
+            </div>
+
+          </article>
+
+        </div>
+
       </div>
 
-      <!-- navigation dots -->
-      <div class="mt-6 flex items-center justify-center gap-2 opacity-70 group-hover:opacity-100 transition">
-        <div class="swiper-pagination !static"></div>
+
+      <!-- =========================
+           PAGINATION
+      ========================= -->
+      <div class="mt-6 flex items-center justify-center">
+
+        <div
+          class="swiper-pagination"
+        ></div>
+
       </div>
+
     </div>
+
   </div>
+
 </section>
 
-<script>
-  // Duplicate template slides into the DOM (keeps HTML compact above)
-  (function appendMoreSlides(){
-    const t = document.querySelector('#more-slides');
-    if(!t) return;
-    const wrapper = document.querySelector('#reviewSwiper .swiper-wrapper');
-    t.content.childNodes.forEach(n => wrapper.appendChild(n.cloneNode(true)));
-  })();
 
-  // Init Swiper (smooth horizontal auto-scroll)
-  const reviewSwiper = new Swiper('#reviewSwiper', {
-    loop: true,
-    speed: 6500,                    // slow, luxurious glide
-    autoplay: { delay: 0, disableOnInteraction: false },
-    freeMode: { enabled: true, momentum: false },
-    slidesPerView: 1.1,
-    spaceBetween: 16,
-    grabCursor: true,
-    pagination: { el: '#reviewSwiper .swiper-pagination', clickable: true },
-    breakpoints: {
-      640: { slidesPerView: 2, spaceBetween: 18 },
-      1024:{ slidesPerView: 3, spaceBetween: 20 },
-      1440:{ slidesPerView: 4, spaceBetween: 22 }
-    },
-    on: {
-      // pause on hover for desktop
-      init(sw){
-        const el = sw.el;
-        el.addEventListener('mouseenter', ()=> sw.autoplay.stop());
-        el.addEventListener('mouseleave', ()=> sw.autoplay.start());
-      }
+<!-- =========================================================
+     SWIPER JAVASCRIPT
+========================================================= -->
+
+<script
+  src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
+></script>
+
+<script>
+(function () {
+
+  "use strict";
+
+  function startTestimonials() {
+
+    const slider = document.getElementById("reviewSwiper");
+
+    if (!slider) {
+      console.error("Testimonials: reviewSwiper not found.");
+      return;
     }
-  });
+
+
+    /* -----------------------------------------
+       Prevent duplicate initialization
+    ----------------------------------------- */
+
+    if (slider.swiper) {
+      slider.swiper.destroy(true, true);
+    }
+
+
+    /* -----------------------------------------
+       Check Swiper
+    ----------------------------------------- */
+
+    if (typeof Swiper === "undefined") {
+
+      console.error(
+        "Testimonials: Swiper library failed to load."
+      );
+
+      return;
+    }
+
+
+    /* -----------------------------------------
+       Initialize
+    ----------------------------------------- */
+
+    const testimonialsSwiper = new Swiper(
+      "#reviewSwiper",
+      {
+
+        /* Infinite loop */
+        loop: true,
+
+        /* Slow smooth movement */
+        speed: 5000,
+
+        /* Continuous automatic movement */
+        autoplay: {
+          delay: 1,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true,
+          waitForTransition: false
+        },
+
+        /* Phone swipe */
+        allowTouchMove: true,
+
+        /* Desktop mouse dragging */
+        simulateTouch: true,
+
+        /* Grab cursor */
+        grabCursor: true,
+
+        /* Free scrolling */
+        freeMode: {
+          enabled: true,
+          momentum: false,
+          momentumRatio: 0,
+          momentumVelocityRatio: 0
+        },
+
+        /* Mobile */
+        slidesPerView: 1.1,
+
+        spaceBetween: 16,
+
+
+        /* Responsive */
+        breakpoints: {
+
+          480: {
+            slidesPerView: 1.2,
+            spaceBetween: 16
+          },
+
+          640: {
+            slidesPerView: 2,
+            spaceBetween: 18
+          },
+
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 20
+          },
+
+          1440: {
+            slidesPerView: 4,
+            spaceBetween: 22
+          }
+
+        },
+
+
+        /* Dots */
+        pagination: {
+          el: "#reviewSwiper .swiper-pagination",
+          clickable: true
+        },
+
+
+        /* Accessibility */
+        a11y: {
+          enabled: true
+        },
+
+
+        /* Automatically update */
+        observer: true,
+        observeParents: true,
+        resizeObserver: true,
+
+
+        /* -------------------------------------
+           Events
+        ------------------------------------- */
+
+        on: {
+
+          init: function (swiper) {
+
+            console.log(
+              "Testimonials: Swiper started successfully."
+            );
+
+            swiper.update();
+
+            if (
+              swiper.autoplay &&
+              !swiper.autoplay.running
+            ) {
+              swiper.autoplay.start();
+            }
+
+          },
+
+
+          resize: function (swiper) {
+
+            swiper.update();
+
+          },
+
+
+          orientationchange: function (swiper) {
+
+            swiper.update();
+
+          }
+
+        }
+
+      }
+    );
+
+
+    /* -----------------------------------------
+       IMPORTANT:
+       Keep autoplay after manual swipe
+    ----------------------------------------- */
+
+    testimonialsSwiper.on(
+      "touchEnd",
+      function () {
+
+        setTimeout(function () {
+
+          if (
+            testimonialsSwiper.autoplay &&
+            !testimonialsSwiper.autoplay.running
+          ) {
+
+            testimonialsSwiper.autoplay.start();
+
+          }
+
+        }, 150);
+
+      }
+    );
+
+
+    /* -----------------------------------------
+       Make instance available globally
+    ----------------------------------------- */
+
+    window.reviewTestimonialsSwiper =
+      testimonialsSwiper;
+
+  }
+
+
+  /* -------------------------------------------
+     Start after DOM is ready
+  ------------------------------------------- */
+
+  if (
+    document.readyState === "loading"
+  ) {
+
+    document.addEventListener(
+      "DOMContentLoaded",
+      startTestimonials
+    );
+
+  } else {
+
+    startTestimonials();
+
+  }
+
+})();
 </script>
-    <!-- Contact -->
-    <section id="contact" class="mt-12 grid md:grid-cols-2 gap-6">
-      <div class="bg-slate-800 glass rounded-xl p-5">
-        <h3 class="text-lg font-semibold">Contact</h3>
-        <p class="text-slate-300 mt-2"> Call or Email for Enquiry.  </p>
-        <div class="mt-4 flex gap-2">
-          <a :href="callLink" class="px-4 py-2 rounded bg-emerald-500 text-black font-semibold hover:bg-emerald-400">Call Us</a>
-          <a :href="mailtoLink" class="px-4 py-2 rounded border border-slate-700 hover:bg-slate-700">Email Us</a>
+    
+   <!-- =========================================================
+     MODERN PHARMACY CONTACT + LOCATION
+     WHITE / GREEN / NAVY THEME
+========================================================= -->
+
+<section
+  id="contact"
+  class="relative mt-16 px-4 sm:px-6 lg:px-8
+         bg-white"
+>
+
+  <div class="max-w-7xl mx-auto">
+
+
+    <!-- =====================================================
+         SECTION HEADER
+    ====================================================== -->
+
+    <div
+      class="flex flex-col lg:flex-row
+             lg:items-end lg:justify-between
+             gap-6 mb-10"
+    >
+
+      <!-- LEFT -->
+
+      <div>
+
+        <div
+          class="inline-flex items-center gap-2
+                 px-4 py-2 rounded-full
+                 bg-emerald-50
+                 border border-emerald-100
+                 text-emerald-700
+                 text-sm font-semibold"
+        >
+
+          <span
+            class="relative flex h-2.5 w-2.5"
+          >
+
+            <span
+              class="absolute inline-flex
+                     h-full w-full
+                     rounded-full
+                     bg-emerald-400
+                     opacity-60
+                     animate-ping"
+            ></span>
+
+            <span
+              class="relative inline-flex
+                     rounded-full
+                     h-2.5 w-2.5
+                     bg-emerald-500"
+            ></span>
+
+          </span>
+
+          We're here to help
+
         </div>
+
+
+        <h2
+          class="mt-4
+                 text-3xl sm:text-4xl lg:text-5xl
+                 font-extrabold
+                 tracking-tight
+                 text-[#062E4F]"
+        >
+          Let's talk
+        </h2>
+
+
+        <p
+          class="mt-3 max-w-2xl
+                 text-slate-500
+                 text-sm sm:text-base
+                 leading-relaxed"
+        >
+          Have a question about our medicines or services?
+          Our team is ready to assist you.
+        </p>
+
       </div>
-      <div class="rounded-xl overflow-hidden border border-slate-700">
-        <iframe class="w-full h-48" loading="lazy"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3559.6517!2d80.9461651!3d26.8466939!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1sLucknow!2sLucknow!5e0!3m2!1sen!2sin!4v1692280200000"></iframe>
+
+
+      <!-- =================================================
+           QUICK ACTIONS — NEXT TO LET'S TALK
+      ================================================== -->
+
+      <div
+        class="flex flex-wrap gap-3"
+      >
+
+        <!-- CALL -->
+
+        <a
+          :href="callLink"
+          class="group inline-flex
+                 items-center gap-3
+                 px-5 py-3.5
+                 rounded-2xl
+                 bg-[#0B9F55]
+                 text-white
+                 font-bold
+                 shadow-lg shadow-emerald-500/20
+                 hover:bg-[#078B49]
+                 hover:-translate-y-1
+                 transition-all duration-300"
+        >
+
+          <span
+            class="w-9 h-9
+                   rounded-xl
+                   bg-white/15
+                   flex items-center
+                   justify-center
+                   group-hover:scale-110
+                   transition-transform"
+          >
+
+            <svg
+              class="w-4.5 h-4.5"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M3 5.5A2.5 2.5 0 015.5 3h1.2c.7 0 1.3.45 1.5 1.1l1 3.1a1.6 1.6 0 01-.4 1.6L7.4 10.2a14.2 14.2 0 006.4 6.4l1.4-1.4a1.6 1.6 0 011.6-.4l3.1 1c.65.2 1.1.8 1.1 1.5v1.2a2.5 2.5 0 01-2.5 2.5C10.5 21 3 13.5 3 5.5z"
+              />
+
+            </svg>
+
+          </span>
+
+          <span>
+            Call Now
+          </span>
+
+        </a>
+
+
+        <!-- WHATSAPP -->
+
+        <a
+          :href="whatsappLink || '#'"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group inline-flex
+                 items-center gap-3
+                 px-5 py-3.5
+                 rounded-2xl
+                 bg-white
+                 border border-slate-200
+                 text-[#062E4F]
+                 font-bold
+                 shadow-sm
+                 hover:border-emerald-300
+                 hover:bg-emerald-50
+                 hover:-translate-y-1
+                 transition-all duration-300"
+        >
+
+          <span
+            class="w-9 h-9
+                   rounded-xl
+                   bg-emerald-50
+                   text-emerald-600
+                   flex items-center
+                   justify-center
+                   group-hover:scale-110
+                   transition-transform"
+          >
+
+            <svg
+              class="w-5 h-5"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+
+              <path
+                d="M20.5 3.5A11.9 11.9 0 0012.05 0
+                C5.5 0 .18 5.32.18 11.87c0 2.09.55 4.13
+                1.59 5.93L.08 24l6.34-1.66a11.88 11.88
+                0 005.63 1.43h.01c6.55 0 11.87-5.32
+                11.87-11.87 0-3.17-1.23-6.15-3.43-8.4z
+                M12.06 21.77h-.01a9.88 9.88 0 01-5.03-1.38
+                l-.36-.21-3.76.98 1-3.66-.24-.38a9.87
+                9.87 0 01-1.52-5.25c0-5.45 4.44-9.88
+                9.9-9.88 2.64 0 5.12 1.03 6.99 2.9
+                a9.83 9.83 0 012.89 7c0 5.44-4.43 9.88-9.86
+                9.88z"
+              />
+
+            </svg>
+
+          </span>
+
+          WhatsApp
+
+        </a>
+
       </div>
-    </section>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
+
+    <div
+      class="grid
+             lg:grid-cols-[0.82fr_1.18fr]
+             gap-6 lg:gap-8"
+    >
+
+
+      <!-- =================================================
+           CONTACT INFORMATION CARD
+      ================================================== -->
+
+      <div
+        class="relative
+               overflow-hidden
+               rounded-[28px]
+               bg-[#F3FBF7]
+               border border-emerald-100
+               p-6 sm:p-8"
+      >
+
+        <!-- Decorative circle -->
+
+        <div
+          class="absolute
+                 -right-20 -top-20
+                 w-56 h-56
+                 rounded-full
+                 bg-emerald-200/30
+                 blur-3xl
+                 pointer-events-none"
+        ></div>
+
+
+        <div
+          class="relative z-10"
+        >
+
+          <!-- Heading -->
+
+          <div>
+
+            <span
+              class="text-xs
+                     uppercase
+                     tracking-[0.18em]
+                     font-bold
+                     text-emerald-600"
+            >
+              Contact information
+            </span>
+
+
+            <h3
+              class="mt-2
+                     text-2xl
+                     font-extrabold
+                     text-[#062E4F]"
+            >
+              We're happy to help
+            </h3>
+
+
+            <p
+              class="mt-2
+                     text-sm
+                     text-slate-500
+                     leading-relaxed"
+            >
+              Reach us through your preferred channel
+              and we'll help you with your enquiry.
+            </p>
+
+          </div>
+
+
+          <!-- =================================================
+               CONTACT ITEMS
+          ================================================== -->
+
+          <div class="mt-7 space-y-3">
+
+
+            <!-- CALL -->
+
+            <a
+              :href="callLink"
+              class="group
+                     flex items-center gap-4
+                     p-4
+                     rounded-2xl
+                     bg-white
+                     border border-slate-100
+                     shadow-sm
+                     hover:border-emerald-200
+                     hover:shadow-md
+                     hover:-translate-y-0.5
+                     transition-all duration-300"
+            >
+
+              <div
+                class="w-12 h-12
+                       shrink-0
+                       rounded-2xl
+                       bg-emerald-50
+                       text-emerald-600
+                       flex items-center
+                       justify-center
+                       group-hover:bg-emerald-500
+                       group-hover:text-white
+                       transition-colors"
+              >
+
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
+
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M3 5.5A2.5 2.5 0 015.5 3h1.2c.7 0 1.3.45 1.5 1.1l1 3.1a1.6 1.6 0 01-.4 1.6L7.4 10.2a14.2 14.2 0 006.4 6.4l1.4-1.4a1.6 1.6 0 011.6-.4l3.1 1c.65.2 1.1.8 1.1 1.5v1.2a2.5 2.5 0 01-2.5 2.5C10.5 21 3 13.5 3 5.5z"
+                  />
+
+                </svg>
+
+              </div>
+
+
+              <div class="flex-1">
+
+                <p
+                  class="text-xs
+                         text-slate-400"
+                >
+                  Phone
+                </p>
+
+                <p
+                  class="mt-0.5
+                         text-sm
+                         font-bold
+                         text-[#062E4F]"
+                >
+                  Speak with our team
+                </p>
+
+              </div>
+
+
+              <svg
+                class="w-5 h-5
+                       text-slate-300
+                       group-hover:text-emerald-500
+                       group-hover:translate-x-1
+                       transition-all"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+              >
+
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M9 5l7 7-7 7"
+                />
+
+              </svg>
+
+            </a>
+
+
+            <!-- EMAIL -->
+
+            <a
+              :href="mailtoLink"
+              class="group
+                     flex items-center gap-4
+                     p-4
+                     rounded-2xl
+                     bg-white
+                     border border-slate-100
+                     shadow-sm
+                     hover:border-emerald-200
+                     hover:shadow-md
+                     hover:-translate-y-0.5
+                     transition-all duration-300"
+            >
+
+              <div
+                class="w-12 h-12
+                       shrink-0
+                       rounded-2xl
+                       bg-blue-50
+                       text-[#1467A3]
+                       flex items-center
+                       justify-center
+                       group-hover:bg-[#062E4F]
+                       group-hover:text-white
+                       transition-colors"
+              >
+
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
+
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M3 7l9 6 9-6"
+                  />
+
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                  />
+
+                </svg>
+
+              </div>
+
+
+              <div class="flex-1">
+
+                <p
+                  class="text-xs
+                         text-slate-400"
+                >
+                  Email
+                </p>
+
+                <p
+                  class="mt-0.5
+                         text-sm
+                         font-bold
+                         text-[#062E4F]"
+                >
+                  Send an enquiry
+                </p>
+
+              </div>
+
+
+              <svg
+                class="w-5 h-5
+                       text-slate-300
+                       group-hover:text-[#062E4F]
+                       group-hover:translate-x-1
+                       transition-all"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+              >
+
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M9 5l7 7-7 7"
+                />
+
+              </svg>
+
+            </a>
+
+
+            <!-- LOCATION -->
+
+            <div
+              class="flex items-center gap-4
+                     p-4
+                     rounded-2xl
+                     bg-white
+                     border border-slate-100
+                     shadow-sm"
+            >
+
+              <div
+                class="w-12 h-12
+                       shrink-0
+                       rounded-2xl
+                       bg-blue-50
+                       text-[#1467A3]
+                       flex items-center
+                       justify-center"
+              >
+
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
+
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M12 21s7-6.2 7-12a7 7 0 10-14 0c0 5.8 7 12 7 12z"
+                  />
+
+                  <circle
+                    cx="12"
+                    cy="9"
+                    r="2.5"
+                  />
+
+                </svg>
+
+              </div>
+
+
+              <div>
+
+                <p
+                  class="text-xs
+                         text-slate-400"
+                >
+                  Visit us
+                </p>
+
+                <p
+                  class="mt-0.5
+                         text-sm
+                         font-bold
+                         text-[#062E4F]"
+                >
+                  Lucknow, Uttar Pradesh
+                </p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- =================================================
+               SERVICE NOTE
+          ================================================== -->
+
+          <div
+            class="mt-6
+                   p-4
+                   rounded-2xl
+                   bg-[#062E4F]
+                   text-white"
+          >
+
+            <div
+              class="flex items-start gap-3"
+            >
+
+              <div
+                class="w-9 h-9
+                       shrink-0
+                       rounded-xl
+                       bg-emerald-400/15
+                       flex items-center
+                       justify-center"
+              >
+
+                <svg
+                  class="w-4 h-4 text-emerald-300"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
+
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="9"
+                  />
+
+                  <path
+                    stroke-linecap="round"
+                    d="M12 8v4l2.5 1.5"
+                  />
+
+                </svg>
+
+              </div>
+
+
+              <div>
+
+                <p
+                  class="text-sm
+                         font-bold"
+                >
+                  Need assistance?
+                </p>
+
+                <p
+                  class="mt-1
+                         text-xs
+                         text-slate-300
+                         leading-relaxed"
+                >
+                  Our team is available to answer
+                  your questions and guide you.
+                </p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- =================================================
+           MODERN MAP CARD
+      ================================================== -->
+
+      <div
+        class="relative
+               min-h-[450px]
+               lg:min-h-[590px]
+               overflow-hidden
+               rounded-[28px]
+               border border-slate-200
+               bg-slate-100
+               shadow-xl
+               shadow-slate-200/50"
+      >
+
+        <!-- MAP -->
+
+        <iframe
+          class="absolute inset-0
+                 w-full h-full"
+          loading="lazy"
+          allowfullscreen
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3559.6517!2d80.9461651!3d26.8466939!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1sLucknow!2sLucknow!5e0!3m2!1sen!2sin!4v1692280200000"
+        ></iframe>
+
+
+        <!-- =================================================
+             TOP LOCATION BADGE
+        ================================================== -->
+
+        <div
+          class="absolute
+                 top-4 left-4 right-4
+                 flex justify-between
+                 items-start
+                 pointer-events-none"
+        >
+
+          <div
+            class="pointer-events-auto
+                   flex items-center gap-3
+                   bg-white/95
+                   backdrop-blur-md
+                   rounded-2xl
+                   px-4 py-3
+                   border border-white
+                   shadow-xl"
+          >
+
+            <div
+              class="w-10 h-10
+                     rounded-xl
+                     bg-emerald-50
+                     text-emerald-600
+                     flex items-center
+                     justify-center"
+            >
+
+              <svg
+                class="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+              >
+
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M12 21s7-6.2 7-12a7 7 0 10-14 0c0 5.8 7 12 7 12z"
+                />
+
+                <circle
+                  cx="12"
+                  cy="9"
+                  r="2.5"
+                />
+
+              </svg>
+
+            </div>
+
+
+            <div>
+
+              <p
+                class="text-[11px]
+                       uppercase
+                       tracking-wider
+                       font-semibold
+                       text-slate-400"
+              >
+                Our location
+              </p>
+
+              <p
+                class="text-sm
+                       font-extrabold
+                       text-[#062E4F]"
+              >
+                Lucknow, India
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- =================================================
+             BOTTOM MAP ACTION
+        ================================================== -->
+
+        <div
+          class="absolute
+                 bottom-4
+                 left-4
+                 right-4
+                 flex
+                 flex-col sm:flex-row
+                 sm:items-end
+                 justify-between
+                 gap-3"
+        >
+
+          <!-- MAP INFO -->
+
+          <div
+            class="bg-white/95
+                   backdrop-blur-md
+                   rounded-2xl
+                   px-4 py-3
+                   border border-white
+                   shadow-xl"
+          >
+
+            <div
+              class="flex items-center gap-2"
+            >
+
+              <span
+                class="relative
+                       flex h-2.5 w-2.5"
+              >
+
+                <span
+                  class="absolute
+                         inline-flex
+                         h-full w-full
+                         rounded-full
+                         bg-emerald-400
+                         opacity-60
+                         animate-ping"
+                ></span>
+
+                <span
+                  class="relative
+                         inline-flex
+                         rounded-full
+                         h-2.5 w-2.5
+                         bg-emerald-500"
+                ></span>
+
+              </span>
+
+              <span
+                class="text-xs
+                       font-semibold
+                       text-emerald-700"
+              >
+                Find us easily
+              </span>
+
+            </div>
+
+            <p
+              class="mt-1
+                     text-xs
+                     text-slate-500"
+            >
+              Open the map for directions
+            </p>
+
+          </div>
+
+
+          <!-- DIRECTIONS BUTTON -->
+
+          <a
+            href="https://www.google.com/maps/search/?api=1&query=Lucknow,Uttar+Pradesh,India"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group
+                   inline-flex
+                   items-center
+                   justify-center
+                   gap-2
+                   px-5 py-3.5
+                   rounded-2xl
+                   bg-[#0B9F55]
+                   text-white
+                   font-bold
+                   shadow-xl
+                   shadow-emerald-600/20
+                   hover:bg-[#078B49]
+                   hover:-translate-y-1
+                   transition-all duration-300"
+          >
+
+            <svg
+              class="w-4 h-4
+                     group-hover:scale-110
+                     transition-transform"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M12 19l-7-7 7-7"
+              />
+
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M5 12h14"
+              />
+
+            </svg>
+
+            Get Directions
+
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
   </main>
 
   
-  <!-- Floating chat button
-  <button @click="chatOpen = !chatOpen"
-          class="fixed bottom-5 right-5 w-14 h-14 rounded-full brand-gradient text-black z-50 shadow-lg flex items-center justify-center"
-          aria-label="Open chat">
-    <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" viewBox="0 0 24 24" fill="currentColor">
-      <path d="M2 3h20v14H6l-4 4V3z"/>
-    </svg>
-  </button> -->
-
-  <!-- Chat panel -->
-  <!--<div v-if="chatOpen" class="fixed bottom-24 right-5 w-[320px] bg-slate-900 border border-slate-700 rounded-xl shadow-soft overflow-hidden z-50">
-    <div class="px-4 py-3 flex items-center justify-between bg-slate-800">
-      <div class="flex items-center gap-2">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-emerald-400" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 1 21h22L12 2z"/></svg>
-        <span class="font-semibold">Support</span>
-      </div>
-      <button @click="chatOpen=false" aria-label="Close">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 18 18 6M6 6l12 12"/></svg>
-      </button>
-    </div>
-    <div class="h-56 overflow-y-auto p-3 space-y-2">
-      <div v-for="(m,i) in chat" :key="i" class="text-sm" :class="m.me?'text-right':''">
-        <div :class="m.me?'inline-block bg-emerald-600 text-white':'inline-block bg-slate-800 text-slate-100'" class="px-3 py-2 rounded-lg">
-          {{ m.text }}
-        </div>
-      </div>
-    </div>
-    <div class="p-3 border-t border-slate-700 flex gap-2">
-      <input v-model="chatInput" @keyup.enter="sendChat" placeholder="Ask about a medicine…" class="flex-1 px-3 py-2 rounded bg-slate-800 border border-slate-700 focus:outline-none">
-      <button @click="sendChat" class="px-3 py-2 rounded bg-emerald-500 text-black font-semibold">Send</button>
-    </div>
-  </div>
-</div>    -->
 <!-- Include AOS Animation CSS/JS -->
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
