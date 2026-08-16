@@ -569,9 +569,9 @@ input:focus {
       </div>
 
       <p class="text-slate-600 leading-relaxed">
-        With 10+ years of experience, we are a trusted pharmaceutical company
+       We are a trusted pharmaceutical company
         based in Lucknow, committed to providing quality homeopathic medicines
-        with care, consistency, and customer trust.
+        with care and customer trust.
       </p>
 
       <a
@@ -1982,134 +1982,6 @@ input:focus {
         </p>
 
       </div>
-
-
-      <!-- =================================================
-           QUICK ACTIONS — NEXT TO LET'S TALK
-      ================================================== -->
-
-      <div
-        class="flex flex-wrap gap-3"
-      >
-
-        <!-- CALL -->
-
-        <a
-          :href="callLink"
-          class="group inline-flex
-                 items-center gap-3
-                 px-5 py-3.5
-                 rounded-2xl
-                 bg-[#0B9F55]
-                 text-white
-                 font-bold
-                 shadow-lg shadow-emerald-500/20
-                 hover:bg-[#078B49]
-                 hover:-translate-y-1
-                 transition-all duration-300"
-        >
-
-          <span
-            class="w-9 h-9
-                   rounded-xl
-                   bg-white/15
-                   flex items-center
-                   justify-center
-                   group-hover:scale-110
-                   transition-transform"
-          >
-
-            <svg
-              class="w-4.5 h-4.5"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              viewBox="0 0 24 24"
-            >
-
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M3 5.5A2.5 2.5 0 015.5 3h1.2c.7 0 1.3.45 1.5 1.1l1 3.1a1.6 1.6 0 01-.4 1.6L7.4 10.2a14.2 14.2 0 006.4 6.4l1.4-1.4a1.6 1.6 0 011.6-.4l3.1 1c.65.2 1.1.8 1.1 1.5v1.2a2.5 2.5 0 01-2.5 2.5C10.5 21 3 13.5 3 5.5z"
-              />
-
-            </svg>
-
-          </span>
-
-          <span>
-            Call Now
-          </span>
-
-        </a>
-
-
-        <!-- WHATSAPP -->
-
-        <a
-          :href="whatsappLink || '#'"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="group inline-flex
-                 items-center gap-3
-                 px-5 py-3.5
-                 rounded-2xl
-                 bg-white
-                 border border-slate-200
-                 text-[#062E4F]
-                 font-bold
-                 shadow-sm
-                 hover:border-emerald-300
-                 hover:bg-emerald-50
-                 hover:-translate-y-1
-                 transition-all duration-300"
-        >
-
-          <span
-            class="w-9 h-9
-                   rounded-xl
-                   bg-emerald-50
-                   text-emerald-600
-                   flex items-center
-                   justify-center
-                   group-hover:scale-110
-                   transition-transform"
-          >
-
-            <svg
-              class="w-5 h-5"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-            >
-
-              <path
-                d="M20.5 3.5A11.9 11.9 0 0012.05 0
-                C5.5 0 .18 5.32.18 11.87c0 2.09.55 4.13
-                1.59 5.93L.08 24l6.34-1.66a11.88 11.88
-                0 005.63 1.43h.01c6.55 0 11.87-5.32
-                11.87-11.87 0-3.17-1.23-6.15-3.43-8.4z
-                M12.06 21.77h-.01a9.88 9.88 0 01-5.03-1.38
-                l-.36-.21-3.76.98 1-3.66-.24-.38a9.87
-                9.87 0 01-1.52-5.25c0-5.45 4.44-9.88
-                9.9-9.88 2.64 0 5.12 1.03 6.99 2.9
-                a9.83 9.83 0 012.89 7c0 5.44-4.43 9.88-9.86
-                9.88z"
-              />
-
-            </svg>
-
-          </span>
-
-          WhatsApp
-
-        </a>
-
-      </div>
-
-    </div>
-
-
-
     <!-- =====================================================
          MAIN CONTENT
     ====================================================== -->
@@ -2187,15 +2059,113 @@ input:focus {
             </p>
 
           </div>
-
-
+ 
           <!-- =================================================
                CONTACT ITEMS
           ================================================== -->
 
-          <div class="mt-7 space-y-3">
+      <div class="mt-7 space-y-3">
+ <!-- WHATSAPP -->
+
+            <a
+              :href="whatsappLink"
+              class="group
+                     flex items-center gap-4
+                     p-4
+                     rounded-2xl
+                     bg-white
+                     border border-slate-100
+                     shadow-sm
+                     hover:border-emerald-200
+                     hover:shadow-md
+                     hover:-translate-y-0.5
+                     transition-all duration-300"
+            >
+
+              <div
+                class="w-12 h-12
+                       shrink-0
+                       rounded-2xl
+                       bg-emerald-50
+                       text-emerald-600
+                       flex items-center
+                       justify-center
+                       group-hover:bg-emerald-500
+                       group-hover:text-white
+                       transition-colors"
+              >
+
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
+
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M20.5 3.5A11.9 11.9 0 0012.05 0
+                C5.5 0 .18 5.32.18 11.87c0 2.09.55 4.13
+                1.59 5.93L.08 24l6.34-1.66a11.88 11.88
+                0 005.63 1.43h.01c6.55 0 11.87-5.32
+                11.87-11.87 0-3.17-1.23-6.15-3.43-8.4z
+                M12.06 21.77h-.01a9.88 9.88 0 01-5.03-1.38
+                l-.36-.21-3.76.98 1-3.66-.24-.38a9.87
+                9.87 0 01-1.52-5.25c0-5.45 4.44-9.88
+                9.9-9.88 2.64 0 5.12 1.03 6.99 2.9
+                a9.83 9.83 0 012.89 7c0 5.44-4.43 9.88-9.86
+                9.88z"
+                  />
+
+                </svg>
+
+              </div>
 
 
+              <div class="flex-1">
+
+                <p
+                  class="text-xs
+                         text-slate-400"
+                >
+                  WhatsApp
+                </p>
+
+                <p
+                  class="mt-0.5
+                         text-sm
+                         font-bold
+                         text-[#062E4F]"
+                >
+                 Type a message to us
+                </p>
+
+              </div>
+
+
+              <svg
+                class="w-5 h-5
+                       text-slate-300
+                       group-hover:text-emerald-500
+                       group-hover:translate-x-1
+                       transition-all"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+              >
+
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M9 5l7 7-7 7"
+                />
+
+              </svg>
+
+            </a>  
             <!-- CALL -->
 
             <a
@@ -2260,7 +2230,7 @@ input:focus {
                          font-bold
                          text-[#062E4F]"
                 >
-                  Speak with our team
+                  Call Us
                 </p>
 
               </div>
@@ -2449,7 +2419,8 @@ input:focus {
                          font-bold
                          text-[#062E4F]"
                 >
-                  Lucknow, Uttar Pradesh
+                  HERBAL BIOLOGISCHE PHARMACEUTICALS PVT. LTD.
+592/3B/214/1, Gopal Nagar Near Defence Colony Lucknow 226025
                 </p>
 
               </div>
@@ -2459,73 +2430,6 @@ input:focus {
           </div>
 
 
-          <!-- =================================================
-               SERVICE NOTE
-          ================================================== -->
-
-          <div
-            class="mt-6
-                   p-4
-                   rounded-2xl
-                   bg-[#062E4F]
-                   text-white"
-          >
-
-            <div
-              class="flex items-start gap-3"
-            >
-
-              <div
-                class="w-9 h-9
-                       shrink-0
-                       rounded-xl
-                       bg-emerald-400/15
-                       flex items-center
-                       justify-center"
-              >
-
-                <svg
-                  class="w-4 h-4 text-emerald-300"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  viewBox="0 0 24 24"
-                >
-
-                  <circle
-                    cx="12"
-                    cy="12"
-                    r="9"
-                  />
-
-                  <path
-                    stroke-linecap="round"
-                    d="M12 8v4l2.5 1.5"
-                  />
-
-                </svg>
-
-              </div>
-
-
-              <div>
-
-                <p
-                  class="text-sm
-                         font-bold"
-                >
-                  Need assistance?
-                </p>
-
-                <p
-                  class="mt-1
-                         text-xs
-                         text-slate-300
-                         leading-relaxed"
-                >
-                  Our team is available to answer
-                  your questions and guide you.
-                </p>
 
               </div>
 
@@ -2562,10 +2466,9 @@ input:focus {
                  w-full h-full"
           loading="lazy"
           allowfullscreen
-          referrerpolicy="no-referrer-when-downgrade"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3559.6517!2d80.9461651!3d26.8466939!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1sLucknow!2sLucknow!5e0!3m2!1sen!2sin!4v1692280200000"
+          referrerpolicy="strict-origin-when-cross-origin"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10659.981781679417!2d80.93528398377893!3d26.793645461562093!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399bfbdcf3691f57%3A0x7214bda93e171b1e!2sHerbal%20biologische%20pharmaceuticals%20private%20limited!5e0!3m2!1sen!2sin!4v1786884711792!5m2!1sen!2sin"
         ></iframe>
-
 
         <!-- =================================================
              TOP LOCATION BADGE
@@ -2641,7 +2544,8 @@ input:focus {
                        font-extrabold
                        text-[#062E4F]"
               >
-                Lucknow, India
+                HERBAL BIOLOGISCHE PHARMACEUTICALS PVT. LTD.
+592/3B/214/1, Gopal Nagar Near Defence Colony Lucknow 226025
               </p>
 
             </div>
@@ -2666,72 +2570,10 @@ input:focus {
                  justify-between
                  gap-3"
         >
-
-          <!-- MAP INFO -->
-
-          <div
-            class="bg-white/95
-                   backdrop-blur-md
-                   rounded-2xl
-                   px-4 py-3
-                   border border-white
-                   shadow-xl"
-          >
-
-            <div
-              class="flex items-center gap-2"
-            >
-
-              <span
-                class="relative
-                       flex h-2.5 w-2.5"
-              >
-
-                <span
-                  class="absolute
-                         inline-flex
-                         h-full w-full
-                         rounded-full
-                         bg-emerald-400
-                         opacity-60
-                         animate-ping"
-                ></span>
-
-                <span
-                  class="relative
-                         inline-flex
-                         rounded-full
-                         h-2.5 w-2.5
-                         bg-emerald-500"
-                ></span>
-
-              </span>
-
-              <span
-                class="text-xs
-                       font-semibold
-                       text-emerald-700"
-              >
-                Find us easily
-              </span>
-
-            </div>
-
-            <p
-              class="mt-1
-                     text-xs
-                     text-slate-500"
-            >
-              Open the map for directions
-            </p>
-
-          </div>
-
-
-          <!-- DIRECTIONS BUTTON -->
+                 <!-- DIRECTIONS BUTTON -->
 
           <a
-            href="https://www.google.com/maps/search/?api=1&query=Lucknow,Uttar+Pradesh,India"
+            href="https://maps.app.goo.gl/LEVkwLVG2HmZCGbs8"
             target="_blank"
             rel="noopener noreferrer"
             class="group
